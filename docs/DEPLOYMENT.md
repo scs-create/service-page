@@ -7,19 +7,11 @@ Order matters. Do the steps in sequence. Anything marked **(you decide)** needs 
 2. `npm run dev` → open http://localhost:3000 and click through the site.
 3. `npm run lint && npm run typecheck && npm test && npm run build` — all four must pass. (The build needs internet access for Google Fonts.)
 
-## B. Put the code on GitHub
-1. GitHub → **New repository** (private is fine). Do not add a README/licence.
-2. In the project folder:
-   ```
-   git init
-   git add .
-   git commit -m "SCS website"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/<your-repo>.git
-   git push -u origin main
-   ```
-   `.gitignore` already excludes `node_modules`, `.next` and the generated `public/admin/*.js` (recreated on every build).
-3. The **CI** workflow (`.github/workflows/ci.yml`) runs automatically on every push. Check the Actions tab is green.
+## B. The code on GitHub
+The repository is `scs-create/service-page` (branch `main`). Netlify is connected to it: **every push to `main` deploys production**; other branches and pull requests get preview deploys (which show the client placeholders and the portal prototype).
+1. Never force-push `main`. Make small commits; revert with `git revert` if needed.
+2. `.gitignore` excludes `node_modules`, `.next`, `*.tsbuildinfo` and the generated `public/admin/*.js` (recreated on every build).
+3. The **CI** workflow (`.github/workflows/ci.yml`) runs lint, typecheck, tests, build and `npm audit` on every push. Check the Actions tab is green.
 
 ## C. Create the Netlify site
 1. Netlify → **Add new project → Import an existing project → GitHub** → choose the repository.
@@ -28,12 +20,15 @@ Order matters. Do the steps in sequence. Anything marked **(you decide)** needs 
 
 ## D. Connect your domain `stephencorporateservices-scs.com`
 1. Netlify → **Domain management → Add a domain** → enter the domain → make the **apex** (no `www`) the **primary** domain, and let `www` redirect to it (the site's canonical URL, sitemap and social tags use the apex).
-2. **Do NOT hand your DNS to Netlify unless you recreate every Google Workspace record** (MX, SPF, DKIM, DMARC) — otherwise email stops. Safest: keep DNS where it is now and add only the records Netlify displays for the apex (A/ALIAS) and `www` (CNAME). Copy the exact values from Netlify's screen; they are not listed here because they can change.
+2. **Do NOT hand your DNS to Netlify unless you recreate every Google Workspace record** (MX, SPF, DKIM, DMARC) — otherwise email stops. DNS stays at **Cloudflare**. Add only two records, both **DNS only (grey cloud)**, and touch nothing else:
+   - `A` · name `@` · value `75.2.60.5` (Netlify's load balancer) · TTL Auto
+   - `CNAME` · name `www` · value `<your-site-name>.netlify.app` · TTL Auto
+   Remove any existing `A`/`AAAA`/`CNAME` for `@` or `www` that points elsewhere (for example a parking page), but never an `MX` or `TXT` record. If Netlify's Domain management screen shows different values, use Netlify's. Keep the grey cloud: an orange-cloud proxy stops Netlify issuing the HTTPS certificate.
 3. Back in Netlify click **Verify DNS**, wait for the HTTPS certificate to provision, then enable **Force HTTPS**.
 4. Send and receive a test email on one alias to confirm email is unaffected.
 
 ## E. Environment variables (Site configuration → Environment variables)
-All optional (defaults are built in): `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`, `NEXT_PUBLIC_BOOKING_URL` (set when you have a Cal.com/Calendly link).
+Defaults are built in, but set this one so it is visible in Netlify: `NEXT_PUBLIC_BOOKING_URL` = `https://cal.com/support-stephen-corporate-services-scs/30min`. Optional: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`.
 **Never** add `NEXT_PUBLIC_SHOW_CLIENT_PLACEHOLDERS` or `NEXT_PUBLIC_ENABLE_PORTAL_PROTOTYPE` to production — `netlify.toml` already sets them for preview deploys only.
 
 ## F. Forms (two forms: `enquiry`, `career-application`)
@@ -46,13 +41,13 @@ All optional (defaults are built in): `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_PLAUS
 ## G. CMS login (GitHub backend; Git Gateway/Identity are deprecated and no longer used)
 1. GitHub → **Settings → Developer settings → OAuth Apps → New OAuth App**. Homepage URL: `https://stephencorporateservices-scs.com`. Authorization callback URL: `https://api.netlify.com/auth/done`. Register, copy the **Client ID**, click **Generate a new client secret** and copy it.
 2. Netlify → **Site configuration → Access & security → OAuth** (older UI: *Access control → OAuth*) → **Install provider → GitHub** → paste Client ID and Secret. (Menu labels vary slightly between Netlify UI versions.)
-3. In the project edit `public/admin/config.yml`: replace `YOUR-GITHUB-USERNAME/YOUR-REPO-NAME` with your real `owner/repo`. Commit and push (this redeploys).
+3. `public/admin/config.yml` already points at `scs-create/service-page` (branch `main`). Change it only if the repository moves.
 4. Open `https://stephencorporateservices-scs.com/admin` → **Login with GitHub**. Every editor needs a GitHub account added to the repository as a collaborator with **write** access.
 5. Editors work in the *Editorial workflow*: Draft → In review → Ready → **Publish** (publishing merges the change; Netlify rebuilds).
 
 ## H. Analytics (Plausible)
 1. Create a Plausible account → **Add a site** → `stephencorporateservices-scs.com`.
-2. Site settings → **Goals → Add goal → Custom event**: `CTA Click`, `Form Submit`, `Form Step`, `Tool Complete`.
+2. Site settings → **Goals → Add goal → Custom event**, one at a time, spelled exactly: `CTA Click`, `Form Submit`, `Form Step`, `Tool Complete`, `Booking Click` (fires on every "Book" button that opens Cal.com).
 3. Remember: analytics only counts visitors who press **Accept all** (or enable analytics) on the cookie banner.
 
 ## I. Scheduled blog posts
@@ -64,12 +59,10 @@ All optional (defaults are built in): `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_PLAUS
 1. Confirm in Google Admin that `contact@`, `info@`, `sales@`, `accounts@` exist as aliases of a real mailbox. `admin@` is internal only. Optional but recommended: add a `privacy@` alias, then change `EMAILS.privacy` in `src/lib/site.ts`.
 2. Google Search Console → add the domain property (DNS TXT verification) → submit `https://stephencorporateservices-scs.com/sitemap.xml`. Import the property into Bing Webmaster Tools.
 
-## K. Before you announce the site **(you decide / supply)**
-- Confirm the office address (Karsana vs Gwarinpa; Benhen vs Belham) in `src/lib/site.ts`.
-- Confirm the WhatsApp number is active; supply Cal.com/Calendly link if wanted.
-- Upload verification documents (watermark them first) via the CMS; supply leadership bios/photos; real consented testimonials; ten signature programmes; SCA description; Partnership terms; IP permissions.
-- Replace the two sample Corporate School posts.
-- **Legal pages:** have a Nigerian lawyer review them and resolve every item in `docs/legal-open-items.md`. Until then they show a draft notice and stay out of search engines. Decide the Privacy Notice and Cookie Policy effective dates.
+## K. Still to supply **(you decide / supply)**
+Already decided (16 October 2026): address, positioning, metrics, primary email, WhatsApp, Cal.com link, leadership photos, Corporate School articles, legal effective dates. Still open:
+- Upload verification documents (watermark them first) via the CMS; real consented testimonials; signature programmes; SCA description; Partnership terms; IP permissions (see `docs/CLIENT_PLACEHOLDERS.md`). Leadership bios only if the founders want them.
+- **Legal pages:** have a Nigerian lawyer review them and resolve every item in `docs/legal-open-items.md`. Until then they show a draft notice and stay out of search engines.
 
 ## L. After launch — checks
 1. Browser DevTools → Network: press **Reject** on the banner and confirm no `plausible.io` request; press **Accept** and confirm it loads.

@@ -45,12 +45,16 @@ Every highlighted `[bracketed]` item below is unresolved text from the supplied 
 
 ## Resolved by the client
 - SCS RC number: **9041457** (now `{{rc}}` in Terms and Privacy, and shown in the footer and on Verification).
-- Terms: Effective date / version = **15th October 2026 / 1.0**.
+- Effective dates: Terms of Use **16 October 2026 / version 1.0**; Privacy Notice **16 October 2026**; Cookie Policy **16 October 2026** (client decision, 16 October 2026).
+- Office address: **SD20 Benhen Estate, Karsana, FCT, Abuja** (confirmed; `{{address}}` everywhere).
+- Terms 31.4 now links the Privacy Notice (`https://{{domain}}/privacy`); it previously read "available at, ".
+- Regulator names aligned with the site: "FIRS" → **Nigeria Revenue Service (NRS)**; "Industrial Property Registry" → **Trademarks, Patents and Designs Registry**. Counsel to confirm.
+- Privacy Notice → *Service providers used on this website* now also lists **Cal.com** (booking link-out) and **GitHub / Netlify** (CMS, staff only).
 
 ## Other discrepancies for the client / lawyer
-- The Privacy Notice (effective 25 Jan 2025) and Cookie Policy (effective 29 Jan 2025) still show their original effective dates; the Terms now say 15th October 2026. Align them if they are to be issued together. (SCS launched May 2025.)
 - Terms contains contradictory number/word pairs: `[two (7)]` business days and `[ten (30)]` business days (clause 32.2).
 - Cookie Policy was written for Google analytics; the site uses Plausible (analytics table row edited; analytics loads only after consent).
 - Privacy Notice: a *Service providers* section and a *Free tools and business assessment* section were ADDED (drafted from how the site works). **Counsel must review both.**
+- Privacy Notice §7 says "We host data Nigeria" (typo, and the website itself is hosted by Netlify outside Nigeria). Counsel to reword alongside the cross-border placeholder.
 - Privacy Notice promises deletion of unsuccessful job applications within 6 months: delete Career form submissions in Netlify on that schedule.
 - Editing log: old-domain emails and personal Gmail addresses replaced by tokens; phone typo corrected; clause 16.5 'by post to admin@…' changed to the postal address; empty Website cell filled; the Terms sentence 'SCS [is / is not] itself a licensed … (DPCO)' deleted at the client's instruction.
