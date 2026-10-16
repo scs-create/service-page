@@ -1,0 +1,115 @@
+{
+  "title": "Which business structure fits?",
+  "intro": "Answer four short questions for plain-language guidance on the three most common structures.",
+  "topN": 1,
+  "disclaimer": "General guidance, not legal advice. SCS confirms the right structure for your situation and handles the registration.",
+  "questions": [
+    {
+      "id": "purpose",
+      "text": "What is the main purpose?",
+      "options": [
+        {
+          "label": "To earn a profit",
+          "weights": {
+            "company": 2,
+            "businessname": 1
+          }
+        },
+        {
+          "label": "Charitable, religious, educational or social, not for profit",
+          "weights": {
+            "trustees": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "owners",
+      "text": "How many owners will there be?",
+      "options": [
+        {
+          "label": "Just me",
+          "weights": {
+            "businessname": 2,
+            "company": 1
+          }
+        },
+        {
+          "label": "Two or more",
+          "weights": {
+            "company": 2,
+            "businessname": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "liability",
+      "text": "Do you want the business's debts kept separate from your personal assets?",
+      "options": [
+        {
+          "label": "Yes",
+          "weights": {
+            "company": 3
+          }
+        },
+        {
+          "label": "Not sure",
+          "weights": {
+            "company": 1
+          }
+        },
+        {
+          "label": "No",
+          "weights": {
+            "businessname": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "investors",
+      "text": "Do you plan to bring in investors or shareholders?",
+      "options": [
+        {
+          "label": "Yes",
+          "weights": {
+            "company": 3
+          }
+        },
+        {
+          "label": "Maybe later",
+          "weights": {
+            "company": 1
+          }
+        },
+        {
+          "label": "No",
+          "weights": {
+            "businessname": 1
+          }
+        }
+      ]
+    }
+  ],
+  "outcomes": {
+    "businessname": {
+      "title": "Business name registration",
+      "description": "The simplest structure: the business and its owner are legally the same, so the owner is personally responsible for the business's obligations. Often a starting point for sole traders and small partnerships.",
+      "href": "/services/business-formation-and-corporate-structuring",
+      "ctaLabel": "Talk to SCS about registration"
+    },
+    "company": {
+      "title": "Limited company",
+      "description": "A separate legal entity owned by its shareholders and run by directors. Liability is generally limited, and the structure suits businesses that want to bring in investors, build credibility or grow.",
+      "href": "/services/business-formation-and-corporate-structuring",
+      "ctaLabel": "Talk to SCS about incorporation"
+    },
+    "trustees": {
+      "title": "Incorporated trustees",
+      "description": "The structure used for not-for-profit bodies with charitable, religious, educational or social purposes. The body is registered and holds property through its trustees.",
+      "href": "/services/business-formation-and-corporate-structuring",
+      "ctaLabel": "Talk to SCS about registration"
+    }
+  }
+}

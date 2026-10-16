@@ -1,0 +1,131 @@
+{
+  "title": "Find my service",
+  "intro": "Three quick questions. We will point you to the areas of support and the package that fit best.",
+  "topN": 3,
+  "questions": [
+    {
+      "id": "stage",
+      "text": "Where is your business right now?",
+      "options": [
+        {
+          "label": "Still an idea",
+          "weights": {
+            "start-and-structure": 3,
+            "pkg-A": 2
+          }
+        },
+        {
+          "label": "Just started (first year)",
+          "weights": {
+            "start-and-structure": 2,
+            "compliance-and-regulatory": 1,
+            "pkg-A": 2
+          }
+        },
+        {
+          "label": "Operating and settled",
+          "weights": {
+            "compliance-and-regulatory": 1,
+            "finance-and-tax": 1,
+            "people-and-operations": 1,
+            "pkg-B": 1
+          }
+        },
+        {
+          "label": "Growing and scaling",
+          "weights": {
+            "growth-and-market-presence": 2,
+            "people-and-operations": 1,
+            "technology-and-data": 1,
+            "pkg-E": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "worry",
+      "text": "What worries you most right now?",
+      "options": [
+        {
+          "label": "Registration and paperwork",
+          "weights": {
+            "start-and-structure": 3,
+            "pkg-A": 1
+          }
+        },
+        {
+          "label": "Licences, permits and compliance",
+          "weights": {
+            "compliance-and-regulatory": 3,
+            "pkg-B": 2
+          }
+        },
+        {
+          "label": "Tax, accounts and money records",
+          "weights": {
+            "finance-and-tax": 3
+          }
+        },
+        {
+          "label": "Staff, hiring and day-to-day operations",
+          "weights": {
+            "people-and-operations": 3,
+            "pkg-C": 2,
+            "pkg-E": 1
+          }
+        },
+        {
+          "label": "Finding and keeping customers",
+          "weights": {
+            "growth-and-market-presence": 3,
+            "pkg-D": 2
+          }
+        },
+        {
+          "label": "Data, systems and technology",
+          "weights": {
+            "technology-and-data": 3,
+            "pkg-E": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "mode",
+      "text": "How would you like to work with SCS?",
+      "options": [
+        {
+          "label": "A specific, one-off job",
+          "weights": {}
+        },
+        {
+          "label": "Ongoing support alongside my team",
+          "weights": {
+            "pkg-F": 2,
+            "pkg-B": 1
+          }
+        },
+        {
+          "label": "I want to learn to do it myself",
+          "weights": {
+            "college": 4
+          }
+        },
+        {
+          "label": "Take over a whole function for me",
+          "weights": {
+            "pkg-F": 3
+          }
+        }
+      ]
+    }
+  ],
+  "outcomes": {
+    "college": {
+      "title": "Corporate College",
+      "description": "Request learning and training on topics related to our services.",
+      "href": "/corporate-college",
+      "ctaLabel": "Explore Corporate College"
+    }
+  }
+}

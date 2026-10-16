@@ -1,0 +1,23 @@
+{
+  "order": 2,
+  "slug": "faith-point-laboratory-diagnostics-ltd",
+  "client": "Faith Point Laboratory & Diagnostics Ltd",
+  "rc": "9909834",
+  "sector": "Diagnostic & Healthcare Services",
+  "filter": "healthcare-pharma",
+  "featured": false,
+  "headline": "A diagnostic laboratory needed to be legally and operationally ready before its first patient.",
+  "challenge": "A diagnostics business carries patient-data sensitivity and health-sector compliance obligations on top of the usual corporate requirements, the margin for error is thin.",
+  "delivered": [
+    "Company incorporation and corporate record-keeping",
+    "Regulatory and permit documentation for diagnostic service operations",
+    "Data protection advisory for patient and employee information handling",
+    "Administrative and compliance support for day-to-day operations"
+  ],
+  "impact": "A diagnostics provider structured to operate lawfully, protect patient data, and scale its testing services on a compliant footing.",
+  "serviceLines": [
+    "Company Formation",
+    "Regulatory Compliance & Permits",
+    "Data Protection"
+  ]
+}

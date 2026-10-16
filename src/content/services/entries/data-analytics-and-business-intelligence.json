@@ -1,0 +1,25 @@
+{
+  "slug": "data-analytics-and-business-intelligence",
+  "title": "Data Analytics & Business Intelligence",
+  "cluster": "technology-and-data",
+  "framingSentence": "We help businesses turn raw information into usable intelligence.",
+  "introLine": "Our services include:",
+  "services": [
+    "Data collection",
+    "Data organisation",
+    "Data cleaning",
+    "Business reporting",
+    "Performance dashboards",
+    "Customer analytics",
+    "Operational analytics",
+    "Financial data analysis",
+    "Market analysis",
+    "KPI development",
+    "Business intelligence",
+    "Management reporting",
+    "Trend analysis",
+    "Decision-support analytics",
+    "Data visualisation"
+  ],
+  "closingStatement": "Better information. Better decisions. Better business outcomes."
+}

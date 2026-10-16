@@ -1,0 +1,24 @@
+{
+  "slug": "agriculture-and-agribusiness",
+  "name": "Agriculture & Agribusiness",
+  "summary": "Agribusinesses move from farm to market through buyers, processors and regulators.",
+  "needs": [
+    "Check registration requirements for processed or packaged products",
+    "Formalise buyer, supplier and out-grower arrangements in writing",
+    "Register the business properly and keep records for tax and financing conversations"
+  ],
+  "regulators": [
+    "NAFDAC",
+    "SON",
+    "CAC",
+    "NRS",
+    "SIRS",
+    "ITF",
+    "NSITF"
+  ],
+  "services": [
+    "business-formation-and-corporate-structuring",
+    "corporate-and-commercial-advisory",
+    "regulatory-compliance-and-licensing"
+  ]
+}

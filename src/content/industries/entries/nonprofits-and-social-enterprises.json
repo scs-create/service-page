@@ -1,0 +1,21 @@
+{
+  "slug": "nonprofits-and-social-enterprises",
+  "name": "Nonprofits & Social Enterprises",
+  "summary": "Funders and the public expect governance and records to be in order.",
+  "needs": [
+    "Register and keep trustee records and constitutional documents current",
+    "Document governance, policies and donor or beneficiary data practices",
+    "Keep accounts and reporting organised for funders"
+  ],
+  "regulators": [
+    "CAC",
+    "NDPC",
+    "NRS",
+    "SIRS"
+  ],
+  "services": [
+    "business-formation-and-corporate-structuring",
+    "data-protection-privacy-and-information-governance",
+    "tax-accounting-and-financial-business-support"
+  ]
+}

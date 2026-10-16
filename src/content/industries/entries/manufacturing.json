@@ -1,0 +1,24 @@
+{
+  "slug": "manufacturing",
+  "name": "Manufacturing",
+  "summary": "Products, suppliers and staff all carry documentation and registration requirements.",
+  "needs": [
+    "Check product registration, labelling and standards requirements for what you make",
+    "Organise supplier and distributor agreements",
+    "Keep staff, employer registrations and operating procedures documented"
+  ],
+  "regulators": [
+    "NAFDAC",
+    "SON",
+    "CAC",
+    "NRS",
+    "SIRS",
+    "ITF",
+    "NSITF"
+  ],
+  "services": [
+    "regulatory-compliance-and-licensing",
+    "procurement-supply-chain-and-vendor-management",
+    "human-resources-and-staff-management"
+  ]
+}

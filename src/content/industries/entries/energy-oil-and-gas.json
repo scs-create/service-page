@@ -1,0 +1,24 @@
+{
+  "slug": "energy-oil-and-gas",
+  "name": "Energy, Oil & Gas",
+  "summary": "Licences, permits and contractor relationships shape what an energy business can do and when.",
+  "needs": [
+    "Identify sector licences and permits early, before operations or contracts depend on them",
+    "Keep contracts with vendors, partners and contractors documented and managed",
+    "Maintain employer registrations and compliance records for field and office staff"
+  ],
+  "regulators": [
+    "CAC",
+    "NRS",
+    "SIRS",
+    "NDPC",
+    "ITF",
+    "NSITF"
+  ],
+  "services": [
+    "regulatory-compliance-and-licensing",
+    "corporate-and-commercial-advisory",
+    "procurement-supply-chain-and-vendor-management"
+  ],
+  "note": "Sector-specific regulators (for example NUPRC, NMDPRA and NERC) are covered under our Regulatory Compliance & Licensing service."
+}

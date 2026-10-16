@@ -1,0 +1,490 @@
+{
+ "slug": "privacy",
+ "title": "Privacy Notice",
+ "effective": "25th January, 2025",
+ "updated": "October 9, 2026",
+ "intro": [
+  {
+   "type": "p",
+   "text": "Stephen Corporate Services (SCS) Ltd (\"SCS\", \"we\", \"us\") protects the personal data of clients, prospective clients, job applicants, website visitors and business partners. This notice explains what we collect, why, who sees it, how long we keep it, and how you can exercise your rights under the Nigeria Data Protection Act 2023 (\"NDP Act\") and the NDP Act General Application and Implementation Directive 2025 (\"GAID\")."
+  },
+  {
+   "type": "table",
+   "rows": [
+    [
+     "Question",
+     "Short answer"
+    ],
+    [
+     "Who is responsible for your data?",
+     "SCS, as data controller for our own website, client and business relationships. For managed services we run for a client, the client is the controller and SCS is its processor."
+    ],
+    [
+     "Do you sell my data?",
+     "No. We do not sell, rent or trade personal data."
+    ],
+    [
+     "Can I say no to marketing and cookies?",
+     "Yes. Non-essential cookies and direct marketing need your consent, and you can withdraw it at any time."
+    ],
+    [
+     "How do I use my rights or complain?",
+     "Email our Data Protection Officer (DPO) at {{email_privacy}}. You can also complain to the NDPC at any time."
+    ]
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "1-who-we-are",
+   "heading": "1. Who we are",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "",
+       ""
+      ],
+      [
+       "Company",
+       "Stephen Corporate Services (SCS) Ltd, RC {{rc}}"
+      ],
+      [
+       "Address",
+       "(Abuja ), Nigeria"
+      ],
+      [
+       "Phone / email",
+       "{{phone}} {{email_privacy}}"
+      ],
+      [
+       "Data Protection Officer",
+       "Stephen Onyekeja, {{email_privacy}}"
+      ],
+      [
+       "",
+       ""
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2-scope",
+   "heading": "2. Scope",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "This notice covers personal data we collect through our website, digital portals and online forms, and through our services:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Contract, commercial and legal documentation coordination",
+      "HR management, recruitment and employee administration",
+      "Sales setup, staff training and prospect operations",
+      "Customer support and customer care management",
+      "Regulatory mapping, permits and government registrations",
+      "Intellectual property support and registry filing coordination"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "It does not cover third-party sites we link to, such as government portals."
+    }
+   ]
+  },
+  {
+   "id": "3-personal-data-we-collect",
+   "heading": "3. Personal data we collect",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "**Data you give us**"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Identity and contact:** name, job title, company, business address, email, phone number.",
+      "**Corporate and compliance:** director and shareholder details, Tax Identification Numbers, CAC documents, and licence details supplied for filings or contract work.",
+      "**HR and workforce (managed HR or recruitment engagements):** CVs, identity documents (NIN, driver's licence, international passport), employment history, bank details for payroll, emergency contacts and background-check details.",
+      "**Support and sales:** enquiries, support tickets, call logs, message histories and prospect lists.",
+      "**Know-your-client and billing:** identification and payment records needed to take on and invoice a client."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Data we collect automatically**"
+    },
+    {
+     "type": "list",
+     "items": [
+      "IP address, browser type, device and operating system, referring page, pages viewed and cookie choices."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Sensitive personal data.** We ask for sensitive data (for example health status, biometric data, religion or ethnic origin) only where a service needs it, and only with your explicit consent or another ground in section 30 of the NDP Act, such as employment and social security obligations."
+    },
+    {
+     "type": "p",
+     "text": "**Data from others.** For managed services, a client may give us personal data about its customers, staff or applicants. We also compile B2B prospect lists from publicly available or lawfully obtained directories."
+    }
+   ]
+  },
+  {
+   "id": "4-why-we-use-your-data-and-our-lawful-basis",
+   "heading": "4. Why we use your data and our lawful basis",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "We process personal data only where section 25 of the NDP Act allows it."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Purpose",
+       "Examples",
+       "Lawful basis"
+      ],
+      [
+       "Delivering our services",
+       "Corporate setup, contract registers and renewal calendars, HR and recruitment workflows, customer care desks, sales pipeline tracking, regulatory filings",
+       "Contract"
+      ],
+      [
+       "Meeting legal duties",
+       "Filings and correspondence with CAC, FIRS, State IRS, PenCom, NSITF, NDPC, NAFDAC, SON, FCCPC and the Trademarks, Patents and Designs Registry; tax and accounting records",
+       "Legal obligation"
+      ],
+      [
+       "Running and securing our business",
+       "Responding to enquiries and tickets, fraud prevention, website security, audit readiness, improving service quality",
+       "Legitimate interest (we complete a Legitimate Interest Assessment and do not rely on it where it overrides your rights)"
+      ],
+      [
+       "Marketing and non-essential cookies",
+       "Newsletters, B2B outreach to individuals who have not been our clients, analytics and advertising cookies",
+       "Consent, which you can withdraw at any time"
+      ],
+      [
+       "Sensitive data and special screenings",
+       "Health, biometric or background-check data in HR engagements",
+       "Explicit consent, or employment and social security law"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "This notice is information, not a request for consent. Where we need consent, we ask separately, in plain language, with a clear option to accept or decline."
+    }
+   ]
+  },
+  {
+   "id": "5-our-role-controller-or-processor",
+   "heading": "5. Our role: controller or processor",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "list",
+     "items": [
+      "**SCS as controller.** For data about our own clients and prospects, website visitors, vendors, job applicants to SCS and SCS staff, we decide why and how data is used.",
+      "**SCS as processor.** When we run managed services for a client (customer support, personnel files, sales databases), the client is the controller. We act only on its written instructions under a Data Processing Agreement. If your data reached us this way, please send rights requests to that client or tell us, and we will pass them on without delay."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6-who-we-share-data-with",
+   "heading": "6. Who we share data with",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "We do not sell, rent or trade personal data. We share it only with:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Accredited professionals:** solicitors, trademark or patent agents and other specialists engaged for formal filings or legal work.",
+      "**Government and regulators:** CAC, FIRS, NDPC, NAFDAC and other authorities, where a filing, licence or legal duty requires it.",
+      "**Service providers (sub-processors):** cloud hosting, data centres, IT security and software vendors, each bound by a written agreement and confidentiality duties. We tell clients before we add a new one.",
+      "**Legal and safety needs:** where law, a court order or a lawful official request requires disclosure, or to protect life, public health or prevent crime."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "We do not share personal data with third parties for their own marketing without your explicit consent."
+    }
+   ]
+  },
+  {
+   "id": "7-transfers-outside-nigeria",
+   "heading": "7. Transfers outside Nigeria",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "We host data Nigeria. If personal data is stored or transferred outside Nigeria, including to cloud providers such as AWS or Microsoft Azure, we transfer it only where the recipient is bound by a law, binding corporate rules, contractual clauses, a code of conduct or certification that gives an adequate level of protection, or where another ground in section 43 of the NDP Act applies, such as your informed consent after we explain the risks (sections 41 to 43). We record the basis for each transfer. You can ask us for details."
+    }
+   ]
+  },
+  {
+   "id": "8-how-long-we-keep-data",
+   "heading": "8. How long we keep data",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Data",
+       "Retention"
+      ],
+      [
+       "Client and engagement records",
+       "Life of the engagement, then deleted or irreversibly anonymised within six (6) months unless a law requires longer"
+      ],
+      [
+       "Tax, accounting and corporate records",
+       "As long as the law requires relating to finance six (6)] years"
+      ],
+      [
+       "Applicants who are not hired",
+       "Deleted within six (6) months unless you consent to us keeping your CV"
+      ],
+      [
+       "Prospects who do not become clients",
+       "Deleted within six (6) months of the last contact, or sooner if you object"
+      ],
+      [
+       "Website logs and cookies",
+       "Up to 12 months, or as stated in the cookie settings"
+      ],
+      [
+       "Data held for a legal claim",
+       "Until the claim and any appeal is concluded"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "When the period ends we securely erase, shred or irreversibly de-identify the data under our Data Retention and Secure Disposal Policy."
+    }
+   ]
+  },
+  {
+   "id": "9-how-we-protect-your-data",
+   "heading": "9. How we protect your data",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "list",
+     "items": [
+      "**Access control:** role-based access and multi-factor authentication for electronic records.",
+      "**Encryption:** SSL/TLS in transit and encryption at rest in our databases.",
+      "**Physical security:** restricted archive rooms, locked cabinets and clean-desk rules.",
+      "**People and process:** confidentiality undertakings, regular data protection training, security testing, backups and a disaster-recovery plan.",
+      "**Breaches:** if a breach puts your rights at high risk, the responsible controller will tell you immediately and notify the NDPC within 72 hours."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "10-cookies-and-similar-tools",
+   "heading": "10. Cookies and similar tools",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "When you first visit our website, a cookie notice appears at the front of the page with clear Accept and Reject choices."
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Necessary cookies** (security, network stability, accessibility) do not need consent.",
+      "**All other cookies** (analytics, advertising, personalisation) are used only if you accept them. Rejecting them does not block basic website use.",
+      "You can change or withdraw your choice at any time through the cookie settings link in the footer."
+     ]
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Cookie / tool",
+       "Purpose",
+       "Type",
+       "Duration"
+      ],
+      [
+       "—",
+       "—",
+       "Necessary / Analytics / Marketing",
+       "—"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "11-children",
+   "heading": "11. Children",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Our services are for businesses and adults. We do not knowingly collect data from children. If you believe a child has given us data, contact the DPO and we will delete it. Where a client's service involves children's data, consent comes from a parent or legal guardian (section 31)."
+    }
+   ]
+  },
+  {
+   "id": "12-automated-decisions",
+   "heading": "12. Automated decisions",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "We do not make decisions that have legal or similarly significant effect on you solely by automated means. If that changes, we will tell you first and you will have the right to human review, to give your view and to contest the decision (section 37)."
+    }
+   ]
+  },
+  {
+   "id": "13-your-rights",
+   "heading": "13. Your rights",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Under sections 34 to 38 of the NDP Act you can:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Access:** ask whether we process your data and get a copy, with details of purposes, recipients and retention.",
+      "**Correct:** have inaccurate, incomplete or outdated data corrected, free of charge where the error is ours.",
+      "**Erase:** have data deleted where it is no longer needed or we have no lawful basis to keep it.",
+      "**Restrict:** pause processing while a request or objection is resolved.",
+      "**Object:** object to processing, and stop direct marketing at any time.",
+      "**Withdraw consent:** as easily as you gave it. This does not affect earlier lawful processing.",
+      "**Port:** receive your data in a structured, commonly used, machine-readable format where this applies.",
+      "**Human review:** not be subject to a solely automated decision with significant effect."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "To use a right, email {{email_privacy}} or write to our address above. We may ask you to verify your identity. We reply without undue delay and within [30] days."
+    }
+   ]
+  },
+  {
+   "id": "14-complaints",
+   "heading": "14. Complaints",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Please contact our DPO first so we can fix the problem quickly. You may also serve a Data Subject's Standard Notice to Address Grievance (SNAG) on us, and we will decide it within the period you state or 30 days, whichever is earlier."
+    },
+    {
+     "type": "p",
+     "text": "You do not have to use our process first. You can complain at any time to the **Nigeria Data Protection Commission (NDPC)** at info@ndpc.gov.ng or ndpc.gov.ng, and you can seek redress in the Federal or State High Court."
+    }
+   ]
+  },
+  {
+   "id": "15-contact-us",
+   "heading": "15. Contact us",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "",
+       ""
+      ],
+      [
+       "Company",
+       "Stephen Corporate Services (SCS) Ltd"
+      ],
+      [
+       "Data Protection Officer",
+       "{{email_privacy}}"
+      ],
+      [
+       "Address",
+       "— (Abuja / Lagos), Nigeria"
+      ],
+      [
+       "Phone",
+       "+234 —"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "service-providers-used-on-this-website",
+   "heading": "Service providers used on this website",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "To run this website and respond to you, we use the following service providers, who process personal data for us:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Netlify, Inc.** — website hosting, and processing of the forms you submit.",
+      "**Plausible Analytics (Plausible Insights OÜ)** — website analytics, loaded only if you accept analytics cookies.",
+      "**Google Workspace (Google LLC)** — the email systems we use to respond to you."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "[CLIENT TO CONFIRM: cross-border transfer safeguards and retention periods for these providers]"
+    }
+   ]
+  },
+  {
+   "id": "our-free-tools-and-business-assessment",
+   "heading": "Our free tools and business assessment",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "When you use tools such as Assess your Business, the Compliance Starter Checklist, the Business Structure Chooser or Find My Service, your answers are processed in your browser to show you a result. Nothing is sent to us unless you choose to submit your details."
+    },
+    {
+     "type": "p",
+     "text": "If you submit your details after using a tool, we receive your contact details together with your answers and result. SCS staff can view these to prepare for any conversation with you and to analyse and improve our tools and services."
+    },
+    {
+     "type": "p",
+     "text": "We contact you about your submission only if you tick the consent box on the form. You can withdraw consent, or ask us to delete your submission, at any time by contacting {{email_privacy}}."
+    },
+    {
+     "type": "p",
+     "text": "[CLIENT TO CONFIRM: retention period for tool submissions and enquiries]"
+    }
+   ]
+  },
+  {
+   "id": "16-changes-to-this-notice",
+   "heading": "16. Changes to this notice",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "We will update this notice when our practices or the law change, and show the new date at the top. For material changes we will notify you by email or a notice on the website. Our Terms of Use and this notice should be read together."
+    }
+   ]
+  }
+ ]
+}

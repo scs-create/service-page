@@ -1,0 +1,60 @@
+{
+  "regulators": [
+    {
+      "code": "CAC",
+      "name": "Corporate Affairs Commission (CAC)"
+    },
+    {
+      "code": "NRS",
+      "name": "Nigeria Revenue Service (NRS)"
+    },
+    {
+      "code": "SIRS",
+      "name": "State Internal Revenue Services (SIRS)"
+    },
+    {
+      "code": "NDPC",
+      "name": "Nigeria Data Protection Commission (NDPC)"
+    },
+    {
+      "code": "SEC",
+      "name": "Securities & Exchange Commission (SEC)"
+    },
+    {
+      "code": "FRCN",
+      "name": "Financial Reporting Council (FRCN)"
+    },
+    {
+      "code": "CBN",
+      "name": "Central Bank of Nigeria (CBN)"
+    },
+    {
+      "code": "NAICOM",
+      "name": "National Insurance Commission (NAICOM)"
+    },
+    {
+      "code": "PENCOM",
+      "name": "Pension Commission (PenCom)"
+    },
+    {
+      "code": "ITF",
+      "name": "Industrial Training Fund (ITF)"
+    },
+    {
+      "code": "NSITF",
+      "name": "Nigeria Social Insurance Trust Fund (NSITF)"
+    },
+    {
+      "code": "NAFDAC",
+      "name": "National Agency for Food & Drug Administration and Control (NAFDAC)"
+    },
+    {
+      "code": "SON",
+      "name": "Standards Organisation of Nigeria (SON)"
+    },
+    {
+      "code": "LANDS",
+      "name": "State Ministries of Physical Planning / Land Bureaux"
+    }
+  ]
+}

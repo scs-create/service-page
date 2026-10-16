@@ -1,0 +1,19 @@
+# Scheduled publishing for Corporate School: posts dated in the future are hidden at build time,
+# so a daily rebuild publishes them on the day. Needs the repository secret NETLIFY_BUILD_HOOK_URL
+# (Netlify → Site configuration → Build & deploy → Build hooks).
+name: Daily rebuild (scheduled posts)
+on:
+  schedule:
+    - cron: "0 5 * * *" # 05:00 UTC
+  workflow_dispatch:
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Netlify build
+        env:
+          HOOK: ${{ secrets.NETLIFY_BUILD_HOOK_URL }}
+        run: |
+          if [ -z "$HOOK" ]; then echo "NETLIFY_BUILD_HOOK_URL not set — skipping"; exit 0; fi
+          curl -fsS -X POST -d '{}' "$HOOK"

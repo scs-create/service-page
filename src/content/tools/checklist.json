@@ -1,0 +1,236 @@
+{
+  "types": [
+    {
+      "id": "business-name",
+      "label": "Business name",
+      "items": [
+        {
+          "text": "Confirm your business name registration and certificate are on record",
+          "regulators": [
+            "CAC"
+          ]
+        },
+        {
+          "text": "Confirm your tax registrations and keep records of income and expenses",
+          "regulators": [
+            "NRS",
+            "SIRS"
+          ]
+        },
+        {
+          "text": "If you employ staff, confirm which employer registrations and contributions apply to you",
+          "regulators": [
+            "ITF",
+            "NSITF",
+            "PENCOM"
+          ]
+        },
+        {
+          "text": "If you collect personal data, document how it is used, protected and kept",
+          "regulators": [
+            "NDPC"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "limited-company",
+      "label": "Limited company",
+      "items": [
+        {
+          "text": "Keep company registration documents and shareholder and director records up to date",
+          "regulators": [
+            "CAC"
+          ]
+        },
+        {
+          "text": "Confirm that annual filings with the registry are being made",
+          "regulators": [
+            "CAC"
+          ]
+        },
+        {
+          "text": "Confirm your tax registrations and keep records of income and expenses",
+          "regulators": [
+            "NRS",
+            "SIRS"
+          ]
+        },
+        {
+          "text": "Check whether financial reporting requirements apply to your company",
+          "regulators": [
+            "FRCN"
+          ]
+        },
+        {
+          "text": "If you employ staff, confirm which employer registrations and contributions apply to you",
+          "regulators": [
+            "ITF",
+            "NSITF",
+            "PENCOM"
+          ]
+        },
+        {
+          "text": "If you collect personal data, document how it is used, protected and kept",
+          "regulators": [
+            "NDPC"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "incorporated-trustees",
+      "label": "Incorporated trustees",
+      "items": [
+        {
+          "text": "Keep the constitution, trustee records and registration documents up to date",
+          "regulators": [
+            "CAC"
+          ]
+        },
+        {
+          "text": "Confirm annual filing obligations with the registry",
+          "regulators": [
+            "CAC"
+          ]
+        },
+        {
+          "text": "Confirm your tax registration and reporting position",
+          "regulators": [
+            "NRS",
+            "SIRS"
+          ]
+        },
+        {
+          "text": "If you employ staff, confirm which employer registrations and contributions apply to you",
+          "regulators": [
+            "ITF",
+            "NSITF",
+            "PENCOM"
+          ]
+        },
+        {
+          "text": "If you collect personal data, document how it is used, protected and kept",
+          "regulators": [
+            "NDPC"
+          ]
+        }
+      ]
+    }
+  ],
+  "sectors": [
+    {
+      "id": "financial-services-and-fintech",
+      "label": "Financial Services & Fintech",
+      "items": [
+        {
+          "text": "Confirm whether your activity needs a licence or approval from a sector regulator",
+          "regulators": [
+            "CBN",
+            "SEC",
+            "NAICOM",
+            "PENCOM"
+          ]
+        },
+        {
+          "text": "Check financial reporting expectations for your type of business",
+          "regulators": [
+            "FRCN"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "technology-and-digital-businesses",
+      "label": "Technology & Digital Businesses",
+      "items": [
+        {
+          "text": "Review user terms and privacy documentation for your product",
+          "regulators": [
+            "NDPC"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "real-estate-and-construction",
+      "label": "Real Estate & Construction",
+      "items": [
+        {
+          "text": "Check land use, planning and building approvals before projects commence",
+          "regulators": [
+            "LANDS"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manufacturing",
+      "label": "Manufacturing",
+      "items": [
+        {
+          "text": "Check product registration and labelling requirements for regulated products",
+          "regulators": [
+            "NAFDAC"
+          ]
+        },
+        {
+          "text": "Check product standards requirements for what you make",
+          "regulators": [
+            "SON"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "healthcare-and-pharmaceuticals",
+      "label": "Healthcare & Pharmaceuticals",
+      "items": [
+        {
+          "text": "Check product and facility registration requirements",
+          "regulators": [
+            "NAFDAC"
+          ]
+        },
+        {
+          "text": "Check product standards requirements",
+          "regulators": [
+            "SON"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "retail-and-consumer-businesses",
+      "label": "Retail & Consumer Businesses",
+      "items": [
+        {
+          "text": "Check whether the goods you sell need registration or standards approval",
+          "regulators": [
+            "NAFDAC",
+            "SON"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agriculture-and-agribusiness",
+      "label": "Agriculture & Agribusiness",
+      "items": [
+        {
+          "text": "Check registration requirements for processed or packaged products",
+          "regulators": [
+            "NAFDAC",
+            "SON"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "energy-oil-and-gas",
+      "label": "Energy, Oil & Gas",
+      "items": []
+    }
+  ],
+  "disclaimer": "This checklist is a starting point, not legal advice. Whether each item applies depends on your activity and status, and requirements change. SCS can confirm what applies to your business."
+}

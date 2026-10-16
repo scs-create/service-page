@@ -1,0 +1,23 @@
+{
+  "slug": "healthcare-and-pharmaceuticals",
+  "name": "Healthcare & Pharmaceuticals",
+  "summary": "Health businesses combine product and facility rules with sensitive personal data.",
+  "needs": [
+    "Check product and facility registration requirements with the relevant agencies",
+    "Protect patient and customer personal data with documented policies",
+    "Keep corporate, contract and staff records in order"
+  ],
+  "regulators": [
+    "NAFDAC",
+    "SON",
+    "NDPC",
+    "CAC",
+    "ITF",
+    "NSITF"
+  ],
+  "services": [
+    "regulatory-compliance-and-licensing",
+    "data-protection-privacy-and-information-governance",
+    "corporate-and-commercial-advisory"
+  ]
+}

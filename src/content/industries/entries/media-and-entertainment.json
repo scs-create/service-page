@@ -1,0 +1,21 @@
+{
+  "slug": "media-and-entertainment",
+  "name": "Media & Entertainment",
+  "summary": "Creative businesses live on names, content and licensing agreements.",
+  "needs": [
+    "Protect names, brands and creative works as business assets",
+    "Put talent, vendor and licensing agreements in writing",
+    "Keep company records and tax positions current"
+  ],
+  "regulators": [
+    "CAC",
+    "NRS",
+    "SIRS",
+    "NDPC"
+  ],
+  "services": [
+    "intellectual-property-and-brand-asset-management",
+    "corporate-and-commercial-advisory",
+    "tax-accounting-and-financial-business-support"
+  ]
+}

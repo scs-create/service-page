@@ -1,0 +1,23 @@
+{
+  "order": 4,
+  "slug": "bree-ah-technologies-limited",
+  "client": "Bree-Ah Technologies Limited",
+  "rc": "9563975",
+  "sector": "Technology & Digital Services",
+  "filter": "tech-digital",
+  "featured": true,
+  "headline": "A tech company needed a corporate shell that could actually keep up with how it worked.",
+  "challenge": "Technology ventures scale fast and handle user data from day one — the corporate and compliance groundwork has to be built for speed without cutting corners.",
+  "delivered": [
+    "Company incorporation structured for a technology operating model",
+    "Data protection policy drafting and compliance documentation",
+    "Business analytics framework to support data-led decision-making",
+    "Advisory support on regulatory obligations for digital service providers"
+  ],
+  "impact": "A technology business with the corporate, data-governance and analytical foundation to grow without having to retrofit compliance later.",
+  "serviceLines": [
+    "Company Formation",
+    "Data Protection",
+    "Business Analytics"
+  ]
+}

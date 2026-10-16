@@ -1,0 +1,25 @@
+{
+  "slug": "financial-services-and-fintech",
+  "name": "Financial Services & Fintech",
+  "summary": "Regulated activity, customer data and governance records are the foundations of trust in financial services.",
+  "needs": [
+    "Confirm whether the activity needs a licence or approval from a sector regulator",
+    "Document how customer data is collected, used and protected",
+    "Keep governance records, policies and board documentation in order"
+  ],
+  "regulators": [
+    "CBN",
+    "SEC",
+    "FRCN",
+    "NAICOM",
+    "PENCOM",
+    "NDPC",
+    "CAC",
+    "NRS"
+  ],
+  "services": [
+    "regulatory-compliance-and-licensing",
+    "data-protection-privacy-and-information-governance",
+    "business-formation-and-corporate-structuring"
+  ]
+}

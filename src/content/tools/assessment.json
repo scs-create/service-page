@@ -1,0 +1,184 @@
+{
+  "stages": [
+    {
+      "id": "idea",
+      "label": "Just an idea"
+    },
+    {
+      "id": "starting",
+      "label": "Starting up (first year)"
+    },
+    {
+      "id": "operating",
+      "label": "Operating (1–3 years)"
+    },
+    {
+      "id": "established",
+      "label": "Established (3+ years)"
+    }
+  ],
+  "sizes": [
+    "Just me",
+    "2–10 people",
+    "11–50 people",
+    "More than 50"
+  ],
+  "stagePriority": {
+    "idea": [
+      "structure",
+      "tax",
+      "compliance",
+      "contracts",
+      "brand"
+    ],
+    "starting": [
+      "structure",
+      "compliance",
+      "tax",
+      "contracts",
+      "people"
+    ],
+    "operating": [
+      "compliance",
+      "tax",
+      "contracts",
+      "people",
+      "systems"
+    ],
+    "established": [
+      "data",
+      "compliance",
+      "growth",
+      "systems",
+      "brand"
+    ]
+  },
+  "domains": [
+    {
+      "id": "structure",
+      "label": "Registration & structure",
+      "question": "Is your business registered in the form that fits what it does (business name, limited company or incorporated trustees)?",
+      "serviceSlug": "business-formation-and-corporate-structuring",
+      "related": [
+        "corporate-and-commercial-advisory",
+        "intellectual-property-and-brand-asset-management"
+      ],
+      "issue": "The legal form of a business decides who owns it, who is liable and how it can grow. A form that no longer fits creates avoidable risk.",
+      "action": "Confirm your registration details and whether the structure still suits your plans for ownership, liability and funding.",
+      "how": "Compare your current registration with your actual activity and ownership, then adjust or restructure where they no longer match.",
+      "help": "SCS handles registrations, restructuring and post-incorporation corporate support, so the foundation matches the business."
+    },
+    {
+      "id": "compliance",
+      "label": "Licences & compliance",
+      "question": "Do you know which licences, permits and registrations your activity needs, and are they current?",
+      "serviceSlug": "regulatory-compliance-and-licensing",
+      "related": [
+        "data-protection-privacy-and-information-governance",
+        "legal-partnership-and-regulatory-business-support"
+      ],
+      "issue": "Operating without a required licence, permit or filing exposes the business to penalties and interruptions.",
+      "action": "List every registration your activity needs and check which are in place, due or missing.",
+      "how": "Map your activity to the relevant agencies, keep a simple register of each permit and its renewal, and review it regularly.",
+      "help": "SCS maps regulatory requirements, prepares filings and follows up renewals through its compliance support."
+    },
+    {
+      "id": "tax",
+      "label": "Tax & financial records",
+      "question": "Are your tax registrations in place, with returns made and financial records kept up to date?",
+      "serviceSlug": "tax-accounting-and-financial-business-support",
+      "related": [
+        "transaction-investment-and-growth-advisory",
+        "business-operations-and-outsourced-support"
+      ],
+      "issue": "Gaps in tax registration or record-keeping make filings stressful and weaken your position with banks, partners and investors.",
+      "action": "Confirm your tax registrations and bring your bookkeeping up to date.",
+      "how": "Separate business and personal finances, keep a monthly record of income and expenses, and calendar your filing obligations.",
+      "help": "SCS supports tax registration, compliance, bookkeeping and reporting, and coordinates specialist professionals where required."
+    },
+    {
+      "id": "contracts",
+      "label": "Contracts & agreements",
+      "question": "Are your key customer, supplier and staff arrangements in written, signed agreements?",
+      "serviceSlug": "corporate-and-commercial-advisory",
+      "related": [
+        "contract-lifecycle-management",
+        "procurement-supply-chain-and-vendor-management"
+      ],
+      "issue": "Verbal or informal arrangements are hard to enforce and leave the business exposed when relationships change.",
+      "action": "Put your most important relationships into written agreements and keep signed copies in one place.",
+      "how": "Start with your highest-value customer, supplier and staff arrangements, use clear terms for scope, payment and exit, and track renewal dates.",
+      "help": "SCS drafts, reviews and manages commercial contracts and can set up a contract register."
+    },
+    {
+      "id": "people",
+      "label": "People & HR",
+      "question": "Do your staff have written terms, clear roles and organised personnel records?",
+      "serviceSlug": "human-resources-and-staff-management",
+      "related": [
+        "recruitment-and-talent-solutions",
+        "business-operations-and-outsourced-support"
+      ],
+      "issue": "Unclear roles and missing employment documents lead to disputes, weak accountability and compliance gaps.",
+      "action": "Give every role a written description and every employee written terms, and keep personnel records organised.",
+      "how": "Use a standard employment letter, a simple staff register and written policies for leave, conduct and performance.",
+      "help": "SCS supports recruitment, onboarding, HR administration, policies and outsourced HR administration."
+    },
+    {
+      "id": "data",
+      "label": "Data protection",
+      "question": "Do you have a privacy notice and a clear record of the personal data you collect and why?",
+      "serviceSlug": "data-protection-privacy-and-information-governance",
+      "related": [
+        "ai-governance-and-digital-transformation",
+        "contract-lifecycle-management"
+      ],
+      "issue": "Collecting personal data without documented purposes and safeguards creates legal and reputational risk.",
+      "action": "List the personal data you hold, why you hold it, who can access it and how long you keep it.",
+      "how": "Publish a clear privacy notice, limit access to what staff need, and write down how requests and incidents are handled.",
+      "help": "SCS builds data protection compliance programmes, privacy documentation and staff training."
+    },
+    {
+      "id": "brand",
+      "label": "Brand & IP",
+      "question": "Have you checked and protected your business name, logo or products as business assets?",
+      "serviceSlug": "intellectual-property-and-brand-asset-management",
+      "related": [
+        "digital-marketing-and-brand-growth",
+        "corporate-communications-and-business-documentation"
+      ],
+      "issue": "An unprotected name or logo can be copied or lost, and the goodwill you build may not belong to you.",
+      "action": "Check that your name, logo and key products are available and decide which should be protected.",
+      "how": "Search existing records for conflicts, keep records of who created your brand assets, and file for protection where it matters.",
+      "help": "SCS supports trademark, copyright and patent coordination and IP portfolio administration."
+    },
+    {
+      "id": "systems",
+      "label": "Operations & systems",
+      "question": "Are your core processes (sales, records, follow-ups) written down and tracked in one place?",
+      "serviceSlug": "business-operations-and-outsourced-support",
+      "related": [
+        "project-management-and-implementation",
+        "contract-lifecycle-management"
+      ],
+      "issue": "When processes live in people's heads, work slips, handovers fail and growth adds chaos instead of profit.",
+      "action": "Write down your three most important processes and decide where each is tracked.",
+      "how": "Document the steps and owners, use a simple tracker or CRM, and review it weekly.",
+      "help": "SCS develops SOPs, workflows and operational reporting, and can act as an outsourced operations team."
+    },
+    {
+      "id": "growth",
+      "label": "Strategy & growth",
+      "question": "Do you have a written plan with targets for the next 12 months?",
+      "serviceSlug": "strategy-management-and-business-consulting",
+      "related": [
+        "data-analytics-and-business-intelligence",
+        "digital-marketing-and-brand-growth"
+      ],
+      "issue": "Without written targets, effort drifts and it is hard to tell what is working.",
+      "action": "Write a one-page plan with three measurable targets and the actions behind them.",
+      "how": "Choose targets for revenue, customers and operations, assign owners and review them monthly.",
+      "help": "SCS supports business strategy, growth planning, analytics and performance improvement."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "order": 6,
+  "slug": "kendy-global-logistics-ltd",
+  "client": "Kendy Global Logistics Ltd",
+  "rc": "9475189",
+  "sector": "Logistics & Supply Chain",
+  "filter": "logistics-transport",
+  "featured": false,
+  "headline": "A logistics operation was growing faster than its systems could handle.",
+  "challenge": "Logistics businesses succeed or fail on process — fleet, personnel and delivery systems need structure before volume outpaces control.",
+  "delivered": [
+    "Company formation and corporate documentation",
+    "Operations management framework for fleet and delivery workflows",
+    "HR documentation and staff administration systems",
+    "Administrative support for day-to-day business functions"
+  ],
+  "impact": "A logistics company with operational systems and HR structure built to carry higher volumes without losing control of the business.",
+  "serviceLines": [
+    "Operations Management",
+    "HR Management",
+    "Company Formation"
+  ]
+}

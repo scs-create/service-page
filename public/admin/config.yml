@@ -1,0 +1,258 @@
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # <-- change to your real GitHub repository (see README, step 6)
+  branch: main
+# Editors log in at /admin; edits commit to the GitHub repo and Netlify rebuilds the site automatically.
+publish_mode: editorial_workflow
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "corporate_school"
+    label: "Corporate School (Blog)"
+    folder: "src/content/corporate-school"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Excerpt", name: "excerpt", widget: "text" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Services", "Corporate World Updates", "Corporate Learning"]
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "services"
+    label: "Services"
+    folder: "src/content/services/entries"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    fields:
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Cluster"
+        name: "cluster"
+        widget: "select"
+        options:
+          - { label: "Start & Structure", value: "start-and-structure" }
+          - { label: "Compliance & Regulatory", value: "compliance-and-regulatory" }
+          - { label: "Finance & Tax", value: "finance-and-tax" }
+          - { label: "People & Operations", value: "people-and-operations" }
+          - { label: "Technology & Data", value: "technology-and-data" }
+          - { label: "Growth & Market Presence", value: "growth-and-market-presence" }
+      - { label: "Framing Sentence", name: "framingSentence", widget: "text" }
+      - { label: "Intro Line", name: "introLine", widget: "string" }
+      - label: "Services List"
+        name: "services"
+        widget: "list"
+        field: { label: "Service", name: "item", widget: "string" }
+      - { label: "Supporting Statement", name: "supportingStatement", widget: "text", required: false }
+      - { label: "Closing Statement", name: "closingStatement", widget: "text", required: false }
+
+  - name: "academy_topics"
+    label: "Academy Training Topics"
+    files:
+      - name: "topics"
+        label: "Training Topics List"
+        file: "src/content/academy/topics-cms.json"
+        fields:
+          - label: "Topics"
+            name: "topics"
+            widget: "list"
+            field: { label: "Topic", name: "item", widget: "string" }
+
+  - name: "portfolio"
+    label: "Portfolio Case Studies"
+    folder: "src/content/portfolio/entries"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "client"
+    fields:
+      - { label: "Display order (1 = first)", name: "order", widget: "number", value_type: "int" }
+      - { label: "Slug (lowercase-with-dashes)", name: "slug", widget: "string" }
+      - { label: "Client", name: "client", widget: "string" }
+      - { label: "RC number (digits only)", name: "rc", widget: "string" }
+      - { label: "Sector (shown on the card)", name: "sector", widget: "string" }
+      - label: "Filter category"
+        name: "filter"
+        widget: "select"
+        options:
+          - { label: "Healthcare & Pharma", value: "healthcare-pharma" }
+          - { label: "Real Estate", value: "real-estate" }
+          - { label: "Tech & Digital", value: "tech-digital" }
+          - { label: "Logistics & Transport", value: "logistics-transport" }
+          - { label: "Hospitality", value: "hospitality" }
+          - { label: "Agribusiness", value: "agribusiness" }
+          - { label: "Non-Profit", value: "non-profit" }
+          - { label: "Manufacturing", value: "manufacturing" }
+          - { label: "Media, Retail & Professional", value: "media-retail-professional" }
+      - { label: "Show on Home page", name: "featured", widget: "boolean", default: false }
+      - { label: "Headline", name: "headline", widget: "string" }
+      - { label: "The Challenge", name: "challenge", widget: "text" }
+      - label: "What SCS Delivered"
+        name: "delivered"
+        widget: "list"
+        field: { label: "Item", name: "item", widget: "string" }
+      - { label: "Business Impact", name: "impact", widget: "text" }
+      - label: "Services Provided (use exact names, e.g. Company Formation)"
+        name: "serviceLines"
+        widget: "list"
+        field: { label: "Service line", name: "item", widget: "string" }
+
+  - name: "verification_documents"
+    label: "Verification Documents (Trust Hub)"
+    folder: "src/content/verification/documents"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    media_folder: "/public/verification"
+    public_folder: "/verification"
+    fields:
+      - { label: "Slug (lowercase-with-dashes)", name: "slug", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options: ["Certificate of Incorporation", "Regulatory Permit", "Client Acknowledgment Letter"]
+      - { label: "Client", name: "client", widget: "string", required: false }
+      - { label: "Issuing body (e.g. Corporate Affairs Commission)", name: "issuingBody", widget: "string", required: false }
+      - { label: "Badge text (e.g. Verifiable on CAC public search)", name: "badge", widget: "string", required: false }
+      - { label: "Issued", name: "issued", widget: "string", required: false }
+      - { label: "Image (watermark it before uploading)", name: "image", widget: "image" }
+      - { label: "Image description (alt text)", name: "alt", widget: "string" }
+
+  # ---------- Added in this release (all validated at build time by src/lib/schemas.ts) ----------
+  - name: "packages"
+    label: "Managed Support Packages (A–F)"
+    folder: "src/content/packages/entries"
+    create: true
+    extension: "json"
+    format: "json"
+    identifier_field: "name"
+    fields:
+      - { label: "Letter (A–Z)", name: "id", widget: "string" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Who it is for", name: "audience", widget: "string" }
+      - { label: "What is included", name: "includes", widget: "text" }
+
+  - name: "industries"
+    label: "Industries (needs and agencies)"
+    folder: "src/content/industries/entries"
+    create: true
+    extension: "json"
+    format: "json"
+    identifier_field: "name"
+    fields:
+      - { label: "Slug (lowercase-with-dashes)", name: "slug", widget: "string" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Typical needs", name: "needs", widget: "list", field: { label: "Need", name: "item", widget: "string" } }
+      - { label: "Agency codes (see Regulators list, e.g. CAC, NRS)", name: "regulators", widget: "list", field: { label: "Code", name: "item", widget: "string" } }
+      - { label: "Related service slugs", name: "services", widget: "list", required: false, field: { label: "Service slug", name: "item", widget: "string" } }
+      - { label: "Note", name: "note", widget: "text", required: false }
+
+  - name: "faqs"
+    label: "FAQ"
+    folder: "src/content/faqs/entries"
+    create: true
+    extension: "json"
+    format: "json"
+    identifier_field: "question"
+    fields:
+      - { label: "Order (1 = first)", name: "order", widget: "number", value_type: "int" }
+      - { label: "Question", name: "question", widget: "string" }
+      - { label: "Answer", name: "answer", widget: "text" }
+
+  - name: "ip_showcase"
+    label: "IP Showcase (hidden until permission = on)"
+    folder: "src/content/ip/entries"
+    create: true
+    extension: "json"
+    format: "json"
+    identifier_field: "name"
+    fields:
+      - { label: "Slug (lowercase-with-dashes)", name: "slug", widget: "string" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Type", name: "type", widget: "select", options: ["Trademark", "Patent", "Copyright"] }
+      - { label: "Client has given permission to show this publicly", name: "permission", widget: "boolean", default: false }
+      - { label: "Status note (filed vs registered — confirm before showing)", name: "status", widget: "string" }
+      - { label: "Note", name: "note", widget: "string", required: false }
+
+  - name: "testimonials"
+    label: "Testimonials (consent required)"
+    folder: "src/content/testimonials/entries"
+    create: true
+    extension: "json"
+    format: "json"
+    identifier_field: "name"
+    fields:
+      - { label: "Quote", name: "quote", widget: "text" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string", required: false }
+      - { label: "Organisation", name: "organisation", widget: "string", required: false }
+      - { label: "The person gave documented consent to publish this", name: "consent", widget: "boolean", default: false }
+
+  - name: "programmes"
+    label: "Signature Programmes (problem → solution)"
+    folder: "src/content/programmes/entries"
+    create: true
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+    fields:
+      - { label: "Order (1 = first)", name: "order", widget: "number", value_type: "int" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "The problem", name: "problem", widget: "text" }
+      - { label: "The solution", name: "solution", widget: "text" }
+      - { label: "Related service slugs", name: "services", widget: "list", required: false, field: { label: "Service slug", name: "item", widget: "string" } }
+
+  - name: "site_content"
+    label: "Site content (single files)"
+    files:
+      - name: "partnership"
+        label: "Partnership & Quarterly Business Check-Up"
+        file: "src/content/partnership.json"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Formerly called", name: "formerlyCalled", widget: "string" }
+          - { label: "Intro", name: "intro", widget: "text" }
+          - { label: "Check-Up name", name: "checkupName", widget: "string" }
+          - { label: "Check-Up description", name: "checkupDescription", widget: "text" }
+          - { label: "Report name", name: "reportName", widget: "string" }
+          - { label: "Visitor assessment note", name: "visitorAssessmentNote", widget: "text" }
+          - { label: "Terms (leave the [CLIENT TO CONFIRM] text until terms are agreed)", name: "terms", widget: "string" }
+      - name: "regulators"
+        label: "Regulators (codes used by industries and tools)"
+        file: "src/content/regulators.json"
+        fields:
+          - label: "Regulators"
+            name: "regulators"
+            widget: "list"
+            fields:
+              - { label: "Code", name: "code", widget: "string" }
+              - { label: "Full name", name: "name", widget: "string" }
+      - name: "calendar"
+        label: "Compliance Calendar areas"
+        file: "src/content/tools/calendar.json"
+        fields:
+          - { label: "Intro", name: "intro", widget: "text" }
+          - label: "Areas"
+            name: "areas"
+            widget: "list"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Agency codes", name: "regulators", widget: "list", field: { label: "Code", name: "item", widget: "string" } }
+              - { label: "Note", name: "note", widget: "text" }
+          - { label: "Disclaimer", name: "disclaimer", widget: "text" }
+
+# AUTH: GitHub backend + Netlify's built-in OAuth provider (README, step 6). Editors sign in with a GitHub account
+# that has write access to the repository. Git Gateway / Netlify Identity are deprecated and are no longer used.

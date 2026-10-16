@@ -1,0 +1,23 @@
+{
+  "slug": "real-estate-and-construction",
+  "name": "Real Estate & Construction",
+  "summary": "Approvals, property documents and contractor agreements decide whether a project can proceed.",
+  "needs": [
+    "Check land use, planning and building approvals before projects commence",
+    "Document property transactions, partnerships and contractor agreements",
+    "Keep corporate records and tax positions of project companies in order"
+  ],
+  "regulators": [
+    "LANDS",
+    "CAC",
+    "NRS",
+    "SIRS",
+    "NSITF",
+    "ITF"
+  ],
+  "services": [
+    "corporate-and-commercial-advisory",
+    "business-formation-and-corporate-structuring",
+    "tax-accounting-and-financial-business-support"
+  ]
+}

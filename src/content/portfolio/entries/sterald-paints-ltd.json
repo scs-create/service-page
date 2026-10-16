@@ -1,0 +1,23 @@
+{
+  "order": 12,
+  "slug": "sterald-paints-ltd",
+  "client": "Sterald Paints Ltd",
+  "rc": "9679591",
+  "sector": "Manufacturing & Industrial Products",
+  "filter": "manufacturing",
+  "featured": false,
+  "headline": "A manufacturing business needed permits and process before it could scale production.",
+  "challenge": "Manufacturing operations face a dense layer of regulatory, environmental and safety permit requirements that must be resolved before production can responsibly scale.",
+  "delivered": [
+    "Corporate formation and manufacturing business documentation",
+    "Regulatory filings and permit coordination for production operations",
+    "Operations management framework for production and quality workflows",
+    "Administrative support for supplier and regulatory record-keeping"
+  ],
+  "impact": "A paints manufacturer with the regulatory permits and operational structure needed to scale production on a compliant, well-documented footing.",
+  "serviceLines": [
+    "Regulatory Compliance & Permits",
+    "Operations Management",
+    "Company Formation"
+  ]
+}

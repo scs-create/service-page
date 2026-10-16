@@ -1,0 +1,21 @@
+{
+  "slug": "technology-and-digital-businesses",
+  "name": "Technology & Digital Businesses",
+  "summary": "Digital businesses handle user data and intellectual property from day one.",
+  "needs": [
+    "Put clear terms, privacy documentation and user agreements in place",
+    "Protect software, brand names and content as business assets",
+    "Keep records and contracts organised as the team and customer base grow"
+  ],
+  "regulators": [
+    "NDPC",
+    "CAC",
+    "NRS",
+    "SIRS"
+  ],
+  "services": [
+    "data-protection-privacy-and-information-governance",
+    "intellectual-property-and-brand-asset-management",
+    "corporate-and-commercial-advisory"
+  ]
+}

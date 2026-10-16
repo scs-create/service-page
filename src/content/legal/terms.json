@@ -1,0 +1,1401 @@
+{
+ "slug": "terms",
+ "title": "Terms of Use",
+ "effective": "15th October 2026",
+ "updated": null,
+ "intro": [
+  {
+   "type": "p",
+   "text": "These Terms govern every engagement between Stephen Corporate Services (SCS) Ltd and its clients, and they bind a Client from the moment it accepts a Service Order or uses SCS services. Bracketed dashes (—) are details SCS must complete before publication."
+  },
+  {
+   "type": "table",
+   "rows": [
+    [
+     "Item",
+     "Details"
+    ],
+    [
+     "Company",
+     "Stephen Corporate Services (SCS) Ltd (\"SCS\")"
+    ],
+    [
+     "RC number",
+     "{{rc}}"
+    ],
+    [
+     "Registered address",
+     "{{address}}"
+    ],
+    [
+     "Email / phone",
+     "[{{email_contact}}](mailto:{{email_contact}}) – {{phone}}"
+    ],
+    [
+     "Website",
+     "{{domain}}"
+    ],
+    [
+     "Data Protection Officer (DPO)",
+     "Stephen Onyekeja (CDPO), {{email_privacy}}, {{phone}}"
+    ],
+    [
+     "Effective date / version",
+     "15th October 2026 / 1.0"
+    ]
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "part-1-general-terms-of-use",
+   "heading": "Part 1: General Terms of Use",
+   "level": 2,
+   "blocks": []
+  },
+  {
+   "id": "1-introduction-and-acceptance",
+   "heading": "1. Introduction and acceptance",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "1.1 SCS is a corporate service, compliance and commercial operations provider. These Terms consist of Parts 1 to 4 (including Part 2 on data protection), Schedules A to H, and each signed Service Order or engagement letter (together, the \"Agreement\")."
+    },
+    {
+     "type": "p",
+     "text": "1.2 The Client accepts the Agreement by signing a Service Order, paying an invoice, supplying instructions or documents for a service, or using any SCS portal, website or platform. The person accepting for a company warrants that it has authority to bind that company."
+    },
+    {
+     "type": "p",
+     "text": "1.3 Order of precedence if documents conflict: (a) mandatory law; (b) Part 2 and Schedule G on any matter involving personal data; (c) the relevant Service Schedule; (d) the Service Order; (e) this Part 1. Under section 63 of the Nigeria Data Protection Act 2023 (\"NDP Act\") and Article 3 of the General Application and Implementation Directive 2025 (\"GAID\"), the NDP Act prevails over any inconsistent term."
+    },
+    {
+     "type": "p",
+     "text": "1.4 SCS may update these Terms on at least 30 days' written notice. An update does not change a Service Order already in progress unless the Client agrees, or the change is needed to comply with law or an NDPC directive. Any change to how personal data is processed will also be notified in the privacy notice."
+    }
+   ]
+  },
+  {
+   "id": "2-definitions",
+   "heading": "2. Definitions",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Term",
+       "Meaning"
+      ],
+      [
+       "Client",
+       "The person or entity engaging SCS under a Service Order"
+      ],
+      [
+       "Service Order",
+       "A signed proposal, engagement letter, quotation or SLA appendix describing the services, fees and timelines"
+      ],
+      [
+       "Services",
+       "The services in Clause 3 and Schedules A to F"
+      ],
+      [
+       "Deliverables",
+       "Documents, registers, templates, reports, training materials and other outputs SCS produces for the Client"
+      ],
+      [
+       "NDP Act / GAID / NDPC",
+       "Nigeria Data Protection Act 2023; the NDP Act General Application and Implementation Directive 2025; the Nigeria Data Protection Commission"
+      ],
+      [
+       "Personal data, data subject, processing, sensitive personal data, personal data breach",
+       "As defined in section 65 of the NDP Act"
+      ],
+      [
+       "Data controller / data processor",
+       "As defined in section 65 of the NDP Act"
+      ],
+      [
+       "Authority",
+       "Any regulator or agency, including CAC, FIRS, State IRS, NAFDAC, SON, NDPC, FCCPC, PenCom, NSITF, ITF, NIMC and the Industrial Property Registry"
+      ],
+      [
+       "Accredited Professional",
+       "A solicitor, trademark or patent agent, tax practitioner, DPCO, or other person licensed or accredited to perform a regulated act"
+      ],
+      [
+       "Client Data",
+       "All documents, records, instructions and personal data the Client or its people supply to SCS"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3-the-services",
+   "heading": "3. The Services",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "3.1 SCS provides integrated corporate support across six pillars, each governed by a Schedule:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Commercial and legal documentation coordination and contract management (Schedule A)",
+      "HR management and workforce administration (Schedule B)",
+      "Sales setup and operations support (Schedule C)",
+      "Customer care and support operations (Schedule D)",
+      "Regulatory mapping and compliance coordination (Schedule E)",
+      "Intellectual property filing coordination (Schedule F)"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "3.2 Only the services listed in a signed Service Order are provided. Anything else is a change request, priced and agreed in writing before work starts."
+    },
+    {
+     "type": "p",
+     "text": "3.3 **Capacity metrics.** Any number, target or capacity figure in a proposal, schedule, catalogue or website (for example managing 50 employees, 100 prospects or 500 support contacts) describes the service framework and project scope. It is not a guarantee, and it is not a representation of past or present achievements unless supported by executed client performance records."
+    },
+    {
+     "type": "p",
+     "text": "3.4 **No outcome guarantees.** SCS does not guarantee any regulatory approval, sales revenue, conversion rate, customer satisfaction score, litigation result or financial return."
+    },
+    {
+     "type": "p",
+     "text": "3.5 SCS performs the Services with reasonable skill and care, using suitably qualified personnel, and may use subcontractors and Accredited Professionals subject to Clause 9."
+    }
+   ]
+  },
+  {
+   "id": "4-legal-status-and-professional-boundaries",
+   "heading": "4. Legal status and professional boundaries",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "4.1 **No legal practice.** Where a service involves formal legal documentation, statutory filings or regulatory applications that require a licensed practitioner or accredited agent, SCS coordinates the work through duly qualified and accredited legal professionals, solicitors or authorised agents. Nothing in the Agreement creates a solicitor-client relationship between SCS and the Client unless a licensed legal practitioner expressly signs such an engagement."
+    },
+    {
+     "type": "p",
+     "text": "4.2 **Not the employer.** SCS acts only as an HR systems administrator and service coordinator. The Client remains the sole employer for all statutory, tax, pension (PenCom), social insurance (NSITF), housing fund (NHF), industrial training (ITF) and labour law purposes."
+    },
+    {
+     "type": "p",
+     "text": "4.3 **Not a tax, audit or financial adviser.** SCS's outputs are administrative and compliance support. The Client should take independent professional advice on tax, audit, investment or legal strategy."
+    },
+    {
+     "type": "p",
+     "text": "4.4 **Templates.** Standard contract templates and libraries are commercial management frameworks. The Client must have them customised for its own statutory and operational environment."
+    },
+    {
+     "type": "p",
+     "text": "4.5 SCS acts as the Client's coordinator or agent only to the extent a Service Order says so, and never beyond the authority the Client has given."
+    }
+   ]
+  },
+  {
+   "id": "5-client-obligations-and-warranties",
+   "heading": "5. Client obligations and warranties",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "The Client warrants and agrees that it will:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "supply accurate, complete and genuine documents, samples, financial records and identification, and tell SCS promptly if anything changes;",
+      "give timely instructions, approvals, access and decisions, because SCS timelines run from receipt of complete information;",
+      "hold a lawful basis for every item of personal data it gives SCS, and give data subjects the notices that the NDP Act requires (see Part 2);",
+      "remain solely responsible for product quality, employment decisions, refunds, service recovery and its own statutory duties;",
+      "use Deliverables and databases only for lawful purposes, and never for unsolicited mass messaging, spam or unlawful direct marketing;",
+      "comply with applicable anti-money-laundering, sanctions and anti-corruption laws, and provide know-your-client information on request;",
+      "not ask SCS to submit any false, altered or misleading document to any Authority."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "SCS may suspend or withdraw from a service, without liability, if the Client breaches this Clause 5 or SCS reasonably suspects unlawful activity, and SCS may report to Authorities where the law requires."
+    }
+   ]
+  },
+  {
+   "id": "6-fees-and-payment",
+   "heading": "6. Fees and payment",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "6.1 The Client pays the fees in the Service Order. Unless the Service Order says otherwise, fees are quoted in Naira, excluding VAT and taxes, and are invoiced % in advance and the balance on delivery / monthly in advance for recurring services as may be prescribed by SCS from time to time."
+    },
+    {
+     "type": "p",
+     "text": "6.2 VAT is charged at the prevailing rate. If the Client must withhold tax, it must pay the grossed-up amount unless the law requires otherwise and must give SCS a valid withholding tax credit note."
+    },
+    {
+     "type": "p",
+     "text": "6.3 Government, registry, agency and accredited-agent fees are pass-through costs charged at cost, paid by the Client in advance, and are non-refundable once submitted to an Authority, even if the application is delayed, queried or rejected."
+    },
+    {
+     "type": "p",
+     "text": "6.4 Invoices are due within 10 days. Overdue sums attract interest at % per month as may be prescribed by SCS from time to time. SCS may suspend the Services, and withhold Deliverables not yet paid for, while an invoice is overdue."
+    },
+    {
+     "type": "p",
+     "text": "6.5 SCS may revise fees for recurring services on at least 30 days' written notice, effective on the next renewal date."
+    },
+    {
+     "type": "p",
+     "text": "6.6 Fees for work already done, and non-cancellable third-party costs, are not refundable on early termination, except as Clause 27.4 provides."
+    }
+   ]
+  },
+  {
+   "id": "7-confidentiality",
+   "heading": "7. Confidentiality",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "7.1 Each party must keep the other's confidential information secret, use it only to perform or receive the Services, and disclose it only to personnel, advisers and subcontractors who need it and are bound by equivalent duties."
+    },
+    {
+     "type": "p",
+     "text": "7.2 Confidential information excludes information that is public through no fault of the recipient, was lawfully known to the recipient beforehand, was independently developed, or was lawfully received from a third party."
+    },
+    {
+     "type": "p",
+     "text": "7.3 A party may disclose confidential information where a law, court order or Authority requires it, after giving the other party prompt notice where lawful."
+    },
+    {
+     "type": "p",
+     "text": "7.4 These duties continue for five (5) years after the Agreement ends. Duties relating to personal data continue for as long as the data is held."
+    }
+   ]
+  },
+  {
+   "id": "8-intellectual-property",
+   "heading": "8. Intellectual property",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "8.1 **Client IP.** The Client keeps all rights in its brand, trademarks, confidential data and proprietary business information (\"Client IP\"). It grants SCS a non-exclusive licence to use Client IP only to provide the Services."
+    },
+    {
+     "type": "p",
+     "text": "8.2 **SCS Background IP.** SCS keeps all rights in its templates, agreement libraries, training decks, operating workflows, checklists, software and know-how, including improvements made during the engagement (\"SCS Background IP\")."
+    },
+    {
+     "type": "p",
+     "text": "8.3 **Licence to the Client.** Subject to payment, the Client receives a non-exclusive, non-transferable, non-sublicensable licence to use Deliverables, and any SCS Background IP embedded in them, for its own internal business during the engagement and afterwards for the Deliverables as delivered. The Client may not resell, publish or share SCS Background IP or template libraries with competitors of SCS or use them to build a competing service."
+    },
+    {
+     "type": "p",
+     "text": "8.4 **Bespoke work.** Documents drafted solely for the Client from Client Data (for example a signed contract or employee handbook) belong to the Client once paid for, excluding SCS Background IP embedded in them."
+    },
+    {
+     "type": "p",
+     "text": "8.5 SCS may keep a copy of Deliverables for its records, professional-indemnity and regulatory purposes, subject to Part 2."
+    },
+    {
+     "type": "p",
+     "text": "8.6 SCS may not name the Client as a reference or use its logo without written consent."
+    }
+   ]
+  },
+  {
+   "id": "9-third-parties-and-accredited-professionals",
+   "heading": "9. Third parties and Accredited Professionals",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "9.1 Some Services need Accredited Professionals or external providers (for example solicitors, trademark agents, DPCOs, tax practitioners, couriers, payroll banks or software vendors). SCS selects them with reasonable care."
+    },
+    {
+     "type": "p",
+     "text": "9.2 Where SCS engages a subcontractor that processes Client personal data, SCS remains responsible to the Client for that subcontractor under Part 2 and Schedule G."
+    },
+    {
+     "type": "p",
+     "text": "9.3 Where the Client asks SCS to introduce or appoint an Accredited Professional on the Client's own account, that professional's engagement is separate and the professional is responsible for its own advice and filings."
+    },
+    {
+     "type": "p",
+     "text": "9.4 SCS is not liable for the acts, delays or decisions of any Authority or of a provider the Client chose or directed SCS to use."
+    }
+   ]
+  },
+  {
+   "id": "part-2-data-protection-ndp-act-2023-and-gaid-2025",
+   "heading": "Part 2: Data Protection (NDP Act 2023 and GAID 2025)",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "This Part 2 applies whenever SCS handles personal data. Together with Schedule G it is the written agreement between controller and processor required by section 29(2) of the NDP Act and Article 34 of the GAID."
+    }
+   ]
+  },
+  {
+   "id": "10-roles-of-the-parties",
+   "heading": "10. Roles of the parties",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "10.1 **Client as controller.** For Client customer data, staff and applicant records, supplier contacts, sales lists and any other personal data SCS processes to deliver the Services, the Client is the data controller and decides the purposes and means of processing."
+    },
+    {
+     "type": "p",
+     "text": "10.2 **SCS as processor.** For that data SCS is the data processor and acts only on the Client's documented instructions, which are the Agreement and any later written instruction."
+    },
+    {
+     "type": "p",
+     "text": "10.3 **SCS as controller.** SCS is a data controller for its own processing: Client contact and billing data, know-your-client checks, website and portal visitors, SCS's own staff and recruitment, SCS's marketing, and records SCS must keep by law. SCS's privacy notice describes that processing."
+    },
+    {
+     "type": "p",
+     "text": "10.4 A Service Order may record a different role split (for example joint control) for a specific service. Each party remains responsible for its own compliance with the NDP Act."
+    }
+   ]
+  },
+  {
+   "id": "11-scs-s-compliance-commitments",
+   "heading": "11. SCS's compliance commitments",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "11.1 SCS confirms that it will, for the life of the Agreement:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "register with the NDPC as a data controller and data processor of major importance where required by section 44 of the NDP Act, Article 9 of the GAID and the NDPC Guidance Notice in Schedule 7 of the GAID, and give the Client its registration number on request;",
+      "renew its registration or file its Compliance Audit Returns (CAR) on time. Where its tier requires it, SCS files CAR through a Data Protection Compliance Organisation (DPCO) licensed by the NDPC (Articles 7, 9 and 10 of the GAID);",
+      "designate a Data Protection Officer (section 32; Articles 11 to 14), publish the DPO's contact details, and have the DPO report to management at least every six months (Article 13);",
+      "maintain a Record of Processing Activities, a data retention policy, a published privacy policy and cookie notice, an internal data protection policy and a Basic Privacy Checklist (Articles 7, 27 and 30);",
+      "maintain and follow a schedule for monitoring, evaluation and maintenance of its data security systems (Article 29), and a schedule for privacy training, with all staff and contractors trained within six months of starting work and at least annually (Articles 7, 30 and 46); and",
+      "notify the NDPC of significant changes to its registration within 60 days (section 44(3))."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "11.2 The Client must assess for itself whether it is a data controller of major importance and, if so, register and file as required. SCS can support that work under a separate Service Order (Schedule E)."
+    }
+   ]
+  },
+  {
+   "id": "12-lawful-basis-consent-and-notices",
+   "heading": "12. Lawful basis, consent and notices",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "12.1 The Client, as controller, is ultimately responsible for choosing and recording a lawful basis under section 25 of the NDP Act and Article 16(3) of the GAID. SCS will not process personal data for a purpose for which the Client has not confirmed a lawful basis."
+    },
+    {
+     "type": "p",
+     "text": "12.2 Where the Client relies on consent it must keep proof of it, because the controller bears the burden of proving consent (section 26(1); Article 17(6)). Consent must be specific, informed and affirmative; it cannot be pre-selected, and silence is not consent (sections 26(3) and 26(7)). Withdrawing consent must be as easy as giving it (section 35)."
+    },
+    {
+     "type": "p",
+     "text": "12.3 Consent is required, among other cases, for direct marketing, sensitive personal data, further processing incompatible with the original purpose, children's data, transfers to a country without an NDPC adequacy decision, and solely automated decisions with legal or similarly significant effect (Article 18 of the GAID)."
+    },
+    {
+     "type": "p",
+     "text": "12.4 Where the Client relies on legitimate interests, it must complete a Legitimate Interest Assessment (Schedule 8 of the GAID) before processing and may not rely on it where its interests override the data subject's rights or the data subject would not reasonably expect the processing (section 25(2); Article 26)."
+    },
+    {
+     "type": "p",
+     "text": "12.5 Before collecting personal data, the Client must give each data subject the information listed in section 27 of the NDP Act and Article 27 of the GAID in a privacy notice written in clear language suited to that audience, including the identity of SCS or its category as a recipient and the right to complain to the NDPC."
+    }
+   ]
+  },
+  {
+   "id": "13-instructions-purpose-minimisation-and-retention",
+   "heading": "13. Instructions, purpose, minimisation and retention",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "13.1 SCS processes personal data only to deliver the Services, for specified, explicit and legitimate purposes, and not in any way incompatible with them (section 24(1)(b)). SCS will tell the Client if it believes an instruction would breach the NDP Act."
+    },
+    {
+     "type": "p",
+     "text": "13.2 SCS collects and keeps only the minimum personal data needed (section 24(1)(c)). The Client must not send SCS data it does not need for the Services."
+    },
+    {
+     "type": "p",
+     "text": "13.3 SCS keeps data accurate and up to date as far as the Client's data allows, and supports rectification (section 24(1)(e); Article 36). A data subject is not charged to correct an error made in inputting their data."
+    },
+    {
+     "type": "p",
+     "text": "13.4 **Retention.** SCS keeps personal data no longer than necessary. Unless a statute fixes another period, or data must be kept for a legal claim or due diligence, SCS deletes or irreversibly de-identifies personal data within six (6) calendar months after the purpose is accomplished (Article 49(3) and (4); Schedule 1, paragraph 4). Personal data collected from a prospective customer or candidate whose contract or hire does not go ahead is destroyed within six months (Article 21(2))."
+    },
+    {
+     "type": "p",
+     "text": "13.5 SCS will not use Client personal data to train artificial-intelligence models or for any purpose of its own without the Client's written approval and a lawful basis."
+    }
+   ]
+  },
+  {
+   "id": "14-security",
+   "heading": "14. Security",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "14.1 SCS implements appropriate technical and organisational measures for the security, integrity, confidentiality and availability of personal data, taking into account the factors in section 39(1) of the NDP Act and the Data Subject's Vulnerability Indexes in Schedule 6 of the GAID."
+    },
+    {
+     "type": "p",
+     "text": "14.2 As a minimum those measures include: user-specific passwords and multi-factor authentication for systems holding personal data; role-based access limited to staff who need it; encryption of data in transit and at rest; pseudonymisation or de-identification where practicable; anti-malware, anti-ransomware and patching; locked storage and controlled access for physical files; backups and a tested disaster-recovery plan; periodic risk assessments and vulnerability testing; and confidentiality undertakings from every person with access (section 39(2); Articles 29 and 30)."
+    },
+    {
+     "type": "p",
+     "text": "14.3 The Client must protect the credentials it receives, use only approved channels to send personal data, and tell SCS at once if it suspects a compromise."
+    }
+   ]
+  },
+  {
+   "id": "15-personal-data-breaches",
+   "heading": "15. Personal data breaches",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "15.1 SCS will notify the Client without undue delay, and in any event within [24] hours of becoming aware of a personal data breach affecting Client personal data (section 40(1)). The notice will describe the nature of the breach, the categories and approximate numbers of data subjects and records concerned, the likely consequences, and the measures taken or proposed (section 40(4); Article 33(5))."
+    },
+    {
+     "type": "p",
+     "text": "15.2 SCS will contain the breach, investigate, give the Client the information it needs, and cooperate with the NDPC. Where information cannot be given at once, SCS provides it in phases without undue delay (section 40(9))."
+    },
+    {
+     "type": "p",
+     "text": "15.3 The Client, as controller, is responsible for notifying the NDPC within 72 hours of becoming aware of a breach likely to risk individuals' rights and freedoms, and for notifying affected data subjects immediately where the risk is high (section 40(2) and (3); Article 33). SCS will not notify the NDPC or data subjects about Client data unless the Client instructs it to or the law requires it."
+    },
+    {
+     "type": "p",
+     "text": "15.4 For breaches of data for which SCS is the controller, SCS carries out those notifications itself."
+    },
+    {
+     "type": "p",
+     "text": "15.5 Each party keeps a record of every personal data breach, its effects and the remedial action taken (section 40(8))."
+    }
+   ]
+  },
+  {
+   "id": "16-data-subject-rights-complaints-and-grievances",
+   "heading": "16. Data subject rights, complaints and grievances",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "16.1 Data subjects have the rights in Part VI of the NDP Act: access and a copy of their data, correction, erasure, restriction of processing, withdrawal of consent, objection (including to direct marketing and profiling), protection from solely automated decisions, and portability (sections 34 to 38; Articles 36 to 38)."
+    },
+    {
+     "type": "p",
+     "text": "16.2 If SCS receives a request about data it processes for the Client, SCS will forward it to the Client within [three (3)] business days and will not respond on the Client's behalf unless instructed. SCS provides technical and organisational help so the Client can respond without undue delay (section 29(1)(b))."
+    },
+    {
+     "type": "p",
+     "text": "16.3 For data for which SCS is the controller, requests go to the DPO at ({{email_privacy}}) and SCS will respond without undue delay and within 30 days, or sooner where the matter is urgent."
+    },
+    {
+     "type": "p",
+     "text": "16.4 **Right to complain to the NDPC.** Every data subject has the right to lodge a complaint with the Nigeria Data Protection Commission under section 46 of the NDP Act and Article 39 of the GAID. Using SCS's internal process is not a condition for complaining to the NDPC or going to court."
+    },
+    {
+     "type": "p",
+     "text": "16.5 A data subject may serve a Data Subject's Standard Notice to Address Grievance (SNAG) under Article 40 and Schedule 9 of the GAID on SCS by post to {{address}}, by email to {{email_privacy}} or by any other reasonable means. SCS will decide the matter within the period stated in the SNAG or 30 days, whichever is earlier, and will communicate its decision to the NDPC through the designated platform."
+    },
+    {
+     "type": "p",
+     "text": "16.6 Data subjects may also seek redress and damages in the Federal or State High Court (section 51 of the NDP Act; Article 47)."
+    }
+   ]
+  },
+  {
+   "id": "17-sensitive-personal-data-children-and-vulnerable-data-subj",
+   "heading": "17. Sensitive personal data, children and vulnerable data subjects",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "17.1 Sensitive personal data includes genetic and biometric data, race or ethnic origin, religious or similar beliefs, health status, sex life, political opinions, trade union membership and anything else the NDPC prescribes (section 65). It may be processed only on a ground in section 30(1), such as the data subject's consent, or where needed to meet employment or social security obligations (section 30(1)(b))."
+    },
+    {
+     "type": "p",
+     "text": "17.2 The Client must tell SCS before it supplies sensitive personal data, and must supply only what the Services need (for example, sick-leave certificates or biometric attendance records for HR administration)."
+    },
+    {
+     "type": "p",
+     "text": "17.3 Where the data subject is a child or lacks legal capacity, the Client must obtain the consent of a parent or legal guardian and apply appropriate age-verification (section 31). SCS will not knowingly collect children's data in customer care or sales services unless the Service Order says so and Part 2 safeguards are in place."
+    },
+    {
+     "type": "p",
+     "text": "17.4 Both parties must take into account the vulnerability of data subjects, including age, health, financial difficulty, disability, and lack of digital literacy (Schedule 6 of the GAID)."
+    }
+   ]
+  },
+  {
+   "id": "18-impact-assessments-software-and-emerging-technology",
+   "heading": "18. Impact assessments, software and emerging technology",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "18.1 A Data Privacy Impact Assessment (DPIA) is required before processing that is likely to be high risk (section 28). Article 28(3) of the GAID makes a DPIA mandatory in listed cases, including profiling, systematic monitoring, sensitive or highly personal data, vulnerable data subjects, e-commerce and financial services involving digital devices, health care, development of software for communicating with data subjects, and cross-border transfers."
+    },
+    {
+     "type": "p",
+     "text": "18.2 The Client, as controller, carries out the DPIA before processing begins. SCS supplies the information and assistance reasonably needed. The DPIA must be vetted and signed by a certified DPO accredited by the NDPC (Article 28(4) and (12)). SCS will not begin high-risk processing until the Client confirms that a DPIA has concluded the processing may go ahead."
+    },
+    {
+     "type": "p",
+     "text": "18.3 If SCS deploys or operates software that tracks data subjects or enables communication with them for the Client (such as a CRM, customer-care portal, chatbot or messaging tool), it will follow Article 31 of the GAID: a DPIA before deployment, privacy by design and by default, and an in-product privacy statement."
+    },
+    {
+     "type": "p",
+     "text": "18.4 Where a service uses automated decision-making, profiling or artificial intelligence, the parties will follow section 37 of the NDP Act and Article 43 of the GAID. No decision with legal or similarly significant effect on a person will be made solely by automated means unless an exception in section 37(2) applies, and the person keeps the right to human intervention, to express a view and to contest the decision."
+    }
+   ]
+  },
+  {
+   "id": "19-sub-processors",
+   "heading": "19. Sub-processors",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "19.1 The Client authorises SCS to use the sub-processors listed in Schedule G. SCS will notify the Client of any new data processor it engages (section 29(1)(e)) at least [14] days before the new sub-processor starts processing, and the Client may object on reasonable data-protection grounds in that time."
+    },
+    {
+     "type": "p",
+     "text": "19.2 SCS will bind each sub-processor by a written agreement imposing the same data-protection obligations as this Part 2 (section 29(2)), will take reasonable measures to confirm each sub-processor's compliance with the NDP Act, including NDPC registration where it applies (Article 34(3)), and remains accountable to the Client for each sub-processor's acts and omissions."
+    },
+    {
+     "type": "p",
+     "text": "19.3 Where the NDPC Guidance Notice (Schedule 7, paragraph 7 of the GAID) requires a controller of a particular tier to pay a processing fee for each processor it engages, that fee is the Client's responsibility."
+    }
+   ]
+  },
+  {
+   "id": "20-cross-border-transfers",
+   "heading": "20. Cross-border transfers",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "20.1 SCS stores and processes Client personal data in [Nigeria / list countries and hosting providers]. It will not transfer personal data outside Nigeria, or permit its transfer, unless the recipient is subject to a law, binding corporate rules, contractual clauses, code of conduct or certification giving an adequate level of protection (section 41(1)(a)), or a condition in section 43 applies, such as informed consent, performance of a contract, or defence of legal claims."
+    },
+    {
+     "type": "p",
+     "text": "20.2 SCS will record the basis for each transfer and the adequacy of protection (section 41(2)) and will carry out a DPIA first (Article 28(3)(o)). Where no adequacy decision exists and the Client relies on consent, SCS will make sure the data subject has been told of the risks (section 43(1)(a); Schedule 5 of the GAID)."
+    },
+    {
+     "type": "p",
+     "text": "20.3 The Client must approve in writing any transfer outside Nigeria that is not listed in Schedule G."
+    }
+   ]
+  },
+  {
+   "id": "21-direct-marketing-and-prospect-databases",
+   "heading": "21. Direct marketing and prospect databases",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "21.1 Prospect databases that SCS compiles are drawn from publicly available or lawfully obtained B2B directories and other sources whose provenance SCS records. Business contact details that identify an individual remain personal data."
+    },
+    {
+     "type": "p",
+     "text": "21.2 The Client must have a lawful basis, and obtain consent where it is required, before sending any direct marketing (Article 18(1)(a)). It must honour opt-outs immediately, keep a suppression list, and never use the data for unsolicited mass messaging, behavioural profiling or targeted advertising without consent (sections 36(3) and 36(4); Schedule 1, paragraph 2(v) of the GAID)."
+    },
+    {
+     "type": "p",
+     "text": "21.3 SCS may refuse or suspend any campaign that appears unlawful and will not supply lists whose lawful sourcing it cannot document."
+    }
+   ]
+  },
+  {
+   "id": "22-audit-records-and-regulatory-cooperation",
+   "heading": "22. Audit, records and regulatory cooperation",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "22.1 SCS keeps a Record of Processing Activities for Client data and gives the Client information reasonably needed to show compliance with the NDP Act (section 29(1)(d); Article 13)."
+    },
+    {
+     "type": "p",
+     "text": "22.2 The Client may audit SCS's compliance on [30] days' notice, no more than once a year, unless a breach, an NDPC directive or a regulatory complaint justifies an earlier audit. SCS may satisfy this by giving its latest DPCO audit evidence, CAR filing evidence and security assessment summary."
+    },
+    {
+     "type": "p",
+     "text": "22.3 Each party will cooperate with NDPC investigations, answer notices of investigation within the time the NDPC sets (21 days unless otherwise specified; Article 39(8)), and provide lists of processors, data processing agreements and DPIAs where requested."
+    },
+    {
+     "type": "p",
+     "text": "22.4 If the NDPC notifies SCS that a person is using SCS's platform to breach privacy, SCS may immediately restrict that person's access pending investigation (Article 32)."
+    },
+    {
+     "type": "p",
+     "text": "22.5 Registration, CAR filing and DPIA submission show good faith and accountability, but they do not replace concrete evidence of compliance with the Act (Article 48)."
+    }
+   ]
+  },
+  {
+   "id": "part-3-liability-term-and-exit",
+   "heading": "Part 3: Liability, Term and Exit",
+   "level": 2,
+   "blocks": []
+  },
+  {
+   "id": "23-warranties-and-disclaimers",
+   "heading": "23. Warranties and disclaimers",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "23.1 SCS warrants that it will perform the Services with reasonable skill and care and in compliance with the laws that apply to SCS as a service provider."
+    },
+    {
+     "type": "p",
+     "text": "23.2 SCS relies on Client Data and does not verify its accuracy unless a Service Order says it will. SCS is not liable for third-party contract breaches, or for a Client's failure to act on renewal, expiry or termination reminders SCS has issued."
+    },
+    {
+     "type": "p",
+     "text": "23.3 SCS is not liable for approval timelines, rejections, queries, policy changes, fee changes or delays by any Authority, or for rejections caused by the Client's non-compliance or incorrect information. Statutory approval timelines and issuance of certificates, permits and licences remain with the relevant Authority."
+    },
+    {
+     "type": "p",
+     "text": "23.4 Preliminary trademark availability or clearance searches do not guarantee registry approval or protection from third-party opposition."
+    },
+    {
+     "type": "p",
+     "text": "23.5 Except as this Agreement states, and to the extent the law allows, SCS gives no other warranty, condition or representation."
+    }
+   ]
+  },
+  {
+   "id": "24-limitation-of-liability",
+   "heading": "24. Limitation of liability",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "24.1 Subject to Clause 24.3, SCS's total liability to the Client for all claims arising from a Service Order, whether in contract, tort (including negligence), breach of statutory duty or otherwise, is limited to the professional fees the Client paid SCS under that Service Order in the [six (6)] months before the event giving rise to the claim."
+    },
+    {
+     "type": "p",
+     "text": "24.2 Neither party is liable to the other for indirect, special, consequential or punitive loss, or for loss of profit, revenue, goodwill or anticipated savings, arising from the Agreement."
+    },
+    {
+     "type": "p",
+     "text": "24.3 Nothing in this Agreement limits or excludes liability for fraud, willful misconduct, death or personal injury caused by negligence, or any liability that the law does not allow to be limited. In particular, nothing in the Agreement limits or restricts: (a) a data subject's rights against either party under the NDP Act, including compensation under section 51; (b) any order, penalty or sanction of the NDPC or a court under Part X of the NDP Act; or (c) a party's own statutory duties."
+    },
+    {
+     "type": "p",
+     "text": "24.4 SCS's liability for breach of Part 2 caused by SCS's own breach is capped separately at times the fees paid in the 12 months before the claim."
+    },
+    {
+     "type": "p",
+     "text": "24.5 SCS maintains professional indemnity insurance and will give evidence of cover on request. Insurance does not replace either party's responsibility for protecting personal data."
+    }
+   ]
+  },
+  {
+   "id": "25-indemnities",
+   "heading": "25. Indemnities",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "25.1 **Client indemnity.** The Client will indemnify SCS against third-party claims, regulatory penalties and reasonable costs arising from: (a) documents or information the Client supplied that were false, forged or misleading; (b) personal data given to SCS without a lawful basis or in breach of Part 2; (c) the Client's employment decisions, including wrongful termination, discrimination and workplace grievance claims; (d) the quality, safety or marketing of the Client's products and services, and its refunds and service recovery; (e) misuse of Deliverables or prospect data, including unlawful marketing; and (f) the Client's breach of Clause 5."
+    },
+    {
+     "type": "p",
+     "text": "25.2 **SCS indemnity.** SCS will indemnify the Client against third-party claims, regulatory penalties and reasonable costs to the extent they arise from: (a) SCS's breach of Part 2 or Schedule G, or the NDP Act, in its role as processor or controller; (b) SCS's fraud or wilful misconduct; (c) a claim that SCS Background IP, as supplied, infringes a third party's rights; and (d) SCS's negligent administration of HR records or filings that causes a statutory penalty, to the extent the Client supplied correct information on time."
+    },
+    {
+     "type": "p",
+     "text": "25.3 **Procedure.** The indemnified party must promptly notify the other of a claim, let the indemnifying party take reasonable conduct of the defence (subject to the NDPC and court's powers), cooperate, and not settle without consent, which must not be unreasonably withheld. Each party must take reasonable steps to mitigate loss."
+    },
+    {
+     "type": "p",
+     "text": "25.4 Where both parties contributed to a loss, each bears the share that fairly reflects its responsibility."
+    }
+   ]
+  },
+  {
+   "id": "26-term-and-renewal",
+   "heading": "26. Term and renewal",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "26.1 The Agreement starts on the date of the first Service Order and continues until all Service Orders end."
+    },
+    {
+     "type": "p",
+     "text": "26.2 A project Service Order runs until delivery of its Deliverables. A recurring service (for example HR administration, contract management or a regulatory renewal desk) runs for its initial term and renews automatically for successive periods of the same length unless either party gives at least 30 days' written notice before the renewal date."
+    }
+   ]
+  },
+  {
+   "id": "27-termination",
+   "heading": "27. Termination",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "27.1 Either party may terminate a recurring service for convenience on 30 days' written notice."
+    },
+    {
+     "type": "p",
+     "text": "27.2 Either party may terminate a Service Order immediately by written notice if the other: (a) commits a material breach that is not fixed within 14 days of notice; (b) becomes insolvent, enters liquidation or ceases business; or (c) cannot lawfully continue the Services."
+    },
+    {
+     "type": "p",
+     "text": "27.3 SCS may terminate or suspend a Service Order immediately if the Client breaches Clause 5, fails to pay after notice, or if continuing would put SCS in breach of law or an NDPC directive."
+    },
+    {
+     "type": "p",
+     "text": "27.4 On termination: (a) the Client pays for Services performed up to the termination date and for non-cancellable third-party costs; (b) SCS refunds any unused advance fee for work not started, less pass-through costs already incurred; and (c) rights that accrued before termination, and clauses meant to survive (including 7, 8, 24, 25, 28, 30 and Part 2), continue."
+    }
+   ]
+  },
+  {
+   "id": "28-exit-and-handover",
+   "heading": "28. Exit and handover",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "28.1 Within [30] days after the Agreement ends, or earlier if the Client asks in writing, SCS will, at the Client's choice, return or transfer to the Client or its nominee the Client's document registries, physical files, and digital records, including personal data, in a structured, commonly used and machine-readable format (sections 34(1)(b) and 38; Article 37)."
+    },
+    {
+     "type": "p",
+     "text": "28.2 SCS will then securely delete the Client's personal data, or irreversibly de-identify it where deletion is not practicable, revoke all access to systems and data, and give the Client written confirmation of deletion. This applies to sub-processors too. Where a legal obligation or legal claim justifies keeping some records, SCS will keep only the minimum data needed, for no longer than needed, and will tell the Client what it is keeping and why (Articles 49(3)-(4); Schedule 2, Part 5, item 4)."
+    },
+    {
+     "type": "p",
+     "text": "28.3 Exit work beyond ordinary handover is charged at SCS's then-current rates, unless termination follows SCS's breach. SCS may keep unpaid Deliverables until its invoices are paid but must still honour the Client's data return and deletion rights."
+    }
+   ]
+  },
+  {
+   "id": "part-4-disputes-website-and-general-provisions",
+   "heading": "Part 4: Disputes, Website and General Provisions",
+   "level": 2,
+   "blocks": []
+  },
+  {
+   "id": "29-force-majeure",
+   "heading": "29. Force majeure",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "29.1 Neither party is liable for delay or failure caused by events beyond its reasonable control, including natural disaster, epidemic, war, civil unrest, industrial action outside its workforce, power or network failure, government action, or Authority shutdowns, if it notifies the other promptly and uses reasonable efforts to resume performance."
+    },
+    {
+     "type": "p",
+     "text": "29.2 Force majeure does not excuse payment of money due, or either party's duties of security, confidentiality and breach notification under Part 2."
+    },
+    {
+     "type": "p",
+     "text": "29.3 If the event continues for more than [60] days, either party may terminate the affected Service Order on written notice."
+    }
+   ]
+  },
+  {
+   "id": "30-governing-law-and-dispute-resolution",
+   "heading": "30. Governing law and dispute resolution",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "30.1 The Agreement is governed by the laws of the Federal Republic of Nigeria."
+    },
+    {
+     "type": "p",
+     "text": "30.2 The parties will first try to settle any dispute by good-faith discussion between senior representatives for [14] days after written notice of the dispute."
+    },
+    {
+     "type": "p",
+     "text": "30.3 If that fails, the dispute goes to mediation and, if still unresolved after [30] days, to arbitration under the Arbitration and Mediation Act 2023, before a sole arbitrator appointed by agreement or, failing agreement, by [appointing body] agreed by the parties. The seat is Abuja, the language is English, and the award is final and binding."
+    },
+    {
+     "type": "p",
+     "text": "30.4 Either party may seek urgent injunctive or interim relief from a competent Nigerian court at any time."
+    },
+    {
+     "type": "p",
+     "text": "30.5 **Protected rights.** Nothing in this Clause 30 or elsewhere in the Agreement removes or limits: (a) the jurisdiction of the NDPC, or a data subject's right to complain to it (section 46); (b) the jurisdiction of Nigerian courts, including a data subject's right to seek redress at the nearest Federal or State High Court (Article 47 of the GAID); or (c) any right of a data subject under the NDP Act. Under Article 21(4) of the GAID, any term that purports to oust that jurisdiction is void. Alternative dispute resolution is permitted only to the extent Article 21(5) allows."
+    }
+   ]
+  },
+  {
+   "id": "31-website-portals-and-cookies",
+   "heading": "31. Website, portals and cookies",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "31.1 Use of SCS's website, client portal or any SCS platform is permitted only for lawful purposes. Users must not attempt unauthorised access, introduce malware, scrape personal data, or use the platform to breach anyone's privacy ."
+    },
+    {
+     "type": "p",
+     "text": "31.2 Website content is general information, not legal, tax or professional advice. SCS does not guarantee uninterrupted availability."
+    },
+    {
+     "type": "p",
+     "text": "31.3 **Cookies and tracking tools.** SCS shows a cookie notice conspicuously when a visitor first arrives, without requiring scrolling. Except for necessary cookies (those that enable core functions such as security, network stability and accessibility), SCS will use cookies and similar tracking tools only after the visitor gives specific, informed consent by choosing Accept or Reject . The notice explains each cookie's purpose, names SCS as the responsible organisation, and explains how to withdraw consent. A visitor who declines is not denied the website's basic functions."
+    },
+    {
+     "type": "p",
+     "text": "31.4 SCS's privacy policy, available at, forms part of these Terms and explains how SCS processes personal data as a controller."
+    }
+   ]
+  },
+  {
+   "id": "32-notices-and-complaints",
+   "heading": "32. Notices and complaints",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "32.1 Notices must be in writing and sent to the address or email in the Service Order or the details table above. Email notices are received the next business day after sending, unless the sender gets a delivery failure."
+    },
+    {
+     "type": "p",
+     "text": "32.2 Clients can raise service complaints with {{email_info}}. SCS will acknowledge within [two (7)] business days and aim to resolve within [ten (30)] business days. This does not affect any right under Clause 16 or Clause 30.5."
+    }
+   ]
+  },
+  {
+   "id": "33-general",
+   "heading": "33. General",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "33.1 **Entire agreement.** The Agreement is the entire agreement on its subject and replaces earlier proposals, except for fraudulent statements."
+    },
+    {
+     "type": "p",
+     "text": "33.2 **Variation and waiver.** Amendments must be in writing (Clause 1.4 aside). A delay or failure to enforce a right is not a waiver."
+    },
+    {
+     "type": "p",
+     "text": "33.3 **Assignment.** Neither party may assign the Agreement without the other's written consent, except SCS may assign to a successor to its business on written notice, provided the successor assumes Part 2."
+    },
+    {
+     "type": "p",
+     "text": "33.4 **Severance.** If any term is unlawful or unenforceable, the rest continues, and the term is read down to the minimum extent necessary."
+    },
+    {
+     "type": "p",
+     "text": "33.5 **Relationship.** The parties are independent contractors. Nothing creates a partnership, joint venture or employment relationship."
+    },
+    {
+     "type": "p",
+     "text": "33.6 **No third-party rights,** except that data subjects keep the statutory rights described in Part 2."
+    },
+    {
+     "type": "p",
+     "text": "33.7 **Electronic signature and counterparts.** The Agreement may be signed electronically and in counterparts."
+    },
+    {
+     "type": "p",
+     "text": "33.8 **Anti-corruption.** Neither party will offer, give or accept any improper payment or advantage in connection with the Agreement or any dealings with an Authority."
+    },
+    {
+     "type": "p",
+     "text": "33.9 **Interpretation.** Headings are for convenience; \"including\" means \"including without limitation\"; references to laws include amendments and replacements, including any NDPC instrument that supersedes the GAID."
+    }
+   ]
+  },
+  {
+   "id": "service-schedules",
+   "heading": "Service Schedules",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Each Schedule applies only if the Service Order includes that service. If a Schedule conflicts with Part 1, the Schedule prevails for that service; Part 2 always prevails on personal data."
+    }
+   ]
+  },
+  {
+   "id": "schedule-a-commercial-documentation-and-contract-management",
+   "heading": "Schedule A: Commercial Documentation and Contract Management",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "A1. **Scope.** Coordinating the preparation, review workflow and execution of commercial documents (for example supply, service, agency, distribution, NDA, vendor and employment-related contracts); maintaining a contract library, obligation register and renewal and expiry calendar (90, 60 and 30 days before expiry); and tracking approvals and signatures."
+    },
+    {
+     "type": "p",
+     "text": "A2. **Legal boundary.** SCS supplies commercial frameworks and administrative support. Where a document needs legal drafting, advice, stamping, notarisation or court action, SCS coordinates that work through a solicitor or other Accredited Professional (Clause 4.1). SCS does not negotiate legal positions on the Client's behalf unless a solicitor is engaged."
+    },
+    {
+     "type": "p",
+     "text": "A3. **Templates.** Standard templates are starting points and must be customised to the Client's statutory and operational context (Clause 4.4)."
+    },
+    {
+     "type": "p",
+     "text": "A4. **Contract management.** SCS works only from the contracts and data the Client supplies and updates. The Client decides whether to renew, renegotiate, enforce or terminate. SCS is not liable for a counterparty's breach, or for the Client's failure to act on a reminder, notice or alert that SCS gave on time."
+    },
+    {
+     "type": "p",
+     "text": "A5. **Reminder service.** Reminders are sent to the contacts the Client nominates. The Client must keep those contacts current. A reminder is an administrative alert, not legal advice."
+    },
+    {
+     "type": "p",
+     "text": "A6. **Personal data.** Signatories, counterparties and contract contacts are data subjects. Part 2 applies, and the Client must have a lawful basis to share their details."
+    }
+   ]
+  },
+  {
+   "id": "schedule-b-hr-management-recruitment-and-workforce-administr",
+   "heading": "Schedule B: HR Management, Recruitment and Workforce Administration",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "B1. **Scope.** Recruitment support, onboarding, preparation of employment contract documents, personnel file management, attendance and leave administration, payroll data preparation, tracking of statutory deductions and remittances (PAYE, PenCom pension, NSITF, NHF, ITF), HR policies and handbooks, and performance and training administration."
+    },
+    {
+     "type": "p",
+     "text": "B2. **The Client is the employer.** SCS is an HR systems administrator and coordinator only. It is not an employer of record. The Client alone makes, and is responsible for, decisions to hire, discipline, promote, pay, suspend or dismiss, and it carries all statutory, tax, pension, social insurance and labour-law obligations (Clause 4.2)."
+    },
+    {
+     "type": "p",
+     "text": "B3. **Payroll and statutory remittances.** SCS prepares schedules from data the Client supplies. The Client must approve each payroll and put funds in place in time for statutory deadlines. SCS is not liable for penalties or interest caused by late funding, late approval or wrong inputs."
+    },
+    {
+     "type": "p",
+     "text": "B4. **Recruitment.** SCS screens and shortlists against the Client's criteria. The Client makes the final hiring decision. SCS does not guarantee a candidate's conduct or performance. Selection must be fair and must not discriminate on gender, ethnicity, religion, physical ability or other protected characteristics (Article 41(5) of the GAID). No hiring decision may be made solely by automated means (section 37)."
+    },
+    {
+     "type": "p",
+     "text": "B5. **Personnel files and sensitive data.**"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Employee intake forms, emergency contacts, identity verification and similar documents are collected only to the extent needed for a stated HR purpose (data minimisation, section 24(1)(c)).",
+      "Lawful bases are normally contract and legal obligation. Sensitive data such as health status, biometric attendance data, ethnic origin or religion is processed only under section 30 (employment and social security law, or explicit consent).",
+      "Employee monitoring, biometric systems and similar tools need a DPIA first (Article 28(3)).",
+      "Personnel files are access-controlled, kept in secure systems or locked storage, and shared only with those who need them.",
+      "Data of unsuccessful candidates is deleted within six months unless the candidate consents to keep it or a legal-claim reason applies (Article 21(2)).",
+      "Background and reference checks need the candidate's informed consent."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "B6. **Employee data rights.** Employees can use the rights in Clause 16 through the Client's HR or DPO contact. SCS assists the Client in responding."
+    },
+    {
+     "type": "p",
+     "text": "B7. **Employment disputes.** The Client decides how to handle grievances, disciplinary matters and claims. SCS provides records and administrative support and recommends the Client take employment-law advice. Liability for employment claims follows Clause 25."
+    }
+   ]
+  },
+  {
+   "id": "schedule-c-sales-operations-and-prospect-management",
+   "heading": "Schedule C: Sales Operations and Prospect Management",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "C1. **Scope.** Setting up sales structures and pipeline management, training sales staff, preparing scripts and playbooks, running a CRM, and organising prospect databases (for example a database of 100 to 1,000 corporate prospects)."
+    },
+    {
+     "type": "p",
+     "text": "C2. **No sales guarantee.** SCS assists in establishing sales structures, pipeline management, training and database organisation. SCS does not guarantee any sales revenue, conversion ratio or financial return. All sales activity run through SCS systems must comply with ethical sales standards and consumer protection law, including the Federal Competition and Consumer Protection Act 2018."
+    },
+    {
+     "type": "p",
+     "text": "C3. **Prospect data sourcing.** SCS compiles prospect databases from publicly available or lawfully obtained B2B directories and records the source of each list (Clause 21.1). SCS will not supply a list whose lawful sourcing it cannot document."
+    },
+    {
+     "type": "p",
+     "text": "C4. **Client use of prospect data.** The Client must use prospect data only for lawful marketing. It must obtain consent where required for direct marketing, honour opt-outs, keep suppression lists and not use the data for unsolicited mass messaging (Clause 21.2; Article 18(1)(a)). Unsolicited messages are a ground for a data subject's grievance under Schedule 9 of the GAID."
+    },
+    {
+     "type": "p",
+     "text": "C5. **Sales staff.** Unless a Service Order says otherwise, sales staff are the Client's employees or contractors and the Client is their employer (Schedule B applies). SCS's training does not make SCS responsible for their conduct."
+    },
+    {
+     "type": "p",
+     "text": "C6. **Call recording and monitoring.** Recording or monitoring sales calls or staff needs a lawful basis, a notice to those recorded, and where it amounts to systematic monitoring, a DPIA (Article 28(3)(c)). The Client must not instruct SCS to record without that basis."
+    },
+    {
+     "type": "p",
+     "text": "C7. **Claims.** The Client is responsible for the accuracy of its product, price and performance claims. SCS will not prepare materials containing claims it knows to be false or misleading."
+    }
+   ]
+  },
+  {
+   "id": "schedule-d-customer-care-and-support-outsourcing",
+   "heading": "Schedule D: Customer Care and Support Outsourcing",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "D1. **Scope.** Operating customer support channels (phone, email, chat, social media), handling enquiries and complaints, escalating issues, maintaining knowledge bases and reporting."
+    },
+    {
+     "type": "p",
+     "text": "D2. **Service levels.** Response-time targets (for example responding to 90% of routine enquiries within operating hours) are agreed operational SLAs set out in Schedule H. They are targets, not absolute guarantees, and are measured over the reporting period."
+    },
+    {
+     "type": "p",
+     "text": "D3. **Authenticity rule.** SCS will never fabricate customer reviews, testimonials, ratings, endorsements or referral metrics, and will not post or request any in an invented person's name. SCS may ask genuine customers for honest feedback and may report genuine results."
+    },
+    {
+     "type": "p",
+     "text": "D4. **Client responsibility.** The Client alone is responsible for product and service quality, safety, pricing, warranty, refunds, replacement and service recovery. SCS agents act within scripts and authority the Client has approved in writing."
+    },
+    {
+     "type": "p",
+     "text": "D5. **Customer personal data.** For customer data SCS is the Client's processor. The Client must give customers its privacy notice and name SCS or its category as a recipient. Agents may collect only the data needed to resolve the enquiry. SCS does not store payment-card or similar credentials unless the Service Order expressly provides for it with appropriate safeguards (section 39)."
+    },
+    {
+     "type": "p",
+     "text": "D6. **Recording and quality monitoring.** Calls and chats may be recorded for quality and training only where the customer has been told at the start of the interaction and a lawful basis applies. A DPIA is required for e-commerce services and systematic monitoring (Article 28(3))."
+    },
+    {
+     "type": "p",
+     "text": "D7. **Customer rights requests.** Agents will route any access, correction, erasure, objection or complaint request to the Client's designated contact within the time in Clause 16.2."
+    },
+    {
+     "type": "p",
+     "text": "D8. **Vulnerable customers.** Agents will apply extra care to children, elderly or vulnerable customers and will not collect a child's data without parent or guardian consent (Clause 17)."
+    }
+   ]
+  },
+  {
+   "id": "schedule-e-regulatory-mapping-and-compliance-coordination",
+   "heading": "Schedule E: Regulatory Mapping and Compliance Coordination",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "E1. **Role.** SCS is a regulatory mapping and application coordination partner. It identifies the licences, permits and registrations a business needs, prepares and coordinates applications, tracks renewals, and liaises with Authorities, and may do so through Accredited Professionals."
+    },
+    {
+     "type": "p",
+     "text": "E2. **Authorities.** This includes CAC, FIRS and State IRS, NAFDAC, SON, NDPC, FCCPC, PenCom, NSITF, ITF and NIMC, and other agencies named in a Service Order."
+    },
+    {
+     "type": "p",
+     "text": "E3. **Timelines and outcomes.** Approval timelines, issuance of certificates, permits and licences, and fees remain at the sole discretion and operating timeline of the relevant Authority. SCS is not liable for regulatory delays, policy changes or rejections caused by an Authority or by the Client's non-compliance (Clause 23.3)."
+    },
+    {
+     "type": "p",
+     "text": "E4. **Document authenticity.** The Client warrants that all corporate documents, product samples, financial records and identification supplied for filings are genuine, accurate and complete. SCS will not submit anything it knows or reasonably suspects is false, and may withdraw if the Client insists."
+    },
+    {
+     "type": "p",
+     "text": "E5. **No improper payments.** SCS does not make informal or improper payments to officials. Only published official fees are paid, and receipts are provided."
+    },
+    {
+     "type": "p",
+     "text": "E6. **Data protection compliance services.** If the Service Order covers NDPC registration, DPIAs, audits, DPO services or CAR filing, those tasks are provided by or through persons licensed or accredited by the NDPC where the law requires it (section 33 of the NDP Act; Articles 10(14), 14 and 28(4)). Licence number, if any: —. The Client remains responsible for its own compliance."
+    },
+    {
+     "type": "p",
+     "text": "E7. **Renewal desk.** Where SCS runs a renewal desk, it calendars due dates from the information the Client supplies. The Client must tell SCS about any change in its business that affects a licence or filing."
+    }
+   ]
+  },
+  {
+   "id": "schedule-f-intellectual-property-filing-coordination",
+   "heading": "Schedule F: Intellectual Property Filing Coordination",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "F1. **Accredited agents.** Where trademark, patent or design registration requires accredited agent status before the relevant Industrial Property Registry, SCS coordinates the filing through a duly accredited agent."
+    },
+    {
+     "type": "p",
+     "text": "F2. **Searches.** Preliminary availability and clearance searches are indicative only. They do not guarantee final registry approval or immunity from opposition by third parties during publication (Clause 23.4)."
+    },
+    {
+     "type": "p",
+     "text": "F3. **Client decisions.** The Client chooses the mark, classes, goods and services, and is responsible for its right to use them. SCS will notify the Client of deadlines, objections and oppositions, and will act on written instructions to respond, subject to additional fees."
+    },
+    {
+     "type": "p",
+     "text": "F4. **Ownership.** Registrations are in the Client's name (or as the Service Order states). SCS gets no ownership of Client IP."
+    }
+   ]
+  },
+  {
+   "id": "schedule-g-data-processing-agreement-particulars-gaid-articl",
+   "heading": "Schedule G: Data Processing Agreement Particulars (GAID Article 34)",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Complete one Schedule G for each engagement that involves SCS processing the Client's personal data. Together with Part 2, it forms the data processing agreement under section 29(2) of the NDP Act."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "GAID Art. 34(2) item",
+       "Particulars"
+      ],
+      [
+       "(a) Obligations of controller and processor",
+       "Section 29 NDP Act; Part 2 of these Terms"
+      ],
+      [
+       "(b) Names of parties",
+       "Client: . Processor: Stephen Corporate Services (SCS) Ltd"
+      ],
+      [
+       "(c) Addresses",
+       "Client: . SCS:"
+      ],
+      [
+       "(d) Principal agreement / SLA",
+       "Terms of Use v1.0 and Service Order no. dated"
+      ],
+      [
+       "(e) Purpose of processing",
+       "(for example HR administration, customer care, sales database support)"
+      ],
+      [
+       "(f) Location of processing",
+       "(country, city, hosting provider)"
+      ],
+      [
+       "(g) Scope of processing",
+       "See data table below"
+      ],
+      [
+       "(h) Lawful bases",
+       "Client's recorded basis for each category: (consent / contract / legal obligation / vital interest / public interest / legitimate interest)"
+      ],
+      [
+       "(i) Responsibilities of parties",
+       "Client: Clauses 5, 12, 17, 18. SCS: Clauses 11, 13 to 15, 19, 20"
+      ],
+      [
+       "(j) Technical and organisational measures",
+       "Clause 14, plus any special measures:"
+      ],
+      [
+       "(k) DPIA outcome"
+      ],
+      [
+       "(l) Potential risks",
+       ""
+      ],
+      [
+       "(m) NDP Act compliance",
+       ""
+      ],
+      [
+       "(n) Confidentiality",
+       "Clause 7"
+      ],
+      [
+       "(o) Tenure",
+       "Term of the Service Order, plus the exit period in Clause 28"
+      ],
+      [
+       "(p) Specific restrictions",
+       ""
+      ],
+      [
+       "(q) Indemnity",
+       "Clause 25"
+      ],
+      [
+       "(r) Insurance",
+       "Clause 24.5"
+      ],
+      [
+       "(s) Force majeure",
+       "Clause 29"
+      ],
+      [
+       "(t) Dispute resolution",
+       "Clause 30 (subject to Clause 30.5)"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Data processed**"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Service",
+       "Data subjects",
+       "Types of personal data",
+       "Sensitive data?",
+       "Retention"
+      ],
+      [
+       "—",
+       "—",
+       "—",
+       "Yes / No",
+       "—"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Approved sub-processors**"
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Name",
+       "Service provided",
+       "Location",
+       "NDPC registration (if applicable)"
+      ],
+      [
+       "—",
+       "—",
+       "—",
+       "—"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "id": "schedule-h-service-level-and-capacity-appendix",
+   "heading": "Schedule H: Service Level and Capacity Appendix",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Complete one appendix per engagement. Figures in square brackets are examples to replace. Capacity figures describe service framework and project scope, not past achievements (Clause 3.3), and service-level targets are agreed operational targets, not guarantees."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Service",
+       "Capacity or scope metric",
+       "Service-level target",
+       "Reporting"
+      ],
+      [
+       "Commercial documentation (Schedule A)",
+       "[—] contracts under management",
+       "Renewal alerts at 90, 60 and 30 days before expiry; first draft within [—] business days of complete instructions",
+       "Monthly obligation register update"
+      ],
+      [
+       "HR administration (Schedule B)",
+       "Up to [50] employees",
+       "Payroll data schedule ready [—] days before pay date; onboarding file complete within [—] days of start",
+       "Monthly HR and statutory remittance report"
+      ],
+      [
+       "Sales operations (Schedule C)",
+       "Prospect database of [100–1,000] corporate prospects; [—] sales staff trained",
+       "Database delivered within [—] days; weekly pipeline report",
+       "Weekly pipeline report"
+      ],
+      [
+       "Customer care (Schedule D)",
+       "Up to [500] support contacts per [month]",
+       "[90]% of routine enquiries answered within operating hours of [—]",
+       "Monthly service report"
+      ],
+      [
+       "Regulatory compliance (Schedule E)",
+       "[—] filings or renewals",
+       "Filing submitted within [—] days of complete documents; status update every [—] days",
+       "Per-filing status log"
+      ],
+      [
+       "IP coordination (Schedule F)",
+       "[—] marks or designs",
+       "Filing within [—] days of instructions and payment",
+       "Per-filing status log"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "**Operating hours:** —. **Escalation contact:** —. **Service credits (if any):** —. **Review:** the parties review these metrics every [quarter]."
+    }
+   ]
+  },
+  {
+   "id": "execution",
+   "heading": "Execution",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "By signing, the Client accepts the Terms of Use, Part 2 and Schedule G for the Services in the Service Order."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "",
+       "For Stephen Corporate Services (SCS) Ltd",
+       "For the Client"
+      ],
+      [
+       "Company name",
+       "Stephen Corporate Services (SCS) Ltd",
+       ""
+      ],
+      [
+       "Name of signatory",
+       "",
+       "—"
+      ],
+      [
+       "Title",
+       "—",
+       "—"
+      ],
+      [
+       "Signature",
+       "—",
+       "—"
+      ],
+      [
+       "Date",
+       "—",
+       "—"
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

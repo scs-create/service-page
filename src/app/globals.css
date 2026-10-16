@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+/* =========================================================
+   SCS DESIGN TOKENS — from PROJECT STATE v0.5
+   Do not add colors/spacing values outside this file.
+   ========================================================= */
+:root {
+  /* Color system */
+  --color-primary: #0340a9;
+  --color-secondary: #011550;
+  --color-accent: #f9b91a; /* logo gold: rules, icons, navy-text buttons; text ONLY on navy/blue */
+  --color-bg: #ffffff;
+  --color-surface: #f1f5fc;
+  --color-text: #0b1730;
+  --color-muted: #475a7d;
+  --color-border: #d6e0f2;
+  --color-success: #1e7f4d;
+  --color-error: #b3261e;
+
+  /* Spacing scale (8px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-none: 0px;
+
+  /* Type */
+  --font-body: 16px;
+  --leading-body: 1.5;
+  --leading-heading: 1.2;
+}
+
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-text: var(--color-text);
+  --color-muted: var(--color-muted);
+  --color-border: var(--color-border);
+  --color-success: var(--color-success);
+  --color-error: var(--color-error);
+
+  --font-sans: var(--font-inter);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+}
+
+/* No prefers-color-scheme override: SCS design system is a single,
+   fixed light theme (v0.5) — intentionally not adaptive to OS dark mode. */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+  font-size: var(--font-body);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: var(--leading-heading);
+  font-weight: 600;
+}
+
+/* Skip link — visible only on keyboard focus (Module 1 accessibility req) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: var(--space-3) var(--space-4);
+  z-index: 100;
+  border-radius: var(--radius-sm);
+}
+
+.skip-link:focus {
+  left: var(--space-3);
+  top: var(--space-3);
+}
+
+/* Basic styling for rendered Markdown blog content (Corporate School) */
+.prose-content p {
+  margin-bottom: var(--space-4);
+  color: var(--color-text);
+}
+
+.prose-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+.prose-content h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-2);
+}
+
+.prose-content ul,
+.prose-content ol {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-5);
+}
+
+.prose-content li {
+  margin-bottom: var(--space-2);
+}
+
+.prose-content a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* Focus ring: royal blue on light surfaces (>=3:1 on white); gold on navy
+   surfaces (.dark-surface). Gold on white fails WCAG 1.4.11, so it is never
+   the default ring. */
+:root {
+  --focus-ring: var(--color-primary);
+}
+
+.dark-surface {
+  --focus-ring: var(--color-accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Form validation (error colour) — only after the user has interacted */
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 1px var(--color-error);
+}
+
+input,
+select,
+textarea {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Anchor targets clear the sticky header */
+[id] {
+  scroll-margin-top: 7rem;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-secondary);
+}
+
+/* Certificate lightbox (native <dialog>: focus trap + Esc handled by the browser) */
+dialog::backdrop {
+  background: color-mix(in srgb, var(--color-secondary) 88%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Typography rhythm, motion and utilities (all tokens above)
+   --------------------------------------------------------------- */
+h1, h2, h3 { text-wrap: balance; letter-spacing: -0.01em; }
+p, li { text-wrap: pretty; }
+
+/* Scroll reveal: pure CSS (scroll-driven animations). Browsers without support simply show the content.
+   Wrapped in no-preference, so reduced-motion users never see movement. */
+@keyframes reveal-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal { animation: reveal-up linear both; animation-timeline: view(); animation-range: entry 0% entry 30%; }
+  }
+  .lift { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .lift:hover { transform: translateY(-3px); box-shadow: 0 10px 28px color-mix(in srgb, var(--color-secondary) 14%, transparent); }
+}
+
+/* Certificate watermark (deterrent only — burn a watermark into uploaded files for real protection) */
+.cert-watermark {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='150'%3E%3Ctext x='10' y='95' transform='rotate(-24 150 75)' font-family='Arial' font-size='16' font-weight='700' fill='%23011550' fill-opacity='0.18'%3ESCS %C2%B7 FOR VERIFICATION ONLY%3C/text%3E%3C/svg%3E");
+}
+
+/* Printable results (checklist "Save as PDF") */
+@media print {
+  body * { visibility: hidden; }
+  .print-area, .print-area * { visibility: visible; }
+  .print-area { position: absolute; left: 0; top: 0; width: 100%; padding: 1.5rem; }
+  .no-print { display: none !important; }
+}

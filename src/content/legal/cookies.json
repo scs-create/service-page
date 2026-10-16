@@ -1,0 +1,229 @@
+{
+ "slug": "cookies",
+ "title": "Cookie Policy",
+ "effective": "29th January, 2025",
+ "updated": "October 9, 2026",
+ "intro": [
+  {
+   "type": "p",
+   "text": "Only necessary cookies run on the SCS website until you choose otherwise; every other cookie needs your consent, which you can withdraw at any time. This policy follows section 26 of the Nigeria Data Protection Act 2023 (\"NDP Act\") and Article 19 of the NDP Act General Application and Implementation Directive 2025 (\"GAID\"), and forms part of our Privacy Notice."
+  }
+ ],
+ "sections": [
+  {
+   "id": "1-who-is-responsible",
+   "heading": "1. Who is responsible",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Stephen Corporate Services (SCS) Ltd (\"SCS\", \"we\", \"us\"), {{address}}, is the organisation responsible for the cookies set by our website and client portals. You can reach our Data Protection Officer at {{email_privacy}}."
+    }
+   ]
+  },
+  {
+   "id": "2-what-cookies-and-similar-tools-are",
+   "heading": "2. What cookies and similar tools are",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Cookies are small text files a website stores on your phone, tablet or computer. They let the site recognise your device, remember choices and measure how it is used. Under Article 19(8) of the GAID, similar tracking tools such as pixels, local storage, device fingerprinting and tracking scripts follow the same rules, so in this policy \"cookies\" includes them."
+    }
+   ]
+  },
+  {
+   "id": "3-the-cookies-we-use",
+   "heading": "3. The cookies we use",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Category",
+       "What it does",
+       "Consent needed?"
+      ],
+      [
+       "Strictly necessary",
+       "Security, session management, login to secure client portals, load balancing and network stability, accessibility, and remembering your cookie choice",
+       "No. Without them the site cannot work safely. They do not process sensitive, financial or private data"
+      ],
+      [
+       "Performance and analytics",
+       "Count visits, find error pages and measure load times, using aggregated data to improve the site",
+       "Yes. Off until you accept"
+      ],
+      [
+       "Functional",
+       "Remember choices such as language, location or saved enquiry details",
+       "Yes. Off until you accept"
+      ],
+      [
+       "Marketing and targeting",
+       "Show relevant service updates and campaign information and limit how often you see them",
+       "Yes. Off until you accept"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Under Article 19(6) of the GAID only cookies for core functions such as security, network stability and accessibility are exempt from consent, so we ask for consent for every other category, including functional cookies."
+    }
+   ]
+  },
+  {
+   "id": "4-how-we-ask-for-your-consent",
+   "heading": "4. How we ask for your consent",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "list",
+     "items": [
+      "A cookie banner appears the first time you visit, at the front of the page. You do not have to scroll to see it, and it names SCS as the responsible organisation.",
+      "It offers equal, clear **Accept** and **Reject** buttons and a **Manage preferences** option to choose by category. Nothing is pre-ticked, and closing the banner or continuing to browse is not treated as consent to non-essential cookies.",
+      "It explains each cookie's purpose in plain language and how to withdraw consent.",
+      "We keep a record of your choice (the scs_cookie_consent cookie) as evidence of consent.",
+      "If you reject non-essential cookies you can still use the website's basic functions."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5-cookie-table",
+   "heading": "5. Cookie table",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "SCS must confirm this table against a scan of the live website before publication. Names and lifetimes below are the expected set.",
+     "internal": true
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Category",
+       "Name / provider",
+       "Purpose",
+       "Lifetime",
+       "Basis"
+      ],
+      [
+       "Strictly necessary",
+       "[to be confirmed by a live-site scan]",
+       "Secure session and request protection",
+       "Session",
+       "Necessary for the service (contract / security)"
+      ],
+      [
+       "Strictly necessary",
+       "scs_cookie_consent (browser local storage), set by SCS",
+       "Stores your banner choice",
+       "1 year",
+       "Necessary to honour and prove your choice"
+      ],
+      [
+       "Analytics",
+       "Plausible Analytics (plausible.io): sets no cookies",
+       "Usage and performance statistics",
+       "Not applicable (no cookies set)",
+       "Consent"
+      ],
+      [
+       "Functional",
+       "None in use on this website",
+       "Remembers interface preferences",
+       "6 months",
+       "Consent"
+      ],
+      [
+       "Marketing",
+       "None in use on this website",
+       "",
+       "",
+       "Consent"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "The consent record is kept for as long as it is needed to prove your choice and is then deleted."
+    }
+   ]
+  },
+  {
+   "id": "6-third-parties-and-transfers-abroad",
+   "heading": "6. Third parties and transfers abroad",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Some cookies are set by providers we use, such as analytics, security, hosting or embedded video services. They set their own cookies and we do not control them, so please read their policies. Where a provider processes data outside Nigeria, for example Google, we rely on the transfer grounds in sections 41 to 43 of the NDP Act, including your consent for analytics and marketing cookies. We do not use tracking tools to sell personal data."
+    }
+   ]
+  },
+  {
+   "id": "7-managing-and-withdrawing-consent",
+   "heading": "7. Managing and withdrawing consent",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "**On our site.** Select **Cookie settings** in the website footer at any time to change categories or withdraw consent. Withdrawing is as easy as giving consent (section 35 of the NDP Act) and does not affect earlier lawful use. After you withdraw we stop the cookies and delete those we can."
+    },
+    {
+     "type": "p",
+     "text": "**In your browser.** You can view, block or delete cookies, block third-party cookies, or clear cookies when you close the browser:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "[Google Chrome](https://support.google.com/chrome/answer/95647)",
+      "[Mozilla Firefox](https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop)",
+      "[Microsoft Edge](https://support.microsoft.com/en-us/microsoft-edge)",
+      "[Apple Safari](https://support.apple.com/guide/safari/sfri11471/mac)"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Blocking strictly necessary cookies may stop our secure client portals from working."
+    }
+   ]
+  },
+  {
+   "id": "8-your-rights-and-complaints",
+   "heading": "8. Your rights and complaints",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "You have the rights described in our Privacy Notice, including access, correction, erasure, objection and withdrawal of consent. Contact the DPO at {{email_privacy}}. You may also complain to the Nigeria Data Protection Commission at info@ndpc.gov.ng or ndpc.gov.ng, or seek redress in court."
+    }
+   ]
+  },
+  {
+   "id": "9-updates",
+   "heading": "9. Updates",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "We will update this policy when our cookies, technology or the law change, and show the new date at the top. If we add a new category of non-essential cookie, we will ask for your consent again before using it."
+    }
+   ]
+  },
+  {
+   "id": "10-contact",
+   "heading": "10. Contact",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Stephen Corporate Services (SCS) Ltd, {{address}}. Email: {{email_privacy}}. Phone: {{phone}}."
+    }
+   ]
+  }
+ ]
+}

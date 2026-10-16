@@ -1,0 +1,23 @@
+{
+  "order": 7,
+  "slug": "dinedirect-limited",
+  "client": "DineDirect Limited",
+  "rc": "9889906",
+  "sector": "Food Service & Hospitality",
+  "filter": "hospitality",
+  "featured": false,
+  "headline": "A food service brand needed structure behind its customer-facing ambition.",
+  "challenge": "Hospitality brands are judged by customer experience, but what sits behind that experience — contracts, suppliers, staff and compliance — determines whether the brand survives its own growth.",
+  "delivered": [
+    "Corporate formation and business documentation",
+    "Customer support process design for service consistency",
+    "Business consultancy on operational standards and supplier structuring",
+    "Administrative support for statutory and licensing obligations"
+  ],
+  "impact": "A food service business with the operational backbone to protect its brand promise as it scales beyond its first locations.",
+  "serviceLines": [
+    "Business Consultancy",
+    "Customer Support Services",
+    "Company Formation"
+  ]
+}

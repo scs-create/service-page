@@ -1,0 +1,23 @@
+{
+  "order": 11,
+  "slug": "boots-ng-online-shopping-ltd",
+  "client": "Boots.ng Online Shopping Ltd",
+  "rc": "9181142",
+  "sector": "E-Commerce & Retail Technology",
+  "filter": "tech-digital",
+  "featured": false,
+  "headline": "An online retailer needed compliance infrastructure to match its digital storefront.",
+  "challenge": "E-commerce businesses collect customer and payment data from their first transaction — the corporate, tax and data protection groundwork has to exist before the first sale, not after the first complaint.",
+  "delivered": [
+    "Company incorporation and e-commerce business documentation",
+    "Tax registration and compliance support",
+    "Data protection policy drafting for customer and payment information",
+    "Business analytics support for sales and customer insights"
+  ],
+  "impact": "An online retail business trading on a compliant tax position and a documented data protection framework, with analytics feeding its growth decisions.",
+  "serviceLines": [
+    "Company Formation",
+    "Tax Services",
+    "Data Protection"
+  ]
+}

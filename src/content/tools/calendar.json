@@ -1,0 +1,56 @@
+{
+  "intro": "Most businesses carry recurring obligations to several agencies. These are the main areas to keep on your radar. Dates and requirements vary by business type and year, so we do not list exact deadlines here.",
+  "areas": [
+    {
+      "label": "Annual filings with the registry",
+      "regulators": [
+        "CAC"
+      ],
+      "note": "Registered entities have recurring filing obligations."
+    },
+    {
+      "label": "Tax registrations, returns and payments",
+      "regulators": [
+        "NRS",
+        "SIRS"
+      ],
+      "note": "Federal and state tax obligations run on different cycles."
+    },
+    {
+      "label": "Financial reporting",
+      "regulators": [
+        "FRCN"
+      ],
+      "note": "Applies to entities within its reporting scope."
+    },
+    {
+      "label": "Employer registrations and contributions",
+      "regulators": [
+        "ITF",
+        "NSITF",
+        "PENCOM"
+      ],
+      "note": "Relevant once the business has employees."
+    },
+    {
+      "label": "Data protection documentation",
+      "regulators": [
+        "NDPC"
+      ],
+      "note": "Relevant whenever the business handles personal data."
+    },
+    {
+      "label": "Sector licences, permits and renewals",
+      "regulators": [
+        "CBN",
+        "SEC",
+        "NAICOM",
+        "NAFDAC",
+        "SON",
+        "LANDS"
+      ],
+      "note": "Depends on the sector; permits usually have their own renewal cycles."
+    }
+  ],
+  "disclaimer": "SCS keeps a compliance calendar for each client. Sign up and we will let you know when reminders are available for your business type."
+}

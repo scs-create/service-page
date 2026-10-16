@@ -1,0 +1,23 @@
+{
+  "slug": "retail-and-consumer-businesses",
+  "name": "Retail & Consumer Businesses",
+  "summary": "Retailers manage goods, suppliers and customer data at the same time.",
+  "needs": [
+    "Check whether the goods you sell need registration or standards approval",
+    "Document customer data handling and online terms",
+    "Set up supplier agreements, records and tax compliance"
+  ],
+  "regulators": [
+    "SON",
+    "NAFDAC",
+    "NDPC",
+    "CAC",
+    "NRS",
+    "SIRS"
+  ],
+  "services": [
+    "regulatory-compliance-and-licensing",
+    "data-protection-privacy-and-information-governance",
+    "customer-experience-and-customer-care"
+  ]
+}

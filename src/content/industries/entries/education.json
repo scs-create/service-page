@@ -1,0 +1,22 @@
+{
+  "slug": "education",
+  "name": "Education",
+  "summary": "Institutions hold student records and employ staff, so governance and data both matter.",
+  "needs": [
+    "Keep institutional registration and governance records in order",
+    "Protect student and staff personal data with documented policies",
+    "Document staff contracts and employer registrations"
+  ],
+  "regulators": [
+    "CAC",
+    "NDPC",
+    "ITF",
+    "NSITF",
+    "PENCOM"
+  ],
+  "services": [
+    "business-formation-and-corporate-structuring",
+    "data-protection-privacy-and-information-governance",
+    "human-resources-and-staff-management"
+  ]
+}

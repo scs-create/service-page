@@ -1,0 +1,38 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Preview / branch deploys show client placeholders and the portal prototype.
+# Production does NOT (set the same variables in the production context only if you want them visible there).
+[context.deploy-preview.environment]
+  NEXT_PUBLIC_SHOW_CLIENT_PLACEHOLDERS = "true"
+  NEXT_PUBLIC_ENABLE_PORTAL_PROTOTYPE = "true"
+[context.branch-deploy.environment]
+  NEXT_PUBLIC_SHOW_CLIENT_PLACEHOLDERS = "true"
+  NEXT_PUBLIC_ENABLE_PORTAL_PROTOTYPE = "true"
+
+# Security headers.
+# CSP: only directives that cannot break Next.js inline hydration scripts, the CMS, forms or Plausible.
+# A full script-src policy needs per-request nonces (dynamic rendering) — deliberately not enabled; see README.
+# HSTS: max-age only. includeSubDomains / preload are NOT enabled until every subdomain (www, mail/Workspace
+# records, any future subdomain) is confirmed HTTPS-only; preload is effectively irreversible.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Strict-Transport-Security = "max-age=31536000"
+    Content-Security-Policy = "frame-ancestors 'self'; base-uri 'self'; form-action 'self'; object-src 'none'"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

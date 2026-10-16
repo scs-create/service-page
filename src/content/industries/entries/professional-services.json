@@ -1,0 +1,24 @@
+{
+  "slug": "professional-services",
+  "name": "Professional Services",
+  "summary": "Firms hold client confidences and rely on clear engagement terms.",
+  "needs": [
+    "Structure the practice or firm and keep its records current",
+    "Protect client information with documented data-protection practices",
+    "Set up staff terms, engagement letters and standard operating procedures"
+  ],
+  "regulators": [
+    "CAC",
+    "NRS",
+    "SIRS",
+    "NDPC",
+    "ITF",
+    "NSITF",
+    "PENCOM"
+  ],
+  "services": [
+    "business-formation-and-corporate-structuring",
+    "data-protection-privacy-and-information-governance",
+    "human-resources-and-staff-management"
+  ]
+}
