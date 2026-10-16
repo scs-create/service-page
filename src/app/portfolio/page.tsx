@@ -22,7 +22,7 @@ export default function PortfolioPage() {
         <div className="mt-14 rounded-md bg-surface border border-border p-6 flex flex-wrap items-center gap-4">
           <p className="font-medium text-text">Want to check a registration number yourself?</p>
           <CTAButton href="/verification" label="Go to the Trust Hub" variant="secondary" />
-          <CTAButton href="/contact#enquiry" label="Book Consultation" />
+          <CTAButton booking label="Book a Discovery Call" />
         </div>
       </div>
     </>

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { SITE } from "@/lib/site";
 
 const WA = `https://wa.me/${SITE.whatsappHref}?text=${encodeURIComponent("Hello SCS, I would like to speak with your team.")}`;
@@ -23,7 +22,9 @@ export default function ContactDock() {
           <a href={WA} target="_blank" rel="noopener noreferrer" data-track="Dock WhatsApp" className={item}>
             <Icon d={CHAT} />WhatsApp<span className="sr-only"> (opens in new tab)</span>
           </a>
-          <Link href="/contact#enquiry" data-track="Dock Book" className={item}><Icon d={CAL} />Book</Link>
+          <a href={SITE.bookingUrl} target="_blank" rel="noopener noreferrer" data-track="Dock Book" data-booking="" className={item}>
+            <Icon d={CAL} /><span>Book <span aria-hidden="true">↗</span></span><span className="sr-only"> a Discovery Call (opens Cal.com in a new tab)</span>
+          </a>
         </div>
       </nav>
       <a

@@ -79,7 +79,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <h2 className="text-xl font-semibold">Discuss this service</h2>
           <p className="mt-2 text-sm text-white/85">Speak with our team about how this applies to your business.</p>
           <div className="mt-5 flex flex-col gap-3">
-            <CTAButton href="/contact#enquiry" label="Book Consultation" variant="accent" />
+            <CTAButton booking label="Book a Discovery Call" variant="accent" />
             <CTAButton href="/contact" label="Get in Touch" variant="outlineLight" />
           </div>
           <p className="mt-5 text-sm text-white/85 space-y-1">

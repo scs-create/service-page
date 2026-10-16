@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
+import { SITE } from "@/lib/site";
 import OutcomeQuiz from "@/components/sections/OutcomeQuiz";
 import { structureQuiz } from "@/content/loaders";
 
@@ -15,7 +15,7 @@ export default function StructurePage() {
       <PageHero eyebrow="Free tool" title={structureQuiz.title} intro={structureQuiz.intro} />
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12">
         <div className="max-w-[760px]">
-          <noscript><p className="rounded-md border border-border bg-surface p-4 text-text">This tool needs JavaScript. <Link href="/contact#enquiry" className="text-primary underline">Book a consultation</Link> and we will advise on the right structure.</p></noscript>
+          <noscript><p className="rounded-md border border-border bg-surface p-4 text-text">This tool needs JavaScript. <a href={SITE.bookingUrl} target="_blank" rel="noopener noreferrer" data-booking="" className="text-primary underline">Book a Discovery Call<span className="sr-only"> (opens Cal.com in a new tab)</span> ↗</a> and we will advise on the right structure.</p></noscript>
           <OutcomeQuiz quiz={structureQuiz} outcomes={structureQuiz.outcomes} toolId="structure" resultField="structure_result" requestType="business-structure" sourcePage="/business-structure" />
         </div>
       </div>

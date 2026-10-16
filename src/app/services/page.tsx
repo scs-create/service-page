@@ -46,7 +46,7 @@ export default function ServicesIndexPage() {
 
         <div className="mt-8 rounded-md bg-surface border border-border p-6 flex flex-wrap items-center gap-4">
           <p className="text-text font-medium">Not sure which service fits? Tell us about your business.</p>
-          <CTAButton href="/contact#enquiry" label="Book Consultation" />
+          <CTAButton booking label="Book a Discovery Call" />
         </div>
       </div>
       <ProgrammesSection />

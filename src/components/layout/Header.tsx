@@ -103,7 +103,7 @@ export default function Header({ services }: HeaderProps) {
             <div className="flex items-center gap-2">
               <SearchPalette />
               {/* Persistent conversion CTA: always visible, desktop and mobile */}
-              <CTAButton href="/contact#enquiry" label="Book a Complimentary Consultation" shortLabel="Book Consultation" />
+              <CTAButton booking label="Book a Discovery Call" shortLabel="Book a Call" />
               <button type="button" aria-expanded={mobileOpen} aria-controls="mobile-menu" aria-label={mobileOpen ? "Close menu" : "Open menu"} onClick={() => setMobileOpen((v) => !v)} className="xl:hidden min-h-11 min-w-11 flex items-center justify-center">
                 <span aria-hidden="true" className="text-2xl leading-none">{mobileOpen ? "✕" : "☰"}</span>
               </button>

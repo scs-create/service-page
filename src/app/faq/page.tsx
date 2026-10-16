@@ -28,7 +28,7 @@ export default function FaqPage() {
         </div>
         <div className="mt-10 flex flex-wrap items-center gap-4 rounded-md border border-border bg-surface p-6">
           <p className="font-medium text-text">Still have a question?</p>
-          <CTAButton href="/contact#enquiry" label="Book Consultation" />
+          <CTAButton booking label="Book a Discovery Call" />
         </div>
       </div>
     </>

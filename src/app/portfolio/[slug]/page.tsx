@@ -54,7 +54,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           <section className="dark-surface rounded-md border-t-4 border-accent bg-secondary p-5 text-white">
             <h2 className="font-semibold">Similar challenge?</h2>
             <p className="mt-1 text-sm text-white/85">Speak with our team about your business.</p>
-            <div className="mt-4"><CTAButton href="/contact#enquiry" label="Book Consultation" variant="accent" /></div>
+            <div className="mt-4"><CTAButton booking label="Book a Discovery Call" variant="accent" /></div>
           </section>
         </aside>
       </div>
