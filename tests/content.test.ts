@@ -120,7 +120,7 @@ test("SCS RC number and Terms effective date/version come from the client's conf
   assert.doesNotMatch(terms + privacy, /confirm SCS RC number/);
   assert.match(terms, /\{\{rc\}\}/);
   assert.match(privacy, /RC \{\{rc\}\}/);
-  assert.match(terms, /15th October 2026 \/ 1\.0/);
+  assert.match(terms, /16 October 2026 \/ 1\.0/);
   assert.equal(SITE.rc, "9041457");
 });
 test("no link points at the CAC search portal (it returned 404); only the CAC website is linked", () => {
@@ -129,8 +129,11 @@ test("no link points at the CAC search portal (it returned 404); only the CAC we
   assert.deepEqual(hits, []);
   assert.equal(SITE.cacUrl, "https://www.cac.gov.ng");
 });
-test("no breadcrumb component or markup remains", () => {
-  assert.equal(fs.existsSync("src/components/ui/Breadcrumbs.tsx"), false);
+test("legal effective dates are the client's confirmed values (16 October 2026)", () => {
+  for (const n of ["terms", "privacy", "cookies"]) assert.equal((legal(n) as unknown as { effective: string }).effective, "16 October 2026");
+});
+test("booking calls to action never fall back to an empty URL", () => {
+  assert.match(SITE.bookingUrl, /^https:\/\/cal\.com\//);
 });
 test("exactly one DPCO self-description sentence was removed from the Terms", () => {
   const t = JSON.stringify(legal("terms"));

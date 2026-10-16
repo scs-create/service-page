@@ -1,7 +1,7 @@
 {
  "slug": "terms",
  "title": "Terms of Use",
- "effective": "15th October 2026",
+ "effective": "16 October 2026",
  "updated": null,
  "intro": [
   {
@@ -41,7 +41,7 @@
     ],
     [
      "Effective date / version",
-     "15th October 2026 / 1.0"
+     "16 October 2026 / 1.0"
     ]
    ]
   }
@@ -118,7 +118,7 @@
       ],
       [
        "Authority",
-       "Any regulator or agency, including CAC, FIRS, State IRS, NAFDAC, SON, NDPC, FCCPC, PenCom, NSITF, ITF, NIMC and the Industrial Property Registry"
+       "Any regulator or agency, including CAC, the Nigeria Revenue Service (NRS), State IRS, NAFDAC, SON, NDPC, FCCPC, PenCom, NSITF, ITF, NIMC and the Trademarks, Patents and Designs Registry"
       ],
       [
        "Accredited Professional",
@@ -864,7 +864,7 @@
     },
     {
      "type": "p",
-     "text": "31.4 SCS's privacy policy, available at, forms part of these Terms and explains how SCS processes personal data as a controller."
+     "text": "31.4 SCS's privacy policy, available at https://{{domain}}/privacy, forms part of these Terms and explains how SCS processes personal data as a controller."
     }
    ]
   },
@@ -1099,7 +1099,7 @@
     },
     {
      "type": "p",
-     "text": "E2. **Authorities.** This includes CAC, FIRS and State IRS, NAFDAC, SON, NDPC, FCCPC, PenCom, NSITF, ITF and NIMC, and other agencies named in a Service Order."
+     "text": "E2. **Authorities.** This includes CAC, the Nigeria Revenue Service (NRS) and State IRS, NAFDAC, SON, NDPC, FCCPC, PenCom, NSITF, ITF and NIMC, and other agencies named in a Service Order."
     },
     {
      "type": "p",
@@ -1130,7 +1130,7 @@
    "blocks": [
     {
      "type": "p",
-     "text": "F1. **Accredited agents.** Where trademark, patent or design registration requires accredited agent status before the relevant Industrial Property Registry, SCS coordinates the filing through a duly accredited agent."
+     "text": "F1. **Accredited agents.** Where trademark, patent or design registration requires accredited agent status before the Trademarks, Patents and Designs Registry, SCS coordinates the filing through a duly accredited agent."
     },
     {
      "type": "p",

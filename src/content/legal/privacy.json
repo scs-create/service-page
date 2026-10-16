@@ -1,7 +1,7 @@
 {
  "slug": "privacy",
  "title": "Privacy Notice",
- "effective": "25th January, 2025",
+ "effective": "16 October 2026",
  "updated": "October 9, 2026",
  "intro": [
   {
@@ -160,7 +160,7 @@
       ],
       [
        "Meeting legal duties",
-       "Filings and correspondence with CAC, FIRS, State IRS, PenCom, NSITF, NDPC, NAFDAC, SON, FCCPC and the Trademarks, Patents and Designs Registry; tax and accounting records",
+       "Filings and correspondence with CAC, the Nigeria Revenue Service (NRS), State IRS, PenCom, NSITF, NDPC, NAFDAC, SON, FCCPC and the Trademarks, Patents and Designs Registry; tax and accounting records",
        "Legal obligation"
       ],
       [
@@ -213,7 +213,7 @@
      "type": "list",
      "items": [
       "**Accredited professionals:** solicitors, trademark or patent agents and other specialists engaged for formal filings or legal work.",
-      "**Government and regulators:** CAC, FIRS, NDPC, NAFDAC and other authorities, where a filing, licence or legal duty requires it.",
+      "**Government and regulators:** CAC, the Nigeria Revenue Service (NRS), the Nigeria Data Protection Commission (NDPC), NAFDAC and other authorities, where a filing, licence or legal duty requires it.",
       "**Service providers (sub-processors):** cloud hosting, data centres, IT security and software vendors, each bound by a written agreement and confidentiality duties. We tell clients before we add a new one.",
       "**Legal and safety needs:** where law, a court order or a lawful official request requires disclosure, or to protect life, public health or prevent crime."
      ]
@@ -443,7 +443,9 @@
      "items": [
       "**Netlify, Inc.** — website hosting, and processing of the forms you submit.",
       "**Plausible Analytics (Plausible Insights OÜ)** — website analytics, loaded only if you accept analytics cookies.",
-      "**Google Workspace (Google LLC)** — the email systems we use to respond to you."
+      "**Google Workspace (Google LLC)** — the email systems we use to respond to you.",
+      "**Cal.com, Inc.** — our online booking calendar. Our website only links to it: when you choose \"Book a Discovery Call\" you leave our site, and the details you enter on Cal.com are processed under Cal.com's own terms and privacy policy, and shared with us so we can hold the call.",
+      "**GitHub, Inc. and Netlify** — used only by our own staff to edit website content (the /admin area). Editors sign in with a GitHub account; visitors are never asked to."
      ]
     },
     {
