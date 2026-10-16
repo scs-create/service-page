@@ -109,7 +109,7 @@ export default function AboutPage() {
 
   return (
     <>
-      <PageHero eyebrow="About SCS" title="About SCS" intro={ABOUT_INTRO} />
+      <PageHero breadcrumbs={[{ label: "About" }]} eyebrow="About SCS" title="About SCS" intro={ABOUT_INTRO} />
       {ABOUT_SECTIONS.map((s, i) => (
         <section key={`${s.type}-${i}`} id={s.type === "text" ? undefined : s.type} className={`${bands[i]} py-16`}>
           <div className={WRAP}>{renderSection(s)}</div>

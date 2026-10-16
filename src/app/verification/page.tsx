@@ -28,7 +28,7 @@ export default function VerificationPage() {
   const hasDocs = verificationDocuments.length > 0;
   return (
     <>
-      <PageHero
+      <PageHero breadcrumbs={[{ label: "Verification" }]}
         eyebrow="Trust hub"
         title="Verify our work independently"
         intro="Every client below can be looked up on the Corporate Affairs Commission's website using its RC number. Check the record yourself — you should not have to take our word for it."

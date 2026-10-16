@@ -26,7 +26,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
 
   return (
     <>
-      <PageHero eyebrow="Industries" title={industry.name} intro={industry.summary} />
+      <PageHero breadcrumbs={[{ label: "Industries", href: "/industries" }, { label: industry.name }]} eyebrow="Industries" title={industry.name} intro={industry.summary} />
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12 grid lg:grid-cols-[minmax(0,1fr)_340px] gap-10 items-start">
         <div>
           <h2 className="text-2xl font-semibold text-secondary mb-3 pl-3 border-l-4 border-accent">Typical needs to review</h2>

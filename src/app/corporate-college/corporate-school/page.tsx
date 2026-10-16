@@ -13,7 +13,7 @@ export default function CorporateSchoolIndexPage() {
   const posts = getAllPosts();
   return (
     <>
-      <PageHero eyebrow="Corporate College" title="Corporate School" intro="Insights on our services, corporate-world updates, and business learnings." />
+      <PageHero breadcrumbs={[{ label: "Corporate College", href: "/corporate-college" }, { label: "Corporate School" }]} eyebrow="Corporate College" title="Corporate School" intro="Insights on our services, corporate-world updates, and business learnings." />
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12">
         {posts.length === 0 ? (
           <p className="text-muted">No posts published yet.</p>

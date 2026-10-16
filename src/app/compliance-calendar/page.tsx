@@ -19,7 +19,7 @@ const fields: FormField[] = [
 export default function CalendarPage() {
   return (
     <>
-      <PageHero eyebrow="Free tool" title="Compliance Calendar" intro={calendar.intro} />
+      <PageHero breadcrumbs={[{ label: "Free Tools", href: "/tools" }, { label: "Compliance Calendar" }]} eyebrow="Free tool" title="Compliance Calendar" intro={calendar.intro} />
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12 grid lg:grid-cols-[minmax(0,1fr)_420px] gap-10 items-start">
         <ul className="space-y-4">
           {calendar.areas.map((a) => (

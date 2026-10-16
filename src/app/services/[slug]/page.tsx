@@ -44,7 +44,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           areaServed: "Nigeria",
         }}
       />
-      <PageHero eyebrow={clusterName} title={service.title} intro={service.framingSentence} />
+      <PageHero breadcrumbs={[{ label: "Services", href: "/services" }, { label: service.title }]} eyebrow={clusterName} title={service.title} intro={service.framingSentence} />
 
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12 grid lg:grid-cols-[minmax(0,1fr)_340px] gap-10 items-start">
         <div>

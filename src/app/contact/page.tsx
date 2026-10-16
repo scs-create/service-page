@@ -20,7 +20,7 @@ const WRAP = "max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8";
 export default function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Contact" title="Speak with SCS" intro="Choose whichever channel works best for you — we'll respond directly." />
+      <PageHero breadcrumbs={[{ label: "Contact" }]} eyebrow="Contact" title="Speak with SCS" intro="Choose whichever channel works best for you — we'll respond directly." />
 
       <section className={`${WRAP} py-14 grid lg:grid-cols-[380px_minmax(0,1fr)] gap-10 items-start`}>
         <div className="rounded-md border border-border border-t-4 border-t-primary bg-surface p-6">

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function StructurePage() {
   return (
     <>
-      <PageHero eyebrow="Free tool" title={structureQuiz.title} intro={structureQuiz.intro} />
+      <PageHero breadcrumbs={[{ label: "Free Tools", href: "/tools" }, { label: structureQuiz.title }]} eyebrow="Free tool" title={structureQuiz.title} intro={structureQuiz.intro} />
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12">
         <div className="max-w-[760px]">
           <noscript><p className="rounded-md border border-border bg-surface p-4 text-text">This tool needs JavaScript. <a href={SITE.bookingUrl} target="_blank" rel="noopener noreferrer" data-booking="" className="text-primary underline">Book a Discovery Call<span className="sr-only"> (opens Cal.com in a new tab)</span> ↗</a> and we will advise on the right structure.</p></noscript>

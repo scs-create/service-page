@@ -4,6 +4,7 @@ import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { renderMarkdown } from "@/lib/markdown";
 import PostCard from "@/components/ui/PostCard";
 import JsonLd from "@/components/ui/JsonLd";
+import Breadcrumbs from "@/components/ui/Breadcrumbs";
 import NewsletterSignup from "@/components/sections/NewsletterSignup";
 import { SITE } from "@/lib/site";
 
@@ -14,7 +15,12 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  return post ? { title: post.title, description: post.excerpt } : {};
+  if (!post) return {};
+  return {
+    title: post.title,
+    description: post.excerpt,
+    openGraph: { type: "article", title: post.title, description: post.excerpt, publishedTime: post.date, images: [{ url: "/og-image.png", width: 1200, height: 630 }] },
+  };
 }
 
 export default async function CorporateSchoolPostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -28,7 +34,8 @@ export default async function CorporateSchoolPostPage({ params }: { params: Prom
 
   return (
     <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12">
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "BlogPosting", headline: post.title, description: post.excerpt, datePublished: post.date, author: { "@type": "Organization", name: SITE.legalName }, publisher: { "@type": "Organization", name: SITE.legalName }, mainEntityOfPage: `${SITE.url}/corporate-college/corporate-school/${post.slug}` }} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "Article", headline: post.title, description: post.excerpt, datePublished: post.date, dateModified: post.date, image: `${SITE.url}/og-image.png`, author: { "@type": "Organization", name: SITE.legalName, url: SITE.url }, publisher: { "@type": "Organization", name: SITE.legalName, logo: { "@type": "ImageObject", url: `${SITE.url}/images/logo.png` } }, mainEntityOfPage: `${SITE.url}/corporate-college/corporate-school/${post.slug}` }} />
+      <div className="mb-8"><Breadcrumbs tone="light" items={[{ label: "Corporate College", href: "/corporate-college" }, { label: "Corporate School", href: "/corporate-college/corporate-school" }, { label: post.title }]} /></div>
       <article className="max-w-[75ch]">
         {post.category && <span className="text-xs font-semibold text-primary uppercase tracking-wide">{post.category}</span>}
         <h1 className="text-3xl md:text-4xl font-semibold text-text mt-2 mb-3">{post.title}</h1>

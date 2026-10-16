@@ -132,6 +132,13 @@ test("no link points at the CAC search portal (it returned 404); only the CAC we
 test("legal effective dates are the client's confirmed values (16 October 2026)", () => {
   for (const n of ["terms", "privacy", "cookies"]) assert.equal((legal(n) as unknown as { effective: string }).effective, "16 October 2026");
 });
+test("breadcrumbs are restored and Corporate School has the ten supplied articles (samples removed)", () => {
+  assert.equal(fs.existsSync("src/components/ui/Breadcrumbs.tsx"), true);
+  const posts = fs.readdirSync("src/content/corporate-school").filter((f) => f.endsWith(".md"));
+  assert.equal(posts.length, 10);
+  assert.ok(!posts.includes("understanding-business-registration-nigeria.md") && !posts.includes("data-protection-compliance-basics.md"));
+  for (const f of posts) assert.doesNotMatch(fs.readFileSync(`src/content/corporate-school/${f}`, "utf-8"), /utm_source/);
+});
 test("booking calls to action never fall back to an empty URL", () => {
   assert.match(SITE.bookingUrl, /^https:\/\/cal\.com\//);
 });

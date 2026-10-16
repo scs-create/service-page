@@ -33,7 +33,7 @@ export default function CorporateCollegePage() {
   const posts = getAllPosts().slice(0, 3);
   return (
     <>
-      <PageHero
+      <PageHero breadcrumbs={[{ label: "Corporate College" }]}
         eyebrow="Corporate College"
         title="Learn from real corporate practice"
         intro="Corporate College is where you can request learning and training on topics related to our services, or on a topic you need that is not listed. It is also home to our blog, Corporate School."

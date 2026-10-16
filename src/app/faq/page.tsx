@@ -13,7 +13,7 @@ export default function FaqPage() {
   return (
     <>
       <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.question, acceptedAnswer: { "@type": "Answer", text: f.answer } })) }} />
-      <PageHero eyebrow="FAQ" title="Questions we are often asked" intro="Straight answers about working with SCS." />
+      <PageHero breadcrumbs={[{ label: "FAQ" }]} eyebrow="FAQ" title="Questions we are often asked" intro="Straight answers about working with SCS." />
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12">
         <div className="max-w-[80ch] space-y-3">
           {faqs.map((f) => (

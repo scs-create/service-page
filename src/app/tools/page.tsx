@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ToolsPage() {
   return (
     <>
-      <PageHero eyebrow="Free tools" title="Practical first steps, no commitment" intro="Quick tools to show where your business stands and what to do next. Your answers stay on your device unless you choose to send them to us." />
+      <PageHero breadcrumbs={[{ label: "Free Tools" }]} eyebrow="Free tools" title="Practical first steps, no commitment" intro="Quick tools to show where your business stands and what to do next. Your answers stay on your device unless you choose to send them to us." />
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12">
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {TOOLS.map((t) => (

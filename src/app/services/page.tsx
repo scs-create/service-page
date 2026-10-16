@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function ServicesIndexPage() {
   return (
     <>
-      <PageHero
+      <PageHero breadcrumbs={[{ label: "Services" }]}
         eyebrow="Services"
         title="How We Help"
         intro="Our services are organised into six areas of support. Select a category to see everything it includes."

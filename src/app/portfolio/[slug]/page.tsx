@@ -30,7 +30,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
 
   return (
     <>
-      <PageHero eyebrow={entry.sector} title={entry.client} intro={entry.headline} />
+      <PageHero breadcrumbs={[{ label: "Portfolio", href: "/portfolio" }, { label: entry.client }]} eyebrow={entry.sector} title={entry.client} intro={entry.headline} />
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12 grid lg:grid-cols-[minmax(0,1fr)_340px] gap-10 items-start">
         <CaseStudyCard entry={entry} />
         <aside className="space-y-6 lg:sticky lg:top-28">

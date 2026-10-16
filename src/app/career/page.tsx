@@ -25,7 +25,7 @@ const fields: FormField[] = [
 export default function CareerPage() {
   return (
     <>
-      <PageHero eyebrow="Career" title="Work with SCS" intro="Interested in joining SCS or partnering with us? Choose how you would like to work with us, tell us a bit about yourself, and we will follow up directly." />
+      <PageHero breadcrumbs={[{ label: "Career" }]} eyebrow="Career" title="Work with SCS" intro="Interested in joining SCS or partnering with us? Choose how you would like to work with us, tell us a bit about yourself, and we will follow up directly." />
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12">
         <div className="max-w-[640px]">
           <NetlifyForm formName="career-application" sourcePage="/career" fields={fields} submitLabel="Submit Application" successTitle="Application received." successMessage="Thank you for your interest in SCS — we'll be in touch." />

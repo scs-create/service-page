@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function IndustriesPage() {
   return (
     <>
-      <PageHero eyebrow="Industries" title="Support that understands your sector" intro="Every sector has its own agencies and documents. See the typical needs and the agencies to review for yours." />
+      <PageHero breadcrumbs={[{ label: "Industries" }]} eyebrow="Industries" title="Support that understands your sector" intro="Every sector has its own agencies and documents. See the typical needs and the agencies to review for yours." />
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12">
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {industries.map((i) => (
