@@ -1,14 +1,16 @@
 import { LeadershipProfile } from "@/lib/types";
 
 // Names, titles, credentials and focus areas are from the SCS Work Portfolio 2026
-// and the verified LinkedIn profiles supplied by the client. No biographies are
-// invented: add a short bio field here once the founders approve wording.
+// and the verified LinkedIn profiles supplied by the client. Photos supplied by the client
+// (16 October 2026). No biographies exist: add a short bio field only once the founders approve wording.
+// Never publish signatures anywhere on the site.
 export const leadership: LeadershipProfile[] = [
   {
     slug: "stephen-onyekeja",
     name: "Stephen Onyekeja, Esq.",
     role: "Chairman / Founder",
     initials: "SO",
+    photo: "/images/team/stephen-onyekeja.jpg",
     credentials: "LL.B., BL, ACArb, CDPO, ACA (in view)",
     focus: [
       "Corporate structuring",
@@ -24,6 +26,7 @@ export const leadership: LeadershipProfile[] = [
     name: "Dr. Chinedum Chidalu Kelvin",
     role: "Chief Executive Officer",
     initials: "CK",
+    photo: "/images/team/chinedum-chidalu-kelvin.jpg",
     credentials: "",
     focus: [
       "Entrepreneurship",

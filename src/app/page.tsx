@@ -11,8 +11,6 @@ import LeadCapture from "@/components/sections/LeadCapture";
 import HeroSkyline from "@/components/sections/HeroSkyline";
 import ToolsTeaser from "@/components/sections/ToolsTeaser";
 import Testimonials from "@/components/sections/Testimonials";
-import ClientPlaceholder from "@/components/ui/ClientPlaceholder";
-import { PH } from "@/lib/placeholders";
 import { CLUSTERS } from "@/lib/types";
 import { SITE } from "@/lib/site";
 import { services } from "@/content/services/data";
@@ -47,7 +45,7 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <CTAButton href="/services" label="Explore Services" variant="accent" size="large" />
-              <CTAButton href="/contact#enquiry" label="Book Consultation" variant="outlineLight" size="large" />
+              <CTAButton booking label="Book a Discovery Call" variant="outlineLight" size="large" />
             </div>
             <p className="mt-8 text-sm text-white/80">
               Company formation · Regulatory compliance · Tax · Data protection · Operations · Growth
@@ -60,11 +58,10 @@ export default function Home() {
       {/* METRICS */}
       <section aria-label="SCS in numbers" className="dark-surface bg-primary">
         <div className={`${WRAP} py-10 grid grid-cols-2 lg:grid-cols-4 gap-8`}>
-          <StatCounter value={3000} suffix="+" label="Business registrations approved by the CAC since 2025" />
+          <StatCounter value={3000} suffix="+" label="Business registrations guided through the CAC by our founding team" />
           <StatCounter value={1800} suffix="+" label="Agreements processed" />
           <StatCounter value={1200} suffix="+" label="Client &amp; admin engagements" />
           <StatCounter value={10} suffix="+" label="Sectors actively served" />
-          <p className="col-span-2 lg:col-span-4"><ClientPlaceholder text={PH.metrics} /></p>
         </div>
       </section>
 
@@ -73,13 +70,12 @@ export default function Home() {
         <SectionHeading eyebrow="Who we are" title="A Business Support Partner, Not Just a Registration Office" />
         <div className="space-y-4 text-base text-muted">
           <p>
-            Stephen Corporate Services Ltd (SCS) is a multidisciplinary corporate services, business support, consulting and advisory company providing integrated solutions to businesses, entrepreneurs, organisations, investors and institutions.
+            Stephen Corporate Services Ltd (SCS) is a business-support company providing integrated solutions to businesses, entrepreneurs, organisations, investors and institutions. Before SCS launched, its founding team had already guided more than 3,000 businesses through CAC registration. Building on this experience, SCS helps clients in Nigeria and across borders establish appropriate corporate structures, meet their regulatory and compliance obligations, and achieve sustainable growth. Through integrated corporate, regulatory and operational support, we provide one accountable point of coordination, simplifying business administration and reducing the need to manage multiple service providers.
           </p>
           <p>
             We exist because most businesses do not fail from a lack of ambition — they fail from a lack of structure. SCS builds that structure: the documents, the filings, the policies, the systems and the compliance posture that let a business function, scale and survive scrutiny.
           </p>
           <CTAButton href="/about" label="About SCS →" variant="text" />
-          <p><ClientPlaceholder text={PH.positioning} /></p>
         </div>
       </section>
 
@@ -186,7 +182,7 @@ export default function Home() {
           <div className="mt-12 pt-12 border-t border-white/15 text-center">
             <h2 className="text-3xl md:text-4xl font-semibold text-white">Let&apos;s build what&apos;s next.</h2>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <CTAButton href="/contact#enquiry" label="Book Consultation" variant="accent" size="large" />
+              <CTAButton booking label="Book a Discovery Call" variant="accent" size="large" />
               <CTAButton href="/contact" label="Get in Touch" variant="outlineLight" size="large" />
             </div>
             <p className="mt-6 text-sm text-white/85">

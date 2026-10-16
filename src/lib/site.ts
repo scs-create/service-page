@@ -38,9 +38,8 @@ export const SITE = {
   email: EMAILS.contact,
   phone: "+234 906 403 5713",
   phoneHref: "+2349064035713",
-  whatsappHref: "2349064035713", // wa.me/<number> — confirm this number is active on WhatsApp
-  // ⚠ Address variants in client documents: "Karsana" (portfolio, legal docs) vs "Gwarinpa" (Growth Portfolio deck);
-  //   "Benhen" vs "Belham" Estate. Awaiting client confirmation — change here and legal pages follow.
+  whatsappHref: "2349064035713", // wa.me/<number> — active on WhatsApp (confirmed by the client)
+  // Confirmed by the client (16 October 2026): Karsana, Benhen Estate. Legal pages read it from here.
   address: {
     street: "SD20 Benhen Estate, Karsana",
     region: "FCT",
@@ -52,8 +51,9 @@ export const SITE = {
   threads: "https://www.threads.com/@stephen_corporate_services",
   instagram: "https://www.instagram.com/stephen_corporate_services",
   facebook: "https://web.facebook.com/profile.php?id=61593570197715",
-  // Optional online booking page (Cal.com / Calendly). Set NEXT_PUBLIC_BOOKING_URL in Netlify; empty = placeholder.
-  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL ?? "",
+  // Discovery Call on Cal.com (free). Every "Book" call to action opens it in a new tab.
+  // NEXT_PUBLIC_BOOKING_URL in Netlify overrides it; an empty value falls back to this default.
+  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || "https://cal.com/support-stephen-corporate-services-scs/30min",
   academyUrl: "https://stephencorporateservicesacademy.com",
   // CAC website only. The old deep link to the public-search portal returned 404, so visitors are given instructions instead.
   cacUrl: "https://www.cac.gov.ng",

@@ -13,7 +13,7 @@ const PAGES: SearchEntry[] = [
   { title: "Corporate College", text: "Request training; Stephen Corporate Academy; Corporate School blog", href: "/corporate-college", kind: "Page" },
   { title: "About SCS", text: "Leadership, approach, client journey and sectors", href: "/about", kind: "Page" },
   { title: "FAQ", text: "Answers to common questions about working with SCS", href: "/faq", kind: "Page" },
-  { title: "Contact", text: "Book a consultation, call, WhatsApp or email", href: "/contact", kind: "Page" },
+  { title: "Contact", text: "Book a Discovery Call, call, WhatsApp or email", href: "/contact", kind: "Page" },
   { title: "Career", text: "Apply to work or partner with SCS", href: "/career", kind: "Page" },
 ];
 

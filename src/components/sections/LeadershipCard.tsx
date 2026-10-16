@@ -1,6 +1,4 @@
 import BrandImage from "@/components/ui/BrandImage";
-import ClientPlaceholder from "@/components/ui/ClientPlaceholder";
-import { PH } from "@/lib/placeholders";
 import TagList from "@/components/ui/TagList";
 import type { LeadershipProfile } from "@/lib/types";
 
@@ -19,7 +17,7 @@ export default function LeadershipCard({ profile: p }: { profile: LeadershipProf
         <h3 className="text-xl font-semibold text-text">{p.name}</h3>
         <p className="text-sm font-medium text-primary">{p.role}</p>
         {p.credentials && <p className="text-sm text-muted mt-1">{p.credentials}</p>}
-        {p.bio ? <p className="mt-3 text-sm text-muted">{p.bio}</p> : <p className="mt-3"><ClientPlaceholder text={PH.bios} /></p>}
+        {p.bio && <p className="mt-3 text-sm text-muted">{p.bio}</p>}
         <div className="mt-4"><TagList items={p.focus} /></div>
         <a href={p.linkedin} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-sm font-medium text-primary hover:underline">
           LinkedIn profile<span className="sr-only"> of {p.name} (opens in new tab)</span> ↗
