@@ -144,7 +144,9 @@ h4 {
   --focus-ring: var(--color-primary);
 }
 
-.dark-surface {
+/* .scs-dark is the design system's name for the same navy/blue band pattern. */
+.dark-surface,
+.scs-dark {
   --focus-ring: var(--color-accent);
 }
 

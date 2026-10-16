@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # <-- change to your real GitHub repository (see README, step 6)
+  repo: scs-create/service-page
   branch: main
 # Editors log in at /admin; edits commit to the GitHub repo and Netlify rebuilds the site automatically.
 publish_mode: editorial_workflow

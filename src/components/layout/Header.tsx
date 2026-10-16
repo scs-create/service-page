@@ -26,6 +26,8 @@ export default function Header({ services }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const megaRef = useRef<HTMLDivElement>(null);
+  const megaButtonRef = useRef<HTMLButtonElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   const byCluster = (cluster: string) => services.filter((s) => s.cluster === cluster);
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
@@ -36,8 +38,17 @@ export default function Header({ services }: HeaderProps) {
     const onClick = (e: MouseEvent) => {
       if (megaRef.current && !megaRef.current.contains(e.target as Node)) setMegaOpen(false);
     };
+    // Escape closes whichever menu is open and returns focus to the button that opened it.
     const onEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setMegaOpen(false);
+      if (e.key !== "Escape") return;
+      setMegaOpen((open) => {
+        if (open) megaButtonRef.current?.focus();
+        return false;
+      });
+      setMobileOpen((open) => {
+        if (open) menuButtonRef.current?.focus();
+        return false;
+      });
     };
     document.addEventListener("mousedown", onClick);
     document.addEventListener("keydown", onEscape);
@@ -70,7 +81,7 @@ export default function Header({ services }: HeaderProps) {
             <nav aria-label="Primary" className="hidden xl:flex items-center gap-6">
               <Link href="/" aria-current={isActive("/") ? "page" : undefined} className={navClass(isActive("/"))}>Home</Link>
               <div className="relative" ref={megaRef}>
-                <button type="button" aria-expanded={megaOpen} aria-controls="services-mega-menu" onClick={() => setMegaOpen((v) => !v)} className={`${navClass(isActive("/services"))} flex items-center gap-1`}>
+                <button ref={megaButtonRef} type="button" aria-expanded={megaOpen} aria-controls="services-mega-menu" onClick={() => setMegaOpen((v) => !v)} className={`${navClass(isActive("/services"))} flex items-center gap-1`}>
                   Services
                   <span aria-hidden="true" className="text-xs">{megaOpen ? "▲" : "▼"}</span>
                 </button>
@@ -104,7 +115,7 @@ export default function Header({ services }: HeaderProps) {
               <SearchPalette />
               {/* Persistent conversion CTA: always visible, desktop and mobile */}
               <CTAButton booking label="Book a Discovery Call" shortLabel="Book a Call" />
-              <button type="button" aria-expanded={mobileOpen} aria-controls="mobile-menu" aria-label={mobileOpen ? "Close menu" : "Open menu"} onClick={() => setMobileOpen((v) => !v)} className="xl:hidden min-h-11 min-w-11 flex items-center justify-center">
+              <button ref={menuButtonRef} type="button" aria-expanded={mobileOpen} aria-controls="mobile-menu" aria-label={mobileOpen ? "Close menu" : "Open menu"} onClick={() => setMobileOpen((v) => !v)} className="xl:hidden min-h-11 min-w-11 flex items-center justify-center">
                 <span aria-hidden="true" className="text-2xl leading-none">{mobileOpen ? "✕" : "☰"}</span>
               </button>
             </div>

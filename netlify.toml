@@ -18,8 +18,9 @@
   NEXT_PUBLIC_ENABLE_PORTAL_PROTOTYPE = "true"
 
 # Security headers.
-# CSP: only directives that cannot break Next.js inline hydration scripts, the CMS, forms or Plausible.
-# A full script-src policy needs per-request nonces (dynamic rendering) — deliberately not enabled; see README.
+# CSP here is the minimal policy that applies to EVERY path, including /admin (Decap CMS + GitHub OAuth via
+# api.netlify.com). The full policy for the public site (default-src 'self', Plausible only) is set in
+# next.config.ts for every path except /admin. See README → Security notes.
 # HSTS: max-age only. includeSubDomains / preload are NOT enabled until every subdomain (www, mail/Workspace
 # records, any future subdomain) is confirmed HTTPS-only; preload is effectively irreversible.
 [[headers]]
