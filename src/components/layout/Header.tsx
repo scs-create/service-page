@@ -18,7 +18,9 @@ const NAV = [
   { href: "/contact", label: "Contact" },
 ];
 
-type HeaderProps = { services: ServiceCategoryData[] };
+// Only what the menus need: the full service records would be serialised into every page.
+export type NavService = Pick<ServiceCategoryData, "slug" | "title" | "cluster">;
+type HeaderProps = { services: NavService[] };
 
 export default function Header({ services }: HeaderProps) {
   const pathname = usePathname();

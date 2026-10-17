@@ -66,13 +66,15 @@ const organisationSchema = {
   founder: { "@type": "Person", name: "Stephen Onyekeja" },
 };
 
+const navServices = services.map(({ slug, title, cluster }) => ({ slug, title, cluster }));
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} h-full`}>
       <body className="min-h-full flex flex-col pb-[calc(3.5rem+env(safe-area-inset-bottom))] md:pb-0">
         <JsonLd data={organisationSchema} />
                 <a href="#main-content" className="skip-link">Skip to main content</a>
-        <Header services={services} />
+        <Header services={navServices} />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
         <ContactDock />

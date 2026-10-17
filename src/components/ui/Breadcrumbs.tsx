@@ -36,7 +36,7 @@ export default function Breadcrumbs({ items, tone = "dark" }: { items: Crumb[]; 
                 {last || !c.href ? (
                   <span aria-current={last ? "page" : undefined} className={current}>{c.label}</span>
                 ) : (
-                  <Link href={c.href} className={`inline-flex min-h-6 items-center ${link}`}>{c.label}</Link>
+                  <Link href={c.href} prefetch={false} className={`inline-flex min-h-6 items-center ${link}`}>{c.label}</Link>
                 )}
                 {!last && <span aria-hidden="true" className={sep}>&gt;</span>}
               </li>

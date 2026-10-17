@@ -66,8 +66,8 @@ export default function CookieBanner() {
               {SITE.legalName} is responsible for the cookies and similar tools on this website. Strictly necessary tools are always on.
               Performance and analytics tools stay off unless you accept them, and closing this banner is not consent. You can change your
               choice at any time with “Cookie settings” in the footer. Read our{" "}
-              <Link href="/cookies" className="underline hover:text-accent">Cookie Policy</Link> and{" "}
-              <Link href="/privacy" className="underline hover:text-accent">Privacy Notice</Link>.
+              <Link href="/cookies" prefetch={false} className="underline hover:text-accent">Cookie Policy</Link> and{" "}
+              <Link href="/privacy" prefetch={false} className="underline hover:text-accent">Privacy Notice</Link>.
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <button type="button" onClick={() => choose(true)} className={EQUAL}>Accept all</button>
