@@ -22,6 +22,15 @@ const CSP = [
   "upgrade-insecure-requests",
 ].join("; ");
 
+// Same values as netlify.toml (kept in step). HSTS is max-age only: never includeSubDomains/preload here.
+const SECURITY_HEADERS = [
+  { key: "X-Content-Type-Options", value: "nosniff" },
+  { key: "X-Frame-Options", value: "SAMEORIGIN" },
+  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
+  { key: "Strict-Transport-Security", value: "max-age=31536000" },
+];
+
 const nextConfig: NextConfig = {
   // "Academy" is now "Corporate College" — keep old links and search rankings working.
   async redirects() {
@@ -30,8 +39,13 @@ const nextConfig: NextConfig = {
       { source: "/academy/:path*", destination: "/corporate-college/:path*", permanent: true },
     ];
   },
+  poweredByHeader: false,
+  // On Netlify, netlify.toml [[headers]] only reach static files; pages rendered by Next.js need them here too.
   async headers() {
-    return [{ source: "/((?!admin).*)", headers: [{ key: "Content-Security-Policy", value: CSP }] }];
+    return [
+      { source: "/:path*", headers: SECURITY_HEADERS },
+      { source: "/((?!admin).*)", headers: [{ key: "Content-Security-Policy", value: CSP }] },
+    ];
   },
 };
 
