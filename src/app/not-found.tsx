@@ -1,5 +1,8 @@
+import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import CTAButton from "@/components/ui/CTAButton";
+
+export const metadata: Metadata = { title: "Page not found", robots: { index: false, follow: true } };
 
 export default function NotFound() {
   return (

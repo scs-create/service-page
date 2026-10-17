@@ -37,3 +37,17 @@
   for = "/images/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# "Academy" is now "Corporate College". Netlify answers these with a true 301 before Next.js runs
+# (next.config.ts keeps the same rule as a fallback, which Next.js serves as 308).
+[[redirects]]
+  from = "/academy"
+  to = "/corporate-college"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/academy/*"
+  to = "/corporate-college/:splat"
+  status = 301
+  force = true
