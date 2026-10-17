@@ -17,7 +17,7 @@ export const EMAILS = {
   accounts: `accounts@${DOMAIN}`,
   // No privacy@ alias exists yet, so data-protection requests use info@.
   // Create privacy@ in Google Workspace, then change ONLY this line.
-  privacy: `info@${DOMAIN}`,
+  privacy: `privacy@${DOMAIN}`,
 } as const;
 
 // Shown on the Contact page ("Who to write to").
