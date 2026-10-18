@@ -6,7 +6,7 @@ import { portfolio } from "@/content/portfolio/data";
 
 export const metadata: Metadata = {
   title: "Portfolio",
-  description: "Selected SCS engagements since 2025 across healthcare, real estate, technology, logistics, hospitality, agribusiness, non-profit and manufacturing, each with its CAC RC number.",
+  description: "Selected SCS engagements across healthcare, finance and investment, education, construction, real estate, technology, logistics, hospitality, agribusiness, non-profit and manufacturing, with CAC registration numbers you can verify.",
 };
 
 export default function PortfolioPage() {

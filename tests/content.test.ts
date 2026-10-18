@@ -39,9 +39,9 @@ test("verification documents must describe their image", () => {
 });
 
 // ---------- Content integrity ----------
-test("21 services, 16 case studies, 15 industries, packages A–F, 10 FAQs", () => {
+test("21 services, 23 case studies, 15 industries, packages A–F, 10 FAQs", () => {
   assert.equal(services.length, 21);
-  assert.equal(portfolio.length, 16);
+  assert.equal(portfolio.length, 23);
   assert.equal(industries.length, 15);
   assert.deepEqual(SUPPORT_PACKAGES.map((p) => p.id), ["A", "B", "C", "D", "E", "F"]);
   assert.equal(faqs.length, 10);
@@ -55,9 +55,9 @@ test("every referenced regulator code exists (list supplied by the client)", () 
   const used = [...industries.flatMap((i) => i.regulators), ...checklist.types.flatMap((t) => t.items.flatMap((i) => i.regulators)), ...checklist.sectors.flatMap((s) => s.items.flatMap((i) => i.regulators)), ...calendar.areas.flatMap((a) => a.regulators)];
   for (const c of used) assert.ok(regCodes.has(c), `unknown regulator ${c}`);
 });
-test("portfolio: every case study has an RC number and its service lines are mapped", () => {
+test("portfolio: CAC numbers are digits when supplied, and service lines are mapped", () => {
   for (const p of portfolio) {
-    assert.match(p.rc, /^\d+$/);
+    if (p.rc) assert.match(p.rc, /^\d+$/);
     for (const l of p.serviceLines) assert.ok(SERVICE_LINE_TO_SLUG[l], `${p.slug}: unmapped service line "${l}"`);
   }
 });

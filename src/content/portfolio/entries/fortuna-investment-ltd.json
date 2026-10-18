@@ -1,0 +1,27 @@
+{
+  "order": 18,
+  "slug": "fortuna-investment-ltd",
+  "client": "Fortuna Investment Ltd",
+  "rc": "7462847",
+  "regType": "RC",
+  "sector": "Investment",
+  "filter": "finance-investment",
+  "featured": false,
+  "headline": "An investment company needed governance and agreements built to stand up to due diligence.",
+  "challenge": "Investment businesses are judged on their governance, their documentation and the reliability of their numbers. Statutory filings, agreements and financial information all had to be in order and easy to verify.",
+  "delivered": [
+    "Corporate governance support and statutory filings",
+    "Regulatory and licensing assessments",
+    "Investment and commercial agreements, and due diligence support",
+    "Tax advisory and compliance, data protection, financial performance analysis and operational systems"
+  ],
+  "impact": "An investment company with organised governance, documented agreements and clear financial information, positioned for growth and for scrutiny from partners and investors.",
+  "serviceLines": [
+    "Regulatory Compliance & Permits",
+    "Contract & Commercial",
+    "Tax Services",
+    "Data Protection",
+    "Business Analytics",
+    "Operations Management"
+  ]
+}

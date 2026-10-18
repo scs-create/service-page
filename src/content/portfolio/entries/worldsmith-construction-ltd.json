@@ -1,0 +1,27 @@
+{
+  "order": 21,
+  "slug": "worldsmith-construction-ltd",
+  "client": "WorldSmith Construction Ltd",
+  "rc": "",
+  "regType": "RC",
+  "sector": "Construction & General Contracting",
+  "filter": "real-estate",
+  "featured": false,
+  "headline": "A construction company needed contracts and project administration strong enough for subcontractors and clients.",
+  "challenge": "Construction projects depend on subcontractors, suppliers, permits and payment terms. Every weak agreement is a risk to the schedule and the margin.",
+  "delivered": [
+    "Corporate compliance, tax compliance and applicable permits and registrations",
+    "Construction and subcontractor agreements, and procurement documentation",
+    "HR management and project administration",
+    "Contractual risk management and business development support"
+  ],
+  "impact": "A construction company with documented agreements, organised project administration and better coordination and commercial efficiency across its projects.",
+  "serviceLines": [
+    "Regulatory Compliance & Permits",
+    "Contract & Commercial",
+    "Tax Services",
+    "HR Management",
+    "Operations Management",
+    "Business Development Consultancy"
+  ]
+}

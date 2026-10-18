@@ -11,7 +11,7 @@ npm run lint && npm run typecheck && npm test && npm run build
 ```
 
 ## Routes
-`/` · `/services` (+21) · `/portfolio` (+16 case studies) · `/industries` (+12) · `/verification` · `/faq` · `/about` · `/contact` · `/career`
+`/` · `/services` (+21) · `/portfolio` (+23 case studies) · `/industries` (+15) · `/verification` · `/faq` · `/about` · `/contact` · `/career`
 · `/corporate-college` · `/corporate-college/corporate-school` (+posts) · free tools: `/tools` `/assess` `/compliance-checklist` `/compliance-calendar` `/business-structure` `/find-my-service`
 · `/terms` `/privacy` `/cookies` · `/admin` · `/rss.xml` `/sitemap.xml` `/search-index.json` · `/portal` (prototype, 404 in production; the real portal is phase two: `docs/CLIENT_PORTAL_PLAN.md`)
 Inner pages show breadcrumbs (`Home > Section > Page`) with matching BreadcrumbList structured data.

@@ -1,0 +1,21 @@
+{
+  "order": 22,
+  "slug": "koskos-xchange-services",
+  "client": "Koskos Xchange Services",
+  "rc": "",
+  "regType": "BN",
+  "sector": "Construction & General Contracting",
+  "filter": "real-estate",
+  "featured": false,
+  "headline": "A general contracting business needed to be formally registered before taking on contracts in its own name.",
+  "challenge": "Contracting clients and partners expect to deal with a registered business. Trading informally limits the contracts a business can bid for and the confidence it can offer.",
+  "delivered": [
+    "Business name registration with the Corporate Affairs Commission under CAMA 2020",
+    "Nature of business recorded as general contracts",
+    "Principal place of business registered in Lagos State"
+  ],
+  "impact": "A formally registered general contracting business, able to present itself to clients and partners under its own registered name.",
+  "serviceLines": [
+    "Company Formation"
+  ]
+}

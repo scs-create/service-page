@@ -67,7 +67,7 @@ export default function Home() {
 
       {/* WHO WE ARE */}
       <section className={`${WRAP} py-16 md:py-20 grid lg:grid-cols-2 gap-10 items-start`}>
-        <SectionHeading eyebrow="Who we are" title="A Business Support Partner, Not Just a Registration Office" />
+        <SectionHeading eyebrow="Who we are" title="A Business Support Partner Delivering 21+ Integrated Services Through a One-Stop Centre, Focused on Your Growth" />
         <div className="space-y-4 text-base text-muted">
           <p>
             Stephen Corporate Services Ltd (SCS) is a business-support company providing integrated solutions to businesses, entrepreneurs, organisations, investors and institutions. Before SCS launched, its founding team had already guided more than 3,000 businesses through CAC registration. Building on this experience, SCS helps clients in Nigeria and across borders establish appropriate corporate structures, meet their regulatory and compliance obligations, and achieve sustainable growth. Through integrated corporate, regulatory and operational support, we provide one accountable point of coordination, simplifying business administration and reducing the need to manage multiple service providers.
