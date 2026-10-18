@@ -673,20 +673,24 @@
        "Not required"
       ],
       [
-       "plausible_ignore (browser local storage), set by SCS",
-       "Strictly necessary",
-       "Tells Plausible not to count you after you reject analytics",
-       "Persistent, until you change your choice",
-       "Not required"
+       "ph_<project key>_posthog (cookie and browser local storage), PostHog",
+       "Analytics and performance",
+       "Recognises your browser between visits and holds the current session, so visits and journeys can be counted",
+       "Persistent, 365 days",
+       "Only after you accept"
       ],
       [
-       "Plausible Analytics script (plausible.io), Plausible Insights OÜ",
+       "__ph_opt_in_out_<project key> (cookie), PostHog",
        "Analytics and performance",
-       "Counts page visits and button clicks in aggregate. Sets no cookies",
-       "Not applicable (no cookie)",
+       "Records your analytics choice inside PostHog if you change it during a visit; deleted if you withdraw",
+       "Persistent",
        "Only after you accept"
       ]
      ]
+    },
+    {
+     "type": "p",
+     "text": "If you decline analytics, or your browser sends Do Not Track or Global Privacy Control, none of the PostHog items are set and PostHog is not loaded."
     },
     {
      "type": "p",
