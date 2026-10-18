@@ -123,8 +123,7 @@ export interface LegalSection {
 export interface LegalDocumentData {
   slug: "terms" | "privacy" | "cookies";
   title: string;
-  effective?: string | null;
-  updated?: string | null;
+  effective?: string | null; // the only date shown (client decision, 18 October 2026: no "last updated")
   intro: LegalBlock[];
   sections: LegalSection[];
 }

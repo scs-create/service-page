@@ -130,11 +130,12 @@ test("no link points at the CAC search portal (it returned 404); only the CAC we
   assert.deepEqual(hits, []);
   assert.equal(SITE.cacUrl, "https://www.cac.gov.ng");
 });
-test("every legal date is the launch date, 16 October 2026", () => {
+test("every legal page is effective 3 December 2025 and shows no 'last updated' date", () => {
   for (const n of ["terms", "privacy", "cookies"]) {
-    const d = legal(n) as unknown as { effective: string; updated: string };
-    assert.equal(d.effective, "16 October 2026");
-    assert.equal(d.updated, "16 October 2026");
+    const d = legal(n) as unknown as { effective: string; updated?: string };
+    assert.equal(d.effective, "3 December 2025");
+    assert.equal(d.updated, undefined);
+    assert.doesNotMatch(JSON.stringify(d), /last updated|16 October 2026/i);
     assert.doesNotMatch(JSON.stringify(d), /(19|20)\d\d(?<!2023)(?<!2025)(?<!2026)/); // only NDPA 2023, GAID 2025 and 2026
   }
 });

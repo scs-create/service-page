@@ -49,9 +49,7 @@ function Block({ block }: { block: LegalBlock }) {
 
 export default function LegalDocument({ doc }: { doc: LegalDocumentData }) {
   const draft = hasPlaceholders(doc);
-  const dateLine = [doc.effective && `Effective date: ${doc.effective}`, doc.updated && `Last updated: ${doc.updated}`]
-    .filter(Boolean)
-    .join(" · ");
+  const dateLine = doc.effective ? `Effective date: ${doc.effective}` : "";
 
   return (
     <>
