@@ -35,7 +35,7 @@ export default function CalendarPage() {
         <section className="rounded-md border border-border border-t-4 border-t-accent bg-surface p-6 lg:sticky lg:top-28">
           <h2 className="text-xl font-semibold text-text">Get reminders</h2>
           <p className="mt-2 mb-5 text-sm text-muted">Join the list and we will let you know when reminders are available for your business type.</p>
-          <NetlifyForm formName="enquiry" requestType="compliance-reminders" sourcePage="/compliance-calendar" fields={fields} submitLabel="Join the reminder list" successTitle="You are on the list." successMessage="Thank you — we will be in touch when reminders are available." />
+          <NetlifyForm formName="enquiry" requestType="compliance-reminders" sourcePage="/compliance-calendar" fields={fields} submitLabel="Join the reminder list" successTitle="You are on the list." successMessage="Thank you. We will be in touch when reminders are available." />
         </section>
       </div>
     </>

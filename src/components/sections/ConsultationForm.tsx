@@ -10,8 +10,8 @@ const NEEDS = [
   "Contracts and business documentation", "Data protection and privacy", "Operations and outsourcing", "Marketing, brand and growth",
   "Training (Corporate College)", "Something else / not sure",
 ];
-const STAGES = ["Just an idea", "Starting up (first year)", "Operating (1–3 years)", "Established (3+ years)"];
-const SIZES = ["Just me", "2–10 people", "11–50 people", "More than 50"];
+const STAGES = ["Just an idea", "Starting up (first year)", "Operating (1 to 3 years)", "Established (3+ years)"];
+const SIZES = ["Just me", "2 to 10 people", "11 to 50 people", "More than 50"];
 const STEPS = ["What you need", "Your business", "Your details"];
 const noopSubscribe = () => () => {};
 const INPUT = "w-full min-h-11 border border-border rounded-sm px-3 py-2 text-base";
@@ -53,7 +53,7 @@ export default function ConsultationForm({ sectors }: { sectors: string[] }) {
     }
   }
 
-  if (status === "success") return <FormSuccess title="Consultation request received." message="Thank you — a member of our team will contact you directly." />;
+  if (status === "success") return <FormSuccess title="Consultation request received." message="Thank you. A member of our team will contact you directly." />;
 
   const show = (i: number) => !js || step === i;
   return (

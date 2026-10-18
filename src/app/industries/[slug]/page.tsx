@@ -43,7 +43,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
           {related.length > 0 && (
             <>
               <h2 className="mt-10 text-2xl font-semibold text-secondary mb-3 pl-3 border-l-4 border-accent">How SCS can help</h2>
-              <ul className="space-y-2">{related.map((s) => <li key={s!.slug}><Link href={`/services/${s!.slug}`} className="font-medium text-primary hover:underline">{s!.title}</Link><span className="text-sm text-muted"> — {s!.framingSentence}</span></li>)}</ul>
+              <ul className="space-y-2">{related.map((s) => <li key={s!.slug}><Link href={`/services/${s!.slug}`} className="font-medium text-primary hover:underline">{s!.title}</Link><span className="text-sm text-muted">: {s!.framingSentence}</span></li>)}</ul>
             </>
           )}
         </div>

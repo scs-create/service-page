@@ -14,7 +14,7 @@ import { SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Corporate College",
-  description: "Request learning and training on topics related to SCS services — for individuals, companies, NGOs and government agencies — and read our Corporate School blog.",
+  description: "Request learning and training on topics related to SCS services, for individuals, companies, NGOs and government agencies, and read our Corporate School blog.",
 };
 
 const WRAP = "max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8";
@@ -44,7 +44,7 @@ export default function CorporateCollegePage() {
         <section className="mb-14 rounded-md bg-surface border border-border p-6 md:p-10">
           <SectionHeading eyebrow="Request learning or training" title="For individuals, companies, NGOs and government agencies" intro="Tell us what you need and we'll follow up directly." />
           <div className="max-w-[640px]">
-            <NetlifyForm formName="enquiry" requestType="training-request" sourcePage="/corporate-college" fields={fields} submitLabel="Request Training" successTitle="Request received." successMessage="Thank you — we'll be in touch about your training request." />
+            <NetlifyForm formName="enquiry" requestType="training-request" sourcePage="/corporate-college" fields={fields} submitLabel="Request Training" successTitle="Request received." successMessage="Thank you. We'll be in touch about your training request." />
           </div>
         </section>
 

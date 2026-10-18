@@ -10,7 +10,7 @@
     },
     {
       "id": "operating",
-      "label": "Operating (1–3 years)"
+      "label": "Operating (1 to 3 years)"
     },
     {
       "id": "established",
@@ -19,8 +19,8 @@
   ],
   "sizes": [
     "Just me",
-    "2–10 people",
-    "11–50 people",
+    "2 to 10 people",
+    "11 to 50 people",
     "More than 50"
   ],
   "stagePriority": {

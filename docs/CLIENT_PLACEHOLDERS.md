@@ -11,7 +11,7 @@ Production hides them, and a section with nothing real to show is removed, not f
 | `[CLIENT TO SUPPLY: real consented testimonials]` | Home (section hidden in production) | Add via CMS → Testimonials (consent box is mandatory) |
 | `[CLIENT TO SUPPLY: verification document uploads]` | Verification | Certificates / letters via CMS → Verification Documents (watermark first) |
 | `[CLIENT TO CONFIRM: IP filing vs registration status and client permission]` | Services → IP page | Per item: filed or registered? Client permission? Then switch `permission` on |
-| `[CLIENT TO SUPPLY: ten signature programmes — not found in the Growth Portfolio deck]` | Services (section hidden in production) | Supply the programmes (CMS → Signature Programmes) |
+| `[CLIENT TO SUPPLY: ten signature programmes, not found in the Growth Portfolio deck]` | Services (section hidden in production) | Supply the programmes (CMS → Signature Programmes) |
 | `[CLIENT TO CONFIRM: SCA description]` | Corporate College | Final description of Stephen Corporate Academy |
 | `[CLIENT TO CONFIRM: Partnership terms]` | Services (Partnership band) | Terms of Partnership / Quarterly Check-Up |
 

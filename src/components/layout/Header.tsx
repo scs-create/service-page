@@ -77,7 +77,7 @@ export default function Header({ services }: HeaderProps) {
         <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8">
           <div className="flex items-center justify-between gap-4 h-[72px] md:h-20">
             <Link href="/" className="shrink-0">
-              <Image src="/images/logo.png" alt="Stephen Corporate Services — Home" width={64} height={72} priority className="h-14 md:h-16 w-auto" />
+              <Image src="/images/logo.png" alt="Stephen Corporate Services home page" width={64} height={72} priority className="h-14 md:h-16 w-auto" />
             </Link>
 
             <nav aria-label="Primary" className="hidden lg:flex items-center gap-3.5 xl:gap-6">

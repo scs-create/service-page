@@ -104,7 +104,7 @@ export const ABOUT_SECTIONS: AboutSection[] = [
     type: "identity",
     paragraphs: [
       "From business formation and corporate structuring to regulatory compliance, tax, human resources, technology and growth advisory, SCS provides an integrated platform for businesses at every stage of their lifecycle.",
-      "We exist because most businesses do not fail from a lack of ambition — they fail from a lack of structure. SCS builds that structure: the documents, the filings, the policies, the systems and the compliance posture that let a business function, scale and survive scrutiny.",
+      "We exist because most businesses do not fail from a lack of ambition; they fail from a lack of structure. SCS builds that structure: the documents, the filings, the policies, the systems and the compliance posture that let a business function, scale and survive scrutiny.",
     ],
   },
   {
@@ -117,7 +117,7 @@ export const ABOUT_SECTIONS: AboutSection[] = [
       heading: "A specialist network model",
       paragraphs: [
         "Company secretarial practitioners, tax consultants, data protection advisors, chartered professionals and sector specialists are engaged as each engagement requires. This lets SCS scale specialist capability to match each client's sector and complexity, without the overhead or the delay of a traditional large-firm structure.",
-        "Where specialist legal or regulated professional services are required, SCS partners with the relevant professionals and coordinates the work — SCS does not present itself as a law firm.",
+        "Where specialist legal or regulated professional services are required, SCS partners with the relevant professionals and coordinates the work. SCS does not present itself as a law firm.",
       ],
     },
   },

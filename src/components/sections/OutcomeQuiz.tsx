@@ -41,7 +41,7 @@ export default function OutcomeQuiz({ quiz, outcomes, resultField, requestType, 
             );
           })}
         </ul>
-        {ranked.length === 0 && <p className="mt-4 text-muted">We could not match a single area — a short conversation with our team is the quickest way to find the right fit.</p>}
+        {ranked.length === 0 && <p className="mt-4 text-muted">We could not match a single area. A short conversation with our team is the quickest way to find the right fit.</p>}
         {quiz.disclaimer && <p className="mt-4 text-xs text-muted">{quiz.disclaimer}</p>}
         <div className="mt-6"><button type="button" onClick={() => { setShown(false); setPicks({}); }} className="min-h-11 rounded-md border border-border px-6 py-3 font-medium text-text hover:border-primary">Start again</button></div>
         <section className="mt-10 rounded-md border border-border border-t-4 border-t-accent bg-surface p-6">

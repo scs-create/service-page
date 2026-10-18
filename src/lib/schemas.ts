@@ -15,7 +15,7 @@ export const serviceSchema = z.object({
 
 export const portfolioSchema = z.object({
   order: z.number().int().positive(), slug, client: text,
-  rc: z.string().regex(/^\d{5,9}$/, "RC number must be digits only (5–9 digits)"),
+  rc: z.string().regex(/^\d{5,9}$/, "RC number must be digits only (5 to 9 digits)"),
   sector: text,
   filter: z.enum(["healthcare-pharma", "real-estate", "tech-digital", "logistics-transport", "hospitality", "agribusiness", "non-profit", "manufacturing", "media-retail-professional"]),
   featured: z.boolean().optional(), headline: text, challenge: text,

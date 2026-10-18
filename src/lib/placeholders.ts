@@ -7,5 +7,5 @@ export const PH = {
   testimonials: "[CLIENT TO SUPPLY: real consented testimonials]",
   verification: "[CLIENT TO SUPPLY: verification document uploads]",
   ip: "[CLIENT TO CONFIRM: IP filing vs registration status and client permission]",
-  programmes: "[CLIENT TO SUPPLY: ten signature programmes — not found in the Growth Portfolio deck]",
+  programmes: "[CLIENT TO SUPPLY: ten signature programmes, not found in the Growth Portfolio deck]",
 } as const;

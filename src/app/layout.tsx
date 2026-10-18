@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     locale: "en_NG",
     title: `${SITE.titleName} | Corporate Services Partner`,
     description: DESCRIPTION,
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: `${SITE.name} — ${SITE.tagline}` }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: `${SITE.name}: ${SITE.tagline}` }],
   },
   twitter: { card: "summary_large_image" },
 };

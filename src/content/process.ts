@@ -7,7 +7,7 @@ export const APPROACH_STAGES = [
   {
     label: "Assess",
     description:
-      "We start by understanding the business, its stage, its sector obligations and its real risk exposure — not a generic checklist.",
+      "We start by understanding the business, its stage, its sector obligations and its real risk exposure, not a generic checklist.",
   },
   {
     label: "Structure",
@@ -51,7 +51,7 @@ export const ENGAGEMENT_STEPS = [
   {
     label: "Delivery",
     description:
-      "We deliver the registrations, filings, policies and systems the engagement called for — completed, not merely drafted.",
+      "We deliver the registrations, filings, policies and systems the engagement called for: completed, not merely drafted.",
   },
   {
     label: "Ongoing Support",

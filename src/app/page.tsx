@@ -73,7 +73,7 @@ export default function Home() {
             Stephen Corporate Services Ltd (SCS) is a business-support company providing integrated solutions to businesses, entrepreneurs, organisations, investors and institutions. Before SCS launched, its founding team had already guided more than 3,000 businesses through CAC registration. Building on this experience, SCS helps clients in Nigeria and across borders establish appropriate corporate structures, meet their regulatory and compliance obligations, and achieve sustainable growth. Through integrated corporate, regulatory and operational support, we provide one accountable point of coordination, simplifying business administration and reducing the need to manage multiple service providers.
           </p>
           <p>
-            We exist because most businesses do not fail from a lack of ambition — they fail from a lack of structure. SCS builds that structure: the documents, the filings, the policies, the systems and the compliance posture that let a business function, scale and survive scrutiny.
+            We exist because most businesses do not fail from a lack of ambition; they fail from a lack of structure. SCS builds that structure: the documents, the filings, the policies, the systems and the compliance posture that let a business function, scale and survive scrutiny.
           </p>
           <CTAButton href="/about" label="About SCS →" variant="text" />
         </div>
@@ -85,7 +85,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="What we do"
             title="Corporate services for every stage of the business"
-            intro="Six areas of support, one accountable partner — from formation to long-term growth."
+            intro="Six areas of support, one accountable partner, from formation to long-term growth."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {CLUSTERS.map((cluster) => {
@@ -128,7 +128,7 @@ export default function Home() {
             tone="dark"
             eyebrow="The SCS Enterprise Scale System™"
             title="From Idea to Institution"
-            intro="Every engagement follows the same disciplined path — whatever the sector, whatever the size of the business."
+            intro="Every engagement follows the same disciplined path, whatever the sector and whatever the size of the business."
           />
           <ProcessStepper steps={APPROACH_STAGES} tone="dark" />
           <DeliveryModes tone="dark" />
@@ -174,7 +174,7 @@ export default function Home() {
         <div className={WRAP}>
           <span aria-hidden="true" className="block h-1 w-14 bg-accent rounded-sm mx-auto mb-6" />
           <p className="max-w-[62ch] mx-auto text-center text-xl md:text-2xl text-white/90">
-            Businesses need structure, people, systems, information, technology, compliance, customers, strategy — and, above all, they need a reliable partner capable of helping them navigate the complexity that comes with building and operating an organisation.
+            Businesses need structure, people, systems, information, technology, compliance, customers and strategy. Above all, they need a reliable partner capable of helping them navigate the complexity that comes with building and operating an organisation.
           </p>
           <div className="mt-10">
             <ClosingStatement tone="dark" lines={["From idea to company.", "From structure to strategy.", "From compliance to confidence.", "From startup to scale."]} />

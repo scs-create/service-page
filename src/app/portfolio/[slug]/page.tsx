@@ -17,7 +17,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const p = getPortfolioBySlug(slug);
-  return p ? { title: `${p.client} — case study`, description: `${p.headline} ${p.impact}`.slice(0, 160) } : {};
+  return p ? { title: `${p.client}: case study`, description: `${p.headline} ${p.impact}`.slice(0, 160) } : {};
 }
 
 export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {

@@ -9,8 +9,8 @@ import PageHero from "@/components/ui/PageHero";
 export const metadata: Metadata = { title: "Client portal (prototype)", robots: { index: false, follow: false } };
 
 const ENGAGEMENTS = [
-  { name: "Sample Ltd — Company incorporation", stage: "Structure", progress: 60 },
-  { name: "Sample Ltd — Compliance Desk (Package B)", stage: "Comply", progress: 35 },
+  { name: "Sample Ltd: Company incorporation", stage: "Structure", progress: 60 },
+  { name: "Sample Ltd: Compliance Desk (Package B)", stage: "Comply", progress: 35 },
 ];
 const REQUESTS = ["Certified ID of directors (mock)", "Signed board resolution (mock)", "Proof of address (mock)"];
 
