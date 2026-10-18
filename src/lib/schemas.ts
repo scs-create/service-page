@@ -15,9 +15,12 @@ export const serviceSchema = z.object({
 
 export const portfolioSchema = z.object({
   order: z.number().int().positive(), slug, client: text,
-  rc: z.string().regex(/^\d{5,9}$/, "RC number must be digits only (5 to 9 digits)"),
+  // CAC number: digits only. Leave empty until it is supplied (the page then says "to be added" and the client
+  // is kept out of the Verification register). regType: "RC" for companies, "BN" for business names.
+  rc: z.union([z.literal(""), z.string().regex(/^\d{5,9}$/, "RC/BN number must be digits only (5 to 9 digits)")]).optional(),
+  regType: z.enum(["RC", "BN"]).optional(),
   sector: text,
-  filter: z.enum(["healthcare-pharma", "real-estate", "tech-digital", "logistics-transport", "hospitality", "agribusiness", "non-profit", "manufacturing", "media-retail-professional"]),
+  filter: z.enum(["healthcare-pharma", "real-estate", "tech-digital", "logistics-transport", "hospitality", "agribusiness", "non-profit", "manufacturing", "media-retail-professional", "finance-investment", "education"]),
   featured: z.boolean().optional(), headline: text, challenge: text,
   delivered: z.array(text).min(1), impact: text, serviceLines: z.array(text).min(1),
 });

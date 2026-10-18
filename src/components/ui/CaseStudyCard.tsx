@@ -1,3 +1,4 @@
+import { registrationLabel } from "@/lib/types";
 import Link from "next/link";
 import { PortfolioEntry } from "@/lib/types";
 import { SERVICE_LINE_TO_SLUG } from "@/content/portfolio/serviceLines";
@@ -23,9 +24,11 @@ export default function CaseStudyCard({
     <>
       <p className="text-xs font-semibold uppercase tracking-wider text-primary">{entry.sector}</p>
       <h3 className="mt-1 text-xl font-semibold text-text">{entry.client}</h3>
-      <p className="mt-2 inline-block rounded-sm border border-border bg-surface px-2 py-0.5 text-sm text-secondary">
-        RC {entry.rc}
-      </p>
+      {registrationLabel(entry) && (
+        <p className="mt-2 inline-block rounded-sm border border-border bg-surface px-2 py-0.5 text-sm text-secondary">
+          {registrationLabel(entry)}
+        </p>
+      )}
       <p className="mt-3 font-medium text-text">{entry.headline}</p>
     </>
   );

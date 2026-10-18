@@ -47,11 +47,13 @@ export type PortfolioFilter =
   | "agribusiness"
   | "non-profit"
   | "manufacturing"
-  | "media-retail-professional";
+  | "media-retail-professional"
+  | "finance-investment"
+  | "education";
 
 export const PORTFOLIO_FILTERS: { slug: PortfolioFilter; label: string }[] = [
   { slug: "healthcare-pharma", label: "Healthcare & Pharma" },
-  { slug: "real-estate", label: "Real Estate" },
+  { slug: "real-estate", label: "Real Estate & Construction" },
   { slug: "tech-digital", label: "Tech & Digital" },
   { slug: "logistics-transport", label: "Logistics & Transport" },
   { slug: "hospitality", label: "Hospitality" },
@@ -59,13 +61,16 @@ export const PORTFOLIO_FILTERS: { slug: PortfolioFilter; label: string }[] = [
   { slug: "non-profit", label: "Non-Profit" },
   { slug: "manufacturing", label: "Manufacturing" },
   { slug: "media-retail-professional", label: "Media, Retail & Professional" },
+  { slug: "finance-investment", label: "Finance & Investment" },
+  { slug: "education", label: "Education" },
 ];
 
 export interface PortfolioEntry {
   order: number;
   slug: string;
   client: string;
-  rc: string;
+  rc?: string; // empty until supplied
+  regType?: "RC" | "BN"; // default RC; BN for business names
   sector: string;
   filter: PortfolioFilter;
   featured?: boolean;
@@ -139,3 +144,6 @@ export interface SupportPackage {
   audience: string;
   includes: string;
 }
+
+// "RC 1234567" / "BN 1234567", or null while the number has not been supplied.
+export const registrationLabel = (e: { rc?: string; regType?: "RC" | "BN" }) => (e.rc ? `${e.regType ?? "RC"} ${e.rc}` : null);

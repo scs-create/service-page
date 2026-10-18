@@ -110,14 +110,15 @@ collections:
       - { label: "Display order (1 = first)", name: "order", widget: "number", value_type: "int" }
       - { label: "Slug (lowercase-with-dashes)", name: "slug", widget: "string" }
       - { label: "Client", name: "client", widget: "string" }
-      - { label: "RC number (digits only)", name: "rc", widget: "string" }
+      - { label: "CAC number (digits only; leave empty until known)", name: "rc", widget: "string", required: false }
+      - { label: "Number type", name: "regType", widget: "select", options: ["RC", "BN"], default: "RC", required: false, hint: "RC for companies, BN for business names" }
       - { label: "Sector (shown on the card)", name: "sector", widget: "string" }
       - label: "Filter category"
         name: "filter"
         widget: "select"
         options:
           - { label: "Healthcare & Pharma", value: "healthcare-pharma" }
-          - { label: "Real Estate", value: "real-estate" }
+          - { label: "Real Estate & Construction", value: "real-estate" }
           - { label: "Tech & Digital", value: "tech-digital" }
           - { label: "Logistics & Transport", value: "logistics-transport" }
           - { label: "Hospitality", value: "hospitality" }
@@ -125,6 +126,8 @@ collections:
           - { label: "Non-Profit", value: "non-profit" }
           - { label: "Manufacturing", value: "manufacturing" }
           - { label: "Media, Retail & Professional", value: "media-retail-professional" }
+          - { label: "Finance & Investment", value: "finance-investment" }
+          - { label: "Education", value: "education" }
       - { label: "Show on Home page", name: "featured", widget: "boolean", default: false }
       - { label: "Headline", name: "headline", widget: "string" }
       - { label: "The Challenge", name: "challenge", widget: "text" }

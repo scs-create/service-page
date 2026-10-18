@@ -3,7 +3,7 @@
 import { useState } from "react";
 import CopyButton from "@/components/ui/CopyButton";
 
-type Row = { slug: string; client: string; sector: string; rc: string };
+type Row = { slug: string; client: string; sector: string; rc: string; regType: "RC" | "BN" };
 
 // Client register with search by name, sector or RC number. The full table is server-rendered, so it
 // is complete without JavaScript; the search box only appears once JS is available.
@@ -34,7 +34,7 @@ export default function RegisterTable({ rows }: { rows: Row[] }) {
               <tr key={r.slug} className="border-t border-border">
                 <th scope="row" className="px-4 py-3 font-medium text-text">{r.client}</th>
                 <td className="px-4 py-3 text-muted">{r.sector}</td>
-                <td className="px-4 py-3 tabular-nums text-text">RC {r.rc}</td>
+                <td className="px-4 py-3 tabular-nums text-text">{r.regType} {r.rc}</td>
                 <td className="px-4 py-3 whitespace-nowrap"><CopyButton text={r.rc} label={r.client} /></td>
               </tr>
             ))}

@@ -1,3 +1,4 @@
+import { registrationLabel } from "@/lib/types";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -36,9 +37,13 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         <aside className="space-y-6 lg:sticky lg:top-28">
           <section className="rounded-md border border-border border-t-4 border-t-success bg-bg p-5">
             <h2 className="font-semibold text-text">Verify this client</h2>
-            <p className="mt-2 text-sm text-muted">RC {entry.rc}. Copy the number, open the CAC website, then use its Public Search to compare the registered name.</p>
+            {entry.rc ? (
+              <p className="mt-2 text-sm text-muted">{registrationLabel(entry)}. Copy the number, open the CAC website, then use its Public Search to compare the registered name.</p>
+            ) : (
+              <p className="mt-2 text-sm text-muted">The CAC registration number for this client will be added shortly. You can already search the registered name on the CAC website.</p>
+            )}
             <div className="mt-3 flex flex-wrap items-center gap-3">
-              <CopyButton text={entry.rc} label={entry.client} />
+              {entry.rc && <CopyButton text={entry.rc} label={entry.client} />}
               <a href={SITE.cacUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:underline">CAC website<span className="sr-only"> (opens in new tab)</span> ↗</a>
             </div>
             <Link href="/verification" className="mt-3 inline-block text-sm text-primary hover:underline">All verifiable clients →</Link>

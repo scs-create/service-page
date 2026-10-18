@@ -25,6 +25,8 @@ const STEPS = [
 ];
 
 export default function VerificationPage() {
+  // Only clients whose CAC number has been supplied: this register promises each one can be looked up.
+  const verifiable = portfolio.filter((e) => !!e.rc);
   const hasDocs = verificationDocuments.length > 0;
   return (
     <>
@@ -61,8 +63,8 @@ export default function VerificationPage() {
 
       <section className="bg-surface py-14">
         <div className={WRAP}>
-          <SectionHeading eyebrow="Client register" title={`${portfolio.length} clients, listed with their RC numbers`} />
-          <RegisterTable rows={portfolio.map((e) => ({ slug: e.slug, client: e.client, sector: e.sector, rc: e.rc }))} />
+          <SectionHeading eyebrow="Client register" title={`${verifiable.length} clients, listed with their CAC numbers`} />
+          <RegisterTable rows={verifiable.map((e) => ({ slug: e.slug, client: e.client, sector: e.sector, rc: e.rc!, regType: e.regType ?? "RC" }))} />
           <p className="mt-4 text-sm text-muted">Confidential commercial details are withheld in line with client confidentiality.</p>
         </div>
       </section>
