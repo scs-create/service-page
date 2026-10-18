@@ -11,10 +11,16 @@
 - **Address:** **SD20 Belham Estate, Karsana, FCT, Abuja** (client decision, 18 October 2026; it replaces "Benhen" site-wide).
 - **Dates:** every effective and "last updated" date is **16 October 2026** (client decision). The supplied files said 3 December 2025.
 - **Website-specific sections added** (client-approved, 18 October 2026), because the supplied documents are deliberately generic:
-  - Privacy Notice → *This website: tools and service providers* (Netlify Forms, Google Workspace, Plausible after consent, Cal.com link-out, GitHub/Netlify for staff editing, retention of job applications).
-  - Cookie Policy → *Cookies and similar technologies on this website*, the inventory that Section 6 of the policy requires (`scs_cookie_consent`, `plausible_ignore`, Plausible sets no cookies).
+  - Privacy Notice → *This website: tools and service providers* (Netlify Forms, Google Workspace, PostHog analytics after consent, Cal.com link-out, GitHub/Netlify for staff editing, retention of job applications).
+  - Cookie Policy → *Cookies and similar technologies on this website*, the inventory that Section 6 of the policy requires (`scs_cookie_consent` and the PostHog items, set only after consent).
   **Counsel should glance at these two added sections.**
 - **Title:** the Terms page is now titled "Terms of Service" (URL unchanged: `/terms`).
+
+## Analytics change (approved by the client, 18 October 2026)
+The previous analytics tool was replaced by **PostHog Cloud EU** (PostHog Inc.; servers in Frankfurt). Wording approved by the client and applied:
+- Privacy Notice → website section: what PostHog records, consent as the lawful basis, Do Not Track / GPC respected, withdrawal via "Cookie settings", the random enquiry reference number (never name/email/phone/message), **12-month** retention, how to request access or deletion, no sale of personal data, client insights aggregated and anonymised.
+- Cookie Policy → inventory: `ph_<project key>_posthog` (cookie + local storage, 365 days) and `__ph_opt_in_out_<project key>` (cookie), both only after consent; note that nothing is set for visitors who decline or send DNT/GPC.
+- No GDPR wording was added; the documents continue to cite the NDPA 2023 and GAID 2025. **Counsel may wish to confirm the EU transfer (Section 8) for PostHog.**
 
 ## Ongoing
 - Delete unsuccessful job applications from Netlify Forms within 6 months (stated in the Privacy Notice website section).

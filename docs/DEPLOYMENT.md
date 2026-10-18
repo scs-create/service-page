@@ -28,7 +28,7 @@ The repository is `scs-create/service-page` (branch `main`). Netlify is connecte
 4. Send and receive a test email on one alias to confirm email is unaffected.
 
 ## E. Environment variables (Site configuration → Environment variables)
-Defaults are built in, but set this one so it is visible in Netlify: `NEXT_PUBLIC_BOOKING_URL` = `https://cal.com/support-stephen-corporate-services-scs/30min`. Optional: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`.
+Defaults are built in, but set this one so it is visible in Netlify: `NEXT_PUBLIC_BOOKING_URL` = `https://cal.com/support-stephen-corporate-services-scs/30min`. Optional: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_POSTHOG_KEY` (only to point at a different PostHog project; the live key is built in).
 **Never** add `NEXT_PUBLIC_SHOW_CLIENT_PLACEHOLDERS` or `NEXT_PUBLIC_ENABLE_PORTAL_PROTOTYPE` to production — `netlify.toml` already sets them for preview deploys only.
 
 ## F. Forms (two forms: `enquiry`, `career-application`)
@@ -45,10 +45,15 @@ Defaults are built in, but set this one so it is visible in Netlify: `NEXT_PUBLI
 4. Open `https://stephencorporateservices-scs.com/admin` → **Login with GitHub**. Every editor needs a GitHub account added to the repository as a collaborator with **write** access.
 5. Editors work in the *Editorial workflow*: Draft → In review → Ready → **Publish** (publishing merges the change; Netlify rebuilds).
 
-## H. Analytics (Plausible)
-1. Create a Plausible account → **Add a site** → `stephencorporateservices-scs.com`.
-2. Site settings → **Goals → Add goal → Custom event**, one at a time, spelled exactly: `CTA Click`, `Form Submit`, `Form Step`, `Tool Complete`, `Booking Click` (fires on every "Book" button that opens Cal.com).
-3. Remember: analytics only counts visitors who press **Accept all** (or enable analytics) on the cookie banner.
+## H. Analytics (PostHog Cloud EU)
+1. PostHog → the project whose key starts `phc_virz…` (EU Cloud, https://eu.posthog.com).
+2. **Settings → Project → IP data capture:** turn on **Discard client IP data**.
+3. **Settings → data retention:** set **12 months** (what the Privacy Notice promises).
+4. Leave **session replay** and **surveys** off (the site disables them too).
+5. Check it works: open the live site in a private window → **Accept analytics** → click a few buttons → PostHog → **Activity → Live events** shows `$pageview`, `cta_clicked` and so on within a minute. Decline in another private window: nothing appears.
+6. Suggested insights: funnel `$pageview` (/) → `service_page_viewed` → `form_started` (consultation) → `form_submitted`; trend of `cta_clicked` broken down by `cta_name`; `form_submitted` broken down by UTM source / referring domain.
+7. In Netlify → Environment variables, delete the old analytics domain variable if it exists (it is no longer read), and cancel the previous analytics account.
+8. Analytics only counts visitors who press **Accept analytics**; never those who decline or send Do Not Track / Global Privacy Control.
 
 ## I. Scheduled blog posts
 1. Netlify → **Site configuration → Build & deploy → Build hooks → Add build hook** ("Daily scheduled posts") → copy the URL.
@@ -65,7 +70,7 @@ Already decided (16 October 2026): address, positioning, metrics, primary email,
 - **Legal pages:** final versions are live (18 October 2026). Counsel to glance at the two website-specific sections listed in `docs/legal-open-items.md`.
 
 ## L. After launch — checks
-1. Browser DevTools → Network: press **Reject** on the banner and confirm no `plausible.io` request; press **Accept** and confirm it loads.
+1. Browser DevTools → Network: press **Decline** on the banner and confirm no `/ingest` request and no `ph_*` cookie or storage; press **Accept analytics** and confirm `/ingest` requests start.
 2. Run a cookie scan (DevTools → Application → Cookies / storage, or a free scanner), then replace `[to be confirmed by a live-site scan]` in `src/content/legal/cookies.json`.
 3. Run Lighthouse (Chrome DevTools) on Home, a service page and Contact; check headers at securityheaders.com.
 4. Visit `/academy` (should redirect to `/corporate-college`), a wrong URL (branded 404), and `/portal` (must be 404 in production).

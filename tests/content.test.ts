@@ -150,7 +150,16 @@ test("booking calls to action never fall back to an empty URL", () => {
 });
 test("the website sections describe the tools this site actually uses", () => {
   const privacy = JSON.stringify(legal("privacy")), cookies = JSON.stringify(legal("cookies"));
-  for (const t of ["Netlify", "Plausible", "Cal.com", "GitHub"]) assert.match(privacy, new RegExp(t));
-  for (const t of ["scs_cookie_consent", "plausible_ignore", "Plausible"]) assert.match(cookies, new RegExp(t));
+  for (const t of ["Netlify", "PostHog", "Cal.com", "GitHub", "12 months", "never** sent to PostHog"]) assert.ok(privacy.includes(t), t);
+  for (const t of ["scs_cookie_consent", "ph_<project key>_posthog", "365 days", "Global Privacy Control"]) assert.match(cookies, new RegExp(t));
+});
+test("analytics: the previous tool is gone everywhere; one PostHog config; only allowlisted event properties", () => {
+  const walk = (d: string): string[] => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(`${d}/${e.name}`) : [`${d}/${e.name}`]));
+  const files = [...walk("src"), "next.config.ts", "netlify.toml", ".env.example", "README.md", ...walk("docs")];
+  const oldTool = new RegExp(["plaus", "ible"].join(""), "i"); // built from parts so this file passes its own check
+  assert.deepEqual(files.filter((f) => oldTool.test(fs.readFileSync(f, "utf-8"))), []);
+  assert.deepEqual(files.filter((f) => f.startsWith("src") && fs.readFileSync(f, "utf-8").includes("phc_")), ["src/lib/analytics.ts"]);
+  const track = fs.readFileSync("src/lib/track.ts", "utf-8");
+  for (const banned of ["name", "email", "phone", "message"]) assert.doesNotMatch(track.match(/ALLOWED_PROPS = new Set\(\[([\s\S]*?)\]\)/)![1], new RegExp(`"${banned}"`));
 });
 void z;
