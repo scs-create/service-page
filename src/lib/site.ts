@@ -39,13 +39,13 @@ export const SITE = {
   phone: "+234 906 403 5713",
   phoneHref: "+2349064035713",
   whatsappHref: "2349064035713", // wa.me/<number> — active on WhatsApp (confirmed by the client)
-  // Confirmed by the client (16 October 2026): Karsana, Benhen Estate. Legal pages read it from here.
+  // Confirmed by the client (18 October 2026): Belham Estate, Karsana. Legal pages read it from here.
   address: {
-    street: "SD20 Benhen Estate, Karsana",
+    street: "SD20 Belham Estate, Karsana",
     region: "FCT",
     city: "Abuja",
     country: "Nigeria",
-    full: "SD20 Benhen Estate, Karsana, FCT, Abuja, Nigeria",
+    full: "SD20 Belham Estate, Karsana, FCT, Abuja, Nigeria",
   },
   linkedin: "https://www.linkedin.com/company/stephen-corporate-services/",
   threads: "https://www.threads.com/@stephen_corporate_services",

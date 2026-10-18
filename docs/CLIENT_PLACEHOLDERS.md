@@ -23,7 +23,7 @@ Leadership bios: none exist, so none are shown (no placeholder). Add a `bio` in 
 |---|---|
 | Positioning wording (Home, "Who we are") | Owner's positioning paragraph is live |
 | Metrics | 3,000+ / 1,800+ / 1,200+ / 10+ confirmed; the 3,000+ label now reads "Business registrations guided through the CAC by our founding team" (achieved before SCS launched) |
-| Address | SD20 Benhen Estate, Karsana, FCT, Abuja |
+| Address | SD20 Belham Estate, Karsana, FCT, Abuja (changed from "Benhen" on 18 October 2026) |
 | Primary email | contact@stephencorporateservices-scs.com |
 | WhatsApp | +234 906 403 5713 is active |
 | Leadership photos | Supplied; circular, optimised (`public/images/team/`). Signatures are never published |
