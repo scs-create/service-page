@@ -55,7 +55,7 @@ export default function CookieBanner() {
       aria-describedby="cookie-banner-text"
       className="dark-surface fixed inset-x-0 bottom-0 z-[60] max-h-[90vh] overflow-y-auto border-t-4 border-accent bg-secondary text-white shadow-2xl"
     >
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-5">
+      <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 pt-5 pb-[calc(1.25rem+var(--badge-h,0px))]">
         <h2 id="cookie-banner-title" className="text-lg font-semibold">{reopened ? "Cookie settings" : "Your cookie choice"}</h2>
         {!reopened ? (
           <>

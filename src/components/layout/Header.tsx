@@ -80,7 +80,7 @@ export default function Header({ services }: HeaderProps) {
               <Image src="/images/logo.png" alt="Stephen Corporate Services home page" width={64} height={72} priority className="h-14 md:h-16 w-auto" />
             </Link>
 
-            <nav aria-label="Primary" className="hidden lg:flex items-center gap-3.5 xl:gap-6">
+            <nav aria-label="Primary" className="hidden lg:flex items-center gap-2.5 xl:gap-6">
               <Link href="/" aria-current={isActive("/") ? "page" : undefined} className={navClass(isActive("/"))}>Home</Link>
               <div className="relative" ref={megaRef}>
                 <button ref={megaButtonRef} type="button" aria-expanded={megaOpen} aria-controls="services-mega-menu" onClick={() => setMegaOpen((v) => !v)} className={`${navClass(isActive("/services"))} flex items-center gap-1`}>

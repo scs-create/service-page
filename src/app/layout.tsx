@@ -8,6 +8,7 @@ import Analytics from "@/components/ui/Analytics";
 import CookieBanner from "@/components/ui/CookieBanner";
 import ContactDock from "@/components/layout/ContactDock";
 import TrackClicks from "@/components/ui/TrackClicks";
+import BadgeOffset from "@/components/ui/BadgeOffset";
 import { services } from "@/content/services/data";
 import { SITE } from "@/lib/site";
 
@@ -71,7 +72,7 @@ const navServices = services.map(({ slug, title, cluster }) => ({ slug, title, c
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} h-full`}>
-      <body className="min-h-full flex flex-col pb-[calc(3.5rem+env(safe-area-inset-bottom))] md:pb-0">
+      <body className="min-h-full flex flex-col pb-[calc(3.5rem+env(safe-area-inset-bottom)+var(--badge-h,0px))] md:pb-[var(--badge-h,0px)]">
         <JsonLd data={organisationSchema} />
         <a href="#main-content" className="skip-link">Skip to main content</a>
         {/* First in the focus order (after the skip link) so keyboard users reach the choice straight away; it is fixed to the bottom visually. */}
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <ContactDock />
         <TrackClicks />
+        <BadgeOffset />
         <Analytics />
       </body>
     </html>
