@@ -1,0 +1,26 @@
+{
+  "slug": "private-schools-and-early-years",
+  "name": "Private Schools & Early Years",
+  "summary": "Schools are trusted with children, staff and parents' confidence, so regulation, safeguarding and clear agreements sit at the heart of good school administration.",
+  "needs": [
+    "Meet educational regulatory requirements and keep corporate records in order",
+    "Document staff employment contracts, admissions and parent and school agreements",
+    "Put child safeguarding and data protection policies in place",
+    "Run customer care and enrolment processes that keep parents informed and satisfied"
+  ],
+  "regulators": [
+    "CAC",
+    "NRS",
+    "NDPC",
+    "ITF",
+    "NSITF",
+    "PENCOM"
+  ],
+  "services": [
+    "regulatory-compliance-and-licensing",
+    "human-resources-and-staff-management",
+    "data-protection-privacy-and-information-governance",
+    "customer-experience-and-customer-care",
+    "digital-marketing-and-brand-growth"
+  ]
+}

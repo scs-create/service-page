@@ -1,0 +1,23 @@
+{
+  "slug": "lending-credit-and-investment",
+  "name": "Lending, Credit & Investment",
+  "summary": "Lending and investment businesses handle other people's money and personal data, so licensing, documentation and consumer rules must be right from the start.",
+  "needs": [
+    "Assess which licences and registrations apply to the lending or investment activity, including FCCPC digital lending requirements where relevant",
+    "Prepare loan agreements, customer terms, investment agreements and debt recovery documentation",
+    "Keep corporate governance, statutory filings and tax compliance up to date",
+    "Protect borrower and investor personal data with documented policies"
+  ],
+  "regulators": [
+    "CAC",
+    "NRS",
+    "NDPC"
+  ],
+  "services": [
+    "regulatory-compliance-and-licensing",
+    "corporate-and-commercial-advisory",
+    "data-protection-privacy-and-information-governance",
+    "tax-accounting-and-financial-business-support",
+    "transaction-investment-and-growth-advisory"
+  ]
+}

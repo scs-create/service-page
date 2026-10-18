@@ -71,10 +71,12 @@ export const JOURNEY_STAGES = [
 
 export const INDUSTRIES = [
   "Financial Services & Fintech",
+  "Lending, Credit & Investment",
   "Technology & Digital Businesses",
   "Energy, Oil & Gas",
   "Power & Utilities",
   "Real Estate & Construction",
+  "Construction & General Contracting",
   "Manufacturing",
   "Healthcare & Pharmaceuticals",
   "Retail & Consumer Businesses",
@@ -83,6 +85,7 @@ export const INDUSTRIES = [
   "Media & Entertainment",
   "Nonprofits & Social Enterprises",
   "Education",
+  "Private Schools & Early Years",
   "Government & Public Sector",
   "International Businesses",
   "Startups & Scale-ups",

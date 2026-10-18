@@ -39,10 +39,10 @@ test("verification documents must describe their image", () => {
 });
 
 // ---------- Content integrity ----------
-test("21 services, 16 case studies, 12 industries, packages A–F, 10 FAQs", () => {
+test("21 services, 16 case studies, 15 industries, packages A–F, 10 FAQs", () => {
   assert.equal(services.length, 21);
   assert.equal(portfolio.length, 16);
-  assert.equal(industries.length, 12);
+  assert.equal(industries.length, 15);
   assert.deepEqual(SUPPORT_PACKAGES.map((p) => p.id), ["A", "B", "C", "D", "E", "F"]);
   assert.equal(faqs.length, 10);
 });

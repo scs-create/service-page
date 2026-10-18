@@ -1,0 +1,26 @@
+{
+  "slug": "construction-and-general-contracting",
+  "name": "Construction & General Contracting",
+  "summary": "Construction and contracting work runs on agreements, permits and subcontractors, so sound documentation and compliance protect every project.",
+  "needs": [
+    "Prepare construction, subcontractor and procurement agreements",
+    "Confirm the permits and registrations a project needs before work begins",
+    "Keep corporate, tax and employer registrations compliant",
+    "Set up project administration and contractual risk controls"
+  ],
+  "regulators": [
+    "CAC",
+    "NRS",
+    "SIRS",
+    "LANDS",
+    "NSITF",
+    "ITF"
+  ],
+  "services": [
+    "corporate-and-commercial-advisory",
+    "procurement-supply-chain-and-vendor-management",
+    "project-management-and-implementation",
+    "tax-accounting-and-financial-business-support",
+    "human-resources-and-staff-management"
+  ]
+}
