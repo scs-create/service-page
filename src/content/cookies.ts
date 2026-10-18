@@ -12,7 +12,7 @@ export const COOKIE_CATEGORIES = [
   {
     id: "analytics",
     label: "Performance and analytics",
-    description: "Counts visits and measures page performance using aggregated data (Plausible Analytics). Off until you accept.",
+    description: "Counts visits and measures how the site is used, so we can improve it. Off until you accept.",
     required: false,
     inUse: true,
   },

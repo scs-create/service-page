@@ -4,14 +4,14 @@ import type { NextConfig } from "next";
 // api.github.com, api.netlify.com and GitHub-hosted images and keeps the minimal policy from netlify.toml).
 // 'unsafe-inline' in script-src stays: Next.js inlines its hydration data in <script> tags and the site is
 // statically generated, so per-request nonces (which need dynamic rendering) are not possible. Everything else
-// is same-origin, except Plausible (script + event endpoint), which only loads after analytics consent.
+// is same-origin.
 const CSP = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' https://plausible.io",
+  "script-src 'self' 'unsafe-inline'",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob:",
   "font-src 'self'",
-  "connect-src 'self' https://plausible.io",
+  "connect-src 'self'",
   "manifest-src 'self'",
   "frame-src 'none'",
   "worker-src 'self'",

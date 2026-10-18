@@ -19,7 +19,7 @@
 
 # Security headers.
 # CSP here is the minimal policy that applies to EVERY path, including /admin (Decap CMS + GitHub OAuth via
-# api.netlify.com). The full policy for the public site (default-src 'self', Plausible only) is set in
+# api.netlify.com). The full policy for the public site (default-src 'self') is set in
 # next.config.ts for every path except /admin. See README → Security notes.
 # HSTS: max-age only. includeSubDomains / preload are NOT enabled until every subdomain (www, mail/Workspace
 # records, any future subdomain) is confirmed HTTPS-only; preload is effectively irreversible.

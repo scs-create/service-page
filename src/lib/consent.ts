@@ -4,7 +4,7 @@ export const CONSENT_KEY = "scs_cookie_consent";
 const CHANGE_EVENT = "scs-consent-change";
 const OPEN_EVENT = "scs-open-cookie-settings";
 const ONE_YEAR_MS = 365 * 24 * 60 * 60 * 1000;
-const MIN_PLAUSIBLE_TS = Date.UTC(2025, 0, 1); // SCS launched in 2025: anything earlier is not a real record
+const MIN_VALID_TS = Date.UTC(2025, 0, 1); // SCS launched in 2025: anything earlier is not a real record
 const CLOCK_SKEW_MS = 5 * 60 * 1000;
 
 export type Consent = { analytics: boolean; functional: boolean; marketing: boolean; ts: number };
@@ -15,7 +15,7 @@ export function validateConsent(value: unknown, now: number): Consent | null {
   const v = value as Record<string, unknown>;
   if (typeof v.analytics !== "boolean" || typeof v.functional !== "boolean" || typeof v.marketing !== "boolean") return null;
   if (typeof v.ts !== "number" || !Number.isFinite(v.ts)) return null;
-  if (v.ts < MIN_PLAUSIBLE_TS || v.ts > now + CLOCK_SKEW_MS) return null; // impossibly old or from the future
+  if (v.ts < MIN_VALID_TS || v.ts > now + CLOCK_SKEW_MS) return null; // impossibly old or from the future
   if (now - v.ts > ONE_YEAR_MS) return null; // expired
   return { analytics: v.analytics, functional: v.functional, marketing: v.marketing, ts: v.ts };
 }
@@ -42,9 +42,6 @@ export function getRawConsent(): string | null {
 export function saveConsent(choice: Omit<Consent, "ts">) {
   try {
     window.localStorage.setItem(CONSENT_KEY, JSON.stringify({ ...choice, ts: Date.now() }));
-    // Plausible honours this flag, so declining stops tracking immediately even if the script is already loaded.
-    if (choice.analytics) window.localStorage.removeItem("plausible_ignore");
-    else window.localStorage.setItem("plausible_ignore", "true");
   } catch {
     /* storage unavailable (private mode): choice applies for this page view only */
   }

@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { track } from "@/lib/track";
 
-// One delegated listener: any element with data-track="Label" reports a "CTA Click" to Plausible;
+// One delegated listener: any element with data-track="Label" reports a "CTA Click";
 // links marked data-booking (the Cal.com Discovery Call) also report a "Booking Click".
 export default function TrackClicks() {
   useEffect(() => {

@@ -1,11 +1,6 @@
-// Plausible custom events. No-ops unless the visitor accepted analytics (the script is not loaded otherwise).
-declare global {
-  interface Window {
-    plausible?: (event: string, options?: { props?: Record<string, string | number | boolean> }) => void;
-  }
-}
-
+// Analytics events. Plausible was removed; until the replacement is wired in, events are dropped.
+// Call sites keep their place so no conversion tracking is lost in the switch.
 export function track(event: string, props?: Record<string, string | number | boolean>) {
-  if (typeof window === "undefined") return;
-  window.plausible?.(event, props ? { props } : undefined);
+  void event;
+  void props;
 }

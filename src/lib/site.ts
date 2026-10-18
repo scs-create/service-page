@@ -8,7 +8,7 @@ const DOMAIN = "stephencorporateservices-scs.com";
 //  sales    → consultations, assessments, training requests (all lead forms)
 //  info     → information, partnerships, complaints
 //  accounts → invoices and payments
-//  admin    → INTERNAL ONLY (Workspace admin, Netlify/CMS/Plausible accounts). Never rendered on the site.
+//  admin    → INTERNAL ONLY (Workspace admin, Netlify/CMS/analytics accounts). Never rendered on the site.
 export const EMAILS = {
   admin: `admin@${DOMAIN}`,
   contact: `contact@${DOMAIN}`,
