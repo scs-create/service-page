@@ -3,6 +3,19 @@ title: "Commercial Tracking vs. Statutory Accounting: Understanding the Differen
 date: "2026-10-16"
 excerpt: "Many business owners assume that if their accountant maintains accurate records, prepares financial statements and handles tax filings, they have a complete picture of their company's financial health."
 category: "Corporate Learning"
+takeaways:
+  - "Accurate statutory accounts do not, on their own, give management control of cash, collections or margins."
+  - "Commercial tracking follows invoices, receivables, supplier obligations, project profitability and cash flow as they happen."
+  - "Start simply: an invoice register, a supplier payment schedule, a project tracker and a weekly cash-flow forecast."
+  - "Review commercial performance every month, with a named owner for each figure and each follow-up action."
+services:
+  - "tax-accounting-and-financial-business-support"
+  - "data-analytics-and-business-intelligence"
+  - "business-operations-and-outsourced-support"
+help: "SCS helps businesses run practical financial administration alongside their statutory obligations: invoice and receivables registers, supplier payment schedules, project profitability tracking and clear management reporting."
+tool:
+  href: "/assess"
+  label: "Assess your business"
 ---
 
 Many business owners assume that if their accountant maintains accurate records, prepares financial statements and handles tax filings, they have a complete picture of their company's financial health.
@@ -202,9 +215,9 @@ A typical structure is:
 | Ageing category | Meaning | Suggested management response |
 |---|---|---|
 | Not yet due | Payment deadline has not passed. | Confirm invoice receipt and monitor the due date. |
-| 1–30 days overdue | Payment is slightly late. | Send a reminder and confirm the reason for delay. |
-| 31–60 days overdue | Collection risk is increasing. | Escalate follow-up and obtain a clear payment commitment. |
-| 61–90 days overdue | The balance requires closer attention. | Review the customer's payment history and consider formal escalation. |
+| 1 to 30 days overdue | Payment is slightly late. | Send a reminder and confirm the reason for delay. |
+| 31 to 60 days overdue | Collection risk is increasing. | Escalate follow-up and obtain a clear payment commitment. |
+| 61 to 90 days overdue | The balance requires closer attention. | Review the customer's payment history and consider formal escalation. |
 | More than 90 days overdue | The balance may present significant collection risk. | Assess recovery options, contractual remedies and appropriate legal advice. |
 
 These categories are illustrative and should be adapted to the business's payment terms, industry and customer risk profile.
@@ -249,7 +262,7 @@ The consequences can include late-payment charges, supply interruptions, damaged
 
 However, payment tracking should not be confused with automatic payment approval. A payment must still undergo the business's required verification, authorisation and fraud-prevention controls.
 
-**The objective is to ensure that obligations are visible, verified and planned for—not simply to pay every invoice as soon as it appears.**
+**The objective is to ensure that obligations are visible, verified and planned for, not simply to pay every invoice as soon as it appears.**
 
 ## 8. Track Individual Project Profitability
 
@@ -774,7 +787,7 @@ The following resources provide useful background on financial reporting, accoun
 
 - **Financial Reporting Council of Nigeria:** Guidance and resources relating to financial reporting and applicable standards. [Financial Reporting Council of Nigeria](https://frcnigeria.gov.ng/)
 - **Corporate Affairs Commission:** Company registration, statutory filings and relevant corporate compliance resources. [Corporate Affairs Commission Nigeria](https://www.cac.gov.ng/)
-- **Federal Inland Revenue Service legacy resources:** Historical tax information and resources; verify current Nigerian tax administration arrangements and requirements through the relevant official tax authority. [Federal Inland Revenue Service](https://www.firs.gov.ng/)
+- **Nigeria Revenue Service (NRS):** The federal tax authority (formerly the Federal Inland Revenue Service). Confirm current tax administration arrangements and requirements directly with the NRS. [Nigeria Revenue Service](https://www.nrs.gov.ng/)
 - **International Federation of Accountants:** Professional resources on accounting, financial management and the role of accountants in supporting business decisions. [International Federation of Accountants](https://www.ifac.org/)
 - **U.S. Small Business Administration:** Practical guidance on financial management, cash flow and business planning. [U.S. Small Business Administration](https://www.sba.gov/business-guide/manage-your-business/manage-your-finances)
 

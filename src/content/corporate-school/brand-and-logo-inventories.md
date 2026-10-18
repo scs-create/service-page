@@ -3,6 +3,18 @@ title: "Brand and Logo Inventories: Cataloguing Your Intellectual Assets Before 
 date: "2026-10-16"
 excerpt: "Businesses create valuable intellectual assets through their brands, logos, marketing materials, software, original content and internal processes."
 category: "Corporate Learning"
+takeaways:
+  - "An IP inventory records what the business owns, who created it, where it is stored and whether the rights have been secured."
+  - "Review every department: business and product names, logos, marketing materials, website and digital assets, and software."
+  - "For each asset, record ownership, usage rights and registration status, and flag any gaps for action."
+  - "An inventory organises information. It does not replace registration, enforceable agreements or professional advice."
+services:
+  - "intellectual-property-and-brand-asset-management"
+  - "corporate-communications-and-business-documentation"
+help: "SCS helps businesses identify and organise their brands, logos and other intellectual assets, record ownership and protection status, and coordinate trademark filings through authorised agents where they are required."
+tool:
+  href: "/find-my-service"
+  label: "Find the right service"
 ---
 
 Businesses create valuable intellectual assets through their brands, logos, marketing materials, software, original content and internal processes. Yet many organisations lack a reliable record of what they own, who created it, where it is stored or whether the necessary rights have been secured.
@@ -309,8 +321,8 @@ The inventory is not a substitute for registration, enforceable agreements or le
 
 ## References and Further Reading
 
-1. **World Intellectual Property Organization (WIPO) — Uncovering IP Risks and Potential: IP Audit.** Guidance on identifying intellectual assets, verifying ownership, assessing protection gaps and managing IP risks. [Read the official guide](https://www.wipo.int/en/web/business/ip-audit).
-1. **WIPO — Why Intellectual Property Is Essential for Your Business.** An introduction to using intellectual property strategically to support competitiveness, commercialisation and business growth. [Explore WIPO's business resources](https://www.wipo.int/en/web/business/).
-1. **WIPO — Valuing Intellectual Property Assets.** Guidance on identifying and assessing the commercial value of intellectual property. [Read the official guide](https://www.wipo.int/en/web/business/ip-valuation).
-1. **Nigerian Copyright Commission — Copyright Registration.** Official information and services for documenting and registering copyright works in Nigeria. [Visit the Commission](https://copyright.gov.ng/).
-1. **Nigerian Copyright Commission — Copyright e-Registration System.** Online registration and database-search services for copyright works. [Access NCeRS](https://eregistration.copyright.gov.ng/ncc/).
+1. **World Intellectual Property Organization (WIPO): Uncovering IP Risks and Potential: IP Audit.** Guidance on identifying intellectual assets, verifying ownership, assessing protection gaps and managing IP risks. [Read the official guide](https://www.wipo.int/en/web/business/ip-audit).
+1. **WIPO: Why Intellectual Property Is Essential for Your Business.** An introduction to using intellectual property strategically to support competitiveness, commercialisation and business growth. [Explore WIPO's business resources](https://www.wipo.int/en/web/business/).
+1. **WIPO: Valuing Intellectual Property Assets.** Guidance on identifying and assessing the commercial value of intellectual property. [Read the official guide](https://www.wipo.int/en/web/business/ip-valuation).
+1. **Nigerian Copyright Commission: Copyright Registration.** Official information and services for documenting and registering copyright works in Nigeria. [Visit the Commission](https://copyright.gov.ng/).
+1. **Nigerian Copyright Commission: Copyright e-Registration System.** Online registration and database-search services for copyright works. [Access NCeRS](https://eregistration.copyright.gov.ng/ncc/).

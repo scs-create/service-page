@@ -3,6 +3,19 @@ title: "Website Development Requirements Assessment: How to Plan a Business Webs
 date: "2026-10-16"
 excerpt: "One of the most expensive mistakes a business can make is commissioning a website before defining what it needs the website to accomplish."
 category: "Corporate Learning"
+takeaways:
+  - "Define the business outcome the website must deliver before choosing a developer or a theme."
+  - "Plan pages, user journeys and content around the questions your audience actually asks."
+  - "Specify lead capture, functions, mobile usability, accessibility and search requirements in writing."
+  - "Use the requirements document to compare proposals and to measure results after launch."
+services:
+  - "digital-marketing-and-brand-growth"
+  - "corporate-communications-and-business-documentation"
+  - "data-protection-privacy-and-information-governance"
+help: "SCS helps businesses decide what their website must achieve before development starts: objectives, audience, pages and content, lead capture, and the data protection requirements for forms and analytics, so that proposals from developers can be compared properly."
+tool:
+  href: "/find-my-service"
+  label: "Find the right service"
 ---
 
 One of the most expensive mistakes a business can make is commissioning a website before defining what it needs the website to accomplish.
@@ -711,7 +724,7 @@ A successful website is not simply designed and launched. It is planned around r
 
 The following resources provide useful guidance for website planning, accessibility, search visibility, performance, and data protection:
 
-- **Web Content Accessibility Guidelines (WCAG) 2.2:** [World Wide Web Consortium (W3C)](https://www.w3.org/TR/wcag/) — guidance on making website content more accessible.
-- **Google Search Technical Requirements:** [Google Search Central](https://developers.google.com/search/docs/essentials/technical) — explains the technical conditions that allow pages to be eligible for indexing.
-- **Core Web Vitals:** [Google Search Central](https://developers.google.com/search/docs/appearance/core-web-vitals?hl=en) — guidance on measuring loading performance, responsiveness, and visual stability.
-- **Nigeria Data Protection Commission:** [NDPC official resources](https://ndpc.gov.ng/resources/) — official Nigerian data protection legislation and related resources.
+- **Web Content Accessibility Guidelines (WCAG) 2.2:** [World Wide Web Consortium (W3C)](https://www.w3.org/TR/wcag/): guidance on making website content more accessible.
+- **Google Search Technical Requirements:** [Google Search Central](https://developers.google.com/search/docs/essentials/technical): explains the technical conditions that allow pages to be eligible for indexing.
+- **Core Web Vitals:** [Google Search Central](https://developers.google.com/search/docs/appearance/core-web-vitals?hl=en): guidance on measuring loading performance, responsiveness, and visual stability.
+- **Nigeria Data Protection Commission:** [NDPC official resources](https://ndpc.gov.ng/resources/): official Nigerian data protection legislation and related resources.

@@ -3,6 +3,19 @@ title: "Conducting Growth Assessments and Market Research: How to Identify Real 
 date: "2026-10-16"
 excerpt: "Many businesses want to grow. They want more customers, higher revenue, additional branches, new products, and greater market share."
 category: "Corporate Learning"
+takeaways:
+  - "Growth is not a strategy. Start with a specific, measurable growth objective."
+  - "Estimate demand realistically, from the total market down to the share the business can actually win."
+  - "Validate customer problems through interviews and surveys, and study competitors and alternatives."
+  - "Compare opportunities with a weighted scoring model, then pilot and measure before committing fully."
+services:
+  - "research-market-intelligence-and-policy"
+  - "strategy-management-and-business-consulting"
+  - "transaction-investment-and-growth-advisory"
+help: "SCS supports growth decisions with market research, competitor analysis and structured business assessments, so new branches, products or markets are chosen on evidence rather than assumption."
+tool:
+  href: "/assess"
+  label: "Assess your business"
 ---
 
 Many businesses want to grow. They want more customers, higher revenue, additional branches, new products, and greater market share.
@@ -800,8 +813,8 @@ When businesses answer that question through disciplined research and validation
 
 The following resources provide useful guidance for market research, business planning, statistical data, and strategic analysis.
 
-- [U.S. Small Business Administration — Market Research and Competitive Analysis](https://www.sba.gov/business-guide/plan-your-business/market-research-competitive-analysis) — Guidance on assessing demand, market size, customer characteristics, and competition.
-- [National Bureau of Statistics, Nigeria](https://www.nigerianstat.gov.ng/) — An official source for Nigerian economic and statistical information that may support market analysis.
-- [Corporate Affairs Commission, Nigeria](https://www.cac.gov.ng/) — Official company registration and corporate information resources, useful for relevant business research. Registration information should not be treated as a complete measure of active market demand.
-- [International Trade Centre — Market Analysis Tools](https://www.intracen.org/resources/tools) — Resources that can help businesses investigate international markets and trade opportunities.
-- [World Bank Enterprise Surveys](https://www.enterprisesurveys.org/) — Business survey data and analysis that may help researchers understand private-sector operating conditions across economies.
+- [U.S. Small Business Administration: Market Research and Competitive Analysis](https://www.sba.gov/business-guide/plan-your-business/market-research-competitive-analysis): Guidance on assessing demand, market size, customer characteristics, and competition.
+- [National Bureau of Statistics, Nigeria](https://www.nigerianstat.gov.ng/): An official source for Nigerian economic and statistical information that may support market analysis.
+- [Corporate Affairs Commission, Nigeria](https://www.cac.gov.ng/): Official company registration and corporate information resources, useful for relevant business research. Registration information should not be treated as a complete measure of active market demand.
+- [International Trade Centre: Market Analysis Tools](https://www.intracen.org/resources/tools): Resources that can help businesses investigate international markets and trade opportunities.
+- [World Bank Enterprise Surveys](https://www.enterprisesurveys.org/): Business survey data and analysis that may help researchers understand private-sector operating conditions across economies.

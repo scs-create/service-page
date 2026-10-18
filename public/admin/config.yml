@@ -24,6 +24,37 @@ collections:
         name: "category"
         widget: "select"
         options: ["Services", "Corporate World Updates", "Corporate Learning"]
+      - label: "Key takeaways (3 to 5 short sentences, shown at the top)"
+        name: "takeaways"
+        widget: "list"
+        required: false
+        field: { label: "Takeaway", name: "item", widget: "string" }
+      - label: "Related services (shown in 'How SCS can help')"
+        name: "services"
+        widget: "relation"
+        collection: "services"
+        value_field: "slug"
+        search_fields: ["title"]
+        display_fields: ["title"]
+        multiple: true
+        max: 4
+        required: false
+      - { label: "How SCS can help (one or two sentences)", name: "help", widget: "text", required: false }
+      - label: "Free tool link"
+        name: "tool"
+        widget: "object"
+        required: false
+        fields:
+          - label: "Tool"
+            name: "href"
+            widget: "select"
+            options:
+              - { label: "Assess your Business", value: "/assess" }
+              - { label: "Compliance Starter Checklist", value: "/compliance-checklist" }
+              - { label: "Business Structure Chooser", value: "/business-structure" }
+              - { label: "Find My Service", value: "/find-my-service" }
+              - { label: "Compliance Calendar", value: "/compliance-calendar" }
+          - { label: "Button text", name: "label", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "services"

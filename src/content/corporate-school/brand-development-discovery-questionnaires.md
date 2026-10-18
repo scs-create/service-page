@@ -3,6 +3,19 @@ title: "Brand Development Discovery Questionnaires: How to Uncover Your Business
 date: "2026-10-16"
 excerpt: "One of the most common branding mistakes businesses make is investing in logo design, website development, social media marketing, or advertising before establishing a clear understanding of their identity."
 category: "Corporate Learning"
+takeaways:
+  - "A logo is visual identity. A brand is the strategy behind it: purpose, customers, values and positioning."
+  - "Define why the business exists, who it serves and which problems it solves before commissioning any design."
+  - "Test assumptions with customer research, competitor analysis and input from the people who run the business."
+  - "A documented discovery process prevents spending on visuals and campaigns built on an unclear strategy."
+services:
+  - "digital-marketing-and-brand-growth"
+  - "strategy-management-and-business-consulting"
+  - "intellectual-property-and-brand-asset-management"
+help: "SCS helps founders and teams work through brand discovery, positioning and key messages before money is spent on design, then connects the result to marketing, communications and brand protection."
+tool:
+  href: "/assess"
+  label: "Assess your business"
 ---
 
 One of the most common branding mistakes businesses make is investing in logo design, website development, social media marketing, or advertising before establishing a clear understanding of their identity.
@@ -770,8 +783,8 @@ When those questions have credible answers, visual design and marketing can serv
 
 ## Further Reading and Professional Resources
 
-- **World Intellectual Property Organization (WIPO) Trademarks:** [Official WIPO resources](https://www.wipo.int/en/web/trademarks) — an introduction to trademarks, registration, and the protection of distinctive signs used to identify goods and services.
-- **WIPO Branding and Intellectual Property:** [WIPO branding publication](https://www.wipo.int/edocs/pubdocs/en/intproperty/944/wipo_pub_944_2013.pdf) — discusses brands as business assets shaped by customer experiences, perceptions, and intellectual property.
-- **U.S. Small Business Administration - Market Research and Competitive Analysis:** [Official SBA guidance](https://www.sba.gov/counseling/plan-your-business/) — explains market research, customer analysis, and competitor assessment as part of business planning.
-- **Chartered Institute of Personnel and Development (CIPD) - Employer Brand:** [CIPD factsheet](https://www.cipd.org/en/knowledge/factsheets/recruitment-brand-factsheet/) — explores the relationship between organisational values, employee experience, reputation, recruitment, and employer branding.
-- **CIPD - Organisational Culture:** [CIPD resources](https://www.cipd.org/en/topics/organisational-culture/) — provides further reading on organisational culture and the relationship between internal practices and the employee experience.
+- **World Intellectual Property Organization (WIPO) Trademarks:** [Official WIPO resources](https://www.wipo.int/en/web/trademarks): an introduction to trademarks, registration, and the protection of distinctive signs used to identify goods and services.
+- **WIPO Branding and Intellectual Property:** [WIPO branding publication](https://www.wipo.int/edocs/pubdocs/en/intproperty/944/wipo_pub_944_2013.pdf): discusses brands as business assets shaped by customer experiences, perceptions, and intellectual property.
+- **U.S. Small Business Administration: Market Research and Competitive Analysis:** [Official SBA guidance](https://www.sba.gov/counseling/plan-your-business/): explains market research, customer analysis, and competitor assessment as part of business planning.
+- **Chartered Institute of Personnel and Development (CIPD): Employer Brand:** [CIPD factsheet](https://www.cipd.org/en/knowledge/factsheets/recruitment-brand-factsheet/): explores the relationship between organisational values, employee experience, reputation, recruitment, and employer branding.
+- **CIPD: Organisational Culture:** [CIPD resources](https://www.cipd.org/en/topics/organisational-culture/): provides further reading on organisational culture and the relationship between internal practices and the employee experience.

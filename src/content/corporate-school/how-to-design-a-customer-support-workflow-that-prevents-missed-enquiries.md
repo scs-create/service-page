@@ -3,6 +3,18 @@ title: "How to Design a Customer Support Workflow That Prevents Missed Enquiries
 date: "2026-10-16"
 excerpt: "As a business grows, customer enquiries often arrive through multiple channels, including phone calls, WhatsApp, email, social media and website forms."
 category: "Corporate Learning"
+takeaways:
+  - "List every channel customers use: phone, WhatsApp, email, social media and website forms."
+  - "Record every enquiry in one place, with a category, a priority and a named owner."
+  - "Set realistic response and resolution standards, with a clear escalation route."
+  - "Track open and overdue cases, and review recurring problems regularly."
+services:
+  - "customer-experience-and-customer-care"
+  - "business-operations-and-outsourced-support"
+help: "SCS helps businesses design and run customer care processes: enquiry registers, response standards, escalation routes and service reporting. It can also operate agreed support channels as part of an outsourced arrangement."
+tool:
+  href: "/find-my-service"
+  label: "Find the right service"
 ---
 
 As a business grows, customer enquiries often arrive through multiple channels, including phone calls, WhatsApp, email, social media and website forms. Without a structured process for receiving, assigning and tracking these enquiries, potential sales and customer relationships can be lost.
@@ -187,7 +199,7 @@ Use a small set of meaningful indicators to evaluate service quality and operati
 
 Review results by channel, enquiry category, priority and team. Average response times alone can conceal a small number of severely delayed cases, so consider reviewing overdue cases and median response times as well.
 
-Performance measures should encourage accurate, helpful resolutions—not simply fast replies or premature case closures.
+Performance measures should encourage accurate, helpful resolutions, not simply fast replies or premature case closures.
 
 ## 13. Identify Recurring Problems
 
@@ -261,6 +273,6 @@ The objective is straightforward: every enquiry should be recorded, assigned, ac
 
 ## References and Further Reading
 
-1. **Zendesk — About SLA Policies and How They Work.** Guidance on setting and monitoring customer response and resolution targets. [Read the official guide](https://support.zendesk.com/hc/en-us/articles/5600997516058-About-SLA-policies-and-how-they-work).
-1. **HubSpot — Create and Respond to Tickets in Help Desk.** Practical guidance on centralising customer conversations, managing tickets and tracking case status. [Read the official guide](https://knowledge.hubspot.com/help-desk/create-respond-to-tickets-in-help-desk).
-1. **Zendesk — Analysing the Metrics That Matter to Improve Customer Support.** An overview of response-time measures and how support metrics can guide operational improvements. [Read the official guide](https://support.zendesk.com/hc/en-us/articles/4408832234394-Analyzing-the-metrics-that-matter-to-improve-customer-support).
+1. **Zendesk: About SLA Policies and How They Work.** Guidance on setting and monitoring customer response and resolution targets. [Read the official guide](https://support.zendesk.com/hc/en-us/articles/5600997516058-About-SLA-policies-and-how-they-work).
+1. **HubSpot: Create and Respond to Tickets in Help Desk.** Practical guidance on centralising customer conversations, managing tickets and tracking case status. [Read the official guide](https://knowledge.hubspot.com/help-desk/create-respond-to-tickets-in-help-desk).
+1. **Zendesk: Analysing the Metrics That Matter to Improve Customer Support.** An overview of response-time measures and how support metrics can guide operational improvements. [Read the official guide](https://support.zendesk.com/hc/en-us/articles/4408832234394-Analyzing-the-metrics-that-matter-to-improve-customer-support).

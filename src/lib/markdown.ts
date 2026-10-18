@@ -28,3 +28,22 @@ export async function renderMarkdown(markdown: string): Promise<string> {
   const html = await marked.parse(markdown, { gfm: true });
   return sanitizeHtml(html, OPTIONS);
 }
+
+const stripTags = (s: string) => s.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"');
+const slugify = (s: string) => s.toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 70);
+
+// Articles: sanitised HTML plus ids on the section headings (added AFTER sanitising, from our own slug
+// function, so CMS content can never inject ids) and the contents list built from them.
+export async function renderArticle(markdown: string): Promise<{ html: string; toc: { id: string; title: string }[] }> {
+  const toc: { id: string; title: string }[] = [];
+  const seen = new Set<string>();
+  const html = (await renderMarkdown(markdown)).replace(/<h2>([\s\S]*?)<\/h2>/g, (_m, inner: string) => {
+    const title = stripTags(inner).trim();
+    let id = slugify(title) || "section";
+    while (seen.has(id)) id += "-2";
+    seen.add(id);
+    toc.push({ id, title });
+    return `<h2 id="${id}">${inner}</h2>`;
+  });
+  return { html, toc };
+}

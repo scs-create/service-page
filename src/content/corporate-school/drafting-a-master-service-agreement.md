@@ -3,7 +3,22 @@ title: "Drafting a Master Service Agreement: A Practical Guide to Preventing Sco
 date: "2026-10-16"
 excerpt: "A professional guide to defining service obligations, managing contractual changes, and protecting commercial interests."
 category: "Corporate Learning"
+takeaways:
+  - "Use the MSA for the general terms, and a statement of work for each engagement's scope, fees and timelines."
+  - "Define what is included and excluded, with measurable deliverables and acceptance criteria."
+  - "Handle every change through a written change-control procedure that covers scope, cost and timing."
+  - "Keep a contract register so deadlines, renewals and obligations are monitored after signing."
+services:
+  - "contract-lifecycle-management"
+  - "corporate-and-commercial-advisory"
+  - "corporate-partnership-and-regulatory-business-support"
+help: "SCS helps businesses organise their commercial documentation: service order templates, change-control and approval records, and contract registers that track deliverables, renewals and payment obligations. Where an agreement needs a lawyer's drafting or advice, SCS coordinates with qualified professionals."
+tool:
+  href: "/find-my-service"
+  label: "Find the right service"
 ---
+
+Scope creep rarely starts with a dispute. It starts with a vague service description, an informal request for "one more thing" and no agreed way to price the extra work. This guide explains how to structure a Master Service Agreement (MSA) and its supporting documents so that obligations, changes and payments stay clear for the whole relationship.
 
 ## 1. Understanding the Master Service Agreement
 
@@ -23,7 +38,7 @@ An MSA commonly addresses:
 
 ## 2. Define the Scope of Services
 
-Ambiguous service descriptions create uncertainty about contractual obligations and frequently lead to scope creep—the gradual expansion of work beyond the original agreement without corresponding adjustments to fees or timelines.
+Ambiguous service descriptions create uncertainty about contractual obligations and frequently lead to scope creep, the gradual expansion of work beyond the original agreement without corresponding adjustments to fees or timelines.
 
 Each engagement should specify:
 

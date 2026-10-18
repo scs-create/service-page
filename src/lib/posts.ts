@@ -20,6 +20,11 @@ const frontmatter = z.object({
   date: z.coerce.date({ error: "date must be a valid date" }),
   excerpt: z.string().trim().min(1, "excerpt must not be empty"),
   category: z.string().optional(),
+  // Article enhancements (all optional, editable in the CMS):
+  takeaways: z.array(z.string().trim().min(1)).max(6).optional(), // "Key takeaways" box at the top
+  services: z.array(z.string().trim().min(1)).max(4).optional(), // service slugs for "How SCS can help"
+  help: z.string().trim().min(1).optional(), // the "How SCS can help" paragraph
+  tool: z.object({ href: z.string().startsWith("/"), label: z.string().trim().min(1) }).optional(), // a free analysis tool
 });
 
 export interface Post {
@@ -28,6 +33,10 @@ export interface Post {
   date: string; // ISO
   excerpt: string;
   category?: string;
+  takeaways?: string[];
+  services?: string[];
+  help?: string;
+  tool?: { href: string; label: string };
   content: string;
   readingMinutes: number;
 }

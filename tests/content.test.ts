@@ -179,3 +179,18 @@ test("server-rendered files never import values from a \"use client\" module (th
   assert.deepEqual(offenders, []);
 });
 
+test("Corporate School articles: takeaways, real service links and a real tool link; no long dashes", async () => {
+  const { getAllPosts } = await import("../src/lib/posts");
+  const { services } = await import("../src/content/services/data");
+  const { TOOLS } = await import("../src/content/toolsList");
+  const slugs = new Set(services.map((s) => s.slug));
+  const tools = new Set<string>(TOOLS.map((t) => t.href));
+  const posts = getAllPosts(new Date("2100-01-01"));
+  assert.equal(posts.length, 10);
+  for (const p of posts) {
+    assert.ok((p.takeaways ?? []).length >= 3, `${p.slug}: takeaways`);
+    for (const s of p.services ?? []) assert.ok(slugs.has(s), `${p.slug}: unknown service ${s}`);
+    if (p.tool) assert.ok(tools.has(p.tool.href), `${p.slug}: unknown tool ${p.tool.href}`);
+    assert.doesNotMatch(p.content + p.title + p.excerpt, /[—–]/, `${p.slug}: long dash`);
+  }
+});
