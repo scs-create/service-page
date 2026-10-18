@@ -1,7 +1,9 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import fs from "node:fs";
 import { renderMarkdown } from "../src/lib/markdown";
 import { validateConsent, parseConsent } from "../src/lib/consent";
+import { checkBasicAuth, safeEqual } from "../netlify/edge-functions/admin-auth";
 
 // ---------- H-01: CMS Markdown is sanitised ----------
 const attacks: [string, string, RegExp][] = [
@@ -46,4 +48,25 @@ test("consent: non-objects and malformed JSON rejected", () => {
   for (const v of [null, 5, "x", [], true]) assert.equal(validateConsent(v, NOW), null);
   assert.equal(parseConsent("{not json", NOW), null);
   assert.equal(parseConsent(null, NOW), null);
+});
+
+// ---------- /admin password gate (Netlify Edge Function) ----------
+const basic = (u: string, p: string) => "Basic " + Buffer.from(`${u}:${p}`).toString("base64");
+test("admin gate: correct username and password pass", () => assert.equal(checkBasicAuth(basic("editor", "s3cret:with:colons"), "editor", "s3cret:with:colons"), true));
+test("admin gate: wrong password, wrong user, missing or malformed header fail", () => {
+  assert.equal(checkBasicAuth(basic("editor", "nope"), "editor", "s3cret"), false);
+  assert.equal(checkBasicAuth(basic("someone", "s3cret"), "editor", "s3cret"), false);
+  assert.equal(checkBasicAuth(null, "editor", "s3cret"), false);
+  assert.equal(checkBasicAuth("Bearer abc", "editor", "s3cret"), false);
+  assert.equal(checkBasicAuth("Basic !!!not-base64", "editor", "s3cret"), false);
+  assert.equal(checkBasicAuth(basic("editor", ""), "editor", "s3cret"), false);
+});
+test("admin gate: constant-time compare handles different lengths", () => {
+  assert.equal(safeEqual("abc", "abc"), true);
+  assert.equal(safeEqual("abc", "abcd"), false);
+  assert.equal(safeEqual("", "a"), false);
+});
+test("admin gate: no credentials are stored in the repository", () => {
+  const src = fs.readFileSync("netlify/edge-functions/admin-auth.ts", "utf-8") + fs.readFileSync("netlify.toml", "utf-8");
+  assert.doesNotMatch(src, /ADMIN_PASSWORD\s*=\s*["']|Basic-Auth/);
 });

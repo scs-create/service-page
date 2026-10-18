@@ -42,8 +42,9 @@ Defaults are built in, but set this one so it is visible in Netlify: `NEXT_PUBLI
 1. GitHub → **Settings → Developer settings → OAuth Apps → New OAuth App**. Homepage URL: `https://stephencorporateservices-scs.com`. Authorization callback URL: `https://api.netlify.com/auth/done`. Register, copy the **Client ID**, click **Generate a new client secret** and copy it.
 2. Netlify → **Site configuration → Access & security → OAuth** (older UI: *Access control → OAuth*) → **Install provider → GitHub** → paste Client ID and Secret. (Menu labels vary slightly between Netlify UI versions.)
 3. `public/admin/config.yml` already points at `scs-create/service-page` (branch `main`). Change it only if the repository moves.
-4. Open `https://stephencorporateservices-scs.com/admin` → **Login with GitHub**. Every editor needs a GitHub account added to the repository as a collaborator with **write** access.
-5. Editors work in the *Editorial workflow*: Draft → In review → Ready → **Publish** (publishing merges the change; Netlify rebuilds).
+4. **Admin password:** Netlify → **Site configuration → Environment variables → Add a variable** → `ADMIN_USER` (a username of your choice) and `ADMIN_PASSWORD` (a long, unique password, 16+ characters, from a password manager). Tick **Contains secret values**, scope **All scopes**, same value for every deploy context. Then **Deploys → Trigger deploy**. Share them only with editors. To change the password, edit the variable and redeploy.
+5. Open `https://stephencorporateservices-scs.com/admin` → enter that username and password → **Login with GitHub**. Every editor needs a GitHub account added to the repository as a collaborator with **write** access.
+6. Editors work in the *Editorial workflow*: Draft → In review → Ready → **Publish** (publishing merges the change; Netlify rebuilds).
 
 ## H. Analytics (PostHog Cloud EU)
 1. PostHog → the project whose key starts `phc_virz…` (EU Cloud, https://eu.posthog.com).
