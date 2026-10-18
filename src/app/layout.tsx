@@ -73,12 +73,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} h-full`}>
       <body className="min-h-full flex flex-col pb-[calc(3.5rem+env(safe-area-inset-bottom))] md:pb-0">
         <JsonLd data={organisationSchema} />
-                <a href="#main-content" className="skip-link">Skip to main content</a>
+        <a href="#main-content" className="skip-link">Skip to main content</a>
+        {/* First in the focus order (after the skip link) so keyboard users reach the choice straight away; it is fixed to the bottom visually. */}
+        <CookieBanner />
         <Header services={navServices} />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
         <ContactDock />
-        <CookieBanner />
         <TrackClicks />
         <Analytics />
       </body>

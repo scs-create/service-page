@@ -59,8 +59,9 @@ export const toSnake = (s: string) =>
 // enquiry in Netlify (hidden field lead_id) and used as the PostHog person ID, so a lead can be matched to the
 // visit that produced it without any email, name or phone number reaching PostHog.
 export function newLeadId(): string | null {
-  if (!getPosthog() || typeof crypto === "undefined" || !crypto.randomUUID) return null;
-  return `lead_${crypto.randomUUID().replace(/-/g, "")}`;
+  if (!getPosthog() || typeof crypto === "undefined" || !crypto.getRandomValues) return null;
+  const bytes = crypto.getRandomValues(new Uint8Array(16));
+  return `lead_${Array.from(bytes, (b) => b.toString(16).padStart(2, "0")).join("")}`;
 }
 
 export function identifyLead(leadId: string | null, traits: { service_interest?: string; lead_source: string }) {
