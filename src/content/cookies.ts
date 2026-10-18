@@ -12,7 +12,7 @@ export const COOKIE_CATEGORIES = [
   {
     id: "analytics",
     label: "Performance and analytics",
-    description: "Counts visits and measures how the site is used, so we can improve it. Off until you accept.",
+    description: "Shows us how visitors use the site (PostHog, hosted in the EU), so we can improve it. Off until you accept; nothing is stored before then.",
     required: false,
     inUse: true,
   },
