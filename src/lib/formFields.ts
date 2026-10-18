@@ -13,11 +13,12 @@ export const FORM_FIELDS = {
       "audience", "topic", "details",
       "assessment_score", "assessment_band", "assessment_gaps", "assessment_answers",
       "checklist_type", "checklist_sector", "calendar_area", "structure_result", "finder_result",
+      "lead_id", // anonymous analytics ID, only present when the visitor accepted analytics
     ],
     files: [] as string[],
   },
   "career-application": {
-    text: ["source_page", "applying_as", "name", "email", "phone", "area", "profile_url", "message", "consent_contact"],
+    text: ["source_page", "applying_as", "name", "email", "phone", "area", "profile_url", "message", "consent_contact", "lead_id"],
     files: ["cv", "cover_letter", "proposal"],
   },
 } as const;

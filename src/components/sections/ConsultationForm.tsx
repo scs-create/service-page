@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState, useSyncExternalStore, FormEvent } from "react";
 import { submitToNetlify } from "@/lib/forms";
-import { track } from "@/lib/track";
+import { useFormAnalytics } from "@/lib/useFormAnalytics";
 import { FormError, FormSuccess, SUBMIT_ERROR } from "@/components/sections/NetlifyForm";
 
 const NEEDS = [
@@ -25,6 +25,7 @@ export default function ConsultationForm({ sectors }: { sectors: string[] }) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const fieldsets = useRef<(HTMLFieldSetElement | null)[]>([]);
   const headings = useRef<(HTMLHeadingElement | null)[]>([]);
+  const { attach, onFocus, beforeSubmit, submitted, failed, step: trackStep } = useFormAnalytics("consultation");
 
   useEffect(() => {
     if (step > 0) headings.current[step]?.focus();
@@ -33,18 +34,21 @@ export default function ConsultationForm({ sectors }: { sectors: string[] }) {
   function next() {
     const controls = fieldsets.current[step]?.querySelectorAll<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>("input,select,textarea") ?? [];
     for (const c of controls) if (!c.reportValidity()) return;
-    track("Form Step", { form: "consultation", step: step + 1 });
+    trackStep(step + 1);
     setStep((s) => s + 1);
   }
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("submitting");
+    beforeSubmit(form);
     try {
-      await submitToNetlify(e.currentTarget);
-      track("Form Submit", { form: "consultation" });
+      await submitToNetlify(form);
+      submitted(form);
       setStatus("success");
     } catch {
+      failed();
       setStatus("error");
     }
   }
@@ -53,7 +57,7 @@ export default function ConsultationForm({ sectors }: { sectors: string[] }) {
 
   const show = (i: number) => !js || step === i;
   return (
-    <form name="enquiry" method="POST" action="/__forms.html" onSubmit={onSubmit} className="space-y-6">
+    <form name="enquiry" method="POST" action="/__forms.html" onSubmit={onSubmit} ref={attach} onFocus={onFocus} className="space-y-6">
       <input type="hidden" name="form-name" value="enquiry" />
       <input type="hidden" name="request_type" value="consultation" />
       <input type="hidden" name="source_page" value="/contact" />

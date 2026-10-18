@@ -3,7 +3,7 @@
 import { useEffect, useState, useSyncExternalStore, FormEvent } from "react";
 import { MAX_FILE_BYTES, submitToNetlify } from "@/lib/forms";
 import { allFieldNames, FormName } from "@/lib/formFields";
-import { track } from "@/lib/track";
+import { useFormAnalytics } from "@/lib/useFormAnalytics";
 
 export type FormField = {
   name: string;
@@ -72,6 +72,7 @@ export default function NetlifyForm({ formName, fields, submitLabel, successTitl
   const hasFile = fields.some((f) => f.type === "file");
   // Conditional fields are only mandatory when JS can show/hide them (otherwise no-JS visitors could never submit).
   const isRequired = (f: FormField) => !!f.required && (!f.showWhen || hydrated);
+  const { attach, onFocus, beforeSubmit, submitted, failed } = useFormAnalytics(requestType ?? formName);
 
   useEffect(() => {
     if (process.env.NODE_ENV === "production") return;
@@ -93,13 +94,15 @@ export default function NetlifyForm({ formName, fields, submitLabel, successTitl
       }
     }
     setStatus("submitting");
+    beforeSubmit(form);
     try {
       await submitToNetlify(form);
-      track("Form Submit", { form: requestType ?? formName });
+      submitted(form);
       setStatus("success");
       onSuccess?.();
       form.reset();
     } catch {
+      failed();
       setStatus("error");
     }
   }
@@ -107,7 +110,7 @@ export default function NetlifyForm({ formName, fields, submitLabel, successTitl
   if (status === "success") return <FormSuccess title={successTitle} message={successMessage} />;
 
   return (
-    <form name={formName} method="POST" action="/__forms.html" encType={hasFile ? "multipart/form-data" : undefined} onSubmit={handleSubmit} className="space-y-5">
+    <form name={formName} method="POST" action="/__forms.html" encType={hasFile ? "multipart/form-data" : undefined} onSubmit={handleSubmit} ref={attach} onFocus={onFocus} className="space-y-5">
       <input type="hidden" name="form-name" value={formName} />
       {requestType && <input type="hidden" name="request_type" value={requestType} />}
       {sourcePage && <input type="hidden" name="source_page" value={sourcePage} />}
