@@ -7,7 +7,7 @@
 - **Company details** come from `src/lib/site.ts` via `{{tokens}}`, so the legal pages always match the footer and contact page. This corrected the following in the supplied files:
   - The Privacy Notice gave **RC 9552075**; the confirmed RC is **9041457**.
   - All three used old-domain emails (`info@stephencorporateservices.com`, and the Cookie Policy's link pointed to `privacy@…`). They now show `privacy@stephencorporateservices-scs.com` for privacy matters and `contact@…` for general contact.
-  - The telephone number is shown as `+234 906 403 5713`.
+  - The telephone number comes from `{{phone}}`: +234 812 813 8222 (changed 18 October 2026; also the WhatsApp number).
 - **Address:** **SD20 Belham Estate, Karsana, FCT, Abuja** (client decision, 18 October 2026; it replaces "Benhen" site-wide).
 - **Dates:** all three documents are **effective 3 December 2025** and show **no "last updated" date** (client decision, 18 October 2026; this replaced the earlier 16 October 2026).
 - **Website-specific sections added** (client-approved, 18 October 2026), because the supplied documents are deliberately generic:

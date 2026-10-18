@@ -6,7 +6,7 @@ export default function ToolsTeaser({ limit = 3 }: { limit?: number }) {
   return (
     <section data-location="tools_teaser" className="py-16 md:py-20">
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8">
-        <SectionHeading eyebrow="Free tools" title="Start with a quick, useful first step" intro="No commitment. Find out where your business stands and what to do next." />
+        <SectionHeading eyebrow="Analyse your Business" title="Start with a quick, useful first step" intro="No commitment. Find out where your business stands and what to do next." />
         <ul className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {TOOLS.slice(0, limit).map((t) => (
             <li key={t.href}>
@@ -18,7 +18,7 @@ export default function ToolsTeaser({ limit = 3 }: { limit?: number }) {
             </li>
           ))}
         </ul>
-        <div className="mt-8"><Link href="/tools" className="text-sm font-medium text-primary hover:underline">See all free tools →</Link></div>
+        <div className="mt-8"><Link href="/tools" className="text-sm font-medium text-primary hover:underline">Analyse your business →</Link></div>
       </div>
     </section>
   );

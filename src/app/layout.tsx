@@ -23,8 +23,8 @@ const DESCRIPTION =
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: `${SITE.legalName} | Corporate Services Partner`,
-    template: `%s | ${SITE.legalName}`,
+    default: `${SITE.titleName} | Corporate Services Partner`,
+    template: `%s | ${SITE.titleName}`,
   },
   description: DESCRIPTION,
   applicationName: SITE.name,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE.name,
     locale: "en_NG",
-    title: `${SITE.legalName} | Corporate Services Partner`,
+    title: `${SITE.titleName} | Corporate Services Partner`,
     description: DESCRIPTION,
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: `${SITE.name} — ${SITE.tagline}` }],
   },

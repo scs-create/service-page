@@ -4,14 +4,14 @@ import PageHero from "@/components/ui/PageHero";
 import { TOOLS } from "@/content/toolsList";
 
 export const metadata: Metadata = {
-  title: "Free Tools",
-  description: "Free tools from SCS: assess your business, build a compliance starter checklist, choose a business structure, find the right service and track compliance obligations.",
+  title: "Analyse your Business",
+  description: "Analyse your business with free tools from SCS: assess your business, build a compliance starter checklist, choose a business structure, find the right service and track compliance obligations.",
 };
 
 export default function ToolsPage() {
   return (
     <>
-      <PageHero breadcrumbs={[{ label: "Free Tools" }]} eyebrow="Free tools" title="Practical first steps, no commitment" intro="Quick tools to show where your business stands and what to do next. Your answers stay on your device unless you choose to send them to us." />
+      <PageHero breadcrumbs={[{ label: "Analyse your Business" }]} eyebrow="Analyse your Business" title="Practical first steps, no commitment" intro="Quick tools to show where your business stands and what to do next. Your answers stay on your device unless you choose to send them to us." />
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12">
         <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {TOOLS.map((t) => (

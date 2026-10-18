@@ -30,15 +30,17 @@ export const EMAIL_ROUTING = [
 export const SITE = {
   name: "Stephen Corporate Services",
   legalName: "Stephen Corporate Services Ltd",
+  // Browser tab and search-result name (owner decision, 18 October 2026).
+  titleName: "Stephen Corporate Services - SCS Ltd",
   shortName: "SCS",
   tagline: "Elevate Your Company, Go Global.",
   domain: DOMAIN,
   // Netlify injects URL at build time; NEXT_PUBLIC_SITE_URL overrides it.
   url: process.env.NEXT_PUBLIC_SITE_URL ?? `https://${DOMAIN}`,
   email: EMAILS.contact,
-  phone: "+234 906 403 5713",
-  phoneHref: "+2349064035713",
-  whatsappHref: "2349064035713", // wa.me/<number> — active on WhatsApp (confirmed by the client)
+  phone: "+234 812 813 8222", // calls and WhatsApp (owner decision, 18 October 2026; was +234 906 403 5713)
+  phoneHref: "+2348128138222",
+  whatsappHref: "2348128138222", // wa.me/<number>
   // Confirmed by the client (18 October 2026): Belham Estate, Karsana. Legal pages read it from here.
   address: {
     street: "SD20 Belham Estate, Karsana",

@@ -11,7 +11,7 @@ const QUICK_LINKS = [
   { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/verification", label: "Verification" },
-  { href: "/tools", label: "Free Tools" },
+  { href: "/tools", label: "Analyse your Business" },
   { href: "/industries", label: "Industries" },
   { href: "/corporate-college", label: "Corporate College" },
   { href: "/faq", label: "FAQ" },

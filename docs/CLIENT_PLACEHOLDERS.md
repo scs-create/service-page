@@ -25,7 +25,7 @@ Leadership bios: none exist, so none are shown (no placeholder). Add a `bio` in 
 | Metrics | 3,000+ / 1,800+ / 1,200+ / 10+ confirmed; the 3,000+ label now reads "Business registrations guided through the CAC by our founding team" (achieved before SCS launched) |
 | Address | SD20 Belham Estate, Karsana, FCT, Abuja (changed from "Benhen" on 18 October 2026) |
 | Primary email | contact@stephencorporateservices-scs.com |
-| WhatsApp | +234 906 403 5713 is active |
+| Phone and WhatsApp | +234 812 813 8222 (changed from +234 906 403 5713 on 18 October 2026) |
 | Leadership photos | Supplied; circular, optimised (`public/images/team/`). Signatures are never published |
 | Booking link | Cal.com Discovery Call (free): `https://cal.com/support-stephen-corporate-services-scs/30min` |
 | Blog posts | The two samples were replaced by the ten Corporate College articles |

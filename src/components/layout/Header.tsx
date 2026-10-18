@@ -11,7 +11,7 @@ import { SITE } from "@/lib/site";
 
 const NAV = [
   { href: "/portfolio", label: "Portfolio" },
-  { href: "/tools", label: "Free Tools" },
+  { href: "/tools", label: "Analyse your Business" },
   { href: "/corporate-college", label: "Corporate College" },
   { href: "/about", label: "About" },
   { href: "/verification", label: "Verification" },
