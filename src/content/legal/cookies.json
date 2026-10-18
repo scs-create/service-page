@@ -2,226 +2,695 @@
  "slug": "cookies",
  "title": "Cookie Policy",
  "effective": "16 October 2026",
- "updated": "October 9, 2026",
- "intro": [
-  {
-   "type": "p",
-   "text": "Only necessary cookies run on the SCS website until you choose otherwise; every other cookie needs your consent, which you can withdraw at any time. This policy follows section 26 of the Nigeria Data Protection Act 2023 (\"NDP Act\") and Article 19 of the NDP Act General Application and Implementation Directive 2025 (\"GAID\"), and forms part of our Privacy Notice."
-  }
- ],
+ "updated": "16 October 2026",
+ "intro": [],
  "sections": [
   {
-   "id": "1-who-is-responsible",
-   "heading": "1. Who is responsible",
+   "id": "1-introduction",
+   "heading": "1. Introduction",
    "level": 2,
    "blocks": [
     {
      "type": "p",
-     "text": "Stephen Corporate Services (SCS) Ltd (\"SCS\", \"we\", \"us\"), {{address}}, is the organisation responsible for the cookies set by our website and client portals. You can reach our Data Protection Officer at {{email_privacy}}."
+     "text": "Stephen Corporate Services (SCS) Ltd (\"SCS\", \"we\", \"us\" or \"our\") uses cookies and similar technologies to operate, protect, and improve its websites and online services."
+    },
+    {
+     "type": "p",
+     "text": "This Cookie Policy explains the technologies we use, the purposes for which they are used, how they may process information about visitors, and how you can control your preferences."
+    },
+    {
+     "type": "p",
+     "text": "We distinguish between cookies that are necessary for our websites to function and those used for additional purposes, such as analytics, personalisation, and marketing. We do not activate non-essential cookies unless you have given the required consent."
+    },
+    {
+     "type": "p",
+     "text": "This Policy forms part of our Privacy Notice and should be read alongside it. It applies to SCS websites, online services, and client portals that display or link to this Policy."
+    },
+    {
+     "type": "p",
+     "text": "We administer cookies and similar technologies in accordance with the Nigeria Data Protection Act 2023, the applicable provisions of the Nigeria Data Protection Act General Application and Implementation Directive 2025 (GAID), and other relevant legal requirements."
     }
    ]
   },
   {
-   "id": "2-what-cookies-and-similar-tools-are",
-   "heading": "2. What cookies and similar tools are",
+   "id": "2-who-is-responsible-for-our-use-of-cookies",
+   "heading": "2. Who Is Responsible for Our Use of Cookies?",
    "level": 2,
    "blocks": [
     {
      "type": "p",
-     "text": "Cookies are small text files a website stores on your phone, tablet or computer. They let the site recognise your device, remember choices and measure how it is used. Under Article 19(8) of the GAID, similar tracking tools such as pixels, local storage, device fingerprinting and tracking scripts follow the same rules, so in this policy \"cookies\" includes them."
-    }
-   ]
-  },
-  {
-   "id": "3-the-cookies-we-use",
-   "heading": "3. The cookies we use",
-   "level": 2,
-   "blocks": [
+     "text": "Stephen Corporate Services (SCS) Ltd is responsible for determining how cookies and similar technologies are used on the websites and online services covered by this Policy, subject to the respective roles and obligations of third-party service providers."
+    },
     {
      "type": "table",
      "rows": [
       [
-       "Category",
-       "What it does",
-       "Consent needed?"
+       "Organisation",
+       "{{company}}"
       ],
       [
-       "Strictly necessary",
-       "Security, session management, login to secure client portals, load balancing and network stability, accessibility, and remembering your cookie choice",
-       "No. Without them the site cannot work safely. They do not process sensitive, financial or private data"
+       "RC number",
+       "{{rc}}"
       ],
       [
-       "Performance and analytics",
-       "Count visits, find error pages and measure load times, using aggregated data to improve the site",
-       "Yes. Off until you accept"
+       "Address",
+       "{{address}}"
       ],
       [
-       "Functional",
-       "Remember choices such as language, location or saved enquiry details",
-       "Yes. Off until you accept"
+       "Privacy contact",
+       "{{email_privacy}}"
       ],
       [
-       "Marketing and targeting",
-       "Show relevant service updates and campaign information and limit how often you see them",
-       "Yes. Off until you accept"
+       "General contact",
+       "{{email_contact}}"
+      ],
+      [
+       "Telephone",
+       "{{phone}}"
       ]
      ]
     },
     {
      "type": "p",
-     "text": "Under Article 19(6) of the GAID only cookies for core functions such as security, network stability and accessibility are exempt from consent, so we ask for consent for every other category, including functional cookies."
+     "text": "If you have questions about our use of cookies, wish to exercise your privacy rights, or need assistance with your cookie preferences, you may contact us using the details above."
     }
    ]
   },
   {
-   "id": "4-how-we-ask-for-your-consent",
-   "heading": "4. How we ask for your consent",
-   "level": 2,
-   "blocks": [
-    {
-     "type": "list",
-     "items": [
-      "A cookie banner appears the first time you visit, at the front of the page. You do not have to scroll to see it, and it names SCS as the responsible organisation.",
-      "It offers equal, clear **Accept** and **Reject** buttons and a **Manage preferences** option to choose by category. Nothing is pre-ticked, and closing the banner or continuing to browse is not treated as consent to non-essential cookies.",
-      "It explains each cookie's purpose in plain language and how to withdraw consent.",
-      "We keep a record of your choice (the scs_cookie_consent cookie) as evidence of consent.",
-      "If you reject non-essential cookies you can still use the website's basic functions."
-     ]
-    }
-   ]
-  },
-  {
-   "id": "5-cookie-table",
-   "heading": "5. Cookie table",
+   "id": "3-what-are-cookies-and-similar-technologies",
+   "heading": "3. What Are Cookies and Similar Technologies?",
    "level": 2,
    "blocks": [
     {
      "type": "p",
-     "text": "SCS must confirm this table against a scan of the live website before publication. Names and lifetimes below are the expected set.",
-     "internal": true
+     "text": "Cookies are small text files that a website stores on your device when you visit it. They may help the website remember your session, maintain security, retain preferences, or recognise a returning browser."
+    },
+    {
+     "type": "p",
+     "text": "Cookies may be temporary or persistent:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "**Session cookies** generally expire when you close your browser or when the relevant session ends.",
+      "**Persistent cookies** remain on your device for a defined period or until you delete them."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "We may also use technologies that perform functions similar to cookies. These include tracking pixels, web beacons, browser storage, scripts, and other mechanisms that recognise a device, store information, or collect information about interactions with a website."
+    },
+    {
+     "type": "p",
+     "text": "For the purposes of this Policy, references to cookies include these similar technologies where applicable."
+    },
+    {
+     "type": "p",
+     "text": "Depending on the technology and its purpose, information collected may include your browser or device information, IP address, session identifiers, pages visited, interactions with website features, and cookie preferences."
+    },
+    {
+     "type": "p",
+     "text": "Such information may constitute personal data where it relates to an identified or identifiable individual."
+    }
+   ]
+  },
+  {
+   "id": "4-categories-of-cookies-we-use",
+   "heading": "4. Categories of Cookies We Use",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "We classify cookies according to their purpose. The categories below describe the functions that may be used on our websites and online services. The actual cookies deployed must correspond to the categories disclosed in our cookie preference interface."
+    }
+   ]
+  },
+  {
+   "id": "4-1-strictly-necessary-cookies",
+   "heading": "4.1 Strictly Necessary Cookies",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "These cookies support essential website functions and security."
+    },
+    {
+     "type": "p",
+     "text": "They may be used to:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Maintain secure browsing sessions.",
+      "Support authentication and access to protected client portals.",
+      "Protect website forms and sessions against unauthorised activity.",
+      "Support network stability and the reliable delivery of website content.",
+      "Maintain essential accessibility features.",
+      "Remember your cookie consent or rejection choices."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "We use these cookies only where they are necessary for the relevant function. They are not used as a means of introducing unrelated advertising or behavioural tracking."
+    },
+    {
+     "type": "p",
+     "text": "Strictly necessary cookies that fall within the applicable legal exemption do not require consent. Their use remains subject to applicable data protection principles and other legal obligations."
+    }
+   ]
+  },
+  {
+   "id": "4-2-analytics-and-performance-cookies",
+   "heading": "4.2 Analytics and Performance Cookies",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "These cookies help us understand how visitors use our websites and whether our online services are functioning properly."
+    },
+    {
+     "type": "p",
+     "text": "Depending on the tools deployed, they may help us:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Understand which pages receive visits.",
+      "Identify broken links and error pages.",
+      "Measure page-loading times.",
+      "Assess the performance and usability of website features.",
+      "Identify general usage patterns that can guide improvements."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Where these functions involve non-essential cookies or similar tracking technologies, we obtain your consent before activating them."
+    },
+    {
+     "type": "p",
+     "text": "Analytics cookies remain disabled if you reject them. We do not treat the fact that you visit our website as permission to use these technologies."
+    }
+   ]
+  },
+  {
+   "id": "4-3-functional-and-preference-cookies",
+   "heading": "4.3 Functional and Preference Cookies",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "These cookies enable additional features and help us remember choices you make while using our websites."
+    },
+    {
+     "type": "p",
+     "text": "Depending on the functionality provided, they may remember your language preference, interface settings, or other selected options."
+    },
+    {
+     "type": "p",
+     "text": "Where a cookie is not strictly necessary for a function you have requested, we seek your consent before using it."
+    },
+    {
+     "type": "p",
+     "text": "If you reject functional cookies, some optional features may not remember your preferences between visits. The essential functions of the website should remain available where technically practicable."
+    }
+   ]
+  },
+  {
+   "id": "4-4-marketing-and-advertising-cookies",
+   "heading": "4.4 Marketing and Advertising Cookies",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "These cookies and similar technologies may be used to measure marketing campaigns, understand engagement with promotional content, or support the delivery of relevant advertising."
+    },
+    {
+     "type": "p",
+     "text": "Depending on the service involved, they may recognise a browser across visits or collect information about interactions with marketing content."
+    },
+    {
+     "type": "p",
+     "text": "We do not activate marketing cookies or equivalent non-essential tracking technologies without your consent."
+    },
+    {
+     "type": "p",
+     "text": "If we do not use these technologies on a particular website or service, we will not deploy them merely because this category appears in this Policy."
+    },
+    {
+     "type": "p",
+     "text": "We do not use cookies as a means of selling your personal data."
+    }
+   ]
+  },
+  {
+   "id": "5-how-we-obtain-and-manage-your-consent",
+   "heading": "5. How We Obtain and Manage Your Consent",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "When you first visit a website covered by this Policy, our cookie preference interface should provide clear information about our use of cookies and allow you to make an informed choice."
+    },
+    {
+     "type": "p",
+     "text": "The interface is designed to operate as follows:"
+    },
+    {
+     "type": "p",
+     "text": "**a. Clear notice:** The cookie notice identifies SCS and explains why cookies are used."
+    },
+    {
+     "type": "p",
+     "text": "**b. Meaningful choice:** You can accept or reject non-essential cookies without being required to accept them to access the website's ordinary functions."
+    },
+    {
+     "type": "p",
+     "text": "**c. Category selection:** Where different categories of non-essential cookies are available, you can manage them separately through the preference settings."
+    },
+    {
+     "type": "p",
+     "text": "**d. No preselected consent:** Non-essential categories are not enabled by default, and consent is not inferred from silence, continued browsing, or failure to close the notice."
+    },
+    {
+     "type": "p",
+     "text": "**e. Essential functionality:** Strictly necessary cookies may operate without consent where the applicable legal exemption permits their use."
+    },
+    {
+     "type": "p",
+     "text": "**f. Recorded preferences:** We maintain an appropriate record of your choice so that your preferences can be respected and, where necessary, demonstrated."
+    },
+    {
+     "type": "p",
+     "text": "**g. Continued control:** You can revisit your preferences and withdraw consent as explained in Section 8."
+    },
+    {
+     "type": "p",
+     "text": "We seek consent before activating non-essential cookies. If you reject a category, the relevant cookies and tracking technologies must remain disabled unless another lawful basis and applicable legal requirement permit the specific processing."
+    },
+    {
+     "type": "p",
+     "text": "Our consent mechanism should respect your choice throughout the relevant browsing experience and should not repeatedly ask you to make the same choice without a legitimate reason."
+    }
+   ]
+  },
+  {
+   "id": "6-cookie-information-and-retention",
+   "heading": "6. Cookie Information and Retention",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "The cookies used on a website may change when we introduce new features, update our systems, or change service providers."
+    },
+    {
+     "type": "p",
+     "text": "For this reason, the cookie preference interface should provide an up-to-date inventory of the cookies and similar technologies actually deployed on the relevant website."
+    },
+    {
+     "type": "p",
+     "text": "For each applicable cookie or technology, the inventory should identify:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Its name and provider.",
+      "The category to which it belongs.",
+      "Its purpose.",
+      "Whether it is a session or persistent cookie.",
+      "Its applicable expiry period.",
+      "Whether it involves a third party.",
+      "The relevant consent requirement."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "We do not represent that every category described in this Policy is necessarily active on every SCS website or client portal."
+    },
+    {
+     "type": "p",
+     "text": "Cookie information must reflect the technologies actually in use, rather than assumed names, providers, or expiry periods."
+    }
+   ]
+  },
+  {
+   "id": "6-1-retention-of-cookie-information",
+   "heading": "6.1 Retention of Cookie Information",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Session cookies should expire when their intended session ends, unless a documented technical requirement justifies a different period."
+    },
+    {
+     "type": "p",
+     "text": "Persistent cookies should remain active only for the period reasonably required for their stated purpose. Their expiry periods should be disclosed through the cookie inventory or preference interface."
+    },
+    {
+     "type": "p",
+     "text": "We retain cookie preference records for the period reasonably necessary to respect your choices and demonstrate that consent was obtained where required. We then delete or appropriately anonymise those records when they are no longer needed, subject to applicable legal obligations."
+    },
+    {
+     "type": "p",
+     "text": "Where cookie-related information is retained in security logs, analytics systems, or other records, its retention is governed by the relevant purpose, our retention arrangements, and applicable legal requirements."
+    }
+   ]
+  },
+  {
+   "id": "7-third-party-cookies-and-service-providers",
+   "heading": "7. Third-Party Cookies and Service Providers",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Some website functions may depend on external service providers, such as hosting providers, security services, analytics platforms, embedded media providers, or other technology vendors."
+    },
+    {
+     "type": "p",
+     "text": "Depending on how a service is configured, a provider may store cookies on your device or receive information through similar technologies."
+    },
+    {
+     "type": "p",
+     "text": "We assess the technologies incorporated into our websites and take reasonable steps to understand:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "What information the provider collects.",
+      "Why the information is collected.",
+      "Whether the provider uses cookies or similar tracking technologies.",
+      "Whether personal data is disclosed to the provider.",
+      "Whether information is transferred outside Nigeria.",
+      "What contractual, technical, and organisational safeguards are appropriate."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Where a third-party technology requires consent, we obtain that consent before activating it."
+    },
+    {
+     "type": "p",
+     "text": "Third-party providers may operate under their own privacy policies and contractual terms. Where appropriate, we direct you to the relevant provider's privacy information through our cookie preference interface."
+    },
+    {
+     "type": "p",
+     "text": "The involvement of a third party does not remove SCS's responsibility to assess and manage its own data protection obligations."
+    }
+   ]
+  },
+  {
+   "id": "8-changing-your-preferences-and-withdrawing-consent",
+   "heading": "8. Changing Your Preferences and Withdrawing Consent",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "You may change your cookie preferences or withdraw consent at any time."
+    }
+   ]
+  },
+  {
+   "id": "8-1-through-our-website",
+   "heading": "8.1 Through Our Website",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Use the **Cookie Settings** option on the relevant website to reopen the preference interface."
+    },
+    {
+     "type": "p",
+     "text": "You can use this interface to withdraw consent for previously accepted categories or change your selections."
+    },
+    {
+     "type": "p",
+     "text": "Withdrawal must be made available through a straightforward mechanism and must not be unnecessarily more difficult than giving consent."
+    },
+    {
+     "type": "p",
+     "text": "Once your preference changes, we will take reasonable technical steps to stop using the affected non-essential cookies and tracking technologies."
+    },
+    {
+     "type": "p",
+     "text": "Some cookies may already have been stored on your device. We will provide a mechanism to delete or disable them where technically practicable. You may also need to remove existing cookies through your browser settings."
+    },
+    {
+     "type": "p",
+     "text": "Withdrawing consent does not invalidate processing that was lawfully carried out before withdrawal. It does, however, require us to stop relying on that consent for subsequent processing to which the withdrawal applies."
+    }
+   ]
+  },
+  {
+   "id": "8-2-through-your-browser",
+   "heading": "8.2 Through Your Browser",
+   "level": 3,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Most modern browsers allow you to view, delete, block, or restrict cookies."
+    },
+    {
+     "type": "p",
+     "text": "You may also configure your browser to restrict third-party cookies or clear selected cookies when you close it."
+    },
+    {
+     "type": "p",
+     "text": "Instructions are available from the browser providers:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Google Chrome: [https://support.google.com/chrome/answer/95647](https://support.google.com/chrome/answer/95647)",
+      "Mozilla Firefox: [https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop](https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop)",
+      "Microsoft Edge: [https://support.microsoft.com/en-us/microsoft-edge](https://support.microsoft.com/en-us/microsoft-edge)",
+      "Apple Safari: [https://support.apple.com/guide/safari/sfri11471/mac](https://support.apple.com/guide/safari/sfri11471/mac)"
+     ]
+    },
+    {
+     "type": "p",
+     "text": "Browser settings operate independently of our website's preference interface. Blocking all cookies may prevent some essential features, including authentication or access to secure client portals, from functioning correctly."
+    },
+    {
+     "type": "p",
+     "text": "Where you have withdrawn consent through our website, changing your browser settings is not a substitute for the website's responsibility to respect your recorded preference."
+    }
+   ]
+  },
+  {
+   "id": "9-security-and-protection-of-cookie-related-information",
+   "heading": "9. Security and Protection of Cookie-Related Information",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "We take reasonable technical and organisational measures to protect information collected through cookies and similar technologies against unauthorised access, disclosure, alteration, loss, or misuse."
+    },
+    {
+     "type": "p",
+     "text": "Depending on the relevant system and risk, these measures may include access controls, secure configuration, restricted administrative privileges, appropriate encryption, monitoring, and the use of trusted service providers."
+    },
+    {
+     "type": "p",
+     "text": "We seek to ensure that cookie-related information is accessed only by persons and systems authorised to use it for legitimate purposes."
+    },
+    {
+     "type": "p",
+     "text": "We also take reasonable steps to ensure that cookie preference records are handled consistently with the choices made by website visitors."
+    },
+    {
+     "type": "p",
+     "text": "The safeguards applied to a particular system depend on the information processed, the technology involved, and the risks associated with its use."
+    }
+   ]
+  },
+  {
+   "id": "10-international-transfers",
+   "heading": "10. International Transfers",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Some third-party service providers may process or store cookie-related information outside Nigeria."
+    },
+    {
+     "type": "p",
+     "text": "Where this occurs, we assess the relevant processing arrangements and apply the international data transfer requirements of the Nigeria Data Protection Act 2023 and the applicable GAID provisions."
+    },
+    {
+     "type": "p",
+     "text": "Depending on the circumstances, this may require an assessment of the destination, the recipient, applicable legal safeguards, and the rights and protections available to affected individuals."
+    },
+    {
+     "type": "p",
+     "text": "We do not treat your acceptance of analytics or marketing cookies as automatic authorisation for every international transfer associated with a provider."
+    },
+    {
+     "type": "p",
+     "text": "Where consent is relied upon for a particular processing activity or transfer, it must satisfy the applicable legal requirements and relate to the processing in question."
+    }
+   ]
+  },
+  {
+   "id": "11-your-data-protection-rights",
+   "heading": "11. Your Data Protection Rights",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "Where information collected through cookies constitutes personal data, you may exercise the rights available to you under applicable data protection law."
+    },
+    {
+     "type": "p",
+     "text": "Depending on the circumstances, these rights may include:"
+    },
+    {
+     "type": "list",
+     "items": [
+      "Requesting access to your personal data.",
+      "Requesting correction of inaccurate or incomplete information.",
+      "Requesting erasure where the applicable conditions are met.",
+      "Objecting to certain processing activities.",
+      "Withdrawing consent where processing relies on consent.",
+      "Lodging a complaint with the relevant supervisory authority."
+     ]
+    },
+    {
+     "type": "p",
+     "text": "The availability and application of particular rights depend on the nature of the processing and the applicable legal requirements."
+    },
+    {
+     "type": "p",
+     "text": "To exercise a right or raise a concern about our use of cookies, contact us using the details in Section 13."
+    },
+    {
+     "type": "p",
+     "text": "We will assess and respond to your request in accordance with applicable law."
+    }
+   ]
+  },
+  {
+   "id": "12-changes-to-this-policy",
+   "heading": "12. Changes to This Policy",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "We may revise this Policy when our websites, technologies, service providers, business operations, or applicable legal requirements change."
+    },
+    {
+     "type": "p",
+     "text": "The latest version will be published on the relevant website with its effective date."
+    },
+    {
+     "type": "p",
+     "text": "Where a material change affects the way we use non-essential cookies, we will update the relevant disclosures and obtain fresh consent where required before activating the affected technologies."
+    },
+    {
+     "type": "p",
+     "text": "We will not rely on the publication of an updated Policy as a substitute for obtaining consent where consent is legally required."
+    },
+    {
+     "type": "p",
+     "text": "We encourage you to review this Policy periodically."
+    }
+   ]
+  },
+  {
+   "id": "13-contact-and-complaints",
+   "heading": "13. Contact and Complaints",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "If you have questions about this Policy, wish to change your cookie preferences, or want to raise a concern about our use of cookies, you may contact Stephen Corporate Services (SCS) Ltd through the following channels:"
     },
     {
      "type": "table",
      "rows": [
       [
+       "Organisation",
+       "{{company}}"
+      ],
+      [
+       "RC number",
+       "{{rc}}"
+      ],
+      [
+       "Address",
+       "{{address}}"
+      ],
+      [
+       "Privacy contact",
+       "{{email_privacy}}"
+      ],
+      [
+       "General contact",
+       "{{email_contact}}"
+      ],
+      [
+       "Telephone",
+       "{{phone}}"
+      ]
+     ]
+    },
+    {
+     "type": "p",
+     "text": "If you are dissatisfied with our handling of a privacy concern, you may lodge a complaint with the Nigeria Data Protection Commission through its official website:"
+    },
+    {
+     "type": "p",
+     "text": "[https://ndpc.gov.ng/](https://ndpc.gov.ng/)"
+    },
+    {
+     "type": "p",
+     "text": "You may also seek any other remedy available to you under applicable law."
+    }
+   ]
+  },
+  {
+   "id": "cookies-on-this-website",
+   "heading": "Cookies and similar technologies on this website",
+   "level": 2,
+   "blocks": [
+    {
+     "type": "p",
+     "text": "This is the current inventory for stephencorporateservices-scs.com, as described in Section 6. Use \"Cookie settings\" in the footer to change your choice at any time."
+    },
+    {
+     "type": "table",
+     "rows": [
+      [
+       "Name and provider",
        "Category",
-       "Name / provider",
        "Purpose",
-       "Lifetime",
-       "Basis"
+       "Type and expiry",
+       "Consent"
       ],
       [
-       "Strictly necessary",
-       "[to be confirmed by a live-site scan]",
-       "Secure session and request protection",
-       "Session",
-       "Necessary for the service (contract / security)"
-      ],
-      [
-       "Strictly necessary",
        "scs_cookie_consent (browser local storage), set by SCS",
-       "Stores your banner choice",
-       "1 year",
-       "Necessary to honour and prove your choice"
+       "Strictly necessary",
+       "Remembers your cookie choice so we can respect it",
+       "Persistent, 1 year",
+       "Not required"
       ],
       [
-       "Analytics",
-       "Plausible Analytics (plausible.io): sets no cookies",
-       "Usage and performance statistics",
-       "Not applicable (no cookies set)",
-       "Consent"
+       "plausible_ignore (browser local storage), set by SCS",
+       "Strictly necessary",
+       "Tells Plausible not to count you after you reject analytics",
+       "Persistent, until you change your choice",
+       "Not required"
       ],
       [
-       "Functional",
-       "None in use on this website",
-       "Remembers interface preferences",
-       "6 months",
-       "Consent"
-      ],
-      [
-       "Marketing",
-       "None in use on this website",
-       "",
-       "",
-       "Consent"
+       "Plausible Analytics script (plausible.io), Plausible Insights OÜ",
+       "Analytics and performance",
+       "Counts page visits and button clicks in aggregate. Sets no cookies",
+       "Not applicable (no cookie)",
+       "Only after you accept"
       ]
      ]
     },
     {
      "type": "p",
-     "text": "The consent record is kept for as long as it is needed to prove your choice and is then deleted."
-    }
-   ]
-  },
-  {
-   "id": "6-third-parties-and-transfers-abroad",
-   "heading": "6. Third parties and transfers abroad",
-   "level": 2,
-   "blocks": [
-    {
-     "type": "p",
-     "text": "Some cookies are set by providers we use, such as analytics, security, hosting or embedded video services. They set their own cookies and we do not control them, so please read their policies. Where a provider processes data outside Nigeria, for example Google, we rely on the transfer grounds in sections 41 to 43 of the NDP Act, including your consent for analytics and marketing cookies. We do not use tracking tools to sell personal data."
-    }
-   ]
-  },
-  {
-   "id": "7-managing-and-withdrawing-consent",
-   "heading": "7. Managing and withdrawing consent",
-   "level": 2,
-   "blocks": [
-    {
-     "type": "p",
-     "text": "**On our site.** Select **Cookie settings** in the website footer at any time to change categories or withdraw consent. Withdrawing is as easy as giving consent (section 35 of the NDP Act) and does not affect earlier lawful use. After you withdraw we stop the cookies and delete those we can."
-    },
-    {
-     "type": "p",
-     "text": "**In your browser.** You can view, block or delete cookies, block third-party cookies, or clear cookies when you close the browser:"
-    },
-    {
-     "type": "list",
-     "items": [
-      "[Google Chrome](https://support.google.com/chrome/answer/95647)",
-      "[Mozilla Firefox](https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop)",
-      "[Microsoft Edge](https://support.microsoft.com/en-us/microsoft-edge)",
-      "[Apple Safari](https://support.apple.com/guide/safari/sfri11471/mac)"
-     ]
-    },
-    {
-     "type": "p",
-     "text": "Blocking strictly necessary cookies may stop our secure client portals from working."
-    }
-   ]
-  },
-  {
-   "id": "8-your-rights-and-complaints",
-   "heading": "8. Your rights and complaints",
-   "level": 2,
-   "blocks": [
-    {
-     "type": "p",
-     "text": "You have the rights described in our Privacy Notice, including access, correction, erasure, objection and withdrawal of consent. Contact the DPO at {{email_privacy}}. You may also complain to the Nigeria Data Protection Commission at info@ndpc.gov.ng or ndpc.gov.ng, or seek redress in court."
-    }
-   ]
-  },
-  {
-   "id": "9-updates",
-   "heading": "9. Updates",
-   "level": 2,
-   "blocks": [
-    {
-     "type": "p",
-     "text": "We will update this policy when our cookies, technology or the law change, and show the new date at the top. If we add a new category of non-essential cookie, we will ask for your consent again before using it."
-    }
-   ]
-  },
-  {
-   "id": "10-contact",
-   "heading": "10. Contact",
-   "level": 2,
-   "blocks": [
-    {
-     "type": "p",
-     "text": "Stephen Corporate Services (SCS) Ltd, {{address}}. Email: {{email_privacy}}. Phone: {{phone}}."
+     "text": "This website uses no functional, marketing or advertising cookies. Our hosting provider (Netlify) sets no cookies for visitors. The Cal.com booking page and other external sites we link to apply their own cookie policies."
     }
    ]
   }

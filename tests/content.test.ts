@@ -107,7 +107,9 @@ test("site search ranks title matches first and requires every word", () => {
 
 // ---------- M-04: legal pages and indexing ----------
 test("legal pages with unresolved placeholders are flagged (noindex + left out of the sitemap)", () => {
-  assert.equal(hasPlaceholders(legal("terms")), true);
+  // The final documents (supplied 18 October 2026) have none, so all three are published and indexable.
+  for (const n of ["terms", "privacy", "cookies"]) assert.equal(hasPlaceholders(legal(n)), false, n);
+  assert.equal(hasPlaceholders({ ...legal("terms"), intro: [{ type: "p", text: "Pay within [30] days." }] }), true);
   assert.equal(hasPlaceholders({ ...legal("cookies"), intro: [], sections: [{ id: "a", heading: "A", level: 2, blocks: [{ type: "p", text: "All resolved." }] }] }), false);
 });
 test("legal text contains no old-domain emails or personal Gmail addresses", () => {
@@ -115,13 +117,12 @@ test("legal text contains no old-domain emails or personal Gmail addresses", () 
   assert.doesNotMatch(all, /@stephencorporateservices\.com/);
   assert.doesNotMatch(all, /@gmail\.com/);
 });
-test("SCS RC number and Terms effective date/version come from the client's confirmed values", () => {
-  const terms = JSON.stringify(legal("terms")), privacy = JSON.stringify(legal("privacy"));
-  assert.doesNotMatch(terms + privacy, /confirm SCS RC number/);
-  assert.match(terms, /\{\{rc\}\}/);
-  assert.match(privacy, /RC \{\{rc\}\}/);
-  assert.match(terms, /16 October 2026 \/ 1\.0/);
+test("legal pages take company details from site.ts tokens, never hard-coded copies", () => {
+  const all = ["terms", "privacy", "cookies"].map((n) => JSON.stringify(legal(n))).join("");
+  for (const t of ["{{rc}}", "{{address}}", "{{email_privacy}}", "{{phone}}"]) assert.ok(all.includes(t), t);
+  assert.doesNotMatch(all, /9552075|Belham|Benhen|09064035713/); // the supplied documents' variants
   assert.equal(SITE.rc, "9041457");
+  assert.match(SITE.address.full, /^SD20 Belham Estate, Karsana/);
 });
 test("no link points at the CAC search portal (it returned 404); only the CAC website is linked", () => {
   const walk = (d: string): string[] => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(`${d}/${e.name}`) : [`${d}/${e.name}`]));
@@ -129,8 +130,13 @@ test("no link points at the CAC search portal (it returned 404); only the CAC we
   assert.deepEqual(hits, []);
   assert.equal(SITE.cacUrl, "https://www.cac.gov.ng");
 });
-test("legal effective dates are the client's confirmed values (16 October 2026)", () => {
-  for (const n of ["terms", "privacy", "cookies"]) assert.equal((legal(n) as unknown as { effective: string }).effective, "16 October 2026");
+test("every legal date is the launch date, 16 October 2026", () => {
+  for (const n of ["terms", "privacy", "cookies"]) {
+    const d = legal(n) as unknown as { effective: string; updated: string };
+    assert.equal(d.effective, "16 October 2026");
+    assert.equal(d.updated, "16 October 2026");
+    assert.doesNotMatch(JSON.stringify(d), /(19|20)\d\d(?<!2023)(?<!2025)(?<!2026)/); // only NDPA 2023, GAID 2025 and 2026
+  }
 });
 test("breadcrumbs are restored and Corporate School has the ten supplied articles (samples removed)", () => {
   assert.equal(fs.existsSync("src/components/ui/Breadcrumbs.tsx"), true);
@@ -142,9 +148,9 @@ test("breadcrumbs are restored and Corporate School has the ten supplied article
 test("booking calls to action never fall back to an empty URL", () => {
   assert.match(SITE.bookingUrl, /^https:\/\/cal\.com\//);
 });
-test("exactly one DPCO self-description sentence was removed from the Terms", () => {
-  const t = JSON.stringify(legal("terms"));
-  assert.doesNotMatch(t, /\[is \/ is not\]/);
-  assert.match(t, /Data Protection Compliance Organisation \(DPCO\) licensed by the NDPC/); // legitimate usage kept
+test("the website sections describe the tools this site actually uses", () => {
+  const privacy = JSON.stringify(legal("privacy")), cookies = JSON.stringify(legal("cookies"));
+  for (const t of ["Netlify", "Plausible", "Cal.com", "GitHub"]) assert.match(privacy, new RegExp(t));
+  for (const t of ["scs_cookie_consent", "plausible_ignore", "Plausible"]) assert.match(cookies, new RegExp(t));
 });
 void z;
