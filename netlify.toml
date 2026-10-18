@@ -38,6 +38,27 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# PostHog (EU Cloud) through our own domain, so ad blockers don't drop analytics and the CSP stays same-origin.
+# Order matters: static assets and remote config before the catch-all. Works on the custom domain only
+# (Netlify alters Content-Encoding on *.netlify.app, which is excluded from tracking anyway).
+[[redirects]]
+  from = "/ingest/static/*"
+  to = "https://eu-assets.i.posthog.com/static/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/ingest/array/*"
+  to = "https://eu-assets.i.posthog.com/array/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/ingest/*"
+  to = "https://eu.i.posthog.com/:splat"
+  status = 200
+  force = true
+
 # "Academy" is now "Corporate College". Netlify answers these with a true 301 before Next.js runs
 # (next.config.ts keeps the same rule as a fallback, which Next.js serves as 308).
 [[redirects]]

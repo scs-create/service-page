@@ -4,7 +4,7 @@ import type { NextConfig } from "next";
 // api.github.com, api.netlify.com and GitHub-hosted images and keeps the minimal policy from netlify.toml).
 // 'unsafe-inline' in script-src stays: Next.js inlines its hydration data in <script> tags and the site is
 // statically generated, so per-request nonces (which need dynamic rendering) are not possible. Everything else
-// is same-origin.
+// is same-origin, including analytics: PostHog is reached through /ingest (proxied in netlify.toml).
 const CSP = [
   "default-src 'self'",
   "script-src 'self' 'unsafe-inline'",
