@@ -51,6 +51,7 @@ export const SITE = {
   threads: "https://www.threads.com/@stephen_corporate_services",
   instagram: "https://www.instagram.com/stephen_corporate_services",
   facebook: "https://web.facebook.com/profile.php?id=61593570197715",
+  x: "https://x.com/SCSaccount1",
   // Discovery Call on Cal.com (free). Every "Book" call to action opens it in a new tab.
   // NEXT_PUBLIC_BOOKING_URL in Netlify overrides it; an empty value falls back to this default.
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || "https://cal.com/support-stephen-corporate-services-scs/30min",

@@ -1,4 +1,4 @@
-type ChannelType = "email" | "whatsapp" | "phone" | "linkedin" | "instagram" | "facebook" | "threads";
+type ChannelType = "email" | "whatsapp" | "phone"; // social profiles use SocialLinks (brand icons)
 
 type ContactChannelProps = {
   type: ChannelType;
@@ -13,10 +13,6 @@ const CHANNEL_CONFIG: Record<ChannelType, { label: string; hrefPrefix: string; e
   email: { label: "Email SCS", hrefPrefix: "mailto:", external: false },
   whatsapp: { label: "Message SCS on WhatsApp", hrefPrefix: "https://wa.me/", external: true },
   phone: { label: "Call SCS", hrefPrefix: "tel:", external: false },
-  linkedin: { label: "SCS on LinkedIn", hrefPrefix: "", external: true },
-  instagram: { label: "SCS on Instagram", hrefPrefix: "", external: true },
-  facebook: { label: "SCS on Facebook", hrefPrefix: "", external: true },
-  threads: { label: "SCS on Threads", hrefPrefix: "", external: true },
 };
 
 // Values starting with "[" are treated as not-yet-supplied placeholders and render disabled.
@@ -43,7 +39,7 @@ export default function ContactChannel({
         isPlaceholder ? "opacity-50 pointer-events-none" : ""
       }`}
     >
-      <span className="font-medium">
+      <span className="font-medium [overflow-wrap:anywhere]">
         {label ?? config.label}
         {isPlaceholder && <span className="text-xs text-muted"> (to be added)</span>}
         {config.external && !isPlaceholder && <span className="sr-only"> (opens in new tab)</span>}

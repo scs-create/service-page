@@ -3,6 +3,7 @@ import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ProcessStepper from "@/components/ui/ProcessStepper";
+import SocialLinks from "@/components/ui/SocialLinks";
 import ContactChannel from "@/components/ui/ContactChannel";
 import CTAButton from "@/components/ui/CTAButton";
 import ConsultationForm from "@/components/sections/ConsultationForm";
@@ -29,11 +30,9 @@ export default function ContactPage() {
             <ContactChannel type="phone" value={SITE.phoneHref} label="Call SCS" detail={SITE.phone} />
             <ContactChannel type="whatsapp" value={SITE.whatsappHref} label="Message SCS on WhatsApp" detail={SITE.phone} />
             <ContactChannel type="email" value={SITE.email} label="Email SCS" detail={SITE.email} />
-            <ContactChannel type="linkedin" value={SITE.linkedin} label="LinkedIn" detail="Stephen Corporate Services" />
-            <ContactChannel type="instagram" value={SITE.instagram} label="Instagram" detail="@stephen_corporate_services" />
-            <ContactChannel type="facebook" value={SITE.facebook} label="Facebook" detail="Stephen Corporate Services" />
-            <ContactChannel type="threads" value={SITE.threads} label="Threads" detail="@stephen_corporate_services" />
           </div>
+          <h2 className="text-lg font-semibold text-text mt-6 mb-2">Follow us</h2>
+          <SocialLinks />
 
           <h2 className="text-lg font-semibold text-text mt-6 mb-2">Who to write to</h2>
           <ul className="space-y-2 text-sm">

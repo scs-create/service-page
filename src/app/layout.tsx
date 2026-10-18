@@ -62,7 +62,7 @@ const organisationSchema = {
   },
   areaServed: "Nigeria",
   identifier: `RC ${SITE.rc}`,
-  sameAs: [SITE.linkedin, SITE.instagram, SITE.facebook, SITE.threads],
+  sameAs: [SITE.linkedin, SITE.instagram, SITE.facebook, SITE.threads, SITE.x],
   founder: { "@type": "Person", name: "Stephen Onyekeja" },
 };
 

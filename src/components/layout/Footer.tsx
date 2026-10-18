@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { services } from "@/content/services/data";
+import SocialLinks from "@/components/ui/SocialLinks";
 import ContactChannel from "@/components/ui/ContactChannel";
 import CookieSettingsButton from "@/components/ui/CookieSettingsButton";
 import { SITE, MAPS_URL } from "@/lib/site";
@@ -77,11 +78,9 @@ export default function Footer() {
           <div className="mt-2 flex flex-col">
             <ContactChannel tone="dark" type="phone" value={SITE.phoneHref} label={SITE.phone} />
             <ContactChannel tone="dark" type="email" value={SITE.email} label={SITE.email} />
-            <ContactChannel tone="dark" type="linkedin" value={SITE.linkedin} label="LinkedIn" />
-            <ContactChannel tone="dark" type="instagram" value={SITE.instagram} label="Instagram" />
-            <ContactChannel tone="dark" type="facebook" value={SITE.facebook} label="Facebook" />
-            <ContactChannel tone="dark" type="threads" value={SITE.threads} label="Threads" />
           </div>
+          <h3 className="sr-only">Follow SCS</h3>
+          <SocialLinks tone="dark" className="mt-3" />
         </div>
       </div>
 
