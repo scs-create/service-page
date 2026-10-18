@@ -53,7 +53,7 @@ export default function LegalDocument({ doc }: { doc: LegalDocumentData }) {
 
   return (
     <>
-      <PageHero breadcrumbs={[{ label: doc.title }]} eyebrow="Legal" title={doc.title} intro={dateLine || undefined} />
+      <PageHero breadcrumbs={[{ label: doc.title }]} eyebrow="Policies" title={doc.title} intro={dateLine || undefined} />
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12 grid lg:grid-cols-[280px_minmax(0,1fr)] gap-10 items-start">
         <nav aria-label={`${doc.title} contents`} className="lg:sticky lg:top-28 rounded-md border border-border bg-surface p-4 lg:max-h-[75vh] lg:overflow-y-auto">
           <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-secondary">Contents</p>

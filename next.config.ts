@@ -36,6 +36,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/academy", destination: "/corporate-college", permanent: true },
+      { source: "/services/legal-partnership-and-regulatory-business-support", destination: "/services/corporate-partnership-and-regulatory-business-support", permanent: true },
       { source: "/academy/:path*", destination: "/corporate-college/:path*", permanent: true },
     ];
   },

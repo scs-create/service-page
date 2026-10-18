@@ -59,6 +59,13 @@
   status = 200
   force = true
 
+# Service renamed (18 October 2026): "Legal Partnership" is now "Corporate Partnership".
+[[redirects]]
+  from = "/services/legal-partnership-and-regulatory-business-support"
+  to = "/services/corporate-partnership-and-regulatory-business-support"
+  status = 301
+  force = true
+
 # "Academy" is now "Corporate College". Netlify answers these with a true 301 before Next.js runs
 # (next.config.ts keeps the same rule as a fallback, which Next.js serves as 308).
 [[redirects]]

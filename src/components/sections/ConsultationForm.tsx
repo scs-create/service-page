@@ -7,7 +7,7 @@ import { FormError, FormSuccess, SUBMIT_ERROR } from "@/components/sections/Netl
 
 const NEEDS = [
   "Registering or structuring a business", "Licences, permits and compliance", "Tax, accounting and finance", "HR, recruitment and staff",
-  "Contracts and legal documentation", "Data protection and privacy", "Operations and outsourcing", "Marketing, brand and growth",
+  "Contracts and business documentation", "Data protection and privacy", "Operations and outsourcing", "Marketing, brand and growth",
   "Training (Corporate College)", "Something else / not sure",
 ];
 const STAGES = ["Just an idea", "Starting up (first year)", "Operating (1–3 years)", "Established (3+ years)"];

@@ -87,7 +87,7 @@ export default function Footer() {
       <div className="border-t border-white/15">
         <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-4 flex flex-col md:flex-row md:justify-between gap-2">
           <p className="text-xs text-white/80">© {year} {SITE.legalName} · RC {SITE.rc}. All rights reserved.</p>
-          <nav aria-label="Legal" className="flex flex-wrap items-center gap-x-5 gap-y-1 text-xs">
+          <nav aria-label="Policies" className="flex flex-wrap items-center gap-x-5 gap-y-1 text-xs">
             <Link href="/terms" className={linkCls}>Terms of Service</Link>
             <Link href="/privacy" className={linkCls}>Privacy Notice</Link>
             <Link href="/cookies" className={linkCls}>Cookie Policy</Link>
