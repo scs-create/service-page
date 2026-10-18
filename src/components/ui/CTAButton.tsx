@@ -24,7 +24,7 @@ export default function CTAButton({
   booking = false,
 }: CTAButtonProps) {
   const base =
-    "inline-flex items-center justify-center gap-1.5 font-medium transition-colors rounded-md min-h-11";
+    "inline-flex items-center justify-center gap-1.5 whitespace-nowrap font-medium transition-colors rounded-md min-h-11";
 
   const sizes = {
     default: "px-5 py-2.5 text-base",

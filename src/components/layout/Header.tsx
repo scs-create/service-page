@@ -34,7 +34,7 @@ export default function Header({ services }: HeaderProps) {
   const byCluster = (cluster: string) => services.filter((s) => s.cluster === cluster);
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
   const navClass = (active: boolean) =>
-    `py-2 text-[15px] border-b-2 transition-colors ${active ? "border-accent text-primary font-semibold" : "border-transparent text-text hover:text-primary"}`;
+    `py-2 whitespace-nowrap text-[14px] xl:text-[15px] border-b-2 transition-colors ${active ? "border-accent text-primary font-semibold" : "border-transparent text-text hover:text-primary"}`;
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
@@ -80,7 +80,7 @@ export default function Header({ services }: HeaderProps) {
               <Image src="/images/logo.png" alt="Stephen Corporate Services — Home" width={64} height={72} priority className="h-14 md:h-16 w-auto" />
             </Link>
 
-            <nav aria-label="Primary" className="hidden xl:flex items-center gap-6">
+            <nav aria-label="Primary" className="hidden lg:flex items-center gap-3.5 xl:gap-6">
               <Link href="/" aria-current={isActive("/") ? "page" : undefined} className={navClass(isActive("/"))}>Home</Link>
               <div className="relative" ref={megaRef}>
                 <button ref={megaButtonRef} type="button" aria-expanded={megaOpen} aria-controls="services-mega-menu" onClick={() => setMegaOpen((v) => !v)} className={`${navClass(isActive("/services"))} flex items-center gap-1`}>
@@ -117,7 +117,7 @@ export default function Header({ services }: HeaderProps) {
               <SearchPalette />
               {/* Persistent conversion CTA: always visible, desktop and mobile */}
               <CTAButton booking label="Book a Discovery Call" shortLabel="Book a Call" />
-              <button ref={menuButtonRef} type="button" aria-expanded={mobileOpen} aria-controls="mobile-menu" aria-label={mobileOpen ? "Close menu" : "Open menu"} onClick={() => setMobileOpen((v) => !v)} className="xl:hidden min-h-11 min-w-11 flex items-center justify-center">
+              <button ref={menuButtonRef} type="button" aria-expanded={mobileOpen} aria-controls="mobile-menu" aria-label={mobileOpen ? "Close menu" : "Open menu"} onClick={() => setMobileOpen((v) => !v)} className="lg:hidden min-h-11 min-w-11 flex items-center justify-center">
                 <span aria-hidden="true" className="text-2xl leading-none">{mobileOpen ? "✕" : "☰"}</span>
               </button>
             </div>
@@ -125,7 +125,7 @@ export default function Header({ services }: HeaderProps) {
         </div>
 
         {mobileOpen && (
-          <div id="mobile-menu" className="xl:hidden border-t border-border bg-bg px-4 py-4 max-h-[80vh] overflow-y-auto">
+          <div id="mobile-menu" className="lg:hidden border-t border-border bg-bg px-4 py-4 max-h-[80vh] overflow-y-auto">
             <nav aria-label="Mobile" className="flex flex-col">
               <Link href="/" className="py-3 text-text" onClick={() => setMobileOpen(false)}>Home</Link>
               <button type="button" aria-expanded={mobileServicesOpen} aria-controls="mobile-services" onClick={() => setMobileServicesOpen((v) => !v)} className="py-3 text-left text-text flex justify-between items-center">
