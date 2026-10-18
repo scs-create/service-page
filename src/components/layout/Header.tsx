@@ -63,7 +63,7 @@ export default function Header({ services }: HeaderProps) {
   return (
     <>
       {/* Utility bar — direct lead channels, desktop only */}
-      <div className="dark-surface hidden lg:block bg-secondary text-white text-sm">
+      <div data-location="top_bar" className="dark-surface hidden lg:block bg-secondary text-white text-sm">
         <div className="max-w-[1280px] mx-auto px-8 py-2 flex items-center justify-between">
           <p className="text-accent font-medium">{SITE.tagline}</p>
           <p className="flex items-center gap-6">

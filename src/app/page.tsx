@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="dark-surface bg-secondary">
+      <section data-location="hero" className="dark-surface bg-secondary">
         <div className={`${WRAP} py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center`}>
           <div>
             <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-4">{SITE.tagline}</p>
@@ -170,7 +170,7 @@ export default function Home() {
       <LeadCapture />
 
       {/* PROMISE + CLOSING + FINAL CTA */}
-      <section className="dark-surface bg-secondary py-16 md:py-24">
+      <section data-location="closing_band" className="dark-surface bg-secondary py-16 md:py-24">
         <div className={WRAP}>
           <span aria-hidden="true" className="block h-1 w-14 bg-accent rounded-sm mx-auto mb-6" />
           <p className="max-w-[62ch] mx-auto text-center text-xl md:text-2xl text-white/90">

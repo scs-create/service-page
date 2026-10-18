@@ -4,10 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 import NetlifyForm, { CONSENT_FIELD, FormField } from "@/components/sections/NetlifyForm";
 import { Quiz, rankOutcomes } from "@/lib/quiz";
-import { track } from "@/lib/track";
+import { toSnake, track } from "@/lib/track";
 
 type Outcome = { title: string; description: string; href?: string; ctaLabel?: string };
-type Props = { quiz: Quiz; outcomes: Record<string, Outcome>; toolId: string; resultField: "finder_result" | "structure_result"; requestType: string; sourcePage: string };
+type Props = { quiz: Quiz; outcomes: Record<string, Outcome>; resultField: "finder_result" | "structure_result"; requestType: string; sourcePage: string };
 
 const fields: FormField[] = [
   { name: "name", label: "Full Name", type: "text", required: true, autoComplete: "name" },
@@ -17,7 +17,7 @@ const fields: FormField[] = [
 ];
 
 // Shared by "Find my service" and the "Business structure chooser": weighted answers → ranked outcomes.
-export default function OutcomeQuiz({ quiz, outcomes, toolId, resultField, requestType, sourcePage }: Props) {
+export default function OutcomeQuiz({ quiz, outcomes, resultField, requestType, sourcePage }: Props) {
   const [picks, setPicks] = useState<Record<string, number>>({});
   const [shown, setShown] = useState(false);
   const complete = quiz.questions.every((q) => picks[q.id] !== undefined);
@@ -53,7 +53,7 @@ export default function OutcomeQuiz({ quiz, outcomes, toolId, resultField, reque
   }
 
   return (
-    <form onSubmit={(e) => { e.preventDefault(); track("Tool Complete", { tool: toolId }); setShown(true); }} className="space-y-8">
+    <form onSubmit={(e) => { e.preventDefault(); track("tool_completed", { tool_name: toSnake(requestType) }); setShown(true); }} className="space-y-8">
       {quiz.questions.map((q, qi) => (
         <fieldset key={q.id}>
           <legend className="mb-3 text-lg font-semibold text-text">{qi + 1}. {q.text}</legend>

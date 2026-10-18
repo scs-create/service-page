@@ -3,6 +3,7 @@
 import { useEffect, useSyncExternalStore } from "react";
 import type { CaptureResult } from "posthog-js";
 import { getRawConsent, parseConsent, subscribeConsent } from "@/lib/consent";
+import { flushQueue } from "@/lib/track";
 import { POSTHOG, clearPosthogStorage, getPosthog, privacySignal, setPosthog, trackingAllowedHere } from "@/lib/analytics";
 
 const EMAIL = /[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g;
@@ -68,6 +69,7 @@ export default function Analytics() {
         });
       }
       setPosthog(posthog);
+      flushQueue();
     });
     return () => {
       cancelled = true;

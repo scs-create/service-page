@@ -9,7 +9,7 @@ type CTAButtonProps = {
   size?: "default" | "large";
   className?: string;
   shortLabel?: string; // shown instead of `label` below the xl breakpoint
-  // Opens the Cal.com Discovery Call in a new tab ("↗") and reports a "Booking Click" (TrackClicks).
+  // Opens the Cal.com Discovery Call in a new tab ("↗"); TrackClicks reports cta_clicked { cta_name: book_discovery_call }.
   booking?: boolean;
 };
 

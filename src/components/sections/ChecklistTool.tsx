@@ -34,7 +34,7 @@ export default function ChecklistTool({ types, sectors, regulatorNames, disclaim
       <div className="no-print grid gap-5 md:grid-cols-2">
         <div>
           <label htmlFor="ck-type" className="mb-1.5 block text-sm font-medium text-text">Business type <span aria-hidden="true" className="text-error">*</span></label>
-          <select id="ck-type" value={typeId} onChange={(e) => { setTypeId(e.target.value); track("Tool Complete", { tool: "checklist" }); }} className={SELECT}>
+          <select id="ck-type" value={typeId} onChange={(e) => { setTypeId(e.target.value); track("tool_completed", { tool_name: "compliance_checklist" }); }} className={SELECT}>
             <option value="" disabled>Select one</option>
             {types.map((t) => <option key={t.id} value={t.id}>{t.label}</option>)}
           </select>

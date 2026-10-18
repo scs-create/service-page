@@ -4,7 +4,7 @@ import { TOOLS } from "@/content/toolsList";
 
 export default function ToolsTeaser({ limit = 3 }: { limit?: number }) {
   return (
-    <section className="py-16 md:py-20">
+    <section data-location="tools_teaser" className="py-16 md:py-20">
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeading eyebrow="Free tools" title="Start with a quick, useful first step" intro="No commitment. Find out where your business stands and what to do next." />
         <ul className="grid grid-cols-1 md:grid-cols-3 gap-5">

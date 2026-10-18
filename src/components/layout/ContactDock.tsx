@@ -32,6 +32,7 @@ export default function ContactDock() {
         target="_blank"
         rel="noopener noreferrer"
         data-track="Float WhatsApp"
+        data-location="floating_button"
         aria-label="Chat with SCS on WhatsApp (opens in new tab)"
         className="fixed bottom-6 right-6 z-40 hidden h-14 w-14 items-center justify-center rounded-full bg-primary text-white shadow-lg ring-2 ring-accent transition-transform hover:scale-105 md:flex"
       >

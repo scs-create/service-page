@@ -67,7 +67,7 @@ export default function AssessmentTool({ assessment, sectors, sectorNotes, servi
     const ready = step === 0 ? !!sector : step === 1 ? !!stage : step === 2 ? !!size : scores[domain!.id] !== undefined;
     const title = step === 0 ? "Which sector is your business in?" : step === 1 ? "Where is your business right now?" : step === 2 ? "How big is your team?" : domain!.question;
     const next = () => {
-      if (step + 1 >= total) track("Tool Complete", { tool: "assessment", band: scoreAssessment(assessment, stage, scores).band });
+      if (step + 1 >= total) track("tool_completed", { tool_name: "assessment", result_band: scoreAssessment(assessment, stage, scores).band });
       setStep(step + 1);
     };
     return (

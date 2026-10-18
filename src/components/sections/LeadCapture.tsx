@@ -13,7 +13,7 @@ const portfolioFields: FormField[] = [
 export default function LeadCapture() {
   const card = "bg-surface border border-border border-t-4 border-t-accent rounded-md p-6";
   return (
-    <section className="py-16 md:py-20" aria-label="Lighter first steps">
+    <section data-location="lead_capture" className="py-16 md:py-20" aria-label="Lighter first steps">
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8">
         <SectionHeading eyebrow="A lighter first step" title="Not ready for a full consultation?" intro="Pick the smaller step that fits. Both go straight to our team." />
         <div className="grid md:grid-cols-2 gap-6 items-start">

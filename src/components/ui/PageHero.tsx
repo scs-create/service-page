@@ -12,7 +12,7 @@ type PageHeroProps = {
 // Navy page-opener band used on every inner page (one H1 per page).
 export default function PageHero({ eyebrow, title, intro, breadcrumbs, children }: PageHeroProps) {
   return (
-    <section className="dark-surface bg-secondary border-b-4 border-accent">
+    <section data-location="page_hero" className="dark-surface bg-secondary border-b-4 border-accent">
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16">
         {breadcrumbs && <div className="mb-6"><Breadcrumbs items={breadcrumbs} /></div>}
         {children && <div className="mb-6">{children}</div>}

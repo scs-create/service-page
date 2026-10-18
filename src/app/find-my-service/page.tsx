@@ -25,7 +25,7 @@ export default function FinderPage() {
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12">
         <div className="max-w-[760px]">
           <noscript><p className="rounded-md border border-border bg-surface p-4 text-text">This tool needs JavaScript. <Link href="/services" className="text-primary underline">Browse all services</Link> or <a href={SITE.bookingUrl} target="_blank" rel="noopener noreferrer" data-booking="" className="text-primary underline">book a Discovery Call<span className="sr-only"> (opens Cal.com in a new tab)</span> ↗</a>.</p></noscript>
-          <OutcomeQuiz quiz={finderQuiz} outcomes={outcomes} toolId="finder" resultField="finder_result" requestType="find-my-service" sourcePage="/find-my-service" />
+          <OutcomeQuiz quiz={finderQuiz} outcomes={outcomes} resultField="finder_result" requestType="find-my-service" sourcePage="/find-my-service" />
         </div>
       </div>
     </>

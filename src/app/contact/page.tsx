@@ -23,7 +23,7 @@ export default function ContactPage() {
       <PageHero breadcrumbs={[{ label: "Contact" }]} eyebrow="Contact" title="Speak with SCS" intro="Choose whichever channel works best for you — we'll respond directly." />
 
       <section className={`${WRAP} py-14 grid lg:grid-cols-[380px_minmax(0,1fr)] gap-10 items-start`}>
-        <div className="rounded-md border border-border border-t-4 border-t-primary bg-surface p-6">
+        <div data-location="contact_channels" className="rounded-md border border-border border-t-4 border-t-primary bg-surface p-6">
           <h2 className="text-lg font-semibold text-text mb-2">Direct channels</h2>
           <div className="divide-y divide-border">
             <ContactChannel type="phone" value={SITE.phoneHref} label="Call SCS" detail={SITE.phone} />
@@ -52,7 +52,7 @@ export default function ContactPage() {
         </div>
 
         <div>
-          <div className="mb-10 rounded-md border border-border border-t-4 border-t-accent bg-bg p-6">
+          <div data-location="contact_booking" className="mb-10 rounded-md border border-border border-t-4 border-t-accent bg-bg p-6">
             <h2 className="text-2xl font-semibold text-text">Book a free Discovery Call</h2>
             <p className="mt-2 text-muted">Pick a 30-minute slot that suits you on our Cal.com calendar. We will talk through what your business needs and the right next step.</p>
             <div className="mt-4"><CTAButton booking label="Book a Discovery Call" /></div>
