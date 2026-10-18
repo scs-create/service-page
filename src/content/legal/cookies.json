@@ -689,7 +689,7 @@
     },
     {
      "type": "p",
-     "text": "If you decline analytics, or your browser sends Do Not Track or Global Privacy Control, none of the PostHog items are set and PostHog is not loaded."
+     "text": "If you decline analytics, none of the PostHog items are set and PostHog is not loaded. If your browser sends Do Not Track or Global Privacy Control, analytics is off by default and stays off unless you choose \"Accept analytics\" yourself."
     },
     {
      "type": "p",

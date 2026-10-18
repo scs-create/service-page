@@ -19,7 +19,8 @@ export function trackingAllowedHere(): boolean {
   return live && !window.location.pathname.startsWith("/admin");
 }
 
-// Do Not Track or Global Privacy Control count as a decline: PostHog never loads for these visitors.
+// Do Not Track or Global Privacy Control: analytics is off by default and the banner says so. Only an explicit
+// "Accept analytics" from the visitor turns it on.
 export function privacySignal(): boolean {
   if (typeof navigator === "undefined") return false;
   const nav = navigator as Navigator & { globalPrivacyControl?: boolean; msDoNotTrack?: string };

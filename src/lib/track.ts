@@ -1,7 +1,7 @@
 // Business events for PostHog. RULE: properties describe the ACTION, never the person. No names, emails,
 // phone numbers, message text or file contents ever go into an event: only the keys in ALLOWED_PROPS are sent,
 // and anything else is dropped here before it reaches PostHog.
-import { getPosthog, privacySignal, trackingAllowedHere } from "@/lib/analytics";
+import { getPosthog, trackingAllowedHere } from "@/lib/analytics";
 import { getRawConsent, parseConsent } from "@/lib/consent";
 
 export type AnalyticsEvent =
@@ -35,7 +35,7 @@ function clean(props: Props): Record<string, string | number | boolean> {
 // Events fired while posthog-js is still downloading (consent already given) wait here, then flush.
 // Without consent nothing is queued: those events are simply dropped.
 const queue: [AnalyticsEvent, Record<string, string | number | boolean>][] = [];
-const consented = () => !!parseConsent(getRawConsent())?.analytics && trackingAllowedHere() && !privacySignal();
+const consented = () => !!parseConsent(getRawConsent())?.analytics && trackingAllowedHere();
 
 export function track(event: AnalyticsEvent, props: Props = {}) {
   if (typeof window === "undefined") return;

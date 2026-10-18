@@ -4,7 +4,7 @@ import { useEffect, useSyncExternalStore } from "react";
 import type { CaptureResult } from "posthog-js";
 import { getRawConsent, parseConsent, subscribeConsent } from "@/lib/consent";
 import { flushQueue } from "@/lib/track";
-import { POSTHOG, clearPosthogStorage, getPosthog, privacySignal, setPosthog, trackingAllowedHere } from "@/lib/analytics";
+import { POSTHOG, clearPosthogStorage, getPosthog, setPosthog, trackingAllowedHere } from "@/lib/analytics";
 
 const EMAIL = /[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g;
 const PHONE = /\+?\d[\d\s().-]{7,}\d/g;
@@ -25,15 +25,16 @@ function scrub(event: CaptureResult | null): CaptureResult | null {
   return event;
 }
 
-// PostHog loads ONLY after the visitor accepts analytics, only on the live domain, and never when the browser
-// sends Do Not Track / Global Privacy Control. Before that nothing is downloaded and nothing is stored.
+// PostHog loads ONLY after the visitor accepts analytics, and only on the live domain. Before that nothing is
+// downloaded and nothing is stored. A Do Not Track / Global Privacy Control signal keeps analytics off by default
+// (the banner says so); only the visitor's own explicit "Accept analytics" turns it on.
 // posthog-js is imported on demand, so it adds nothing to the page for visitors who have not accepted.
 export default function Analytics() {
   const raw = useSyncExternalStore(subscribeConsent, getRawConsent, () => null);
   const accepted = !!parseConsent(raw)?.analytics;
 
   useEffect(() => {
-    const allowed = accepted && trackingAllowedHere() && !privacySignal();
+    const allowed = accepted && trackingAllowedHere();
     const loaded = getPosthog();
     if (!allowed) {
       if (loaded) {
@@ -64,7 +65,7 @@ export default function Analytics() {
           mask_all_element_attributes: false,
           disable_session_recording: true, // OFF. If enabled later: maskAllInputs: true, consent-only.
           disable_surveys: true,
-          respect_dnt: true,
+          respect_dnt: false, // the visitor's explicit "Accept analytics" is the decision; DNT/GPC only sets the default (off)
           before_send: scrub,
         });
       }

@@ -35,8 +35,9 @@ export default function CookieBanner() {
     if (reopened) panelRef.current?.focus();
   }, [reopened]);
 
-  // Do Not Track / Global Privacy Control already say "no": analytics never loads, so there is nothing to ask.
-  if (!hydrated || ((stored || signal) && !reopened)) return null;
+  // Everyone is asked until they choose. A Do Not Track / GPC signal only changes the wording: analytics is off by
+  // default and stays off unless the visitor accepts.
+  if (!hydrated || (stored && !reopened)) return null;
 
   function choose(accept: boolean) {
     saveConsent({ analytics: accept, functional: false, marketing: false });
@@ -60,7 +61,8 @@ export default function CookieBanner() {
           <>
             <p id="cookie-banner-text" className="mt-2 max-w-[90ch] text-sm text-white/90">
               With your permission, we use analytics cookies to see how visitors use this site, so we can improve it. They stay off unless
-              you accept, and you can change your mind at any time with &ldquo;Cookie settings&rdquo; in the footer. See our{" "}
+              you accept, and you can change your mind at any time with &ldquo;Cookie settings&rdquo; in the footer.
+              {signal && " Your browser is sending a privacy signal, so analytics is off unless you choose to allow it."} See our{" "}
               <Link href="/privacy" prefetch={false} className={LINK}>Privacy Notice</Link> and{" "}
               <Link href="/cookies" prefetch={false} className={LINK}>Cookie Policy</Link>.
             </p>
@@ -69,19 +71,13 @@ export default function CookieBanner() {
               <button type="button" onClick={() => choose(false)} className={EQUAL}>Decline</button>
             </div>
           </>
-        ) : signal ? (
-          <>
-            <p id="cookie-banner-text" className="mt-2 max-w-[90ch] text-sm text-white/90">
-              Your browser is sending a privacy signal (Do Not Track or Global Privacy Control), so analytics stays off on this site and
-              nothing is stored on your device. To change this, turn the signal off in your browser settings.
-            </p>
-            <div className="mt-4">
-              <button type="button" onClick={() => setReopened(false)} className={GHOST}>Close</button>
-            </div>
-          </>
         ) : (
           <>
-            <p id="cookie-banner-text" className="sr-only">Choose which cookies this site may use.</p>
+            <p id="cookie-banner-text" className={signal ? "mt-2 max-w-[90ch] text-sm text-white/90" : "sr-only"}>
+              {signal
+                ? "Your browser is sending a privacy signal (Do Not Track or Global Privacy Control), so analytics is off unless you allow it here."
+                : "Choose which cookies this site may use."}
+            </p>
             <fieldset className="mt-3 space-y-3">
               <legend className="sr-only">Cookie categories</legend>
               {visible.map((c) => (

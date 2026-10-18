@@ -54,7 +54,7 @@ Defaults are built in, but set this one so it is visible in Netlify: `NEXT_PUBLI
 5. Check it works: open the live site in a private window → **Accept analytics** → click a few buttons → PostHog → **Activity → Live events** shows `$pageview`, `cta_clicked` and so on within a minute. Decline in another private window: nothing appears.
 6. Suggested insights: funnel `$pageview` (/) → `service_page_viewed` → `form_started` (consultation) → `form_submitted`; trend of `cta_clicked` broken down by `cta_name`; `form_submitted` broken down by UTM source / referring domain.
 7. In Netlify → Environment variables, delete the old analytics domain variable if it exists (it is no longer read), and cancel the previous analytics account.
-8. Analytics only counts visitors who press **Accept analytics**; never those who decline or send Do Not Track / Global Privacy Control.
+8. Analytics only counts visitors who press **Accept analytics**. Visitors who decline are never counted; browsers sending Do Not Track / Global Privacy Control are off by default and counted only if the visitor explicitly accepts.
 
 ## I. Scheduled blog posts
 1. Netlify → **Site configuration → Build & deploy → Build hooks → Add build hook** ("Daily scheduled posts") → copy the URL.
