@@ -62,7 +62,7 @@ Defaults are built in, but set this one so it is visible in Netlify: `NEXT_PUBLI
 ## K. Still to supply **(you decide / supply)**
 Already decided (16 October 2026): address, positioning, metrics, primary email, WhatsApp, Cal.com link, leadership photos, Corporate School articles, legal effective dates. Still open:
 - Upload verification documents (watermark them first) via the CMS; real consented testimonials; signature programmes; SCA description; Partnership terms; IP permissions (see `docs/CLIENT_PLACEHOLDERS.md`). Leadership bios only if the founders want them.
-- **Legal pages:** have a Nigerian lawyer review them and resolve every item in `docs/legal-open-items.md`. Until then they show a draft notice and stay out of search engines.
+- **Legal pages:** final versions are live (18 October 2026). Counsel to glance at the two website-specific sections listed in `docs/legal-open-items.md`.
 
 ## L. After launch — checks
 1. Browser DevTools → Network: press **Reject** on the banner and confirm no `plausible.io` request; press **Accept** and confirm it loads.
