@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import NetlifyForm, { CONSENT_FIELD, FormField } from "@/components/sections/NetlifyForm";
+import NetlifyForm from "@/components/sections/NetlifyForm";
+import { CONSENT_FIELD, type FormField } from "@/lib/formSchema";
 import { Quiz, rankOutcomes } from "@/lib/quiz";
 import { toSnake, track } from "@/lib/track";
 

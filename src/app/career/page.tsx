@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
-import NetlifyForm, { CONSENT_FIELD, FormField } from "@/components/sections/NetlifyForm";
+import NetlifyForm from "@/components/sections/NetlifyForm";
+import { CONSENT_FIELD, type FormField } from "@/lib/formSchema";
 import { services } from "@/content/services/data";
 
 export const metadata: Metadata = {

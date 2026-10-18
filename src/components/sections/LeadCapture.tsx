@@ -1,6 +1,7 @@
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
-import NetlifyForm, { CONSENT_FIELD, FormField } from "@/components/sections/NetlifyForm";
+import NetlifyForm from "@/components/sections/NetlifyForm";
+import { CONSENT_FIELD, type FormField } from "@/lib/formSchema";
 
 const portfolioFields: FormField[] = [
   { name: "name", label: "Full Name", type: "text", required: true, autoComplete: "name" },

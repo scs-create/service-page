@@ -4,21 +4,8 @@ import { useEffect, useState, useSyncExternalStore, FormEvent } from "react";
 import { MAX_FILE_BYTES, submitToNetlify } from "@/lib/forms";
 import { allFieldNames, FormName } from "@/lib/formFields";
 import { useFormAnalytics } from "@/lib/useFormAnalytics";
+import { type FormField } from "@/lib/formSchema";
 
-export type FormField = {
-  name: string;
-  label: string;
-  type: "text" | "email" | "tel" | "url" | "select" | "textarea" | "checkbox" | "file";
-  required?: boolean;
-  options?: string[];
-  placeholder?: string;
-  hint?: string;
-  rows?: number;
-  autoComplete?: string;
-  maxLength?: number;
-  accept?: string; // file inputs
-  showWhen?: { field: string; equals: string }; // only shown when another select has this value (all shown without JS)
-};
 
 type Props = {
   formName: FormName; // "enquiry" (all leads) or "career-application"
@@ -34,13 +21,6 @@ type Props = {
 
 // Form engine for every SCS form. Posts to /__forms.html (Netlify skeleton generated from
 // src/lib/formFields.ts). Limits below are CLIENT-SIDE convenience only — they are not server enforcement.
-export const CONSENT_FIELD: FormField = {
-  name: "consent_contact",
-  label: "I agree that SCS may contact me about this request using the details I have provided.",
-  hint: "Tick this box to give your permission. We can only follow up with you if you do.",
-  type: "checkbox",
-  required: true,
-};
 const DEFAULT_MAX = { text: 200, email: 254, tel: 25, url: 300, textarea: 2000 } as const;
 const INPUT = "w-full min-h-11 border border-border rounded-sm px-3 py-2 text-base";
 const noopSubscribe = () => () => {};

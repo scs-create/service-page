@@ -164,3 +164,18 @@ test("analytics: the previous tool is gone everywhere; one PostHog config; only 
   for (const banned of ["name", "email", "phone", "message"]) assert.doesNotMatch(track.match(/ALLOWED_PROPS = new Set\(\[([\s\S]*?)\]\)/)![1], new RegExp(`"${banned}"`));
 });
 void z;
+test("server-rendered files never import values from a \"use client\" module (they would arrive empty)", () => {
+  const walk = (d: string): string[] => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(`${d}/${e.name}`) : [`${d}/${e.name}`]));
+  const files = walk("src").filter((f) => /\.tsx?$/.test(f));
+  const isClient = (f: string) => fs.readFileSync(f, "utf-8").trimStart().startsWith('"use client"');
+  const clientModules = new Set(files.filter(isClient).map((f) => f.replace(/^src\//, "@/").replace(/\.tsx?$/, "")));
+  const offenders: string[] = [];
+  for (const f of files.filter((x) => !isClient(x))) {
+    for (const m of fs.readFileSync(f, "utf-8").matchAll(/import\s+(?!type)[^;]*?\{([^}]*)\}\s*from\s*"(@\/[^"]+)"/g)) {
+      const named = m[1].split(",").map((s) => s.trim()).filter((s) => s && !s.startsWith("type "));
+      if (named.length && clientModules.has(m[2])) offenders.push(`${f}: { ${named.join(", ")} } from ${m[2]}`);
+    }
+  }
+  assert.deepEqual(offenders, []);
+});
+

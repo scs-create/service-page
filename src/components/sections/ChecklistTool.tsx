@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import NetlifyForm, { CONSENT_FIELD, FormField } from "@/components/sections/NetlifyForm";
+import NetlifyForm from "@/components/sections/NetlifyForm";
+import { CONSENT_FIELD, type FormField } from "@/lib/formSchema";
 import { track } from "@/lib/track";
 
 type Item = { text: string; regulators: string[] };
