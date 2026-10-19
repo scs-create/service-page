@@ -140,7 +140,7 @@ export default function Home() {
         <SectionHeading
           eyebrow="Selected work"
           title="Businesses We Have Helped Build"
-          intro="A selection of engagements completed since 2025. Confidential commercial details are withheld in line with client confidentiality."
+          intro="A selection of engagements completed by SCS. Confidential commercial details are withheld in line with client confidentiality."
         />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {featuredPortfolio.map((entry) => (

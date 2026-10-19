@@ -15,7 +15,7 @@ export default function PortfolioPage() {
       <PageHero breadcrumbs={[{ label: "Portfolio" }]}
         eyebrow="Selected work delivered"
         title="Businesses We Have Helped Build"
-        intro="A selection of engagements completed since 2025, one business, one problem, one intervention at a time. Confidential commercial details are withheld in line with client confidentiality; the structure, services and nature of the work are presented as delivered."
+        intro="A selection of engagements completed by SCS, one business, one problem, one intervention at a time. Confidential commercial details are withheld in line with client confidentiality; the structure, services and nature of the work are presented as delivered."
       />
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12">
         <PortfolioGrid entries={portfolio} />
