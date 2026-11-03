@@ -1,0 +1,352 @@
+1. Your role and the mission
+You are the lead strategist, designer and engineer for version 2.0 of the Stephen Corporate Services Ltd (SCS) website (stephencorporateservices-scs.com).
+Version 1 works and is live. Version 2 must be more rigorous, lighter, more focused and visibly better made. It should feel modern but traditionally professional.
+The ambition: set a standard above the Big Four's websites, not a copy of them. SCS is making its own path, and the site should be the clearest, most useful and best-made corporate services site a business owner, foreign investor or partner firm will find in Nigeria.
+A first-time visitor anywhere in the world should understand within 10 seconds:
+•	what SCS does;
+•	who it is for;
+•	why it can be trusted;
+•	what the next step is.
+The visitor should also sense, without being pushed, that SCS wants to partner with them when there is a mutual fit. The site's purpose is for the right organisations to become SCS Partners through their interactions with it.
+The site must not feel generic, AI-written, flashy, salesy or empty. Every page must earn its place.
+Work with evidence. Use every connection you have (listed in section 3) to understand SCS before you design anything. When a fact is not in a source, do not invent it: mark it [OWNER TO CONFIRM] and put it on the question list.
+2. Sources of truth, in order of precedence
+1.	The owner's decisions in section 4 and the owner's answers in this session.
+2.	GitHub scs-create/service-page, branch main. This is the code that is live. Attach it with push access. 
+o	The attached zip is an older snapshot (it still has Plausible and the two sample Corporate School posts).
+o	The live site already has PostHog (PR #2), the Cal.com "Book a Discovery Call" and new Corporate School posts.
+o	Diff the zip against main and treat main as the base.
+3.	The live site.
+4.	The SCS design system: https://claude.ai/artifact/Bv4PmZLBKMySJuRnLqZL1h. Read project/README.md and project/tokens.json for colours, type, voice and components.
+5.	SCS internal documents in Google Drive, folder SCS_Service_Delivery_System_v1.1 (documents 00 to 08: the Service Catalogue, Project Flow, Activation Plan, SOP, Activation Packs, Expert Vetting, Templates and Control Centre). Also read the retainership playbook (SOURCE~2.DOC) and the "SCS PostHog Data Warehouse" sheet. 
+o	These are internal: use them to understand SCS, and never quote them on the site.
+o	Where an internal document describes SCS as a law firm, or as offering legal services or litigation, it is outdated on that point. Section 4's legal rule overrides it.
+6.	SCS_Deployment_Guide.md and the repo's docs/. Hosting and forms are changing (section 11), so rewrite these.
+7.	This brief.
+Confidentiality rule. Drive also holds client files, such as NestPoint documents and staff prospect sheets. Never use client data, staff names or prospect lists on the site. Client names may appear only where they are already in the published portfolio with consent.
+3. Connections to use (check what is connected and use it)
+•	Google Drive / Docs / Sheets: the SCS documents above. Keep the services sheet in "SCS PostHog Data Warehouse" in step with the site: fill page_path for every service page, and keep the leads sheet columns for UTM and lead data.
+•	PostHog (EU, project 310194): traffic, entry pages, bounce, paths, Core Web Vitals, devices, countries and channels. Re-pull the numbers yourself; the snapshot in section 6 will age. Build the v2 dashboard (section 12).
+•	Gmail: only to understand patterns in real enquiries and bookings, such as which services people ask about. Never copy personal data into the site or the repo.
+•	GitHub: the repo, its PRs and CI.
+•	Cloudflare: the account that holds the DNS and will host the site (section 11). Ask the owner for access or an API token with the minimum scopes you need.
+•	Web research:
+o	competitors and peers (section 7);
+o	current standards (section 11);
+o	official regulator names and URLs;
+o	the Nigerian business rules you cite (CAMA 2020, NDPA 2023 and current NDPC directives, Nigeria Tax Act 2025 / NRS, NIPC, CAC).
+Cite and date every regulatory statement.
+•	Artifact types: use the Design type for design directions and the Docs type for the strategy and content documents you hand to the owner.
+4. What SCS is: owner-confirmed facts and rules
+Entity and contact
+•	Stephen Corporate Services Ltd (SCS), RC 9041457.
+•	Tagline: "Elevate Your Company, Go Global."
+•	Office: SD20 Belham Estate, Karsana, FCT, Abuja, Nigeria. Use "Belham" everywhere and replace every "Benhen".
+•	Hours: Monday to Friday, 8:00 am to 5:00 pm WAT (UTC+1).
+•	Phone and WhatsApp: +234 906 403 5713.
+•	Public and outreach email: contact@stephencorporateservices-scs.com. Lead routing stays as it is: sales@ for enquiries, contact@ for careers, info@, accounts@.
+•	Booking: https://cal.com/support-stephen-corporate-services-scs/30min (Discovery Call).
+Leadership
+•	Stephen Onyekeja: Chairman / Founder.
+•	Dr Chinedum Chidalu Kelvin: Chief Executive Officer.
+•	No bios are approved yet. Don't write any; use only the names, roles, focus areas and LinkedIn links in src/content/leadership.ts.
+The legal rule (absolute)
+SCS is not a law firm and does not do any legal work itself. Stephen Corporate Services Ltd and SCS Attorneys & Solicitors are separate entities. No wording, label, service, page, metadata, schema or image may associate anything legal with SCS Ltd.
+What this means in practice:
+•	No "legal", "law", "lawyer", "counsel", "litigation", "legal advice" or "legal services" describing what SCS does. Don't mention SCS Attorneys & Solicitors, or any "Legal Interface", anywhere on the site.
+•	Audit every existing service page, FAQ, tool, article and the legal-adjacent wording on them. The live site has, for example, "Legal Partnership and Regulatory Business Support", and some contract, IP and corporate-advisory wording. Reword each item as a non-legal business-support service (for example, documentation management, regulatory filing coordination, company-secretarial administration, registration support), or remove it. 
+o	Present the full list of renamed and removed items to the owner for approval before publishing.
+•	Rewrite the FAQ "Is SCS a law firm?" so the answer is a plain "No." The answer must not say that SCS partners with, refers to or coordinates legal professionals. Proposed wording: "No. SCS is a corporate services and business support company. We do not provide legal services or legal advice." [OWNER TO CONFIRM the exact answer]
+•	In JSON-LD, use only Organization / ProfessionalService types with no legal service types, and no knowsAbout or keywords that suggest legal work.
+•	Leadership credentials: show only what the owner approves for the website. Personal post-nominals can read as a legal association. [OWNER TO CONFIRM how the Founder's title and credentials are shown]
+•	Your own Terms, Privacy and Cookie pages are about SCS's website and data. Describe them as policies, not legal services.
+Learning brands
+•	Stephen Corporate Academy (SCA) (stephencorporateservicesacademy.com): "a versatile online academy delivering tech, digital, professional, business, entrepreneurial, and corporate education for anyone willing to grow. We equip learners of all backgrounds with practical, future-ready skills — and the discipline, resilience, intelligence, and intentionality required to create value, earn income, and design the kind of professional or corporate life they choose."
+•	Corporate College (on this site): "where you can request learning and training on topics related to our services, or on a topic you need that is not listed. It is also home to our blog, Corporate School."
+Use these definitions exactly in meaning. You may tighten them to the design system's voice; the owner approves any rewording.
+What SCS does and how it delivers
+SCS is a multidisciplinary corporate services, business support and advisory company. Its promise is one accountable coordinator for corporate, regulatory-filing, documentation, operational and growth support, instead of many separate providers. The way SCS delivers is its real differentiator, so make it visible:
+•	Diagnosis comes first. The Quarterly Business Check-Up and Business Growth Report are included for Partners.
+•	Every engagement is scoped and agreed in writing: deliverables, exclusions, milestones and acceptance, before work starts.
+•	Specialist work goes to vetted professionals, approved for each service, with a backup in place.
+•	Quality review is done by the SCS management team before anything is delivered.
+•	SCS commits to defined work and service levels, not to outcomes it doesn't control, such as approvals, grants, investment or sales.
+•	Neutral diagnosis. A recommendation can be deferred, declined or referred elsewhere.
+SCS Partnership: the conversion goal
+•	An SCS Partnership is the retainership plan SCS agrees with each entity. It is tailored to each partner: there is no public price list.
+•	The same partnership model applies to international firms that want a remote operations partner in Nigeria (for example, client intake, case and file administration, billing administration, research support, back-office and customer support). Each partnership is agreed with that firm.
+•	Describe this remote-operations support in non-legal, administrative terms only. Avoid "legal assistant" or "paralegal" wording for SCS's own services.
+•	Partners receive the Quarterly Business Check-Up and the SCS Business Growth Report, plus continuous support from one coordinator. [OWNER TO CONFIRM any other partner benefits and any plan names; never show fees]
+Fees
+Fees are never shown or stated on the site, not even as ranges. Pages show benefits, deliverables and the process. Visitors request a call, a demo or a proposal, and fees appear only in a proposal sent on request. The site should not announce "we don't publish prices"; let the design imply it:
+•	benefit-led service pages;
+•	"What you receive" sections;
+•	"Request a proposal" and "Book a Discovery Call" as the routes forward.
+Evidence already published
+•	3,000+ registrations, with the attribution as currently worded on the live site;
+•	1,800+ agreements; 1,200+ engagements; 10+ sectors;
+•	16 case studies with RC numbers;
+•	a Verification page.
+Each figure needs a one-line definition and an "as at" date.
+Operating principles
+Use these as SCS's own documents state them:
+•	practical outcomes, not merely paperwork;
+•	evidence before recommendation;
+•	truthful description of people and capability;
+•	scope and acceptance agreed in writing;
+•	management quality review;
+•	data access on least privilege.
+[OWNER TO CONFIRM the official values list.] The current "Why SCS" list is: Multidisciplinary, Business-Centric, Technology-Enabled, Integrated, Scalable, Practical, Continuous.
+5. Audiences (in priority order; validate against PostHog and the enquiries)
+1.	Nigerian founders and SMEs formalising or restructuring: registration support, post-incorporation filings, tax and regulatory registration, documentation.
+2.	Growing companies that want an ongoing partner: the SCS Partnership.
+3.	NGOs, foundations, schools and faith organisations: registration support, governance documentation, donor-compliance support.
+4.	Foreign companies, investors and diaspora founders entering Nigeria. They need Nigerian setup explained plainly, and they need to be dealt with in their time zone.
+5.	International firms looking for a remote operations partner in Nigeria.
+6.	Learners and organisations that want training (Corporate College and SCA).
+7.	Vetted professionals who want to join the SCS expert network, and job candidates.
+Each audience needs a clear entry point from the home page and its own "start here" path, and each path ends at a partnership conversation.
+6. Where version 1 stands (snapshot; re-verify)
+PostHog, last 30 days to 2 November 2026 (consent-gated, so undercounted):
+•	24 visitors, 54 pageviews; average session 2 minutes 23 seconds; bounce rate 42%.
+•	Top pages: / (21 views), /portfolio (7), then /career, /contact, /find-my-service, /tools and /verification.
+•	Mobile visitors viewed 1 page each (9 visitors, 9 views); desktop visitors viewed 3. The mobile journey is not working.
+•	Channels: direct 18, organic social 4, organic search 2. Search visibility is effectively zero.
+•	Countries: Nigeria 21, US 2, Saudi Arabia 1.
+•	Speed (p75 LCP): home 2.75s ("needs improvement"); portfolio 0.64s; contact 1.08s.
+Issues on the live site:
+•	The "Services" menu shows no items in the page text.
+•	The "3,000+" figure is duplicated.
+•	The footer service list is printed twice, and "Show all 21 services" appears as static text.
+•	The honeypot label "Don't fill this out if you're human:" is visible.
+•	Social links show as raw URLs.
+•	Statistics have no definition or date.
+•	Some generic copy ("Practical", "Continuous", a four-line closing).
+•	Legal-adjacent wording that breaks the legal rule in section 4.
+Hosting: Netlify emailed on 20 October 2026 that the team had used all its credits, and production deploys were blocked. Version 2 moves to Cloudflare Workers (section 11).
+7. Competitive reading: exceed the Big Four
+PwC, KPMG, Deloitte and EY (Nigeria) are the bar to clear. Match them on credibility and beat them where their sites are weakest.
+Match them on:
+•	disciplined navigation (Services, Industries, Insights, About, Careers);
+•	dated, filterable insights with format and read-time labels, and topic hubs;
+•	governance and standards pages;
+•	named leaders;
+•	case studies;
+•	a formal "Request a proposal" route;
+•	site search;
+•	an accessibility statement.
+Exceed them on:
+1.	Clarity. They lead with slogans ("Make it happen", "Building better futures"). SCS leads with what it does, for whom, and what happens next.
+2.	Guidance. They give a small business, or a foreign founder, no idea what to do first. SCS gives a "start here" path per audience, a service finder, and an explained process.
+3.	Transparency of process. They don't show how an engagement works. SCS shows every step from first call to delivery and partnership.
+4.	Speed and accessibility. Their pages are image-heavy and script-heavy. SCS is measurably faster (section 11 budgets) and WCAG 2.2 AA throughout.
+5.	Consistency. They have duplicated or mismatched taxonomies (e.g. KPMG and Deloitte industries). SCS uses one coherent service and industry model.
+6.	Responsiveness. Their contact routes are buried in footers. SCS shows a clear way to reach a person on every page, with a stated 24-hour response on working days.
+7.	Useful tools. They have none for clients. SCS offers the assessment, checklist, structure chooser and compliance calendar, each ending in a useful result.
+Also research 3 to 5 direct Nigerian peers (corporate services and company-secretarial firms, CAC-accredited agents, SME advisory firms in Abuja and Lagos) and 2 or 3 excellent international small-firm sites. Write a one-page comparison: what each does well, what SCS should take, and what to avoid.
+8. Goals and non-negotiables for version 2
+The site must be:
+1.	Clear: what, who, why trust, next step, on every key page.
+2.	Credible: every claim defined and dated, real people, real cases, verifiable registration, standards visible.
+3.	Guiding: a visible "how working with SCS works" path, and answers to the questions people actually ask (what's involved, what documents are needed, how long things usually take where SCS can say, what SCS does and does not do).
+4.	Partnership-minded: the tone says "let's see if we're right for each other", and the journey leads naturally to becoming an SCS Partner.
+5.	Fast and light: see the budgets in section 11.
+6.	Searchable and global: see section 11.
+7.	Easy to use: mobile-first, plain English, one primary action per page.
+8.	Distinctive: obviously SCS (navy, royal blue, gold, documents as proof, the Assess → Structure → Comply → Improve → Grow framework), not a template.
+Design direction: modern with a traditional feel.
+•	Restrained, editorial, document-like.
+•	Strong typographic hierarchy, generous white space, square-shouldered cards, hairline rules, the gold rule as the signature, tabular figures.
+•	Navy bands used sparingly.
+•	Proof shown as documents (certificates, case-study fact panels), not stock photos.
+Produce two design directions as a Design artifact before building:
+•	A: strictly within the current design system (Inter only).
+•	B: the same system plus a restrained serif for H1/H2 only, for a more traditional voice. This needs the owner's approval because it changes the design system.
+Both directions show the Home page, one Service page, the Partnership page and Contact on mobile and desktop.
+Never:
+•	gradients, glassmorphism, emoji, stock handshake or skyline photos, or decorative icon sets;
+•	hero carousels, auto-playing video, parallax, pop-ups, exit-intent, countdowns, "limited offer", fake urgency, chat bubbles;
+•	more than one primary call to action per view, or forms that ask for more than needed;
+•	the AI vocabulary: "unlock, empower, seamless, leverage, cutting-edge, robust, holistic, in today's fast-paced world, journey, elevate" (the tagline aside);
+•	invented testimonials, bios, figures, client names or logos;
+•	fees, price ranges or "from" prices.
+9. Information architecture (proposal; refine with evidence)
+Keep existing URLs where they still fit. Add 301 redirects for anything that moves.
+•	Home: 
+o	a plain statement of what SCS does and for whom;
+o	"Start here" by audience;
+o	how engagements work;
+o	the SCS Partnership in brief;
+o	selected proof;
+o	latest insights;
+o	one closing next step.
+•	How we work (new). Discovery call → diagnosis or Business Check-Up → tailored proposal (scope, deliverables, milestones) → delivery with SCS management quality review → acceptance → ongoing partnership. Include what SCS does not do.
+•	SCS Partnership (new, central): 
+o	what a partnership is (a retainership plan tailored to each partner);
+o	what partners receive;
+o	who it suits;
+o	a two-way "Are we a fit?" section: what SCS looks for in partners, and what partners can expect from SCS;
+o	how a partnership is agreed;
+o	the remote-operations partnership for international firms as a clearly signposted variant.
+o	Call to action: "Start a partnership conversation".
+•	Services: keep everything that is on the live site, update it, and integrate the 45-service vision professionally. 
+o	Build one service data file that merges the 21 live services (after the legal-rule audit) with the 45 catalogue services (documents 01 and 08). Remove duplicates. Each entry has: service ID, name, cluster, summary, benefits, "what you receive", typical deliverables, related audiences and industries, related guides and case studies, and page path.
+o	Organise the result into 6 to 8 needs-based clusters, for example Start & Structure, Compliance & Filings, Finance & Funding, People & Operations, Technology & Digital, Brand & Growth, Diagnosis & Strategy. Each cluster gets a hub page; each service gets a concise page generated from the data file.
+o	Recommended: keep the service count manageable for visitors, and make the service finder the main way in. Clusters show "most requested" first. Don't list 60 links in a mega-menu.
+o	Don't commit to timelines for services SCS isn't yet ready to deliver. Every service page ends in "Discuss this service", which leads to a diagnosis and proposal.
+o	Send the merged list to the owner for approval before writing pages.
+•	Who we help: 
+o	audience pages (Founders & SMEs, Growing companies, NGOs & institutions, Doing business in Nigeria for foreign companies and investors, Remote operations partner for international firms);
+o	Industries (cluster the current 12 to about 6, but more coherently than the Big Four do).
+•	Work: case studies with a fixed structure (client and RC, sector, challenge, what SCS did, deliverables, outcome stated factually, date), plus Verification.
+•	Corporate College: 
+o	the training-request page (topics linked to SCS services, plus "request a topic not listed");
+o	Corporate School, the blog: practical guides and dated regulatory updates, each with author, "last reviewed" date and a short "for general information only" note. Topic hubs: company registration, post-incorporation filings, tax registration (NRS), data protection basics (NDPA), doing business in Nigeria, funding readiness. Plus the Compliance Calendar;
+o	a clear link to Stephen Corporate Academy (SCA) for online courses, using the SCA definition in section 4.
+•	Tools: keep only the tools that are used and work well (check PostHog). Each ends with a useful result and a gentle "Discuss your result" link.
+•	About: 
+o	the story;
+o	leadership;
+o	our standards (expert vetting, management quality review, data protection, conflicts, complaints);
+o	registration details.
+•	Contact: 
+o	Book a Discovery Call;
+o	the enquiry form;
+o	"Request a proposal" for organisations with a formal brief;
+o	WhatsApp and phone;
+o	the office;
+o	hours (Mon to Fri, 8 am to 5 pm WAT) with a live "open now / opens Monday 8 am WAT" indicator;
+o	"What happens after you contact us".
+•	Join us: careers and the expert-network application (document 06 sets the criteria).
+•	Global site search; footer with policies, accessibility statement and cookie settings.
+10. Content standards
+•	British/Nigerian English, as set out in the design system. "We" (SCS) speaking to "you". Senior, plain, specific.
+•	Every page answers: what is this, who is it for, what do I receive, what do I need to provide, what happens next.
+•	Every number has a definition and an "as at" date. Every regulatory statement has a source link and a review date.
+•	Name regulators exactly. Explain every acronym the first time it appears.
+•	Apply the legal rule in section 4 to every word, including alt text, metadata, schema, file names and URLs.
+•	Write for international readers: no unexplained Nigerian shorthand; state the time zone; describe remote delivery.
+•	Benefits-led copy without hype. Show the value of partnering; never pressure.
+•	Migrate the existing content, rewrite it to these standards, and remove anything thin.
+11. Technical standards, hosting and forms
+Hosting: Cloudflare Workers (owner decision)
+The owner's proposed stack is Workers + Static Assets + D1 + Resend + Turnstile. Keep it. Optimise it as follows, and confirm current limits and pricing for each product before you build.
+1. Build as a fully static site.
+•	Use output: "export" in Next.js, and serve it with Workers Static Assets.
+•	Add a single small Worker only for the dynamic routes (/api/*). That keeps compute near zero and avoids a server runtime.
+•	Use OpenNext for Cloudflare only if a feature truly needs server rendering; justify it if so.
+•	Static export consequences you must handle: 
+o	Next/image optimisation is unavailable, so pre-optimise images at build time into AVIF/WebP with explicit sizes.
+o	next.config redirects don't run, so move them to a _redirects file or into the Worker.
+o	Security headers go in _headers or the Worker.
+o	The sitemap, rss.xml and search-index.json must be generated statically.
+2. Forms: one Worker endpoint, POST /api/forms/:form.
+•	Turnstile in managed/invisible mode, verified server-side on every submission.
+•	A honeypot field, hidden properly so that its label is never visible.
+•	Per-IP rate limiting with the Workers rate-limiting binding.
+•	Schema validation with zod (already a dependency), and size limits.
+•	Store submissions in D1: a submissions table (id, reference number, form, request_type, service_id, audience, fields as JSON, consent and its timestamp, UTM, PostHog distinct id when consented, status, created_at).
+•	Store career CVs in a private R2 bucket, never in D1, with a type and size check (PDF/DOCX, ≤ 3 MB). Staff open them through short-lived signed links only.
+•	Notify with Resend: 
+o	an internal email to sales@ (enquiries) or contact@ (careers);
+o	a confirmation email to the visitor from contact@stephencorporateservices-scs.com, containing their reference number and what happens next.
+•	Email DNS warning. Verify Resend on a sending subdomain (for example mail. or send.) so that the Google Workspace SPF, DKIM, DMARC and MX records on the root domain stay untouched. Set DMARC alignment correctly.
+•	Retention. A Cron Trigger Worker deletes career applications and their CVs after the period the Privacy Notice states (6 months for unsuccessful applications), and purges other submissions on the retention schedule the owner sets. [OWNER TO CONFIRM the enquiry retention period]
+•	Staff access. Put a minimal read-only submissions view behind Cloudflare Access, limited to named Google Workspace accounts. Alternatively, sync new leads into the leads sheet. Choose one and justify it.
+3. CMS. Decap's GitHub backend needs an OAuth endpoint, and the one Netlify provided disappears with the move. Implement /api/auth and /api/callback in the same Worker, with a GitHub OAuth App; keep the secret in Worker secrets. Alternatively, recommend a simpler editing flow, with reasons.
+4. Deploys.
+•	GitHub Actions runs lint, typecheck, test and build, then wrangler deploy.
+•	Each PR gets a preview URL, where the placeholder and prototype flags are on; production keeps them off.
+•	The daily scheduled build that publishes future-dated posts moves to this pipeline.
+•	Keep a rollback path.
+5. DNS cutover. The domain stays on Cloudflare DNS: attach the apex and www to the Worker, and redirect www to the apex. Don't touch the Google Workspace records. Write a cutover and rollback checklist, and only switch DNS after the owner signs off on the preview.
+6. Better than the proposal (consider and recommend):
+•	PostHog reverse proxy at /ingest through the Worker. Consent is still required.
+•	Cloudflare Email Routing's send_email binding for the internal notifications only, to verified staff addresses. That keeps Resend for visitor-facing email and reduces the dependencies. Recommend one approach.
+•	Cache rules so that HTML revalidates and hashed assets are immutable.
+Performance budgets (mobile, slow 4G, p75 in PostHog and Lighthouse)
+•	LCP < 2.0s, INP < 200ms, CLS < 0.05.
+•	Home page < 500 KB transferred, < 100 KB of JavaScript.
+•	Lighthouse ≥ 95 in every category.
+•	Fonts self-hosted and subset; images pre-optimised with dimensions set.
+•	No third-party scripts except PostHog after consent, Turnstile on form pages only, and the Cal.com link-out.
+Accessibility, SEO, security, privacy
+Accessibility: WCAG 2.2 AA, tested with keyboard, a screen reader and contrast checks, plus a public accessibility statement.
+SEO and global reach
+•	Unique titles and descriptions, canonicals, sitemap, robots.
+•	JSON-LD: Organization / ProfessionalService with RC identifier, opening hours and contact point; Service; Article; FAQPage; BreadcrumbList if breadcrumbs are visible. No legal types.
+•	Open Graph images per section.
+•	Internal linking between services, guides and case studies.
+•	Search Console and Bing setup steps for the owner.
+•	Research real search queries and target them (e.g. "register a company in Nigeria as a foreigner", "CAC annual returns", "NDPA compliance for small business").
+Security
+•	Strict security headers and CSP (connect-src and frame-src covering only Turnstile and PostHog).
+•	Secrets only in Worker secrets; dependency audit in CI.
+•	CMS and submissions access limited to named accounts.
+Privacy
+•	Consent-first analytics, as now.
+•	Update the Privacy and Cookie notices for Cloudflare (hosting, Turnstile, D1, R2), Resend and PostHog, including cross-border transfers and retention. Mark them for the owner's legal review.
+•	Comply with NDPA 2023 and current NDPC guidance (check the latest directive). Consider GDPR/UK GDPR, since the site targets EU/UK visitors.
+12. Conversion: partnership-minded, never pushy
+Actions
+•	Primary: Book a Discovery Call (Cal.com).
+•	Secondary: Request a proposal, Start a partnership conversation, Ask a question, Start the business assessment. Use the one that fits the page.
+•	On mobile: a compact Call / WhatsApp / Book bar.
+Signals of partnership intent (subtle and consistent)
+•	An "Are we a fit?" section on audience pages and the Partnership page.
+•	"What partners receive" panels.
+•	Case studies framed as working relationships.
+•	Every service and audience page ends with "What happens next" in three steps.
+Forms (approved)
+•	As few fields as possible, and clear consent.
+•	The stated response time: "We respond within 24 hours on working days (Monday to Friday, 8 am to 5 pm WAT)."
+•	After submitting, replace the form with a "What happens next" panel: 
+o	a clear success message and the visitor's reference number (also emailed to them);
+o	a short timeline: received → reviewed by the right person → reply within 24 working hours → call or proposal;
+o	one primary button that fits what they asked about. For example: "Book your Discovery Call now" (the Cal.com link, with name and email prefilled where Cal.com supports it), "Take the 3-minute business assessment while you wait", or "Read: what to prepare for your call";
+o	"Continue exploring" with 2 or 3 links matched to the service or audience they chose (a relevant guide, a case study, the Partnership page);
+o	an "Add our hours to your contacts" vCard download, or a "Save this summary" option. Choose whichever is lighter.
+•	Tool results also offer "Email me my result" (with consent) and "Discuss my result".
+Measurement in PostHog
+•	Events: cta_click, booking_click, form_submit, form_step, tool_complete, whatsapp_click, call_click, partnership_cta, post_submit_next_step, each with service_id and audience.
+•	UTM capture stored with each submission and in the leads sheet structure.
+•	A "Website v2" dashboard: entry pages, channels, the funnel landing → service or partnership → booking or form, Core Web Vitals, mobile vs desktop.
+13. How to run this project (phases with approval gates)
+1.	Discovery and audit (report, then stop). 
+o	Repo vs live diff, a PostHog pull, and a content inventory of every page with a keep / merge / rewrite / remove verdict and a legal-rule check.
+o	The competitor and peer review, and a technical audit.
+o	Deliver a one-page summary plus one batched list of owner questions.
+2.	Strategy and content model (Docs artifact, approval). 
+o	Positioning statement, audiences, the merged service list, the legal-rule changes list, sitemap with redirects, page templates, the Partnership page outline, the tone guide, and the metrics plan.
+3.	Design directions (Design artifact, approval): A and B, as in section 8.
+4.	Build on branch v2 with Cloudflare preview deploys only, and small reviewable PRs. Production stays untouched.
+5.	Content: migrate, rewrite and write the new pages. Anything unconfirmed goes on the owner list; it is never invented.
+6.	QA: Lighthouse on every template, accessibility, link check, every form end to end (Turnstile, D1, R2, both emails, success panel, retention job), analytics events, consent, redirects, 404, and a legal-rule scan of the whole build (grep for the banned terms).
+7.	Launch: DNS cutover after the owner signs off on the preview, then re-check redirects and email delivery, and submit the sitemap. Decommission the Netlify site only after a week of stable operation.
+8.	30 days after launch: a PostHog report against the version 1 baseline in section 6, with the next three improvements.
+14. Owner decisions still to collect (ask once, in Phase 0)
+1.	The official values list and the one-line positioning.
+2.	The exact "Is SCS a law firm?" FAQ answer, and how the Founder's title and credentials appear.
+3.	Approval of the merged service list and the legal-rule rename/remove list.
+4.	Partner benefits beyond the Check-Up and Growth Report, and any plan names (no fees).
+5.	The retention period for enquiries.
+6.	Design direction A or B.
+7.	Leadership bios and photos, and consented testimonials.
+8.	Access to Cloudflare and Resend, and who in Google Workspace may view submissions.
+9.	Who signs off the policy pages (a Nigerian lawyer should review the Terms, Privacy and Cookie pages).
+15. Definition of done
+•	Every page passes the clarity test (what, who, why trust, next step).
+•	No invented content; every claim is defined and dated.
+•	No legal association with SCS anywhere.
+•	No fees anywhere.
+•	No [OWNER TO CONFIRM] text in production.
+•	Budgets in section 11 are met on the live URL, WCAG 2.2 AA passes, and CI is green.
+•	Every form works end to end on Cloudflare, with the success panel and next-step button.
+•	Redirects cover every old URL. Netlify Forms is fully replaced. Google Workspace email is unaffected.
+•	Docs are rewritten for Cloudflare: README, deployment and cutover guide, content-editing guide for staff, form and submission handling guide.
+Final report:
+•	the live URL;
+•	a pass/fail table against this section;
+•	before and after metrics;
+•	the owner to-do list (with where to do each item);
+the next three improvements.

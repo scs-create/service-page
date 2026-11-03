@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>SCS footer</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<footer style="width: 100%; background: #011550; color: #ffffff; border-top: 4px solid #f9b91a; font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 14px; line-height: 1.6;">
+<div style="max-width: 1200px; margin: 0 auto; padding: 56px {{pad}} 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px;">
+<div>
+<p style="margin: 0 0 12px; font-size: 16px; font-weight: 600;">Stephen Corporate Services - SCS Ltd</p>
+<p style="margin: 0; color: rgba(255,255,255,0.85);">RC 9041457</p>
+<p style="margin: 0; color: rgba(255,255,255,0.85);">SD20 Belham Estate, Karsana, FCT, Abuja, Nigeria</p>
+<p style="margin: 12px 0 0; color: rgba(255,255,255,0.85);">Monday to Friday, 8:00 am to 5:00 pm WAT (UTC+1)</p>
+<p style="margin: 12px 0 0;"><a href="tel:+2348128138222" style="color: #ffffff; text-decoration: none;">+234 812 813 8222</a> (phone and WhatsApp)</p>
+<p style="margin: 0;"><a href="mailto:contact@stephencorporateservices-scs.com" style="color: #ffffff; text-decoration: none; word-break: break-all;">contact@stephencorporateservices-scs.com</a></p>
+</div>
+<nav aria-label="Services">
+<p style="margin: 0 0 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #f9b91a;">Services</p>
+<ul style="margin: 0; padding: 0; list-style: none;">
+<li><a href="/services/strategy-and-advisory" style="color: rgba(255,255,255,0.85); text-decoration: none;">Strategy &amp; Advisory</a></li>
+<li><a href="/services/company-formation-and-secretarial" style="color: rgba(255,255,255,0.85); text-decoration: none;">Company Formation &amp; Secretarial</a></li>
+<li><a href="/services/compliance-and-regulatory" style="color: rgba(255,255,255,0.85); text-decoration: none;">Compliance &amp; Regulatory</a></li>
+<li><a href="/services/finance-and-accounting" style="color: rgba(255,255,255,0.85); text-decoration: none;">Finance &amp; Accounting</a></li>
+<li><a href="/services/hr-and-operations" style="color: rgba(255,255,255,0.85); text-decoration: none;">HR &amp; Operations</a></li>
+<li><a href="/services/technology-and-digital" style="color: rgba(255,255,255,0.85); text-decoration: none;">Technology &amp; Digital</a></li>
+<li><a href="/services/marketing-and-communications" style="color: rgba(255,255,255,0.85); text-decoration: none;">Marketing &amp; Communications</a></li>
+</ul>
+</nav>
+<nav aria-label="Company">
+<p style="margin: 0 0 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #f9b91a;">SCS</p>
+<ul style="margin: 0; padding: 0; list-style: none;">
+<li><a href="/about" style="color: rgba(255,255,255,0.85); text-decoration: none;">About</a></li>
+<li><a href="/about/standards" style="color: rgba(255,255,255,0.85); text-decoration: none;">Our standards</a></li>
+<li><a href="/portfolio" style="color: rgba(255,255,255,0.85); text-decoration: none;">Case studies</a></li>
+<li><a href="/verification" style="color: rgba(255,255,255,0.85); text-decoration: none;">Verification</a></li>
+<li><a href="/tools" style="color: rgba(255,255,255,0.85); text-decoration: none;">Tools</a></li>
+<li><a href="/corporate-college" style="color: rgba(255,255,255,0.85); text-decoration: none;">Corporate College</a></li>
+<li><a href="/career" style="color: rgba(255,255,255,0.85); text-decoration: none;">Join us</a></li>
+<li><a href="/contact" style="color: rgba(255,255,255,0.85); text-decoration: none;">Contact</a></li>
+</ul>
+</nav>
+<nav aria-label="Policies">
+<p style="margin: 0 0 12px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #f9b91a;">Policies</p>
+<ul style="margin: 0; padding: 0; list-style: none;">
+<li><a href="/privacy" style="color: rgba(255,255,255,0.85); text-decoration: none;">Privacy notice</a></li>
+<li><a href="/cookies" style="color: rgba(255,255,255,0.85); text-decoration: none;">Cookie notice</a></li>
+<li><a href="/terms" style="color: rgba(255,255,255,0.85); text-decoration: none;">Website terms</a></li>
+<li><a href="/accessibility" style="color: rgba(255,255,255,0.85); text-decoration: none;">Accessibility statement</a></li>
+<li><button type="button" style="padding: 0; background: none; border: 0; color: rgba(255,255,255,0.85); font: inherit; cursor: pointer;">Cookie settings</button></li>
+</ul>
+</nav>
+</div>
+<div style="max-width: 1200px; margin: 0 auto; padding: 20px {{pad}} {{bottomPad}}; border-top: 1px solid rgba(255,255,255,0.15); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.85);">
+<span>© 2026 Stephen Corporate Services - SCS Ltd. Elevate Your Company, Go Global.</span>
+<span>Stephen Corporate Academy (SCA) ↗</span>
+</div>
+</footer>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"mobile":{"editor":"boolean","default":false},"direction":{"editor":null},"$preview":{"width":1440,"height":560}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const m = this.props.mobile === true || this.props.mobile === 'yes' || this.props.mobile === 'true';
+    return { pad: m ? '20px' : '48px', bottomPad: m ? '96px' : '28px' };
+  }
+}
+</script>
+</body>
+</html>
