@@ -2,20 +2,19 @@
 // Workers Static Assets directly; only the paths in wrangler.jsonc `assets.run_worker_first` reach this code.
 // Responses made here bypass public/_headers, so they get the same security headers from SECURITY_HEADERS.
 //
-// PR 1 is the skeleton: the routes exist and answer honestly until their PR wires them up.
-//   /api/forms/:form   forms PR (Turnstile, D1, R2, Resend)
+// Routes:
+//   /api/forms/:form   form submissions: Turnstile, rate limit, zod, D1, R2, Resend (worker/forms.ts)
 //   /api/auth, /api/callback   CMS PR (GitHub OAuth for Decap)
 //   /ingest/*          analytics PR (PostHog EU proxy)
 //   /admin/*           password gate (worker/admin-auth.ts, as in v1) + ADMIN_CSP; Cloudflare Access in the CMS PR
 import { adminGate } from "./admin-auth";
+import { handleForm } from "./forms";
 import { ADMIN_CSP, SECURITY_HEADERS } from "./headers";
+import { purgeOld } from "./retention";
+import type { Env } from "./types";
 
-// Only the default export may be exported from the entry module: Workers treats every named export as an entrypoint.
-export interface Env {
-  ASSETS: { fetch(request: Request): Promise<Response> };
-  ADMIN_USER?: string; // Worker secrets, never in the repository
-  ADMIN_PASSWORD?: string;
-}
+// Only the default export may be a value export: Workers treats every named value export as an entrypoint.
+export type { Env };
 
 async function admin(request: Request, env: Env): Promise<Response> {
   const res = adminGate(request, env.ADMIN_USER, env.ADMIN_PASSWORD) ?? (await env.ASSETS.fetch(request));
@@ -37,9 +36,11 @@ function json(status: number, body: unknown): Response {
 async function route(request: Request, env: Env): Promise<Response> {
   const { pathname } = new URL(request.url);
 
-  if (/^\/api\/forms\/[a-z0-9-]+\/?$/.test(pathname)) {
+  const formMatch = pathname.match(/^\/api\/forms\/([a-z0-9-]+)\/?$/);
+  if (formMatch) {
     if (request.method !== "POST") return json(405, { ok: false, error: "method_not_allowed" });
-    return json(503, { ok: false, error: "not_live", message: "This form is not live yet." });
+    const reply = await handleForm(request, env, formMatch[1]);
+    return json(reply.status, reply.body);
   }
   if (pathname === "/api/auth" || pathname === "/api/callback") return json(501, { ok: false, error: "not_implemented" });
   if (pathname.startsWith("/api/")) return json(404, { ok: false, error: "not_found" });
@@ -60,8 +61,10 @@ const worker = {
     }
   },
 
-  // Daily 01:00 UTC (02:00 WAT): six-month retention purge of D1 rows and R2 uploads, added with the forms PR.
-  async scheduled(): Promise<void> {},
+  // Daily 01:00 UTC (02:00 WAT): six-month retention purge of D1 rows and their R2 uploads.
+  async scheduled(_event: unknown, env: Env): Promise<void> {
+    await purgeOld(env);
+  },
 };
 
 export default worker;

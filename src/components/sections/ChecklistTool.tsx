@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import NetlifyForm from "@/components/sections/NetlifyForm";
+import SiteForm from "@/components/sections/SiteForm";
 import { CONSENT_FIELD, type FormField } from "@/lib/formSchema";
 import { track } from "@/lib/track";
 
@@ -74,7 +74,7 @@ export default function ChecklistTool({ types, sectors, regulatorNames, disclaim
           <section className="no-print mt-10 rounded-md border border-border border-t-4 border-t-accent bg-surface p-6">
             <h2 className="text-xl font-semibold text-text">Want help working through this list?</h2>
             <p className="mt-2 mb-5 text-sm text-muted">Share your details and SCS will follow up. We contact you only if you tick the consent box.</p>
-            <NetlifyForm formName="enquiry" requestType="compliance-checklist" sourcePage="/compliance-checklist" fields={leadFields} submitLabel="Contact me" successTitle="Thank you." successMessage="Our team will be in touch." extraHidden={{ checklist_type: type.label, checklist_sector: sector?.label ?? "Not specified" }} />
+            <SiteForm form="enquiry" requestType="compliance-checklist" sourcePage="/compliance-checklist" fields={leadFields} submitLabel="Contact me" successTitle="Thank you." successMessage="Our team will be in touch." extraHidden={{ checklist_type: type.label, checklist_sector: sector?.label ?? "Not specified" }} />
           </section>
         </>
       )}

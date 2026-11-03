@@ -7,7 +7,7 @@ import { IS_PRODUCTION, SITE } from "@/lib/site";
 export default function robots(): MetadataRoute.Robots {
   if (!IS_PRODUCTION) return { rules: { userAgent: "*", disallow: "/" } };
   return {
-    rules: { userAgent: "*", allow: "/", disallow: ["/admin/", "/__forms.html", "/ingest/"] },
+    rules: { userAgent: "*", allow: "/", disallow: ["/admin/", "/api/", "/ingest/"] },
     sitemap: `${SITE.url}/sitemap.xml`,
   };
 }

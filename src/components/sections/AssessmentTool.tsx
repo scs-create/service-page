@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import NetlifyForm from "@/components/sections/NetlifyForm";
+import SiteForm from "@/components/sections/SiteForm";
 import { CONSENT_FIELD, type FormField } from "@/lib/formSchema";
 import { Answer, Assessment, scoreAssessment } from "@/lib/assessment";
 import { track } from "@/lib/track";
@@ -163,8 +163,8 @@ export default function AssessmentTool({ assessment, sectors, sectorNotes, servi
       <section className="no-print mt-10 rounded-md border border-border border-t-4 border-t-accent bg-surface p-6">
         <h2 className="text-xl font-semibold text-text">Want us to walk you through your results?</h2>
         <p className="mt-2 mb-5 text-sm text-muted">If you send your details, SCS can see your answers and results, to prepare for the conversation and to improve our services. We contact you about this only if you tick the consent box.</p>
-        <NetlifyForm
-          formName="enquiry" requestType="business-assessment" sourcePage="/assess" fields={leadFields} submitLabel="Send my results to SCS"
+        <SiteForm
+          form="enquiry" requestType="business-assessment" sourcePage="/assess" fields={leadFields} submitLabel="Send my results to SCS"
           successTitle="Thank you." successMessage="Your results have reached our team. We will contact you about them directly."
           extraHidden={{ assessment_score: String(result.percent), assessment_band: result.band, assessment_gaps: result.gaps.map((g) => g.label).join("; "), assessment_answers: JSON.stringify({ sector, stage, size, scores }), sector, business_stage: stageLabel, team_size: size }}
         />

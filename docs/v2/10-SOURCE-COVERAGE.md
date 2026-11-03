@@ -13,11 +13,11 @@ that carry it are built in PRs 3 to 6, in the order set by `01-BUILD-PROMPT.md`.
 
 | Ruling | Where | Status |
 |---|---|---|
-| Full name "Stephen Corporate Services - SCS Ltd" | `src/lib/site.ts` → header, footer, titles, JSON-LD | ✅ PR 2 (forms and emails: PR 5) |
+| Full name "Stephen Corporate Services - SCS Ltd" | `src/lib/site.ts` → header, footer, titles, JSON-LD, forms, emails | ✅ PR 2–5 |
 | Phone/WhatsApp +234 812 813 8222; old number banned | `site.ts`; `scripts/check-site.mjs` fails on the old number | ✅ PR 1–2 |
 | No fees or cost values, including government fees | Copy rule for every page; guides say fees come in the proposal | ⏳ PR 3–6 (copy) |
 | No delivery or completion timelines | Service template has no timeline field; a test rejects time phrases in service copy | ✅ PR 3 |
-| "We respond within 24 hours." word for word; no "Open now" indicator | `SITE.responsePromise` in the footer; hours as text | ✅ PR 2 (forms and Contact: PR 4–5) |
+| "We respond within 24 hours." word for word; no "Open now" indicator | Footer, Contact, every form and the confirmation email | ✅ PR 2–5 |
 | Direction B: Source Serif 4 for H1/H2, Inter for the rest | `layout.tsx`, `globals.css` | ✅ PR 2 |
 | Tower on the home page, never removed, on mobile too | `TowerMark` + `HeroSkyline` (exact logo vector) | ✅ PR 2–4 |
 | Nav: Home · Services · Clients · Process · Partnership · Insights · About, plus Request a proposal and Book a Discovery Call | `src/lib/nav.ts`, `Header.tsx` | ✅ PR 2–4 (every target page exists) |
@@ -28,7 +28,7 @@ that carry it are built in PRs 3 to 6, in the order set by `01-BUILD-PROMPT.md`.
 | All 23 case studies approved and consented | v1 content | ⏳ PR 6 (fixed case-study template PR 4) |
 | Proof figures with definitions, no "as at" dates | `src/content/v2/pages.ts` FIGURES | ✅ PR 4 |
 | Values list unchanged | v1 content | ✅ unchanged |
-| No extra partner benefits; enquiries kept 6 months | Partnership page; retention job | ✅ Partnership PR 4 · ⏳ retention PR 5 (cron wired in PR 1) |
+| No extra partner benefits; enquiries kept 6 months | Partnership page; `worker/retention.ts` (daily) | ✅ PR 4–5 |
 | Hosting on Cloudflare Workers, not Netlify | `wrangler.jsonc`, `worker/` | ✅ PR 1 (Netlify forms replaced in PR 5) |
 
 ## Strategy and Content Model, section by section
@@ -45,7 +45,7 @@ that carry it are built in PRs 3 to 6, in the order set by `01-BUILD-PROMPT.md`.
 | §7 Eight page templates, each ending in "What happens next" | Home, hub, service, audience, case study, guide, tool, form | ✅ home, hub, service, audience PR 3–4 · ⏳ case study, guide PR 6 · tool, form PR 5 |
 | §8 Partnership page outline | `/partnership`, `/partnership/remote-operations` | ✅ PR 4 |
 | §9 Tone guide (five v2 rules, banned vocabulary) | Copy rules; CI banned-word check | ✅ check PR 1 · ⏳ copy PR 3–6 |
-| §10 Metrics plan: events `cta_click`, `booking_click`, `form_step`, `form_submit`, `tool_complete`, `whatsapp_click`, `call_click`, `partnership_cta`, `post_submit_next_step`, each with `service_id` and `audience`; UTM stored with leads | PostHog via `/ingest`; D1 lead rows | ⏳ PR 5 (UTM) · PR 8 (events, dashboard) |
+| §10 Metrics plan: events `cta_click`, `booking_click`, `form_step`, `form_submit`, `tool_complete`, `whatsapp_click`, `call_click`, `partnership_cta`, `post_submit_next_step`, each with `service_id` and `audience`; UTM stored with leads | PostHog via `/ingest`; D1 lead rows | ✅ UTM in D1 PR 5 · ⏳ events, dashboard PR 8 |
 | §11 Owner decisions | All answered (see `02-DECISIONS.md`) | ✅ |
 
 ## Design canvas (Direction B), board by board
@@ -58,7 +58,7 @@ that carry it are built in PRs 3 to 6, in the order set by `01-BUILD-PROMPT.md`.
 | B · Home (desktop and mobile) | `src/app/page.tsx` | ✅ PR 4 |
 | B · Service page | `src/app/services/[cluster]/[service]/page.tsx` | ✅ PR 3 |
 | B · Partnership | `/partnership` | ✅ PR 4 |
-| B · Contact | `/contact`, `/contact/proposal` | ✅ pages PR 4 · ⏳ Worker forms PR 5 |
+| B · Contact | `/contact`, `/contact/proposal` | ✅ PR 4–5 (forms on the Worker: Turnstile, D1, R2, Resend) |
 
 ## Research report
 

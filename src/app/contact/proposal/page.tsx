@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import WhatHappensNext from "@/components/v2/WhatHappensNext";
+import ProposalForm from "@/components/forms/ProposalForm";
+import { SERVICES } from "@/content/v2/catalogue";
 import { EMAILS, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -10,8 +12,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact/proposal" },
 };
 
-// F: Request a proposal (05-SITE-SPEC.md §1, §3). The proposal form (Worker, Turnstile, D1, R2 attachments) arrives
-// with the forms PR; until then the page gives a working email route and the booking link. DRAFT copy.
+// F: Request a proposal (05-SITE-SPEC.md §1, §3): the proposal form (Worker, Turnstile, D1, an optional PDF brief in R2),
+// with email and the booking link as alternatives. ?service=<ID> pre-selects the service. DRAFT copy.
 const INCLUDE = [
   "Your organisation's name and, if registered, its RC, BN or IT number",
   "What you need, in a few lines, or the brief or tender document",
@@ -35,10 +37,13 @@ export default function ProposalPage() {
           <span aria-hidden="true" className="mb-6 mt-4 block h-1 w-14 rounded-sm bg-accent" />
           <ul className="list-disc space-y-2 pl-5">{INCLUDE.map((t) => <li key={t}>{t}</li>)}</ul>
           <p className="mt-6 text-muted">Fees are set out in the proposal itself, once we understand the scope.</p>
+          <div className="mt-10 max-w-[640px]">
+            <ProposalForm services={SERVICES.map((s) => ({ id: s.id, name: s.name, path: s.path }))} />
+          </div>
         </section>
-        <aside aria-label="Send your request" className="rounded-sm border border-border border-t-4 border-t-accent bg-bg p-7">
-          <h2 className="font-sans text-xl font-semibold text-text">Send your request</h2>
-          <p className="mb-5 mt-2 text-[15px] text-muted">Email your brief, or book a call and talk it through.</p>
+        <aside aria-label="Other ways to send your request" className="rounded-sm border border-border border-t-4 border-t-accent bg-bg p-7 lg:sticky lg:top-28">
+          <h2 className="font-sans text-xl font-semibold text-text">Prefer email or a call?</h2>
+          <p className="mb-5 mt-2 text-[15px] text-muted">Email your brief instead, or book a call and talk it through.</p>
           <a href={`mailto:${EMAILS.sales}?subject=${subject}`} data-track="Proposal email" className="flex min-h-12 items-center justify-center rounded-md bg-primary px-5 font-medium text-white hover:bg-secondary">
             Email your brief
           </a>

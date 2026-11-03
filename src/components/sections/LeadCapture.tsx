@@ -1,6 +1,6 @@
 import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
-import NetlifyForm from "@/components/sections/NetlifyForm";
+import SiteForm from "@/components/sections/SiteForm";
 import { CONSENT_FIELD, type FormField } from "@/lib/formSchema";
 
 const portfolioFields: FormField[] = [
@@ -26,7 +26,7 @@ export default function LeadCapture() {
           <div className={card}>
             <h3 className="text-xl font-semibold text-text">Request the Company Growth Portfolio</h3>
             <p className="mt-2 mb-5 text-sm text-muted">Our 2026 portfolio of service lines, deliverables and the systems behind them, sent to you directly by our team.</p>
-            <NetlifyForm formName="enquiry" requestType="growth-portfolio" sourcePage="/" fields={portfolioFields} submitLabel="Request the Portfolio" successTitle="Request received." successMessage="Thank you. We will send the portfolio to your email." />
+            <SiteForm form="enquiry" requestType="growth-portfolio" sourcePage="/" fields={portfolioFields} submitLabel="Request the Portfolio" successTitle="Request received." successMessage="Thank you. We will send the portfolio to your email." />
           </div>
         </div>
       </div>

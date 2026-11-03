@@ -8,6 +8,7 @@ import Analytics from "@/components/ui/Analytics";
 import CookieBanner from "@/components/ui/CookieBanner";
 import MobileBar from "@/components/layout/MobileBar";
 import TrackClicks from "@/components/ui/TrackClicks";
+import UtmCapture from "@/components/ui/UtmCapture";
 import { SITE, IS_PRODUCTION } from "@/lib/site";
 
 // Self-hosted at build time by next/font (no request to Google from visitors), subset to Latin and Latin
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <MobileBar />
         <TrackClicks />
+        <UtmCapture />
         <Analytics />
       </body>
     </html>

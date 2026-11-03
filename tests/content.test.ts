@@ -8,7 +8,6 @@ import { services } from "../src/content/services/data";
 import { portfolio } from "../src/content/portfolio/data";
 import { SERVICE_LINE_TO_SLUG } from "../src/content/portfolio/serviceLines";
 import { assessment, checklist, calendar, faqs, finderQuiz, industries, ipAll, ipVisible, regulators, structureQuiz, SUPPORT_PACKAGES } from "../src/content/loaders";
-import { buildFormsHtml } from "../scripts/gen-forms";
 import { scoreAssessment } from "../src/lib/assessment";
 import { rankOutcomes } from "../src/lib/quiz";
 import { searchEntries } from "../src/lib/search";
@@ -66,15 +65,11 @@ test("IP showcase: nothing is public until permission is granted", () => {
   assert.equal(ipVisible.length, 0);
 });
 
-// ---------- Forms: skeleton is generated from the same registry the site posts with ----------
-test("public/__forms.html is up to date with src/lib/formFields.ts", () => {
-  assert.equal(fs.readFileSync("public/__forms.html", "utf-8"), buildFormsHtml());
-});
-test("exactly two forms: enquiry (all leads) and career-application (with uploads)", () => {
-  const html = buildFormsHtml();
-  assert.equal((html.match(/<form /g) ?? []).length, 2);
-  assert.match(html, /name="request_type"/);
-  assert.match(html, /enctype="multipart\/form-data"/);
+// ---------- Forms: v2 posts to the Worker (tests/forms.test.ts); the Netlify skeleton is gone ----------
+test("no Netlify form skeleton or Netlify form posting remains", () => {
+  assert.equal(fs.existsSync("public/__forms.html"), false);
+  assert.equal(fs.existsSync("scripts/gen-forms.ts"), false);
+  for (const f of ["src/components/sections/SiteForm.tsx", "src/lib/formFields.ts"]) assert.doesNotMatch(fs.readFileSync(f, "utf-8"), /__forms|data-netlify|netlify-honeypot/);
 });
 
 // ---------- Tools ----------

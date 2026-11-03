@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
 import SocialLinks from "@/components/ui/SocialLinks";
-import ConsultationForm from "@/components/sections/ConsultationForm";
-import { industries } from "@/content/loaders";
+import ContactEnquiryForm from "@/components/forms/ContactEnquiryForm";
+import { CLUSTERS } from "@/content/v2/catalogue";
 import { PROPOSAL_HREF } from "@/lib/nav";
 import { SITE, MAPS_URL, EMAIL_ROUTING } from "@/lib/site";
 
@@ -17,7 +17,8 @@ const WRAP = "mx-auto max-w-[1280px] px-4 md:px-6 lg:px-8";
 const AFTER = ["You receive a reference number by email.", "The right person at SCS reviews your enquiry.", "We reply within 24 hours.", "We arrange a call or prepare a proposal."];
 
 // F: Contact (05-SITE-SPEC.md §3, design/Contact.dc.html). Office hours are text only; there is no "open now" indicator.
-// The enquiry form moves to the Worker (Turnstile, D1, reference number, What happens next panel) in the forms PR.
+// The enquiry form posts to the Worker (Turnstile, D1, reference number, What happens next panel).
+const TOPICS = [...CLUSTERS.map((c) => c.name), "SCS Partnership", "Training (Corporate College)", "Something else"];
 export default function ContactPage() {
   const card = "flex flex-col rounded-sm border border-border border-t-4 border-t-accent bg-bg p-6";
   return (
@@ -48,7 +49,8 @@ export default function ContactPage() {
         <section aria-labelledby="enquiry">
           <h2 id="enquiry" className="type-h2 scroll-mt-28 text-text">Send an enquiry</h2>
           <span aria-hidden="true" className="mb-6 mt-4 block h-1 w-14 rounded-sm bg-accent" />
-          <div className="max-w-[640px]"><ConsultationForm sectors={industries.map((i) => i.name)} /></div>
+          <p className="mb-6 text-muted">Only the fields marked required are needed.</p>
+          <div className="max-w-[640px]"><ContactEnquiryForm topics={TOPICS} /></div>
         </section>
 
         <aside aria-label="Other ways to reach us" className="flex flex-col gap-6">

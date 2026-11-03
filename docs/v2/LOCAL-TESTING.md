@@ -39,16 +39,30 @@ The build needs an internet connection once, to download and self-host the two f
 $env:NEXT_PUBLIC_SITE_ENV="preview"; $env:NEXT_PUBLIC_SHOW_CLIENT_PLACEHOLDERS="true"; $env:NEXT_PUBLIC_ENABLE_PORTAL_PROTOTYPE="true"; npm run build
 ```
 
-## 4. The /admin page locally
+## 4. Local settings: forms and /admin
 
-`/admin` asks for a username and password, as it does on the live site. Locally they come from a file called `.dev.vars` in this folder, which never leaves your PC (it is in `.gitignore`). Create it with Notepad, using any test values you like:
+Local settings live in a file called `.dev.vars` in this folder, which never leaves your PC (it is in `.gitignore`). Create it with Notepad:
 
 ```
+TURNSTILE_SECRET=1x0000000000000000000000000000000AA
 ADMIN_USER=your-test-name
 ADMIN_PASSWORD=a-long-test-password
 ```
 
-Without the file, `/admin` shows "locked", by design. Online, the real values are set as Worker secrets in the Cloudflare dashboard, never in a file.
+- The `TURNSTILE_SECRET` above is Cloudflare's published test key, which always passes. Use it only on your PC. The real secret goes into the Worker settings in the Cloudflare dashboard (owner checklist step 6).
+- `/admin` asks for the username and password you put here. Without them it shows "locked", by design.
+
+Before the first form test, create the local database once:
+
+```
+npx wrangler d1 migrations apply DB --local
+```
+
+Forms then work end to end on your PC: you get a reference number and the "What happens next" panel, and the submission is saved in the local database. No email is sent locally, because the Resend key is only set online. To see what was saved:
+
+```
+npx wrangler d1 execute DB --local --command "SELECT ref, form, created_at FROM submissions"
+```
 
 ## 5. Checks you can run
 
@@ -61,6 +75,5 @@ npm run check:site
 
 ## What to expect at this stage
 
-- **Done:** the platform (PR 1) and design system B (PR 2): fonts, colours, header, footer, mobile bar, cookie banner and the tower mark.
-- **Not yet:** links to Clients, Process, Partnership, Request a proposal, the 7 service-cluster pages, Our standards and the Accessibility statement go to the 404 page. Those pages come in PR 3 (services) and PR 4 (pages).
-- **Not yet:** the forms show "not live yet" until PR 5. Analytics stays off locally.
+- **Done:** platform (PR 1), design system B (PR 2), the 66 services (PR 3), the pages (PR 4) and the forms (PR 5).
+- **Still to come:** content migration and policy updates (PR 6), the CMS behind Cloudflare Access and the submissions view (PR 7), analytics and SEO (PR 8), QA (PR 9).

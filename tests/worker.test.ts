@@ -19,11 +19,12 @@ const call = (path: string, method = "GET", headers: Record<string, string> = {}
   worker.fetch(new Request("https://example.test" + path, { method, headers }), env);
 const login = { authorization: "Basic " + Buffer.from("editor:test-only").toString("base64") };
 
-test("worker: forms are not live yet", async () => {
+test("worker: forms fail closed until D1 and the Turnstile secret are configured; GET is refused", async () => {
   const r = await call("/api/forms/proposal", "POST");
   assert.equal(r.status, 503);
-  assert.equal((await r.json()).error, "not_live");
+  assert.equal((await r.json()).error, "not_configured");
   assert.equal((await call("/api/forms/proposal")).status, 405);
+  assert.equal((await call("/api/forms/nope", "POST")).status, 404);
 });
 
 test("worker: CMS auth and unknown API routes", async () => {

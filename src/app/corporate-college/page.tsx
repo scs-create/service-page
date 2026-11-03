@@ -6,7 +6,7 @@ import ExternalLinkCard from "@/components/ui/ExternalLinkCard";
 import ClientPlaceholder from "@/components/ui/ClientPlaceholder";
 import PostCard from "@/components/ui/PostCard";
 import TagList from "@/components/ui/TagList";
-import NetlifyForm from "@/components/sections/NetlifyForm";
+import SiteForm from "@/components/sections/SiteForm";
 import { CONSENT_FIELD, type FormField } from "@/lib/formSchema";
 import { trainingTopics, audienceTypes } from "@/content/academy/topics";
 import { getAllPosts } from "@/lib/posts";
@@ -44,7 +44,7 @@ export default function CorporateCollegePage() {
         <section className="mb-14 rounded-md bg-surface border border-border p-6 md:p-10">
           <SectionHeading eyebrow="Request learning or training" title="For individuals, companies, NGOs and government agencies" intro="Tell us what you need and we'll follow up directly." />
           <div className="max-w-[640px]">
-            <NetlifyForm formName="enquiry" requestType="training-request" sourcePage="/corporate-college" fields={fields} submitLabel="Request Training" successTitle="Request received." successMessage="Thank you. We'll be in touch about your training request." />
+            <SiteForm form="enquiry" requestType="training-request" sourcePage="/corporate-college" fields={fields} submitLabel="Request Training" successTitle="Request received." successMessage="Thank you. We'll be in touch about your training request." />
           </div>
         </section>
 

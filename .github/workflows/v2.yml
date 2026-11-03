@@ -22,6 +22,9 @@ jobs:
       NEXT_PUBLIC_SITE_ENV: preview
       NEXT_PUBLIC_SHOW_CLIENT_PLACEHOLDERS: "true"
       NEXT_PUBLIC_ENABLE_PORTAL_PROTOTYPE: "true"
+      # Turnstile site key (public): a repository variable, set from owner checklist step 6. Without it, previews use
+      # Cloudflare's always-pass test key.
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.TURNSTILE_SITE_KEY }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -49,6 +52,11 @@ jobs:
             echo "Cloudflare secrets not set yet (owner checklist steps 4-5): skipping the preview upload."
             exit 0
           fi
+          if grep -q "00000000-0000-0000-0000-000000000000" wrangler.jsonc; then
+            echo "The D1 database id is not set yet: run the 'v2 provision' workflow, then put its id in wrangler.jsonc. Skipping the preview upload."
+            exit 0
+          fi
+          npx wrangler d1 migrations apply DB --remote
           npx wrangler versions upload --preview-alias "pr-${{ github.event.number }}" --message "PR #${{ github.event.number }} ${GITHUB_SHA::7}" | tee wrangler.log
           url=$(grep -oE 'https://pr-[0-9]+-[a-z0-9.-]+\.workers\.dev' wrangler.log | head -1)
           echo "url=$url" >> "$GITHUB_OUTPUT"

@@ -22,3 +22,7 @@
 
 /images/*
   Cache-Control: public, max-age=31536000, immutable
+
+/scs-contact.vcf
+  Content-Type: text/vcard; charset=utf-8
+  Content-Disposition: attachment; filename="Stephen-Corporate-Services-SCS-Ltd.vcf"

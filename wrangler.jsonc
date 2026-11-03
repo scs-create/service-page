@@ -16,6 +16,27 @@
     "run_worker_first": ["/api/*", "/ingest", "/ingest/*", "/admin", "/admin/*"]
   },
   "observability": { "enabled": true },
-  // Daily 01:00 UTC = 02:00 WAT: retention job (no-op until the forms PR adds D1 and R2).
-  "triggers": { "crons": ["0 1 * * *"] }
+  // Daily 01:00 UTC = 02:00 WAT: six-month retention purge (worker/retention.ts).
+  "triggers": { "crons": ["0 1 * * *"] },
+
+  // Form submissions (06-TECH-SPEC.md §2). The database is created once by the "v2 provision" workflow, which prints
+  // its id; that id (not a secret) replaces the placeholder below. Local `wrangler dev` uses a local copy either way.
+  "d1_databases": [
+    { "binding": "DB", "database_name": "scs-forms", "database_id": "00000000-0000-0000-0000-000000000000", "migrations_dir": "migrations" }
+  ],
+  // Private bucket for CVs and proposal briefs: no public access; staff open files through the admin view.
+  "r2_buckets": [{ "binding": "UPLOADS", "bucket_name": "scs-forms-uploads" }],
+  // About 5 submissions a minute per address and form (06-TECH-SPEC.md §3 step 4).
+  "ratelimits": [{ "name": "RATE_LIMITER", "namespace_id": "1001", "simple": { "limit": 5, "period": 60 } }],
+
+  "vars": {
+    "SITE_URL": "https://stephencorporateservices-scs.com",
+    "BOOKING_URL": "https://cal.com/support-stephen-corporate-services-scs/30min",
+    // Resend sends from the verified sending subdomain; replies go to the Google Workspace inbox (owner checklist step 9).
+    "MAIL_FROM": "Stephen Corporate Services - SCS Ltd <contact@send.stephencorporateservices-scs.com>",
+    "MAIL_REPLY_TO": "contact@stephencorporateservices-scs.com",
+    "NOTIFY_SALES": "sales@stephencorporateservices-scs.com",
+    "NOTIFY_CONTACT": "contact@stephencorporateservices-scs.com"
+  }
+  // Secrets (never here): TURNSTILE_SECRET, RESEND_API_KEY, ADMIN_USER, ADMIN_PASSWORD.
 }

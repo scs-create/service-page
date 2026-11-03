@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import NetlifyForm from "@/components/sections/NetlifyForm";
+import SiteForm from "@/components/sections/SiteForm";
 import { CONSENT_FIELD, type FormField } from "@/lib/formSchema";
 import { Quiz, rankOutcomes } from "@/lib/quiz";
 import { toSnake, track } from "@/lib/track";
@@ -47,7 +47,7 @@ export default function OutcomeQuiz({ quiz, outcomes, resultField, requestType, 
         <section className="mt-10 rounded-md border border-border border-t-4 border-t-accent bg-surface p-6">
           <h2 className="text-xl font-semibold text-text">Talk to SCS about this</h2>
           <p className="mt-2 mb-5 text-sm text-muted">Share your details and we will follow up. We contact you only if you tick the consent box.</p>
-          <NetlifyForm formName="enquiry" requestType={requestType} sourcePage={sourcePage} fields={fields} submitLabel="Contact me" successTitle="Thank you." successMessage="Our team will be in touch." extraHidden={{ [resultField]: ranked.map((r) => outcomes[r.id].title).join("; ") }} />
+          <SiteForm form="enquiry" requestType={requestType} sourcePage={sourcePage} fields={fields} submitLabel="Contact me" successTitle="Thank you." successMessage="Our team will be in touch." extraHidden={{ [resultField]: ranked.map((r) => outcomes[r.id].title).join("; ") }} />
         </section>
       </div>
     );

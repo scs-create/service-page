@@ -1,4 +1,4 @@
-// Form field definitions shared by server-rendered pages and the client form engine (NetlifyForm).
+// Form field definitions shared by server-rendered pages and the client form engine (SiteForm).
 // They MUST live in a plain module: a server component that imports a value from a "use client" file
 // receives an empty client reference, not the object, which silently turned the consent checkbox into an
 // unnamed text box on the Career, Compliance Calendar, Corporate College, home and newsletter forms.

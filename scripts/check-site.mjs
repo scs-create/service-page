@@ -146,6 +146,8 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
   const updateBaseline = args.includes("--update-baseline");
   const baseline = existsSync(BASELINE_FILE) ? JSON.parse(readFileSync(BASELINE_FILE, "utf8")) : {};
   const r = run(outDir, { production, updateBaseline, baseline });
+  // Production forms need the real Turnstile site key (owner checklist step 6); previews may use the test key.
+  if (production && !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY) r.errors.push("NEXT_PUBLIC_TURNSTILE_SITE_KEY is not set for the production build");
 
   if (r.newBaseline) {
     writeFileSync(BASELINE_FILE, JSON.stringify(r.newBaseline, null, 2) + "\n");
