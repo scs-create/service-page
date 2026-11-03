@@ -5,12 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { SITE } from "@/lib/site";
-import { CLUSTERS, PRIMARY_NAV, PROPOSAL_HREF, SECONDARY_NAV, SERVICE_FINDER_HREF, isActive } from "@/lib/nav";
+import { PRIMARY_NAV, PROPOSAL_HREF, SECONDARY_NAV, SERVICE_FINDER_HREF, isActive } from "@/lib/nav";
+import type { NavCluster } from "@/lib/navClusters";
 
 // v2 header, Direction B (docs/v2/design/Header.dc.html, 05-SITE-SPEC.md §2): logo, full name and RC; seven nav
 // items with a 2px gold underline on the active one; "Request a proposal" and "Book a Discovery Call" on the right.
 // Services opens a mega-menu of the 7 clusters (3 services each). Below 1360px a Menu button opens a full-height panel.
-export default function Header() {
+export default function Header({ clusters }: { clusters: NavCluster[] }) {
   const pathname = usePathname();
   const [megaOpen, setMegaOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -71,7 +72,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-border bg-bg">
       <div className="mx-auto flex min-h-[68px] max-w-[1280px] items-center justify-between gap-5 px-4 md:px-6 min-[1360px]:min-h-[84px] lg:px-8">
         <Link href="/" className="flex min-w-0 items-center gap-3 text-text">
-          <Image src="/images/logo.png" alt="" width={40} height={45} priority className="h-[34px] w-auto min-[1360px]:h-[45px]" />
+          <Image src="/images/logo-header.webp" alt="" width={40} height={45} priority className="h-[34px] w-auto min-[1360px]:h-[45px]" />
           <span className="flex min-w-0 flex-col leading-tight">
             <span className="text-[13px] font-semibold sm:whitespace-nowrap min-[1360px]:text-[15px]">{SITE.titleName}</span>
             <span className="tabular text-xs text-muted">RC {SITE.rc}</span>
@@ -99,7 +100,7 @@ export default function Header() {
                     id="services-menu"
                     className="absolute left-1/2 top-full mt-3 grid w-[880px] -translate-x-1/2 grid-cols-4 gap-x-6 gap-y-5 rounded-sm border border-border border-t-4 border-t-accent bg-bg p-6 shadow-[var(--shadow-menu)]"
                   >
-                    {CLUSTERS.map((c) => (
+                    {clusters.map((c) => (
                       <div key={c.slug}>
                         <Link href={c.path} className="block border-b border-border pb-1 text-sm font-semibold text-text hover:text-primary">
                           {c.name}
@@ -174,7 +175,7 @@ export default function Header() {
                         Services <span aria-hidden="true">+</span>
                       </summary>
                       <ul className="pb-3 pl-3">
-                        {CLUSTERS.map((c) => (
+                        {clusters.map((c) => (
                           <li key={c.slug}>
                             <Link href={c.path} className="flex min-h-11 items-center text-sm text-text">{c.name}</Link>
                           </li>

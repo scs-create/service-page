@@ -11,6 +11,7 @@ const eslintConfig = defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    ".wrangler/**", // wrangler dev bundles
     "next-env.d.ts",
     // Generated, pinned third-party CMS bundles copied by scripts/sync-cms.mjs — not our code.
     "public/admin/**",

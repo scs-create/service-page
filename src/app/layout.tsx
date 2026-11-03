@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
+import { CLUSTERS } from "@/lib/navClusters";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/ui/JsonLd";
@@ -11,17 +12,19 @@ import TrackClicks from "@/components/ui/TrackClicks";
 import UtmCapture from "@/components/ui/UtmCapture";
 import { SITE, IS_PRODUCTION } from "@/lib/site";
 
-// Self-hosted at build time by next/font (no request to Google from visitors), subset to Latin and Latin
-// Extended, font-display swap, preloaded. Direction B: Source Serif 4 600 for H1/H2, Inter for everything else.
+// Self-hosted at build time by next/font (no request to Google from visitors), font-display swap. Only the Latin
+// subset is preloaded; Latin Extended (and the others) stay declared by unicode-range and load only on a page that
+// uses those characters (QA: preloading Latin Extended cost about 106 KB on every page). Direction B: Source Serif 4
+// 600 for H1/H2, Inter for everything else.
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   weight: ["400", "500", "600"],
   display: "swap",
 });
 const sourceSerif = Source_Serif_4({
   variable: "--font-source-serif",
-  subsets: ["latin", "latin-ext"],
+  subsets: ["latin"],
   weight: "600",
   display: "swap",
 });
@@ -102,7 +105,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main-content" className="skip-link">Skip to main content</a>
         {/* First in the focus order (after the skip link) so keyboard users reach the choice straight away; it is fixed to the bottom visually. */}
         <CookieBanner />
-        <Header />
+        <Header clusters={CLUSTERS} />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
         <MobileBar />

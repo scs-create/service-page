@@ -7,7 +7,7 @@ import { ContentError } from "@/lib/content";
 const POSTS_DIR = path.join(process.cwd(), "src/content/corporate-school");
 
 // Validated frontmatter. `date` doubles as the publish date: a future date keeps the post hidden
-// until the first build on/after that day (a daily rebuild publishes it; on Cloudflare this is added with the deploy workflow).
+// until the first build on/after that day (the daily run of .github/workflows/deploy.yml publishes it).
 // Minimal front-matter reader (replaces gray-matter, whose bundled YAML parser carried an advisory).
 function parseFrontmatter(raw: string, file: string): { data: unknown; content: string } {
   const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);

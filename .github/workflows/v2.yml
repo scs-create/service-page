@@ -1,5 +1,5 @@
 # v2 build (docs/v2/06-TECH-SPEC.md §10): every PR into v2 is checked, built and uploaded as a Cloudflare preview
-# version. Nothing here deploys to production; `wrangler deploy` is added only after the owner approves cutover.
+# version. Deploying is in deploy.yml (the workers.dev review address before cutover, production after it).
 name: v2
 on:
   pull_request:
@@ -22,9 +22,8 @@ jobs:
       NEXT_PUBLIC_SITE_ENV: preview
       NEXT_PUBLIC_SHOW_CLIENT_PLACEHOLDERS: "true"
       NEXT_PUBLIC_ENABLE_PORTAL_PROTOTYPE: "true"
-      # Turnstile site key (public): a repository variable, set from owner checklist step 6. Without it, previews use
-      # Cloudflare's always-pass test key.
-      NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.TURNSTILE_SITE_KEY }}
+      # Turnstile site key "SCS forms" (public; owner checklist step 6). A repository variable can override it.
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ vars.TURNSTILE_SITE_KEY || '0x4AAAAAAFyc6LyJDNgcCfFV' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

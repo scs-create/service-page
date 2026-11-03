@@ -30,6 +30,7 @@ Prepared 3 November 2026. This pack holds everything the Claude Code session nee
 | `LOCAL-TESTING.md` | Added in the build: running the v2 build on your own PC |
 | `ADMIN-ACCESS-SETUP.md` | Added in the build: exact Cloudflare Access, GitHub OAuth and Worker settings for checklist steps 10–12 |
 | `ANALYTICS-AND-SEO.md` | Added in the build: the v2 events, the PostHog dashboard to build, structured data, Search Console steps |
+| `QA-REPORT.md` | Added in the build: PR 9 QA results (Lighthouse, accessibility, smoke test) and what is left for after deploy |
 | `99-original-brief.txt` | The original v2 brief (context only; the decisions file overrides it) |
 
 ## Links

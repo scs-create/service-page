@@ -1,7 +1,8 @@
 import Link from "next/link";
 import CookieSettingsButton from "@/components/ui/CookieSettingsButton";
 import { SITE } from "@/lib/site";
-import { CLUSTERS, COMPANY_LINKS, POLICY_LINKS } from "@/lib/nav";
+import { COMPANY_LINKS, POLICY_LINKS } from "@/lib/nav";
+import { CLUSTERS } from "@/lib/navClusters";
 
 const SOCIAL = [
   { label: "LinkedIn", href: SITE.linkedin },

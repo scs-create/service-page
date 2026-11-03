@@ -2,7 +2,8 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import { CLUSTERS, POLICY_LINKS, PRIMARY_NAV, SECONDARY_NAV, isActive } from "../src/lib/nav";
+import { POLICY_LINKS, PRIMARY_NAV, SECONDARY_NAV, isActive } from "../src/lib/nav";
+import { CLUSTERS } from "../src/lib/navClusters";
 
 const read = (p: string) => fs.readFileSync(p, "utf-8");
 
@@ -30,10 +31,10 @@ test("nav: active state", () => {
   assert.equal(isActive("/servicesx", "/services"), false);
 });
 
-test("fonts: Inter and Source Serif 4 are self-hosted by next/font, Latin + Latin Extended; serif only for H1/H2", () => {
+test("fonts: Inter and Source Serif 4 are self-hosted by next/font, Latin preloaded (Latin Extended on demand); serif only for H1/H2", () => {
   const layout = read("src/app/layout.tsx");
   assert.match(layout, /Source_Serif_4\(/);
-  assert.equal((layout.match(/subsets: \["latin", "latin-ext"\]/g) ?? []).length, 2);
+  assert.equal((layout.match(/subsets: \["latin"\]/g) ?? []).length, 2);
   assert.doesNotMatch(layout + read("src/app/globals.css"), /fonts\.googleapis\.com/);
   assert.match(read("src/app/globals.css"), /h1,\nh2 \{\n  font-family: var\(--font-serif\)/);
 });

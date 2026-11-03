@@ -1,80 +1,132 @@
-> **v2 (branch `v2`) runs on Cloudflare Workers, not Netlify.** See `wrangler.jsonc`, `worker/` and `docs/v2/06-TECH-SPEC.md`. The Netlify notes below describe the v1 site that is live until cutover; this file is rewritten for Cloudflare in the v2 docs PR.
+# Deploying the SCS website (v2, Cloudflare Workers)
 
-# Deploying the SCS website — step by step
+The site is a static Next.js export served by Cloudflare Workers Static Assets. A small Worker (`worker/`) handles
+the forms, the CMS sign-in, the PostHog proxy and `/admin`. Architecture: `docs/v2/06-TECH-SPEC.md`.
 
-Order matters. Do the steps in sequence. Anything marked **(you decide)** needs a client decision first.
+**Rules that never change:** no secret is ever pasted into a chat, an issue or a file in this repository. The
+production domain, the Netlify site and the Google Workspace email records (MX, SPF, DKIM, DMARC) stay untouched
+until the owner writes **"Approved for cutover"**. Never force-push. HSTS preload is never switched on.
 
-## A. Test locally (once)
-1. Unzip the project, open a terminal in it, run `npm install` (this also copies the pinned CMS files into `public/admin`).
-2. `npm run dev` → open http://localhost:3000 and click through the site.
-3. `npm run lint && npm run typecheck && npm test && npm run build` — all four must pass. (The build needs internet access for Google Fonts.)
+## 1. Where things run
 
-## B. The code on GitHub
-The repository is `scs-create/service-page` (branch `main`). Netlify is connected to it: **every push to `main` deploys production**; other branches and pull requests get preview deploys (which show the client placeholders and the portal prototype).
-1. Never force-push `main`. Make small commits; revert with `git revert` if needed.
-2. `.gitignore` excludes `node_modules`, `.next`, `*.tsbuildinfo` and the generated `public/admin/*.js` (recreated on every build).
-3. The **CI** workflow (`.github/workflows/ci.yml`) runs lint, typecheck, tests, build and `npm audit` on every push. Check the Actions tab is green.
+| What | Where |
+| --- | --- |
+| Code | GitHub `scs-create/service-page`. v2 lives on the `v2-pr*` branches until cutover, then on `main` |
+| Site and Worker | Cloudflare → Workers & Pages → **scs-website** |
+| Form submissions | Cloudflare D1 database **scs-forms** (6-month retention, deleted automatically each night) |
+| CVs and proposal briefs | Cloudflare R2 bucket **scs-forms-uploads** (private) |
+| Emails | Resend, from `contact@send.stephencorporateservices-scs.com`; replies go to `contact@stephencorporateservices-scs.com` |
+| Analytics | PostHog Cloud EU, project 310194, after the visitor accepts (`docs/v2/ANALYTICS-AND-SEO.md`) |
 
-## C. Create the Netlify site
-1. Netlify → **Add new project → Import an existing project → GitHub** → choose the repository.
-2. Settings are read from `netlify.toml` (build `npm run build`, Node 22, Next.js runtime). Click **Deploy**.
-3. When it finishes you get a `*.netlify.app` address. Open it and confirm the site loads.
+## 2. The workflows (GitHub → Actions)
 
-## D. Connect your domain `stephencorporateservices-scs.com`
-1. Netlify → **Domain management → Add a domain** → enter the domain → make the **apex** (no `www`) the **primary** domain, and let `www` redirect to it (the site's canonical URL, sitemap and social tags use the apex).
-2. **Do NOT hand your DNS to Netlify unless you recreate every Google Workspace record** (MX, SPF, DKIM, DMARC) — otherwise email stops. DNS stays at **Cloudflare**. Add only two records, both **DNS only (grey cloud)**, and touch nothing else:
-   - `A` · name `@` · value `75.2.60.5` (Netlify's load balancer) · TTL Auto
-   - `CNAME` · name `www` · value `<your-site-name>.netlify.app` · TTL Auto
-   Remove any existing `A`/`AAAA`/`CNAME` for `@` or `www` that points elsewhere (for example a parking page), but never an `MX` or `TXT` record. If Netlify's Domain management screen shows different values, use Netlify's. Keep the grey cloud: an orange-cloud proxy stops Netlify issuing the HTTPS certificate.
-3. Back in Netlify click **Verify DNS**, wait for the HTTPS certificate to provision, then enable **Force HTTPS**.
-4. Send and receive a test email on one alias to confirm email is unaffected.
+| Workflow | When it runs | What it does |
+| --- | --- | --- |
+| **Deploy** (`deploy.yml`) | Before cutover: every push to a `v2` / `v2-pr*` branch. After cutover: every push to `main`, daily at 05:00 UTC, and the **Run workflow** button | Lint, typecheck, tests, build, `check:site`, database migrations, then `wrangler deploy`. Before cutover the build is a noindex review build on the `workers.dev` address. After cutover it's the production build. The run summary shows the address and how to roll back |
+| **v2** (`v2.yml`) | Pull requests into `v2` | The same checks, then a preview version with its own address, posted on the pull request |
+| **v2 provision** (`v2-provision.yml`) | By hand, once | Creates the D1 database and the R2 bucket. Done on 3 November 2026; re-running is harmless |
+| **CI** (`ci.yml`) | Pushes and pull requests on `main` | The same checks, without deploying |
 
-## E. Environment variables (Site configuration → Environment variables)
-Defaults are built in, but set this one so it is visible in Netlify: `NEXT_PUBLIC_BOOKING_URL` = `https://cal.com/support-stephen-corporate-services-scs/30min`. Optional: `NEXT_PUBLIC_SITE_URL`, `NEXT_PUBLIC_POSTHOG_KEY` (only to point at a different PostHog project; the live key is built in).
-**Never** add `NEXT_PUBLIC_SHOW_CLIENT_PLACEHOLDERS` or `NEXT_PUBLIC_ENABLE_PORTAL_PROTOTYPE` to production — `netlify.toml` already sets them for preview deploys only.
+The repository variable **`SITE_LIVE`** (GitHub → Settings → Secrets and variables → Actions → Variables) switches
+Deploy from review builds to production builds. It's set to `true` on cutover day (§4, step 6) and never before.
 
-## F. Forms (two forms: `enquiry`, `career-application`)
-1. Netlify → **Forms** → **Enable form detection** → trigger a new deploy.
-2. After the deploy, the Forms tab should list `enquiry` and `career-application`. If not, redeploy with *Clear cache and deploy site*.
-3. **Forms → Settings & usage → Form notifications → Add notification → Email**: `enquiry` → `sales@stephencorporateservices-scs.com`; `career-application` → `contact@stephencorporateservices-scs.com`.
-4. Check spam filtering is on (Forms → Settings) and look at your plan's submission limit under billing.
-5. Submit one real test of each: the Contact consultation form, the assessment (send your result), checklist, structure chooser, Find My Service, compliance reminders, training request, newsletter, and a Career application **with a PDF CV**. Confirm each appears with the right `request_type`.
+The daily run publishes Corporate School posts whose date has arrived. A post dated in the future stays hidden until
+the first build on or after that day. It replaces the v1 Netlify build hook.
 
-## G. CMS login (GitHub backend; Git Gateway/Identity are deprecated and no longer used)
-1. GitHub → **Settings → Developer settings → OAuth Apps → New OAuth App**. Homepage URL: `https://stephencorporateservices-scs.com`. Authorization callback URL: `https://api.netlify.com/auth/done`. Register, copy the **Client ID**, click **Generate a new client secret** and copy it.
-2. Netlify → **Site configuration → Access & security → OAuth** (older UI: *Access control → OAuth*) → **Install provider → GitHub** → paste Client ID and Secret. (Menu labels vary slightly between Netlify UI versions.)
-3. `public/admin/config.yml` already points at `scs-create/service-page` (branch `main`). Change it only if the repository moves.
-4. **Admin password:** Netlify → **Site configuration → Environment variables → Add a variable** → `ADMIN_USER` (a username of your choice) and `ADMIN_PASSWORD` (a long, unique password, 16+ characters, from a password manager). Tick **Contains secret values**, scope **All scopes**, same value for every deploy context. Then **Deploys → Trigger deploy**. Share them only with editors. To change the password, edit the variable and redeploy.
-5. Open `https://stephencorporateservices-scs.com/admin` → enter that username and password → **Login with GitHub**. Every editor needs a GitHub account added to the repository as a collaborator with **write** access.
-6. Editors work in the *Editorial workflow*: Draft → In review → Ready → **Publish** (publishing merges the change; Netlify rebuilds).
+## 3. Settings
 
-## H. Analytics (PostHog Cloud EU)
-1. PostHog → the project whose key starts `phc_virz…` (EU Cloud, https://eu.posthog.com).
-2. **Settings → Project → IP data capture:** turn on **Discard client IP data**.
-3. **Settings → data retention:** set **12 months** (what the Privacy Notice promises).
-4. Leave **session replay** and **surveys** off (the site disables them too).
-5. Check it works: open the live site in a private window → **Accept analytics** → click a few buttons → PostHog → **Activity → Live events** shows `$pageview`, `cta_clicked` and so on within a minute. Decline in another private window: nothing appears.
-6. Suggested insights: funnel `$pageview` (/) → `service_page_viewed` → `form_started` (consultation) → `form_submitted`; trend of `cta_clicked` broken down by `cta_name`; `form_submitted` broken down by UTM source / referring domain.
-7. In Netlify → Environment variables, delete the old analytics domain variable if it exists (it is no longer read), and cancel the previous analytics account.
-8. Analytics only counts visitors who press **Accept analytics**. Visitors who decline are never counted; browsers sending Do Not Track / Global Privacy Control are off by default and counted only if the visitor explicitly accepts.
+**GitHub secrets** (Settings → Secrets and variables → Actions): `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
 
-## I. Scheduled blog posts
-1. Netlify → **Site configuration → Build & deploy → Build hooks → Add build hook** ("Daily scheduled posts") → copy the URL.
-2. GitHub → repository **Settings → Secrets and variables → Actions → New repository secret**: name `NETLIFY_BUILD_HOOK_URL`, value = that URL.
-3. A post whose `date` is in the future stays hidden until the first daily rebuild on/after that date.
+**Worker secrets** (Cloudflare → Workers & Pages → scs-website → Settings → Variables and Secrets → Add →
+type *Secret*):
 
-## J. Google Workspace and search engines
-1. Confirm in Google Admin that `contact@`, `info@`, `sales@`, `accounts@` exist as aliases of a real mailbox. `admin@` is internal only. Optional but recommended: add a `privacy@` alias, then change `EMAILS.privacy` in `src/lib/site.ts`.
-2. Google Search Console → add the domain property (DNS TXT verification) → submit `https://stephencorporateservices-scs.com/sitemap.xml`. Import the property into Bing Webmaster Tools.
+| Secret | What it's for | Owner checklist |
+| --- | --- | --- |
+| `TURNSTILE_SECRET` | The form security check | Step 6 |
+| `RESEND_API_KEY` | Sending the two emails | Steps 7–8 |
+| `FILE_LINK_SECRET` | Signed download links in the submissions view (any long random text) | `docs/v2/ADMIN-ACCESS-SETUP.md` |
+| `ACCESS_TEAM_DOMAIN`, `ACCESS_AUD` | Cloudflare Access in front of `/admin` | Step 11 |
+| `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET` | CMS sign-in | Step 12 |
+| `ADMIN_USER`, `ADMIN_PASSWORD` | Fallback `/admin` password, only until Access is on | — |
 
-## K. Still to supply **(you decide / supply)**
-Already decided (16 October 2026): address, positioning, metrics, primary email, WhatsApp, Cal.com link, leadership photos, Corporate School articles, legal effective dates. Still open:
-- Upload verification documents (watermark them first) via the CMS; real consented testimonials; signature programmes; SCA description; Partnership terms; IP permissions (see `docs/CLIENT_PLACEHOLDERS.md`). Leadership bios only if the founders want them.
-- **Legal pages:** final versions are live (18 October 2026). Counsel to glance at the two website-specific sections listed in `docs/legal-open-items.md`.
+Until a secret is set, the part that needs it stays closed: forms answer "not available right now", and `/admin`
+shows "locked". Nothing breaks open.
 
-## L. After launch — checks
-1. Browser DevTools → Network: press **Decline** on the banner and confirm no `/ingest` request and no `ph_*` cookie or storage; press **Accept analytics** and confirm `/ingest` requests start.
-2. Run a cookie scan (DevTools → Application → Cookies / storage, or a free scanner), then replace `[to be confirmed by a live-site scan]` in `src/content/legal/cookies.json`.
-3. Run Lighthouse (Chrome DevTools) on Home, a service page and Contact; check headers at securityheaders.com.
-4. Visit `/academy` (should redirect to `/corporate-college`), a wrong URL (branded 404), and `/portal` (must be 404 in production).
-5. Ongoing: delete unsuccessful job applications from Netlify Forms within 6 months; keep dependencies current (`npm audit --omit=dev`).
+The Turnstile **site key** is public. It's written in the workflows (`0x4AAAAAAFyc6LyJDNgcCfFV`), and a repository
+variable `TURNSTILE_SITE_KEY` overrides it. The Turnstile widget's hostnames must include every address the forms run
+on: `stephencorporateservices-scs.com` and the `workers.dev` review address (Turnstile → SCS forms → Hostnames).
+
+## 4. Cutover (only after "Approved for cutover")
+
+Do these steps in this order, on a weekday morning, with the owner reachable.
+
+**The day before**
+
+1. In Cloudflare → DNS, note the current apex and `www` records (type, value) in owner checklist step 17. These are
+   the rollback values. Lower their TTL to 5 minutes. Don't touch any other record.
+2. Export the zone: DNS → Records → Import and Export → **Export**. Save it as `dns-before.txt` outside the repository.
+
+**Cutover**
+
+3. Merge v2 into `main`: open a pull request from the last v2 branch into `main`, check that it's green, and merge
+   it (merge commit, no force-push). The Netlify build that this triggers changes nothing visible, because the domain
+   still points at Netlify.
+4. Remove the v1 workflow `scheduled-build.yml` and the `NETLIFY_BUILD_HOOK_URL` secret, if they're still there.
+5. Cloudflare → Workers & Pages → scs-website → Settings → Domains & Routes → **Add → Custom domain**:
+   `stephencorporateservices-scs.com`, then `www.stephencorporateservices-scs.com`. Cloudflare replaces the apex and
+   `www` records itself.
+6. GitHub → Settings → Secrets and variables → Actions → Variables → **New variable** `SITE_LIVE` = `true`. Then
+   Actions → **Deploy** → **Run workflow** on `main`. This deploys the production build: indexable, with no
+   placeholders and no prototype.
+7. Cloudflare → Rules → Redirect Rules → **Create**: when the hostname equals `www.stephencorporateservices-scs.com`,
+   redirect dynamically to `concat("https://stephencorporateservices-scs.com", http.request.uri.path)`, status 301,
+   keeping the query string.
+8. Export the zone again as `dns-after.txt`, then run:
+
+   ```
+   node scripts/dns-diff.mjs dns-before.txt dns-after.txt
+   ```
+
+   It must end with `dns-diff: OK`. If it prints **STOP**, a record other than the apex or `www` changed: put it back
+   from `dns-before.txt` at once.
+
+**Smoke test (the same hour)**
+
+9. Run `node scripts/smoke.mjs https://stephencorporateservices-scs.com`. It checks every sitemap page (200), all 41
+   redirects (301 to the right page), the 404 page, the security headers and that `/admin` isn't open. It must end
+   with `smoke: OK`.
+10. By hand:
+    - send one of each form (enquiry, proposal with a PDF, career with a CV, expert);
+    - check that both emails arrive for each: the team notification at sales@ or contact@, and the visitor confirmation;
+    - check the entries in `/admin/submissions`, and open one file link;
+    - send an ordinary email to `contact@` from outside: Google Workspace must still receive it.
+11. Check `https://www.stephencorporateservices-scs.com/services?x=1` goes to the apex with the path and query kept.
+12. Submit the sitemap in Google Search Console and Bing (owner checklist step 18, `docs/v2/ANALYTICS-AND-SEO.md`).
+
+**After**
+
+13. Watch Cloudflare → scs-website → Metrics and Logs, and PostHog, for 7 days.
+14. After **7 days** of stable operation, delete the Netlify site (owner checklist step 19).
+15. Raise the TTL back to Auto. Switch on HSTS (`max-age=63072000; includeSubDomains`, without preload) only once
+    the 7 days have passed.
+
+## 5. Rollback
+
+| Problem | What to do |
+| --- | --- |
+| A bad deploy (wrong content, a broken page) | Cloudflare → Workers & Pages → scs-website → **Deployments** → choose the previous version → **Rollback**. Or, with the API token set in your terminal: `npx wrangler rollback` (the previous version) or `npx wrangler rollback <version-id>`. Then fix the code with `git revert` and push |
+| The new site itself fails on cutover day | Remove the two custom domains from the Worker (Settings → Domains & Routes), then put the apex and `www` records back to the values from step 1. The Netlify site is still there for 7 days, so v1 is back within the TTL (5 minutes). Set `SITE_LIVE` back to `false` |
+| Email stopped arriving at the Workspace mailbox | Compare against `dns-before.txt` with `scripts/dns-diff.mjs`, and restore any MX, SPF, DKIM or DMARC record that changed. Never edit those records for the website |
+| Forms fail | Check Cloudflare → scs-website → Logs. The usual causes are a missing secret (§3), the Turnstile hostname list, or Resend's domain not being verified. Visitors always see the phone number, WhatsApp and email as alternatives |
+
+## 6. Working on the code
+
+```
+npm ci
+npm run lint && npm run typecheck && npm test
+npm run build && npm run check:site
+npx wrangler dev          # the built site at http://localhost:8787, the same runtime as Cloudflare
+node scripts/smoke.mjs http://localhost:8787
+```
+
+Running the site on your own PC, with local test keys: `docs/v2/LOCAL-TESTING.md`.

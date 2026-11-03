@@ -1,6 +1,5 @@
-// Site navigation for v2 (docs/v2/02-DECISIONS.md §4, 05-SITE-SPEC.md §2). The 7 service clusters and their
-// services come from src/content/v2/services.v2.json, the single source of truth (a copy of docs/v2/03-services.v2.json).
-import catalogue from "@/content/v2/services.v2.json";
+// Site navigation for v2 (docs/v2/02-DECISIONS.md §4, 05-SITE-SPEC.md §2). The service clusters for the menus are in
+// navClusters.ts, so the client header does not bundle the service catalogue.
 
 export type NavLink = { href: string; label: string };
 
@@ -26,15 +25,6 @@ export const SECONDARY_NAV: NavLink[] = [
 
 export const PROPOSAL_HREF = "/contact/proposal";
 export const SERVICE_FINDER_HREF = "/find-my-service";
-
-export type NavCluster = { slug: string; name: string; summary: string; path: string; top: NavLink[] };
-
-// Each cluster shows 3 services in the menu: the ones flagged mostRequested first, then the rest in catalogue order.
-export const CLUSTERS: NavCluster[] = catalogue.clusters.map((c) => {
-  const inCluster = catalogue.services.filter((s) => s.cluster === c.slug);
-  const ordered = [...inCluster.filter((s) => s.mostRequested), ...inCluster.filter((s) => !s.mostRequested)];
-  return { ...c, top: ordered.slice(0, 3).map((s) => ({ href: s.path, label: s.name })) };
-});
 
 export const COMPANY_LINKS: NavLink[] = [
   { href: "/about", label: "About" },
