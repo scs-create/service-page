@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 // Remote operations variant of the Partnership (strategy §3 audience 5, §8). Described in administrative terms only.
-// DRAFT copy for owner approval.
+// Copy approved by the owner.
 const HOW = [
   { title: "Defined tasks", text: "The tasks, systems and handover points written down and agreed before work starts." },
   { title: "Service levels", text: "Turnaround standards and reporting agreed in writing, and reviewed each quarter." },

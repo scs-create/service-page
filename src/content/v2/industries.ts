@@ -1,5 +1,5 @@
 // v2 industries: the 15 v1 industry pages merged into 6 (docs/v2/04-industries.v2.json, strategy §6). Each v2 industry
-// combines the needs, agencies and services of the v1 pages it replaces, without duplicates. Summaries are DRAFT.
+// combines the needs, agencies and services of the v1 pages it replaces, without duplicates. Summaries approved by the owner (3 November 2026).
 import { industries as v1Industries } from "@/content/loaders";
 import { v2LinkForV1 } from "@/content/v2/catalogue";
 import pack from "@/content/v2/industries.v2.json";

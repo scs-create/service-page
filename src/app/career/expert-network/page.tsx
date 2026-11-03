@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/career/expert-network" },
 };
 
-// Join us › Expert network (05-SITE-SPEC.md §1). The criteria follow Our standards (specialist vetting). DRAFT copy.
+// Join us › Expert network (05-SITE-SPEC.md §1). The criteria follow Our standards (specialist vetting). Approved copy.
 const CRITERIA = [
   "Recognised qualifications or registrations in your field, which we check",
   "Experience you can evidence, with references or examples of past work",

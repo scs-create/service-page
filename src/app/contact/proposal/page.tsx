@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 // F: Request a proposal (05-SITE-SPEC.md §1, §3): the proposal form (Worker, Turnstile, D1, an optional PDF brief in R2),
-// with email and the booking link as alternatives. ?service=<ID> pre-selects the service. DRAFT copy.
+// with email and the booking link as alternatives. ?service=<ID> pre-selects the service. Approved copy.
 const INCLUDE = [
   "Your organisation's name and, if registered, its RC, BN or IT number",
   "What you need, in a few lines, or the brief or tender document",

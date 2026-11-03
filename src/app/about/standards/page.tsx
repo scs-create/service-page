@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 // About › Our standards (05-SITE-SPEC.md §1: expert vetting, management quality review, data protection, conflicts,
-// complaints; strategy §2). DRAFT copy for owner approval. The v1 standards sentence on /about is kept as it is
+// complaints; strategy §2). Copy approved by the owner. The v1 standards sentence on /about is kept as it is
 // (legal-rule item 2, owner decision).
 const STANDARDS = [
   {

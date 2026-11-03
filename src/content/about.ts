@@ -7,7 +7,7 @@ export const ABOUT_INTRO =
   "Stephen Corporate Services - SCS Ltd is a multidisciplinary corporate services, business support, consulting and advisory company providing integrated solutions to businesses, entrepreneurs, organisations, investors and institutions.";
 
 export type AboutSection =
-  | { type: "identity"; paragraphs: string[] }
+  | { type: "identity"; eyebrow: string; title: string; paragraphs: string[] }
   | { type: "leadership"; eyebrow: string; title: string; intro: string; network: { heading: string; paragraphs: string[] } }
   | { type: "vision-mission" }
   | { type: "process" }
@@ -105,6 +105,9 @@ export const MISSION = { heading: "Our Mission", paragraphs: [
 export const ABOUT_SECTIONS: AboutSection[] = [
   {
     type: "identity",
+    // The v1 home page heading, kept on About by owner decision (3 November 2026).
+    eyebrow: "Who we are",
+    title: "A Business Support Partner Delivering 21+ Integrated Services Through a One-Stop Centre, Focused on Your Growth",
     paragraphs: [
       "From business formation and corporate structuring to regulatory compliance, tax, human resources, technology and growth advisory, SCS provides an integrated platform for businesses at every stage of their lifecycle.",
       "We exist because most businesses do not fail from a lack of ambition; they fail from a lack of structure. SCS builds that structure: the documents, the filings, the policies, the systems and the compliance posture that let a business function, scale and survive scrutiny.",

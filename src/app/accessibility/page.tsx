@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/accessibility" },
 };
 
-// Accessibility statement (05-SITE-SPEC.md §5: WCAG 2.2 AA). DRAFT for owner approval; the QA PR adds the test results.
+// Accessibility statement (05-SITE-SPEC.md §5: WCAG 2.2 AA). Approved by the owner; the QA PR adds the test results.
 export default function AccessibilityPage() {
   const H2 = "mb-3 mt-10 text-[24px] font-semibold leading-tight text-text first:mt-0";
   return (

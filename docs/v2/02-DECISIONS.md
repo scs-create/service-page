@@ -72,3 +72,19 @@ Of the 22 items in the strategy doc's legal-rule table, **only items 20 and 22 a
 - The single source of truth is `03-services.v2.json`. All 45 internal catalogue services are current (Drive Services reset, 3 November 2026).
 - Industries are merged from 15 to 6 (`04-industries.v2.json`).
 - The process is six steps (Drive "02 How Work Runs"): Enquiry → Understand the need → Propose → Agree → Deliver (with review) → Hand over and close.
+
+## 6. Owner approvals and answers (3 November 2026, in the build chat)
+
+| Item | Owner's answer | Effect |
+| --- | --- | --- |
+| A. 66 service pages and 7 area introductions | "Services approved" | Every service file and area introduction is `status: "approved"` |
+| B. Clients, Process, Partnership, Our standards, Accessibility, Request a proposal | "Pages approved" | Wording stays as built |
+| C. Topic hubs, About vision wording, the note on guides | "Guides and About approved" | Wording stays as built |
+| D. Privacy, Cookie and Terms updates | "Policies approved" | Wording stays as built |
+| 1. Office hours | "Hours correct" | Monday to Friday, 8:00 am to 5:00 pm WAT (UTC+1) |
+| 2. The v1 home heading ("A Business Support Partner Delivering 21+ Integrated Services…") | "Put it on About" | It heads the opening section of About, under "Who we are" |
+| 3. Case study dates | "No dates" | Case studies show no dates |
+| 4. Cookie notice links to Cloudflare's Turnstile privacy page | "Cookie wording OK" | Kept |
+| 5. Policy effective date | "Keep 3 December 2025" | Unchanged |
+| 6. Email sender `contact@send.stephencorporateservices-scs.com`, replies to `contact@stephencorporateservices-scs.com` | "Sender OK" | Kept |
+| 7. Patch the live (v1) site's Next.js version now | "Not yet" | `main` is not changed |

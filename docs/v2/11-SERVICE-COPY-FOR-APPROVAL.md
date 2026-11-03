@@ -1,8 +1,7 @@
-# Service copy for approval (draft)
+# Service copy (approved)
 
-All 66 service pages and the 7 cluster introductions, as drafted in PR 3. Everything here is `status: "draft"`
-until you approve it. To approve, reply on the PR with "Approved" (or list changes by service ID); approved files
-switch to `status: "approved"`. No fees, prices or delivery timelines appear anywhere. The five services marked
+All 66 service pages and the 7 cluster introductions, as drafted in PR 3. The owner approved all of it on 3 November 2026
+("Services approved"), so every file is `status: "approved"`. No fees, prices or delivery timelines appear anywhere. The five services marked
 *v1 wording kept* show their v1 service lines unchanged, as you decided.
 
 Generated from `src/content/v2/services/<ID>.json` and `src/content/v2/clusters.json`.

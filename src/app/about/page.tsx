@@ -34,7 +34,12 @@ function Statement({ data }: { data: { heading: string; paragraphs: string[] } }
 function renderSection(s: AboutSection) {
   switch (s.type) {
     case "identity":
-      return <TextBlock align="left" paragraphs={s.paragraphs} />;
+      return (
+        <>
+          <SectionHeading eyebrow={s.eyebrow} title={s.title} />
+          <TextBlock align="left" paragraphs={s.paragraphs} />
+        </>
+      );
     case "text":
       return (
         <>

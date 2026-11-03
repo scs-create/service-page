@@ -1,5 +1,5 @@
 // Corporate School topic hubs (docs/v2/05-SITE-SPEC.md §1): company registration, post-incorporation filings, tax
-// registration (NRS), data protection (NDPA), doing business in Nigeria, funding readiness. DRAFT copy for owner
+// registration (NRS), data protection (NDPA), doing business in Nigeria, funding readiness. Copy approved by the owner
 // approval. Facts follow 09-RESEARCH-SUMMARY.md: only settled points are stated, each regulator is linked to its
 // official website, and there are no fees, fee figures or processing times.
 export type Topic = {

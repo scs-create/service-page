@@ -1,32 +1,32 @@
 {
-  "note": "Cluster hub copy (C template, docs/v2/05-SITE-SPEC.md §3). Draft until the owner approves. No fees, no timelines.",
+  "note": "Cluster hub copy (C template, docs/v2/05-SITE-SPEC.md §3). Approved by the owner on 3 November 2026. No fees, no timelines.",
   "clusters": {
     "strategy-and-advisory": {
-      "status": "draft",
+      "status": "approved",
       "covers": "Strategy & Advisory is where most engagements start: a clear look at where your organisation stands and what to do next. We review the evidence, set out the options and write down a plan with owners and measures. Every recommendation is yours to accept or decline."
     },
     "company-formation-and-secretarial": {
-      "status": "draft",
+      "status": "approved",
       "covers": "Company Formation & Secretarial covers choosing and registering the right entity with the Corporate Affairs Commission (CAC), Nigeria's company registry, and then keeping its corporate records in order: board and shareholder documents, registers, ownership and structure changes. Founders and investors abroad can complete every step remotely."
     },
     "compliance-and-regulatory": {
-      "status": "draft",
+      "status": "approved",
       "covers": "Compliance & Regulatory keeps your organisation in good standing after registration: annual returns, beneficial ownership, tax registration and recurring returns, licences and permits, and data protection. We map every obligation, track the dates and file within the agreed scope."
     },
     "finance-and-accounting": {
-      "status": "draft",
+      "status": "approved",
       "covers": "Finance & Accounting covers the numbers that run the organisation and the documents that raise money: books, payroll, management accounts, cash-flow planning, business plans, investment readiness, grant and tender submissions, and tax planning with licensed tax practitioners."
     },
     "hr-and-operations": {
-      "status": "draft",
+      "status": "approved",
       "covers": "HR & Operations covers the people, processes and suppliers behind day-to-day work: HR records and policies, recruitment, written procedures, procurement, project management and outsourced administration, including remote operations support for international firms."
     },
     "technology-and-digital": {
-      "status": "draft",
+      "status": "approved",
       "covers": "Technology & Digital covers the systems your organisation runs on: websites, CRM, workflow automation, dashboards, online payments, and the policies and risk assessments for adopting AI and digital tools responsibly. Everything is handed over with training and documentation."
     },
     "marketing-and-communications": {
-      "status": "draft",
+      "status": "approved",
       "covers": "Marketing & Communications covers how your organisation is seen and heard: brand identity, social media and advertising, company profiles and proposals, sales training, customer loyalty and crisis communications planning."
     }
   }

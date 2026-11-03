@@ -1,6 +1,6 @@
 // v2 page copy shared by Home, Process, Partnership and the Clients pages. Sources: the approved Direction B designs
 // (docs/v2/design/*.dc.html) and the Strategy and Content Model (docs/v2/08-STRATEGY-AND-CONTENT-MODEL.md §2, §3, §7,
-// §8). Text written in the build (not in either source) is marked DRAFT and listed for owner approval in the PR.
+// §8). Text written in the build (not in either source) was approved by the owner on 3 November 2026.
 // No fees, no delivery timelines, nothing that ties SCS to legal work.
 
 export const HOME_HERO = {
@@ -28,7 +28,7 @@ export const SIX_STEPS = [
   { title: "Hand over and close", text: "You accept in writing. Files are handed over and access removed." },
 ];
 
-// Process page, "What we do and do not do" (strategy §2). DRAFT wording.
+// Process page, "What we do and do not do" (strategy §2). Approved wording.
 export const WE_DO = [
   "Start every engagement with a diagnosis of what you actually need",
   "Agree scope, deliverables, exclusions, milestones and acceptance in writing before work starts",
@@ -92,7 +92,7 @@ export type Audience = {
   action: AudienceAction;
 };
 
-// Audience pages (strategy §3; template A in 05-SITE-SPEC.md §3). DRAFT copy for owner approval.
+// Audience pages (strategy §3; template A in 05-SITE-SPEC.md §3). Copy approved by the owner.
 export const AUDIENCES: Audience[] = [
   {
     slug: "founders-and-smes",
