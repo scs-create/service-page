@@ -6,6 +6,7 @@
 //   [OWNER TO CONFIRM] fails only when NEXT_PUBLIC_SITE_ENV=production.
 //   old phone, Benhen fail always.
 //   _redirects        fail if a target is not a real page in out/.
+//   internal links    report pages linked but not built yet (v2 pages arrive PR by PR); fail in production.
 //
 // Usage: node scripts/check-site.mjs [outDir] [--update-baseline]
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
@@ -68,6 +69,17 @@ export function legalHits(text) {
   return hits;
 }
 
+// An internal path exists if it is an exported page or a file in out/ (redirect sources are handled in run()).
+export function pageExists(outDir, path) {
+  const base = path.replace(/[?#].*$/, "").replace(/\/$/, "") || "/";
+  if (base === "/") return existsSync(join(outDir, "index.html"));
+  return existsSync(join(outDir, base + ".html")) || existsSync(join(outDir, base, "index.html")) || existsSync(join(outDir, base));
+}
+
+export function internalLinks(html) {
+  return [...html.matchAll(/<a\b[^>]*\shref="(\/[^"#?]*)/gi)].map((m) => m[1]).filter((h) => !h.startsWith("//"));
+}
+
 // Targets of _redirects rules that point inside the site must exist as exported pages.
 export function missingRedirectTargets(outDir, redirects) {
   const missing = [];
@@ -85,7 +97,7 @@ export function missingRedirectTargets(outDir, redirects) {
 }
 
 export function run(outDir, { production = false, updateBaseline = false, baseline = {} } = {}) {
-  const errors = [], legal = [], banned = {};
+  const errors = [], legal = [], banned = {}, linkedMissing = {};
   let ownerToConfirm = 0, pages = 0;
   for (const file of walkHtml(outDir)) {
     const path = pagePath(outDir, file);
@@ -102,6 +114,7 @@ export function run(outDir, { production = false, updateBaseline = false, baseli
       const hits = bannedHits(text);
       if (Object.keys(hits).length) banned[path] = hits;
     }
+    for (const href of internalLinks(html)) if (!pageExists(outDir, href)) (linkedMissing[href] ??= new Set()).add(path);
     for (const h of legalHits(text)) legal.push({ path, ...h, kept: h.kept || KEPT_PAGES.has(path) });
   }
 
@@ -117,7 +130,13 @@ export function run(outDir, { production = false, updateBaseline = false, baseli
     for (const m of missingRedirectTargets(outDir, readFileSync(redirectsFile, "utf8"))) errors.push(`_redirects target missing: ${m}`);
   } else errors.push("out/_redirects missing");
 
-  return { pages, errors, legal, banned, ownerToConfirm, newBaseline: updateBaseline ? banned : null };
+  const redirectSources = existsSync(redirectsFile)
+    ? new Set(readFileSync(redirectsFile, "utf8").split(/\r?\n/).map((l) => l.trim().split(/\s+/)[0]).filter((x) => x && !x.startsWith("#")))
+    : new Set();
+  for (const href of Object.keys(linkedMissing)) if (redirectSources.has(href)) delete linkedMissing[href];
+  if (production) for (const [href, from] of Object.entries(linkedMissing)) errors.push(`link to missing page ${href} (from ${[...from][0]})`);
+
+  return { pages, errors, legal, banned, ownerToConfirm, linkedMissing, newBaseline: updateBaseline ? banned : null };
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
@@ -136,6 +155,9 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
   const legacy = Object.values(r.banned).reduce((s, h) => s + Object.values(h).reduce((a, b) => a + b, 0), 0);
   console.log(`banned words: ${legacy} legacy v1 occurrence(s) on ${Object.keys(r.banned).length} page(s); production needs 0`);
   console.log(`[OWNER TO CONFIRM]: ${r.ownerToConfirm} page(s)`);
+  const missing = Object.entries(r.linkedMissing);
+  console.log(`internal links to pages not built yet: ${missing.length}${missing.length ? " (fails in production)" : ""}`);
+  for (const [href, from] of missing) console.log(`  ${href}  (linked from ${from.size} page(s))`);
   console.log(`legal-word report (review only, never fails): ${r.legal.length} match(es)`);
   for (const h of r.legal) console.log(`  ${h.kept ? "kept " : "check"} ${h.path}  "${h.word}"  …${h.context}…`);
   if (r.errors.length) {

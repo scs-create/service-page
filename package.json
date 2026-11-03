@@ -11,7 +11,7 @@
     "predev": "node scripts/sync-cms.mjs && tsx scripts/gen-forms.ts",
     "typecheck": "tsc --noEmit && tsc --noEmit -p worker",
     "test": "node --import tsx --test tests/*.test.ts",
-    "postbuild": "node scripts/prune-soft-404s.mjs && node scripts/csp-hashes.mjs",
+    "postbuild": "node scripts/prune-soft-404s.mjs && node scripts/flatten-rsc.mjs && node scripts/csp-hashes.mjs",
     "check:site": "node scripts/check-site.mjs"
   },
   "dependencies": {

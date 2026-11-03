@@ -92,3 +92,27 @@ test("prune: pages that rendered the not-found page are found; the real 404 page
   writeFileSync(join(dir, "about.html"), "<head><title>About | Stephen Corporate Services - SCS Ltd</title></head>");
   assert.deepEqual(softNotFoundPages(dir), [join(dir, "portal.html")]);
 });
+
+test("check: internal links to pages that are not built yet are reported, and fail in production", async () => {
+  const { internalLinks } = await import("../scripts/check-site.mjs");
+  assert.deepEqual(internalLinks(`<a href="/a">x</a><a class="b" href="/b/c#x">y</a><a href="https://x.test/">z</a><a href="//cdn">w</a>`), ["/a", "/b/c"]);
+  const dir = site();
+  writeFileSync(join(dir, "_redirects"), "/old /services/a 301\n");
+  writeFileSync(join(dir, "index.html"), `<head></head><a href="/services">ok</a><a href="/clients">later</a><a href="/old">moved</a>`);
+  const preview = run(dir, { baseline: { "/services": { journey: 1 } } });
+  assert.deepEqual(Object.keys(preview.linkedMissing), ["/clients"]);
+  assert.deepEqual(preview.errors, []);
+  assert.ok(run(dir, { production: true }).errors.some((e: string) => e.includes("/clients")));
+});
+
+test("flatten-rsc: nested per-segment payloads get the flat dotted name the router requests", async () => {
+  const { flatNames } = await import("../scripts/flatten-rsc.mjs");
+  const dir = mkdtempSync(join(tmpdir(), "scs-out-"));
+  mkdirSync(join(dir, "about", "__next.about"), { recursive: true });
+  writeFileSync(join(dir, "about", "__next.about", "__PAGE__.txt"), "x");
+  mkdirSync(join(dir, "a", "b", "__next.a", "b", "$d$slug"), { recursive: true });
+  writeFileSync(join(dir, "a", "b", "__next.a", "b", "$d$slug", "__PAGE__.txt"), "y");
+  writeFileSync(join(dir, "__next._tree.txt"), "z");
+  const flat = flatNames(dir).map(([, to]: [string, string]) => to).sort();
+  assert.deepEqual(flat, [join(dir, "a", "b", "__next.a.b.$d$slug.__PAGE__.txt"), join(dir, "about", "__next.about.__PAGE__.txt")].sort());
+});
