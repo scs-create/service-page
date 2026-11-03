@@ -1,0 +1,61 @@
+{
+  "industries": [
+    {
+      "slug": "agriculture-and-food",
+      "name": "Agriculture & Food",
+      "mergesV1": [
+        "agriculture-and-agribusiness"
+      ],
+      "path": "/industries/agriculture-and-food"
+    },
+    {
+      "slug": "education-and-non-profits",
+      "name": "Education & Non-profits",
+      "mergesV1": [
+        "education",
+        "nonprofits-and-social-enterprises",
+        "private-schools-and-early-years"
+      ],
+      "path": "/industries/education-and-non-profits"
+    },
+    {
+      "slug": "energy-construction-and-real-estate",
+      "name": "Energy, Construction & Real Estate",
+      "mergesV1": [
+        "construction-and-general-contracting",
+        "energy-oil-and-gas",
+        "real-estate-and-construction"
+      ],
+      "path": "/industries/energy-construction-and-real-estate"
+    },
+    {
+      "slug": "financial-services",
+      "name": "Financial Services",
+      "mergesV1": [
+        "financial-services-and-fintech",
+        "lending-credit-and-investment"
+      ],
+      "path": "/industries/financial-services"
+    },
+    {
+      "slug": "health-and-manufacturing",
+      "name": "Health & Manufacturing",
+      "mergesV1": [
+        "healthcare-and-pharmaceuticals",
+        "manufacturing"
+      ],
+      "path": "/industries/health-and-manufacturing"
+    },
+    {
+      "slug": "technology-media-and-consumer",
+      "name": "Technology, Media & Consumer",
+      "mergesV1": [
+        "media-and-entertainment",
+        "professional-services",
+        "retail-and-consumer-businesses",
+        "technology-and-digital-businesses"
+      ],
+      "path": "/industries/technology-media-and-consumer"
+    }
+  ]
+}

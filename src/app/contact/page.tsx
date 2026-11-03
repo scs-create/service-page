@@ -1,77 +1,103 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageHero from "@/components/ui/PageHero";
-import SectionHeading from "@/components/ui/SectionHeading";
-import ProcessStepper from "@/components/ui/ProcessStepper";
 import SocialLinks from "@/components/ui/SocialLinks";
-import ContactChannel from "@/components/ui/ContactChannel";
-import CTAButton from "@/components/ui/CTAButton";
 import ConsultationForm from "@/components/sections/ConsultationForm";
 import { industries } from "@/content/loaders";
-import { ENGAGEMENT_STEPS } from "@/content/process";
+import { PROPOSAL_HREF } from "@/lib/nav";
 import { SITE, MAPS_URL, EMAIL_ROUTING } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: `Contact Stephen Corporate Services Ltd in Abuja, Nigeria. Book a free Discovery Call, call ${SITE.phone}, message us on WhatsApp or email ${SITE.email}.`,
+  description: `Contact ${SITE.titleName} in Abuja, Nigeria. Book a Discovery Call, send an enquiry, call or WhatsApp ${SITE.phone} or email ${SITE.email}. ${SITE.responsePromise}`,
+  alternates: { canonical: "/contact" },
 };
 
-const WRAP = "max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8";
+const WRAP = "mx-auto max-w-[1280px] px-4 md:px-6 lg:px-8";
+const AFTER = ["You receive a reference number by email.", "The right person at SCS reviews your enquiry.", "We reply within 24 hours.", "We arrange a call or prepare a proposal."];
 
+// F: Contact (05-SITE-SPEC.md §3, design/Contact.dc.html). Office hours are text only; there is no "open now" indicator.
+// The enquiry form moves to the Worker (Turnstile, D1, reference number, What happens next panel) in the forms PR.
 export default function ContactPage() {
+  const card = "flex flex-col rounded-sm border border-border border-t-4 border-t-accent bg-bg p-6";
   return (
     <>
-      <PageHero breadcrumbs={[{ label: "Contact" }]} eyebrow="Contact" title="Speak with SCS" intro="Choose whichever channel works best for you, and we'll respond directly." />
-
-      <section className={`${WRAP} py-14 grid lg:grid-cols-[380px_minmax(0,1fr)] gap-10 items-start`}>
-        <div data-location="contact_channels" className="rounded-md border border-border border-t-4 border-t-primary bg-surface p-6">
-          <h2 className="text-lg font-semibold text-text mb-2">Direct channels</h2>
-          <div className="divide-y divide-border">
-            <ContactChannel type="phone" value={SITE.phoneHref} label="Call SCS" detail={SITE.phone} />
-            <ContactChannel type="whatsapp" value={SITE.whatsappHref} label="Message SCS on WhatsApp" detail={SITE.phone} />
-            <ContactChannel type="email" value={SITE.email} label="Email SCS" detail={SITE.email} />
+      <PageHero breadcrumbs={[{ label: "Contact" }]} eyebrow="Contact" title="Talk to SCS" intro={`Choose whichever suits you. ${SITE.responsePromise}`}>
+        <div className="grid gap-4 md:grid-cols-3">
+          <div className={card}>
+            <h2 className="font-sans text-lg font-semibold text-text">Book a Discovery Call</h2>
+            <p className="mb-4 mt-1 flex-1 text-sm text-muted">30 minutes by video, at a time that suits you.</p>
+            <a href={SITE.bookingUrl} target="_blank" rel="noopener noreferrer" data-booking="" data-location="contact_options" className="inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-4 font-medium text-white hover:bg-secondary">
+              Book a Discovery Call<span className="sr-only"> (opens Cal.com in a new tab)</span>
+            </a>
           </div>
-          <h2 className="text-lg font-semibold text-text mt-6 mb-2">Follow us</h2>
-          <SocialLinks />
-
-          <h2 className="text-lg font-semibold text-text mt-6 mb-2">Who to write to</h2>
-          <ul className="space-y-2 text-sm">
-            {EMAIL_ROUTING.map((e) => (
-              <li key={e.address}>
-                <span className="block text-muted">{e.label}</span>
-                <a href={`mailto:${e.address}`} className="break-all text-primary hover:underline">{e.address}</a>
-              </li>
-            ))}
-          </ul>
-
-          <h2 className="text-lg font-semibold text-text mt-6 mb-1">Office</h2>
-          <address className="not-italic text-sm text-muted">{SITE.address.full}</address>
-          <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-sm font-medium text-primary hover:underline">View on map<span className="sr-only"> (opens in new tab)</span> ↗</a>
-          <p className="mt-4 text-sm text-muted">Nationwide Nigeria, with cross-border client support.</p>
+          <div className={card}>
+            <h2 className="font-sans text-lg font-semibold text-text">Send an enquiry</h2>
+            <p className="mb-4 mt-1 flex-1 text-sm text-muted">Tell us what you need in a few lines.</p>
+            <a href="#enquiry" className="font-medium text-primary hover:underline">Go to the form →</a>
+          </div>
+          <div className={card}>
+            <h2 className="font-sans text-lg font-semibold text-text">Request a proposal</h2>
+            <p className="mb-4 mt-1 flex-1 text-sm text-muted">For organisations with a formal brief or tender.</p>
+            <Link href={PROPOSAL_HREF} className="font-medium text-primary hover:underline">Request a proposal →</Link>
+          </div>
         </div>
+      </PageHero>
 
-        <div>
-          <div data-location="contact_booking" className="mb-10 rounded-md border border-border border-t-4 border-t-accent bg-bg p-6">
-            <h2 className="text-2xl font-semibold text-text">Book a free Discovery Call</h2>
-            <p className="mt-2 text-muted">Pick a 30-minute slot that suits you on our Cal.com calendar. We will talk through what your business needs and the right next step.</p>
-            <div className="mt-4"><CTAButton booking label="Book a Discovery Call" /></div>
-          </div>
-          <h2 id="enquiry" className="scroll-mt-28 text-2xl font-semibold text-text">Or send us an enquiry</h2>
-          <span aria-hidden="true" className="block h-1 w-12 bg-accent rounded-sm mt-3 mb-6" />
+      <div className={`${WRAP} grid items-start gap-12 py-12 md:py-20 lg:grid-cols-[minmax(0,1fr)_380px]`}>
+        <section aria-labelledby="enquiry">
+          <h2 id="enquiry" className="type-h2 scroll-mt-28 text-text">Send an enquiry</h2>
+          <span aria-hidden="true" className="mb-6 mt-4 block h-1 w-14 rounded-sm bg-accent" />
           <div className="max-w-[640px]"><ConsultationForm sectors={industries.map((i) => i.name)} /></div>
-        </div>
-      </section>
+        </section>
 
-      <section className="bg-surface py-14">
-        <div className={WRAP}>
-          <SectionHeading eyebrow="What happens next" title="A Clear Path, Every Time" intro="Whichever channel you use, this is how every engagement runs." />
-          <ProcessStepper steps={ENGAGEMENT_STEPS} />
-        </div>
-      </section>
-
-      <section className={`${WRAP} py-10`}>
-        <p className="text-sm text-muted">Looking to work with us? <Link href="/career" className="text-primary font-medium hover:underline">Join Us / Career</Link></p>
-      </section>
+        <aside aria-label="Other ways to reach us" className="flex flex-col gap-6">
+          <div data-location="contact_channels" className="rounded-sm border border-border bg-surface p-6">
+            <h2 className="font-sans text-lg font-semibold text-text">Reach a person</h2>
+            <dl className="mt-4 space-y-4 text-sm">
+              <div>
+                <dt className="text-muted">Phone and WhatsApp</dt>
+                <dd className="font-medium">
+                  <a href={`tel:${SITE.phoneHref}`} data-track="Contact Call" className="text-primary hover:underline">{SITE.phone}</a> ·{" "}
+                  <a href={`https://wa.me/${SITE.whatsappHref}`} target="_blank" rel="noopener noreferrer" data-track="Contact WhatsApp" className="text-primary hover:underline">
+                    WhatsApp<span aria-hidden="true"> ↗</span><span className="sr-only"> (opens in new tab)</span>
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt className="text-muted">Email</dt>
+                <dd><a href={`mailto:${SITE.email}`} className="break-all font-medium text-primary hover:underline">{SITE.email}</a></dd>
+              </div>
+              <div>
+                <dt className="text-muted">Office</dt>
+                <dd className="text-text">
+                  {SITE.address.full}{" "}
+                  <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className="whitespace-nowrap font-medium text-primary hover:underline">
+                    Map<span aria-hidden="true"> ↗</span><span className="sr-only"> (opens in new tab)</span>
+                  </a>
+                </dd>
+              </div>
+              <div><dt className="text-muted">Office hours</dt><dd className="text-text">{SITE.hours}</dd></div>
+            </dl>
+            <h3 className="mb-2 mt-6 text-sm font-semibold text-text">Who to write to</h3>
+            <ul className="space-y-2 text-sm">
+              {EMAIL_ROUTING.map((e) => (
+                <li key={e.address}><span className="block text-muted">{e.label}</span><a href={`mailto:${e.address}`} className="break-all text-primary hover:underline">{e.address}</a></li>
+              ))}
+            </ul>
+            <h3 className="mb-2 mt-6 text-sm font-semibold text-text">Follow SCS</h3>
+            <SocialLinks />
+          </div>
+          <div className="rounded-sm border border-border border-t-4 border-t-accent bg-bg p-6">
+            <h2 className="font-sans text-lg font-semibold text-text">What happens after you contact us</h2>
+            <ol className="mt-4 space-y-3 text-sm">
+              {AFTER.map((t, i) => (
+                <li key={t} className="flex gap-3"><span className="tabular w-5 flex-none font-semibold text-primary">{i + 1}</span><span>{t}</span></li>
+              ))}
+            </ol>
+          </div>
+        </aside>
+      </div>
     </>
   );
 }

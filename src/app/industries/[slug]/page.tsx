@@ -1,59 +1,67 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { industries, regulatorName } from "@/content/loaders";
-import { v2LinkForV1 } from "@/content/v2/catalogue";
+import { regulatorName } from "@/content/loaders";
+import { INDUSTRIES, getIndustry } from "@/content/v2/industries";
 import PageHero from "@/components/ui/PageHero";
-import CTAButton from "@/components/ui/CTAButton";
+import DiscussPanel from "@/components/v2/DiscussPanel";
 import ClientPlaceholder from "@/components/ui/ClientPlaceholder";
 import { PH } from "@/lib/placeholders";
 
+// v2 industry page: one of the 6 merged industries (strategy §6). The 15 v1 industry URLs 301 here.
 export function generateStaticParams() {
-  return industries.map((i) => ({ slug: i.slug }));
+  return INDUSTRIES.map((i) => ({ slug: i.slug }));
 }
+export const dynamicParams = false;
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
-  const { slug } = await params;
-  const i = industries.find((x) => x.slug === slug);
-  return i ? { title: `${i.name} corporate services`, description: `${i.summary} Typical needs and the agencies to review for ${i.name} businesses in Nigeria.` } : {};
+  const i = getIndustry((await params).slug);
+  return i ? { title: `${i.name}`, description: `${i.summary} Typical needs and the agencies to review in Nigeria.`, alternates: { canonical: i.path } } : {};
 }
 
+const H2 = "mb-4 text-[24px] font-semibold leading-tight text-text md:text-[28px]";
+
 export default async function IndustryPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const industry = industries.find((x) => x.slug === slug);
+  const industry = getIndustry((await params).slug);
   if (!industry) notFound();
-  const related = [...new Map(industry.services.map(v2LinkForV1).filter((s) => !!s).map((s) => [s.href, s])).values()];
 
   return (
     <>
-      <PageHero breadcrumbs={[{ label: "Industries", href: "/industries" }, { label: industry.name }]} eyebrow="Industries" title={industry.name} intro={industry.summary} />
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12 grid lg:grid-cols-[minmax(0,1fr)_340px] gap-10 items-start">
-        <div>
-          <h2 className="text-2xl font-semibold text-secondary mb-3 pl-3 border-l-4 border-accent">Typical needs to review</h2>
-          <ul className="list-disc space-y-2 pl-6 text-text">{industry.needs.map((n) => <li key={n}>{n}</li>)}</ul>
-
-          <h2 className="mt-10 text-2xl font-semibold text-secondary mb-3 pl-3 border-l-4 border-accent">Agencies to review</h2>
-          <ul className="grid gap-2 sm:grid-cols-2">
-            {industry.regulators.map((r) => <li key={r} className="rounded-sm border border-border bg-surface px-3 py-2 text-sm text-text">{regulatorName(r)}</li>)}
-          </ul>
-          {industry.note && <p className="mt-4 text-sm text-muted">{industry.note}</p>}
-          <p className="mt-4 text-sm text-muted">This list is indicative. Requirements vary by activity and regulatory status, and SCS confirms what applies to your business.</p>
-          <p className="mt-2"><ClientPlaceholder text={PH.taxonomy} /></p>
-
-          {related.length > 0 && (
-            <>
-              <h2 className="mt-10 text-2xl font-semibold text-secondary mb-3 pl-3 border-l-4 border-accent">How SCS can help</h2>
-              <ul className="space-y-2">{related.map((s) => <li key={s.href}><Link href={s.href} className="font-medium text-primary hover:underline">{s.label}</Link><span className="text-sm text-muted">: {s.summary}</span></li>)}</ul>
-            </>
+      <PageHero breadcrumbs={[{ label: "Industries", href: "/industries" }, { label: industry.name }]} eyebrow="Industries" title={industry.name} intro={industry.summary} meta={`Includes: ${industry.includes.join(" · ")}`} />
+      <div className="mx-auto grid max-w-[1280px] items-start gap-14 px-4 py-12 md:px-6 md:py-20 lg:grid-cols-[minmax(0,1fr)_340px] lg:px-8">
+        <div className="flex min-w-0 flex-col gap-12">
+          <section aria-labelledby="needs">
+            <h2 id="needs" className={H2}>Typical needs to review</h2>
+            <ul className="list-disc space-y-2 pl-6">{industry.needs.map((n) => <li key={n}>{n}</li>)}</ul>
+          </section>
+          <section aria-labelledby="agencies">
+            <h2 id="agencies" className={H2}>Agencies to review</h2>
+            <ul className="grid gap-2 sm:grid-cols-2">
+              {industry.regulators.map((r) => <li key={r} className="rounded-sm border border-border bg-surface px-3 py-2 text-sm">{regulatorName(r)}</li>)}
+            </ul>
+            {industry.notes.map((n) => <p key={n} className="mt-4 text-sm text-muted">{n}</p>)}
+            <p className="mt-4 text-sm text-muted">This list is indicative. Requirements vary by activity and regulatory status, and SCS confirms what applies to your organisation.</p>
+            <p className="mt-2"><ClientPlaceholder text={PH.taxonomy} /></p>
+          </section>
+          {industry.services.length > 0 && (
+            <section aria-labelledby="help">
+              <h2 id="help" className={H2}>How SCS can help</h2>
+              <ul className="border-t border-border">
+                {industry.services.map((s) => (
+                  <li key={s.href} className="border-b border-border">
+                    <Link href={s.href} className="group block py-4">
+                      <span className="block font-medium text-text group-hover:text-primary">{s.label} →</span>
+                      <span className="mt-1 block text-sm text-muted">{s.summary}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
           )}
         </div>
-        <aside className="dark-surface rounded-md border-t-4 border-accent bg-secondary p-6 text-white lg:sticky lg:top-28">
-          <h2 className="text-xl font-semibold">Talk to us about your sector</h2>
-          <div className="mt-4 flex flex-col gap-3">
-            <CTAButton booking label="Book a Discovery Call" variant="accent" />
-            <CTAButton href="/compliance-checklist" label="Compliance Starter Checklist" variant="outlineLight" />
-          </div>
-        </aside>
+        <div>
+          <DiscussPanel title="Talk to us about your sector" text="Tell us what your organisation does. We will confirm what applies and which services fit." cta="Book a Discovery Call" />
+        </div>
       </div>
     </>
   );

@@ -1,9 +1,8 @@
 # Cloudflare Workers Static Assets redirects (docs/v2/06-TECH-SPEC.md §1). www -> apex is a Cloudflare
 # redirect rule, not here. Static rules first, then rules with a splat.
 #
-# Staged: only rules whose target page already exists are live. The full v2 list is docs/v2/04-_redirects.txt.
-# Live: the 21 v1 service categories and the old legal-partnership URL (services PR), /academy.
-# Still to switch on with the pages PR: the 15 industry rules, /who-we-help and /how-we-work.
+# The full v2 list from docs/v2/04-_redirects.txt: the 21 v1 service categories and the old legal-partnership URL,
+# the 15 v1 industries, /who-we-help, /how-we-work and /academy.
 # scripts/check-site.mjs fails the build if any target here is not a real page in out/.
 /services/ai-governance-and-digital-transformation /services/technology-and-digital/ai-governance-and-digital-transformation 301
 /services/business-formation-and-corporate-structuring /services/company-formation-and-secretarial 301
@@ -27,5 +26,22 @@
 /services/tax-accounting-and-financial-business-support /services/finance-and-accounting 301
 /services/transaction-investment-and-growth-advisory /services/finance-and-accounting/transaction-and-investment-advisory 301
 /services/legal-partnership-and-regulatory-business-support /services/compliance-and-regulatory/corporate-partnership-and-regulatory-business-support 301
+/industries/agriculture-and-agribusiness /industries/agriculture-and-food 301
+/industries/construction-and-general-contracting /industries/energy-construction-and-real-estate 301
+/industries/education /industries/education-and-non-profits 301
+/industries/energy-oil-and-gas /industries/energy-construction-and-real-estate 301
+/industries/financial-services-and-fintech /industries/financial-services 301
+/industries/healthcare-and-pharmaceuticals /industries/health-and-manufacturing 301
+/industries/lending-credit-and-investment /industries/financial-services 301
+/industries/manufacturing /industries/health-and-manufacturing 301
+/industries/media-and-entertainment /industries/technology-media-and-consumer 301
+/industries/nonprofits-and-social-enterprises /industries/education-and-non-profits 301
+/industries/private-schools-and-early-years /industries/education-and-non-profits 301
+/industries/professional-services /industries/technology-media-and-consumer 301
+/industries/real-estate-and-construction /industries/energy-construction-and-real-estate 301
+/industries/retail-and-consumer-businesses /industries/technology-media-and-consumer 301
+/industries/technology-and-digital-businesses /industries/technology-media-and-consumer 301
 /academy /corporate-college 301
+/who-we-help /clients 301
+/how-we-work /process 301
 /academy/* /corporate-college/:splat 301
