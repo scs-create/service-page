@@ -63,8 +63,11 @@ jobs:
           if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
             echo "Set CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID first (owner checklist steps 4-5)."; exit 1
           fi
-          npx wrangler d1 migrations apply DB --remote
-          npx wrangler deploy --message "${NEXT_PUBLIC_SITE_ENV} ${GITHUB_REF_NAME} ${GITHUB_SHA::7}" | tee deploy.log
+          # As in Build: on failure, the end of the output becomes a run annotation.
+          note() { echo "::error title=$1::$(tail -n 30 "$2" | sed 's/[[:cntrl:]]//g' | sed 's/%/%25/g' | awk '{printf "%s%%0A", $0}')"; }
+          npx wrangler d1 migrations apply DB --remote 2>&1 | tee migrate.log || { note "Migrations failed" migrate.log; exit 1; }
+          npx wrangler deploy --message "${NEXT_PUBLIC_SITE_ENV} ${GITHUB_REF_NAME} ${GITHUB_SHA::7}" 2>&1 | tee deploy.log ||
+            { note "Deploy failed" deploy.log; exit 1; }
           url=$(grep -oE 'https://[a-z0-9.-]+\.workers\.dev' deploy.log | head -1 || true)
           {
             echo "## Deployed (${NEXT_PUBLIC_SITE_ENV})"
