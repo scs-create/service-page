@@ -47,7 +47,16 @@ jobs:
       - run: npm run lint
       - run: npm run typecheck
       - run: npm test
-      - run: npm run build
+      # On failure, the last lines of the build output become an error annotation on the run, which is readable
+      # without signing in to GitHub (the full log is not).
+      - name: Build
+        run: |
+          set -o pipefail
+          npm run build 2>&1 | tee build.log || {
+            echo "::error title=Build failed::$(tail -n 30 build.log | sed -e 's/%/%25/g' -e 's///g' | sed ':a;N;$!ba;s/
+/%0A/g')"
+            exit 1
+          }
       - run: npm run check:site
       - name: Deploy the Worker
         run: |
