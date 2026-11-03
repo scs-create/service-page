@@ -53,8 +53,7 @@ jobs:
         run: |
           set -o pipefail
           npm run build 2>&1 | tee build.log || {
-            echo "::error title=Build failed::$(tail -n 30 build.log | sed -e 's/%/%25/g' -e 's///g' | sed ':a;N;$!ba;s/
-/%0A/g')"
+            echo "::error title=Build failed::$(tail -n 30 build.log | sed 's/[[:cntrl:]]//g' | sed 's/%/%25/g' | awk '{printf "%s%%0A", $0}')"
             exit 1
           }
       - run: npm run check:site
