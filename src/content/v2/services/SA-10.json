@@ -1,0 +1,33 @@
+{
+  "id": "SA-10",
+  "status": "draft",
+  "whoFor": "Organisations and individuals with a brand, idea, method or body of knowledge that could earn more.",
+  "benefits": [
+    {
+      "title": "See the options",
+      "text": "Licensing, partnerships, products, training and more, compared."
+    },
+    {
+      "title": "Protect what you own",
+      "text": "Brand and asset records in order before you share them."
+    },
+    {
+      "title": "A plan to test",
+      "text": "Small, measurable first steps before larger commitments."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of the brand, idea or know-how and who might pay for it",
+    "A comparison of monetisation options",
+    "A first-steps plan with measures",
+    "A list of records and registrations to put in place"
+  ],
+  "whatYouProvide": [
+    "A full description of the brand, idea or know-how",
+    "Any existing registrations, agreements or sales history"
+  ],
+  "doesNotInclude": [
+    "A promise of income",
+    "Registrations or agreements themselves, which are scoped separately"
+  ]
+}

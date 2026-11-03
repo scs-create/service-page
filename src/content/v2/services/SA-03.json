@@ -1,0 +1,34 @@
+{
+  "id": "SA-03",
+  "status": "draft",
+  "whoFor": "Organisations launching a product, entering a market or checking assumptions before they commit money.",
+  "benefits": [
+    {
+      "title": "Know your market",
+      "text": "Size, segments and customer needs, set out from sources you can check."
+    },
+    {
+      "title": "See your competitors clearly",
+      "text": "Who they are, how they position themselves and where the gaps are."
+    },
+    {
+      "title": "Decide with confidence",
+      "text": "Findings framed around the decision you need to make."
+    }
+  ],
+  "whatYouReceive": [
+    "A research brief agreed with you before work starts",
+    "A written report with sources listed",
+    "A competitor comparison table",
+    "A summary of implications and options"
+  ],
+  "whatYouProvide": [
+    "The decision the research should support",
+    "What you already know about your customers and market",
+    "Contacts for any interviews you approve"
+  ],
+  "doesNotInclude": [
+    "Sales forecasts presented as certain",
+    "Research methods you have not approved, such as contacting your customers without consent"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "CS-06",
+  "status": "draft",
+  "whoFor": "Organisations merging entities, changing ownership, closing a company or reorganising operations.",
+  "benefits": [
+    {
+      "title": "A planned sequence",
+      "text": "Every step and filing set out before work starts."
+    },
+    {
+      "title": "Records kept in step",
+      "text": "Registers and filings updated as each step completes."
+    },
+    {
+      "title": "Fewer loose ends",
+      "text": "A checklist that closes every item."
+    }
+  ],
+  "whatYouReceive": [
+    "A restructuring plan with each step and filing",
+    "Preparation of the resolutions, registers and filings",
+    "Coordination with the relevant agencies",
+    "A completion checklist and records pack"
+  ],
+  "whatYouProvide": [
+    "The goals of the restructuring",
+    "Current corporate records",
+    "Decisions from shareholders and directors at each step"
+  ],
+  "doesNotInclude": [
+    "A promise of when any agency will process a filing",
+    "Employee consultation processes, which are scoped separately"
+  ]
+}

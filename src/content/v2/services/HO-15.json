@@ -1,0 +1,33 @@
+{
+  "id": "HO-15",
+  "status": "draft",
+  "whoFor": "Businesses that deliver goods and want routes and logistics planned better.",
+  "benefits": [
+    {
+      "title": "Better routes",
+      "text": "Delivery plans based on locations and timing."
+    },
+    {
+      "title": "Lower running effort",
+      "text": "Fewer wasted trips and clearer schedules."
+    },
+    {
+      "title": "Clear routines",
+      "text": "Simple procedures for drivers and dispatch."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of current delivery operations",
+    "Route and schedule plans",
+    "Dispatch and delivery procedures",
+    "Measures to track performance"
+  ],
+  "whatYouProvide": [
+    "Delivery locations, volumes and vehicle details",
+    "Access to dispatch staff and records"
+  ],
+  "doesNotInclude": [
+    "Operating vehicles or deliveries",
+    "Vehicle purchase or maintenance"
+  ]
+}

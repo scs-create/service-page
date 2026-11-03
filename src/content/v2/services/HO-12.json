@@ -1,0 +1,33 @@
+{
+  "id": "HO-12",
+  "status": "draft",
+  "whoFor": "Businesses holding stock that want accurate records and fewer shortages or losses.",
+  "benefits": [
+    {
+      "title": "Know what you hold",
+      "text": "Stock records that match what is on the shelf."
+    },
+    {
+      "title": "Fewer shortages",
+      "text": "Reorder points set for key items."
+    },
+    {
+      "title": "Less waste and loss",
+      "text": "Regular counts and checks."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of current stock handling",
+    "A stock control system set-up or improvement",
+    "Counting and reorder procedures",
+    "Staff guidance"
+  ],
+  "whatYouProvide": [
+    "Current stock lists and records",
+    "Access to stores and the staff who manage them"
+  ],
+  "doesNotInclude": [
+    "Purchasing stock",
+    "Warehouse construction or equipment installation"
+  ]
+}

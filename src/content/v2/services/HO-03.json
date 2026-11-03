@@ -1,0 +1,34 @@
+{
+  "id": "HO-03",
+  "status": "draft",
+  "whoFor": "International firms that want a reliable operations partner in Nigeria for administrative and back-office work.",
+  "benefits": [
+    {
+      "title": "Working hours that overlap",
+      "text": "West Africa Time (UTC+1) overlaps with the UK and European working day and the North American morning."
+    },
+    {
+      "title": "Defined service levels",
+      "text": "Tasks, turnaround standards and reporting agreed in writing."
+    },
+    {
+      "title": "Quality reviewed",
+      "text": "Work checked by SCS management before it reaches you."
+    }
+  ],
+  "whatYouReceive": [
+    "Client intake support",
+    "Case and file administration",
+    "Billing administration and research support",
+    "Back-office and customer support, with regular reporting"
+  ],
+  "whatYouProvide": [
+    "Your procedures, systems access and data-handling rules",
+    "A named contact and escalation route",
+    "Agreement on service levels"
+  ],
+  "doesNotInclude": [
+    "Work that requires a licence or professional qualification in your jurisdiction",
+    "Decisions reserved for your own staff"
+  ]
+}

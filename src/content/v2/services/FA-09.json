@@ -1,0 +1,33 @@
+{
+  "id": "FA-09",
+  "status": "draft",
+  "whoFor": "Businesses waiting too long to be paid, or without a consistent invoicing routine.",
+  "benefits": [
+    {
+      "title": "Invoices out on time",
+      "text": "A routine that sends accurate invoices promptly."
+    },
+    {
+      "title": "Steady follow-up",
+      "text": "Polite, consistent reminders on overdue amounts."
+    },
+    {
+      "title": "A clear view of debt",
+      "text": "An aged list of who owes what."
+    }
+  ],
+  "whatYouReceive": [
+    "An invoicing and credit control process",
+    "Invoice and reminder templates",
+    "An aged debtors report format",
+    "Follow-up support within the agreed scope"
+  ],
+  "whatYouProvide": [
+    "Your customer list, terms and current invoices",
+    "Decisions on credit limits and escalation"
+  ],
+  "doesNotInclude": [
+    "Formal debt recovery action",
+    "A promise of recovery"
+  ]
+}

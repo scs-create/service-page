@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { industries, regulatorName } from "@/content/loaders";
-import { getServiceBySlug } from "@/content/services/data";
+import { v2LinkForV1 } from "@/content/v2/catalogue";
 import PageHero from "@/components/ui/PageHero";
 import CTAButton from "@/components/ui/CTAButton";
 import ClientPlaceholder from "@/components/ui/ClientPlaceholder";
@@ -22,7 +22,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
   const { slug } = await params;
   const industry = industries.find((x) => x.slug === slug);
   if (!industry) notFound();
-  const related = industry.services.map((s) => getServiceBySlug(s)).filter((s) => !!s);
+  const related = [...new Map(industry.services.map(v2LinkForV1).filter((s) => !!s).map((s) => [s.href, s])).values()];
 
   return (
     <>
@@ -43,7 +43,7 @@ export default async function IndustryPage({ params }: { params: Promise<{ slug:
           {related.length > 0 && (
             <>
               <h2 className="mt-10 text-2xl font-semibold text-secondary mb-3 pl-3 border-l-4 border-accent">How SCS can help</h2>
-              <ul className="space-y-2">{related.map((s) => <li key={s!.slug}><Link href={`/services/${s!.slug}`} className="font-medium text-primary hover:underline">{s!.title}</Link><span className="text-sm text-muted">: {s!.framingSentence}</span></li>)}</ul>
+              <ul className="space-y-2">{related.map((s) => <li key={s.href}><Link href={s.href} className="font-medium text-primary hover:underline">{s.label}</Link><span className="text-sm text-muted">: {s.summary}</span></li>)}</ul>
             </>
           )}
         </div>

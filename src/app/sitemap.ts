@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static"; // static export (v2 on Cloudflare)
 import { SITE } from "@/lib/site";
-import { services } from "@/content/services/data";
+import { CLUSTERS, SERVICES } from "@/content/v2/catalogue";
 import { portfolio } from "@/content/portfolio/data";
 import { industries } from "@/content/loaders";
 import { TOOLS } from "@/content/toolsList";
@@ -23,7 +23,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...pages.map((r) => ({ url: `${SITE.url}${r}`, priority: r === "" ? 1 : 0.8 })),
     ...TOOLS.map((t) => ({ url: `${SITE.url}${t.href}`, priority: 0.7 })),
-    ...services.map((s) => ({ url: `${SITE.url}/services/${s.slug}`, priority: 0.7 })),
+    ...CLUSTERS.map((c) => ({ url: `${SITE.url}${c.path}`, priority: 0.8 })),
+    ...SERVICES.map((s) => ({ url: `${SITE.url}${s.path}`, priority: 0.7 })),
     ...portfolio.map((p) => ({ url: `${SITE.url}/portfolio/${p.slug}`, priority: 0.6 })),
     ...industries.map((i) => ({ url: `${SITE.url}/industries/${i.slug}`, priority: 0.6 })),
     ...getAllPosts().map((p) => ({ url: `${SITE.url}/corporate-college/corporate-school/${p.slug}`, lastModified: new Date(p.date), priority: 0.6 })),

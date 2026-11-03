@@ -1,9 +1,31 @@
 # Cloudflare Workers Static Assets redirects (docs/v2/06-TECH-SPEC.md §1). www -> apex is a Cloudflare
 # redirect rule, not here. Static rules first, then rules with a splat.
 #
-# Staged: only rules whose target page already exists are live. The full v2 list is docs/v2/04-_redirects.txt;
-# the service rules switch on with the services PR and the industry, /who-we-help and /how-we-work rules with the
-# pages PR. scripts/check-site.mjs fails the build if any target here is not a real page in out/.
-/services/legal-partnership-and-regulatory-business-support /services/corporate-partnership-and-regulatory-business-support 301
+# Staged: only rules whose target page already exists are live. The full v2 list is docs/v2/04-_redirects.txt.
+# Live: the 21 v1 service categories and the old legal-partnership URL (services PR), /academy.
+# Still to switch on with the pages PR: the 15 industry rules, /who-we-help and /how-we-work.
+# scripts/check-site.mjs fails the build if any target here is not a real page in out/.
+/services/ai-governance-and-digital-transformation /services/technology-and-digital/ai-governance-and-digital-transformation 301
+/services/business-formation-and-corporate-structuring /services/company-formation-and-secretarial 301
+/services/business-operations-and-outsourced-support /services/hr-and-operations/outsourced-business-administration 301
+/services/contract-lifecycle-management /services/hr-and-operations/contract-lifecycle-management 301
+/services/corporate-and-commercial-advisory /services/strategy-and-advisory/corporate-and-commercial-advisory 301
+/services/corporate-communications-and-business-documentation /services/marketing-and-communications/corporate-communications-and-company-profiles 301
+/services/corporate-partnership-and-regulatory-business-support /services/compliance-and-regulatory/corporate-partnership-and-regulatory-business-support 301
+/services/customer-experience-and-customer-care /services/hr-and-operations/customer-service-outsourcing 301
+/services/data-analytics-and-business-intelligence /services/technology-and-digital/dashboards-and-business-intelligence 301
+/services/data-protection-privacy-and-information-governance /services/compliance-and-regulatory/data-protection-compliance 301
+/services/digital-marketing-and-brand-growth /services/marketing-and-communications 301
+/services/human-resources-and-staff-management /services/hr-and-operations/hr-administration-and-staff-handbooks 301
+/services/intellectual-property-and-brand-asset-management /services/company-formation-and-secretarial/intellectual-property-and-brand-asset-management 301
+/services/procurement-supply-chain-and-vendor-management /services/hr-and-operations/procurement-and-vendor-management 301
+/services/project-management-and-implementation /services/hr-and-operations/project-management 301
+/services/recruitment-and-talent-solutions /services/hr-and-operations/recruitment 301
+/services/regulatory-compliance-and-licensing /services/compliance-and-regulatory 301
+/services/research-market-intelligence-and-policy /services/strategy-and-advisory/market-research-and-competitor-analysis 301
+/services/strategy-management-and-business-consulting /services/strategy-and-advisory/business-strategy-consulting 301
+/services/tax-accounting-and-financial-business-support /services/finance-and-accounting 301
+/services/transaction-investment-and-growth-advisory /services/finance-and-accounting/transaction-and-investment-advisory 301
+/services/legal-partnership-and-regulatory-business-support /services/compliance-and-regulatory/corporate-partnership-and-regulatory-business-support 301
 /academy /corporate-college 301
 /academy/* /corporate-college/:splat 301

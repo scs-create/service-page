@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getPortfolioBySlug, portfolio } from "@/content/portfolio/data";
 import { SERVICE_LINE_TO_SLUG } from "@/content/portfolio/serviceLines";
-import { getServiceBySlug } from "@/content/services/data";
+import { v2LinkForV1 } from "@/content/v2/catalogue";
 import CaseStudyCard from "@/components/ui/CaseStudyCard";
 import PageHero from "@/components/ui/PageHero";
 import CopyButton from "@/components/ui/CopyButton";
@@ -27,7 +27,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   if (!entry) notFound();
 
   const relatedSlugs = [...new Set(entry.serviceLines.map((l) => SERVICE_LINE_TO_SLUG[l]).filter(Boolean))];
-  const related = relatedSlugs.map((s) => getServiceBySlug(s)).filter((s) => !!s);
+  const related = [...new Map(relatedSlugs.map(v2LinkForV1).filter((s) => !!s).map((s) => [s.href, s])).values()];
 
   return (
     <>
@@ -52,7 +52,7 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             <section className="rounded-md border border-border bg-surface p-5">
               <h2 className="font-semibold text-text">Related services</h2>
               <ul className="mt-2 space-y-1.5 text-sm">
-                {related.map((s) => <li key={s!.slug}><Link href={`/services/${s!.slug}`} className="text-primary hover:underline">{s!.title}</Link></li>)}
+                {related.map((s) => <li key={s.href}><Link href={s.href} className="text-primary hover:underline">{s.label}</Link></li>)}
               </ul>
             </section>
           )}

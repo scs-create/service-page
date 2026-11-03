@@ -1,0 +1,34 @@
+{
+  "id": "TD-01",
+  "status": "draft",
+  "whoFor": "Organisations that need a business website planned, built and handed over.",
+  "benefits": [
+    {
+      "title": "A site with a purpose",
+      "text": "Pages planned around what visitors need to do."
+    },
+    {
+      "title": "Built to standard",
+      "text": "Fast, accessible and secure pages."
+    },
+    {
+      "title": "Yours to run",
+      "text": "Handed over with training and documentation."
+    }
+  ],
+  "whatYouReceive": [
+    "A requirements assessment and site plan",
+    "Design and build of the agreed pages",
+    "Testing before launch",
+    "Handover, training and documentation"
+  ],
+  "whatYouProvide": [
+    "Your content, images and brand assets",
+    "Decisions and feedback at each stage",
+    "Access to your domain and hosting accounts"
+  ],
+  "doesNotInclude": [
+    "Ongoing content writing, unless scoped",
+    "Third-party subscriptions and hosting costs"
+  ]
+}

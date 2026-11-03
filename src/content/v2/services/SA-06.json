@@ -1,0 +1,33 @@
+{
+  "id": "SA-06",
+  "status": "draft",
+  "whoFor": "Founders, managing directors and leadership teams who want regular, structured support as they grow.",
+  "benefits": [
+    {
+      "title": "Regular time to think",
+      "text": "Sessions set aside for the decisions that daily work pushes aside."
+    },
+    {
+      "title": "Accountability",
+      "text": "Agreed actions, reviewed at the next session."
+    },
+    {
+      "title": "Practical focus",
+      "text": "Coaching tied to your business, not general theory."
+    }
+  ],
+  "whatYouReceive": [
+    "An initial session to agree goals",
+    "Scheduled coaching sessions, in person in Abuja or online",
+    "Short written notes and agreed actions after each session",
+    "A review of progress against the goals"
+  ],
+  "whatYouProvide": [
+    "Commitment to the agreed sessions",
+    "Openness about the challenges you face"
+  ],
+  "doesNotInclude": [
+    "Therapy or mental health support",
+    "Making business decisions on your behalf"
+  ]
+}

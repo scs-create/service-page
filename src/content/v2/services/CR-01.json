@@ -1,0 +1,36 @@
+{
+  "id": "CR-01",
+  "status": "draft",
+  "whoFor": "Companies, business names and incorporated trustees registered in Nigeria, including foreign-owned companies whose owners manage the business from abroad.",
+  "benefits": [
+    {
+      "title": "Good standing",
+      "text": "Banks, investors and partners check your status on the public register."
+    },
+    {
+      "title": "Records that match",
+      "text": "Your directors, shareholders and addresses read the same everywhere."
+    },
+    {
+      "title": "One person to ask",
+      "text": "A named coordinator tracks every filing until the CAC responds."
+    }
+  ],
+  "whatYouReceive": [
+    "The filed return or update, with the CAC acknowledgement",
+    "Updated statutory registers that match what was filed",
+    "A compliance calendar of your next filing dates",
+    "A short filing record: what was filed, when and by whom"
+  ],
+  "whatYouProvide": [
+    "Your CAC registration number (RC, BN or IT number)",
+    "Current directors, shareholders or trustees, and any changes since the last filing",
+    "Financial statements, where the return requires them",
+    "Your written authority for SCS to file on your behalf"
+  ],
+  "doesNotInclude": [
+    "A promise of when the CAC will process a filing, or of its decision",
+    "Tax returns, which sit under Tax registration and compliance",
+    "Audited accounts, which come from your accountant or auditor"
+  ]
+}

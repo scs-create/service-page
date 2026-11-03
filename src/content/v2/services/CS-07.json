@@ -1,0 +1,45 @@
+{
+  "id": "CS-07",
+  "status": "draft",
+  "whoFor": "Organisations that want their trademarks, copyright and brand assets recorded and looked after.",
+  "benefits": [
+    {
+      "title": "Know what you own",
+      "text": "Brand assets listed in one register."
+    },
+    {
+      "title": "Renewals on time",
+      "text": "Reminders before registrations lapse."
+    },
+    {
+      "title": "One coordinator",
+      "text": "A single contact for the registrations involved."
+    }
+  ],
+  "whatYouReceive": [],
+  "whatYouProvide": [
+    "Your logos, names and other brand assets",
+    "Any existing registrations and certificates",
+    "A named contact for approvals"
+  ],
+  "doesNotInclude": [
+    "A promise of when a registry will decide, or of its decision"
+  ],
+  "v1Retained": {
+    "framing": "We help businesses identify, organise and protect commercially valuable intangible assets.",
+    "intro": "Our services include:",
+    "lines": [
+      "Trademark registration support",
+      "Trademark portfolio management",
+      "Copyright support",
+      "Patent support",
+      "Brand protection",
+      "IP documentation",
+      "IP portfolio administration",
+      "IP commercialisation support",
+      "Domain and digital brand protection",
+      "IP due diligence support"
+    ],
+    "closing": "We view intellectual property not merely as registration paperwork, but as an important business asset."
+  }
+}

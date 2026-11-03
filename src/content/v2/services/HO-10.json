@@ -1,0 +1,34 @@
+{
+  "id": "HO-10",
+  "status": "draft",
+  "whoFor": "Organisations that want customer enquiries answered well, or a support desk run for them.",
+  "benefits": [
+    {
+      "title": "Customers answered",
+      "text": "Enquiries handled to an agreed standard."
+    },
+    {
+      "title": "Consistent service",
+      "text": "Scripts, guides and escalation rules everyone follows."
+    },
+    {
+      "title": "Learn from feedback",
+      "text": "Regular reports on what customers ask and say."
+    }
+  ],
+  "whatYouReceive": [
+    "A customer care process and response guides",
+    "Support desk staffing within the agreed scope",
+    "Escalation rules",
+    "Regular service reports"
+  ],
+  "whatYouProvide": [
+    "Product and policy information",
+    "Access to the channels and systems involved",
+    "A named contact for escalations"
+  ],
+  "doesNotInclude": [
+    "Decisions on refunds or exceptions, unless delegated in writing",
+    "Sales targets"
+  ]
+}

@@ -4,6 +4,7 @@ import { SITE } from "@/lib/site";
 import AssessmentTool from "@/components/sections/AssessmentTool";
 import { assessment, industries, partnership, regulatorName } from "@/content/loaders";
 import { services } from "@/content/services/data";
+import { v2LinkForV1 } from "@/content/v2/catalogue";
 
 export const metadata: Metadata = {
   title: "Assess your Business",
@@ -12,14 +13,14 @@ export const metadata: Metadata = {
 
 export default function AssessPage() {
   const sectorNotes = Object.fromEntries(industries.map((i) => [i.name, { needs: i.needs, regulators: i.regulators.map(regulatorName) }]));
-  const serviceTitles = Object.fromEntries(services.map((s) => [s.slug, s.title]));
+  const serviceLinks = Object.fromEntries(services.map((s) => [s.slug, v2LinkForV1(s.slug) ?? { href: "/services", label: s.title }]));
   return (
     <>
       <PageHero breadcrumbs={[{ label: "Analyse your Business", href: "/tools" }, { label: "Assess your Business" }]} eyebrow="Analyse your Business" title="Assess your Business" intro="Twelve quick questions. A scored result, where the issues are, what to do, how to do it and how SCS can help." />
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12">
         <div className="max-w-[760px]">
           <noscript><p className="rounded-md border border-border bg-surface p-4 text-text">This assessment needs JavaScript. You can <a href={SITE.bookingUrl} target="_blank" rel="noopener noreferrer" data-booking="" className="text-primary underline">book a Discovery Call<span className="sr-only"> (opens Cal.com in a new tab)</span> ↗</a> instead and we will walk through the same questions with you.</p></noscript>
-          <AssessmentTool assessment={assessment} sectors={industries.map((i) => i.name)} sectorNotes={sectorNotes} serviceTitles={serviceTitles} partnershipNote={partnership.visitorAssessmentNote} />
+          <AssessmentTool assessment={assessment} sectors={industries.map((i) => i.name)} sectorNotes={sectorNotes} serviceLinks={serviceLinks} partnershipNote={partnership.visitorAssessmentNote} />
         </div>
       </div>
     </>

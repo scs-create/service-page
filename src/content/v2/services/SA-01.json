@@ -1,0 +1,34 @@
+{
+  "id": "SA-01",
+  "status": "draft",
+  "whoFor": "SCS Partners, and organisations that want a regular, outside view of how the business is run.",
+  "benefits": [
+    {
+      "title": "A clear view each quarter",
+      "text": "One structured look at structure, compliance, operations and growth, every three months."
+    },
+    {
+      "title": "Priorities, not a long list",
+      "text": "Up to three written priorities, so attention goes where it matters most."
+    },
+    {
+      "title": "Progress you can see",
+      "text": "Each review checks what changed since the last one."
+    }
+  ],
+  "whatYouReceive": [
+    "A quarterly Business Check-Up session with your leadership",
+    "The SCS Business Growth Report, with findings and up to three priorities",
+    "A short action list with owners for each priority",
+    "A follow-up on last quarter's priorities"
+  ],
+  "whatYouProvide": [
+    "A named contact who can speak for the organisation",
+    "Recent management figures and any changes since the last review",
+    "Access to the records the review needs"
+  ],
+  "doesNotInclude": [
+    "Carrying out the priorities themselves, which are scoped as separate projects",
+    "Audited figures or an audit opinion"
+  ]
+}

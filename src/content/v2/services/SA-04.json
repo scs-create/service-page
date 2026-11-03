@@ -1,0 +1,33 @@
+{
+  "id": "SA-04",
+  "status": "draft",
+  "whoFor": "Organisations that need to understand the rules and policies shaping their sector before they act.",
+  "benefits": [
+    {
+      "title": "Plain-language summaries",
+      "text": "What a rule or policy says and who it applies to, without jargon."
+    },
+    {
+      "title": "Sourced and dated",
+      "text": "Every point links to the official source, with the date it was checked."
+    },
+    {
+      "title": "Focused on your situation",
+      "text": "Research framed around your activities and plans."
+    }
+  ],
+  "whatYouReceive": [
+    "A research brief agreed with you",
+    "A written summary of the relevant rules and policies, with official sources",
+    "A list of points to confirm with the regulator where sources disagree",
+    "A short briefing for your team"
+  ],
+  "whatYouProvide": [
+    "A description of your activities and plans",
+    "Any letters or notices you have received from regulators"
+  ],
+  "doesNotInclude": [
+    "Representing you before a regulator",
+    "A promise of how a regulator will interpret a rule"
+  ]
+}

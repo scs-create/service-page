@@ -1,0 +1,33 @@
+{
+  "id": "TD-03",
+  "status": "draft",
+  "whoFor": "Organisations doing the same tasks by hand again and again.",
+  "benefits": [
+    {
+      "title": "Less repeat work",
+      "text": "Routine steps handled by software."
+    },
+    {
+      "title": "Fewer errors",
+      "text": "Information entered once and passed along."
+    },
+    {
+      "title": "Clear task tracking",
+      "text": "Projects and tasks visible to the team."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of repeat tasks and workflows",
+    "Automation and task-management set-up for the agreed workflows",
+    "Testing with your team",
+    "Documentation and training"
+  ],
+  "whatYouProvide": [
+    "Access to the tools and systems involved",
+    "A person who knows each workflow"
+  ],
+  "doesNotInclude": [
+    "Custom software development beyond the agreed scope",
+    "Software subscription costs"
+  ]
+}

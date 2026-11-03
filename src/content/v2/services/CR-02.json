@@ -1,0 +1,34 @@
+{
+  "id": "CR-02",
+  "status": "draft",
+  "whoFor": "Companies that need to identify, record and file their persons with significant control (PSC) with the CAC.",
+  "benefits": [
+    {
+      "title": "Clarity on who counts",
+      "text": "Each person's interest checked against the reporting rules."
+    },
+    {
+      "title": "A register that matches",
+      "text": "Your PSC register consistent with your filings."
+    },
+    {
+      "title": "Updates on time",
+      "text": "Changes recorded and filed when ownership or control changes."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of ownership and control to identify each PSC",
+    "A PSC register",
+    "Preparation and submission of the PSC filing with the CAC",
+    "A note of when the next update is due"
+  ],
+  "whatYouProvide": [
+    "Your ownership records, including any nominee or trust arrangements",
+    "Identification for each person with significant control",
+    "Your written authority for SCS to file"
+  ],
+  "doesNotInclude": [
+    "A promise of when the CAC will process the filing",
+    "Investigations into ownership you do not disclose"
+  ]
+}

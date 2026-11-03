@@ -1,0 +1,34 @@
+{
+  "id": "FA-07",
+  "status": "draft",
+  "whoFor": "Businesses responding to public or private tenders, requests for proposals and bids.",
+  "benefits": [
+    {
+      "title": "Compliant every time",
+      "text": "Mandatory documents and formats checked against the tender."
+    },
+    {
+      "title": "Clear answers",
+      "text": "Responses that address what the buyer is scoring."
+    },
+    {
+      "title": "Evidence ready",
+      "text": "Past work, registrations and certificates organised for reuse."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of the tender requirements",
+    "A compliance checklist",
+    "Drafted responses and an assembled bid pack",
+    "A reusable library of standard documents"
+  ],
+  "whatYouProvide": [
+    "The tender documents and clarifications",
+    "Your company records, past work and pricing decisions",
+    "Sign-off on the final submission"
+  ],
+  "doesNotInclude": [
+    "Setting your bid price",
+    "A promise of winning the contract"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "HO-01",
+  "status": "draft",
+  "whoFor": "Organisations where work depends on a few people remembering how things are done.",
+  "benefits": [
+    {
+      "title": "Consistent work",
+      "text": "Tasks done the same way, whoever does them."
+    },
+    {
+      "title": "Faster onboarding",
+      "text": "New staff learn from written procedures."
+    },
+    {
+      "title": "Clear ownership",
+      "text": "Who does what, and what happens when something goes wrong."
+    }
+  ],
+  "whatYouReceive": [
+    "Interviews with the people who do the work",
+    "Written procedures in an agreed format",
+    "Process maps for key workflows",
+    "A handover session for your team"
+  ],
+  "whatYouProvide": [
+    "Access to the staff who do the work",
+    "Existing forms, templates and procedures",
+    "Review and sign-off of drafts"
+  ],
+  "doesNotInclude": [
+    "Running the procedures for you, unless added under Outsourced business administration",
+    "Software changes"
+  ]
+}

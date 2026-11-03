@@ -1,0 +1,33 @@
+{
+  "id": "FA-05",
+  "status": "draft",
+  "whoFor": "Companies planning to raise investment that want their records, structure and story ready first.",
+  "benefits": [
+    {
+      "title": "Fewer surprises in review",
+      "text": "Gaps found and fixed before investors look."
+    },
+    {
+      "title": "A tidy data room",
+      "text": "Corporate, financial and operating records organised."
+    },
+    {
+      "title": "A consistent story",
+      "text": "Plan, figures and records that agree with each other."
+    }
+  ],
+  "whatYouReceive": [
+    "An investment-readiness review",
+    "A gap list with priorities",
+    "An organised data room index",
+    "A summary of the readiness position"
+  ],
+  "whatYouProvide": [
+    "Corporate, financial and operating records",
+    "Your fundraising goals and intended investors"
+  ],
+  "doesNotInclude": [
+    "A promise of investment",
+    "Valuations or an investment recommendation"
+  ]
+}

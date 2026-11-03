@@ -1,0 +1,51 @@
+{
+  "id": "SA-11",
+  "status": "draft",
+  "whoFor": "Businesses that want their commercial structures and documentation organised in one place.",
+  "benefits": [
+    {
+      "title": "Order in your documentation",
+      "text": "Commercial documents kept consistent and easy to find."
+    },
+    {
+      "title": "One coordinator",
+      "text": "A single point of contact for the work involved."
+    },
+    {
+      "title": "Scoped in writing",
+      "text": "What is and is not included is agreed before work starts."
+    }
+  ],
+  "whatYouReceive": [],
+  "whatYouProvide": [
+    "Your existing documents and records",
+    "A named contact for questions and approvals"
+  ],
+  "doesNotInclude": [
+    "Anything outside the scope agreed in writing"
+  ],
+  "v1Retained": {
+    "framing": "We help businesses put in place the commercial structures, documentation and processes required to operate effectively.",
+    "intro": "Our services include:",
+    "lines": [
+      "Commercial contracts and agreements",
+      "Contract drafting and review",
+      "Contract management",
+      "Contract lifecycle management",
+      "Contract negotiation support",
+      "Vendor and supplier documentation",
+      "Customer agreements",
+      "Employment documentation",
+      "Partnership and collaboration arrangements",
+      "Corporate policies",
+      "Terms and conditions",
+      "Non-disclosure and confidentiality arrangements",
+      "Investment documentation",
+      "Corporate governance documentation",
+      "Business relationship structuring",
+      "Commercial risk assessment",
+      "Corporate documentation management"
+    ],
+    "closing": "We focus on practical business outcomes, ensuring that corporate arrangements are structured to support commercial objectives while appropriately managing risk."
+  }
+}

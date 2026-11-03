@@ -1,0 +1,34 @@
+{
+  "id": "MC-03",
+  "status": "draft",
+  "whoFor": "Organisations that need company profiles, proposals, reports and stakeholder communication written well.",
+  "benefits": [
+    {
+      "title": "Clear, credible documents",
+      "text": "Your organisation described accurately and well."
+    },
+    {
+      "title": "Consistent messages",
+      "text": "The same story across every document."
+    },
+    {
+      "title": "Ready to send",
+      "text": "Designed, proofread files in the right format."
+    }
+  ],
+  "whatYouReceive": [
+    "A company profile or the agreed documents",
+    "Drafting and editing",
+    "Layout to your brand guidelines",
+    "Final files ready to share"
+  ],
+  "whatYouProvide": [
+    "Information about your organisation, work and people",
+    "Brand assets",
+    "Review and approval of drafts"
+  ],
+  "doesNotInclude": [
+    "Printing costs",
+    "Claims that cannot be supported by your records"
+  ]
+}

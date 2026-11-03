@@ -1,0 +1,34 @@
+{
+  "id": "FA-02",
+  "status": "draft",
+  "whoFor": "Employers who want payroll run correctly each period, with the deductions and records that go with it.",
+  "benefits": [
+    {
+      "title": "Staff paid correctly",
+      "text": "Pay, allowances and deductions calculated the same way every period."
+    },
+    {
+      "title": "Deductions recorded",
+      "text": "PAYE, pension and other deductions tracked for remittance."
+    },
+    {
+      "title": "Clear records",
+      "text": "Payslips and payroll reports kept in one place."
+    }
+  ],
+  "whatYouReceive": [
+    "Payroll set-up from your staff and pay data",
+    "Periodic payroll calculation and payslips",
+    "Deduction schedules for remittance",
+    "Payroll reports and records"
+  ],
+  "whatYouProvide": [
+    "Staff details, pay rates and changes each period",
+    "Approval of each payroll before it is paid",
+    "Access to make or schedule payments, if you choose"
+  ],
+  "doesNotInclude": [
+    "Funding the payroll",
+    "Grievance and disciplinary handling"
+  ]
+}

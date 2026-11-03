@@ -1,0 +1,33 @@
+{
+  "id": "TD-02",
+  "status": "draft",
+  "whoFor": "Businesses that want customer and sales information tracked in one system.",
+  "benefits": [
+    {
+      "title": "Every lead tracked",
+      "text": "Enquiries and follow-ups recorded in one place."
+    },
+    {
+      "title": "A clear pipeline",
+      "text": "Stages that match how you sell."
+    },
+    {
+      "title": "Better reporting",
+      "text": "Simple reports on sales activity."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of how you sell and track customers",
+    "CRM configuration for your process",
+    "Data import from your existing records",
+    "Staff training"
+  ],
+  "whatYouProvide": [
+    "Your sales process and current customer records",
+    "A CRM subscription, or a decision on which to use"
+  ],
+  "doesNotInclude": [
+    "CRM subscription costs",
+    "Sales activity itself"
+  ]
+}

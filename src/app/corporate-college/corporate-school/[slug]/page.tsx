@@ -8,7 +8,7 @@ import JsonLd from "@/components/ui/JsonLd";
 import PageHero from "@/components/ui/PageHero";
 import CTAButton from "@/components/ui/CTAButton";
 import NewsletterSignup from "@/components/sections/NewsletterSignup";
-import { getServiceBySlug } from "@/content/services/data";
+import { v2LinkForV1 } from "@/content/v2/catalogue";
 import { SITE } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -36,7 +36,7 @@ export default async function CorporateSchoolPostPage({ params }: { params: Prom
   const date = new Date(post.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
   const { html, toc } = await renderArticle(post.content); // sanitised (H-01)
   const related = getRelatedPosts(post);
-  const services = (post.services ?? []).map(getServiceBySlug).filter((s): s is NonNullable<typeof s> => !!s);
+  const services = [...new Map((post.services ?? []).map(v2LinkForV1).filter((s) => !!s).map((s) => [s.href, s])).values()];
   const url = `${SITE.url}/corporate-college/corporate-school/${post.slug}`;
 
   return (
@@ -76,10 +76,10 @@ export default async function CorporateSchoolPostPage({ params }: { params: Prom
               {services.length > 0 && (
                 <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                   {services.map((s) => (
-                    <li key={s.slug}>
-                      <Link href={`/services/${s.slug}`} className="block h-full rounded-md border border-white/15 bg-white/5 p-4 hover:border-accent">
-                        <span className="block font-semibold text-white">{s.title} →</span>
-                        <span className="mt-1 block text-sm text-white/85">{s.framingSentence}</span>
+                    <li key={s.href}>
+                      <Link href={s.href} className="block h-full rounded-md border border-white/15 bg-white/5 p-4 hover:border-accent">
+                        <span className="block font-semibold text-white">{s.label} →</span>
+                        <span className="mt-1 block text-sm text-white/85">{s.summary}</span>
                       </Link>
                     </li>
                   ))}

@@ -1,0 +1,34 @@
+{
+  "id": "MC-02",
+  "status": "draft",
+  "whoFor": "Organisations that want their social media managed and online advertising run.",
+  "benefits": [
+    {
+      "title": "A steady presence",
+      "text": "Planned, regular posts on the right channels."
+    },
+    {
+      "title": "Advertising with a purpose",
+      "text": "Campaigns set up around clear goals."
+    },
+    {
+      "title": "Know what works",
+      "text": "Regular reports on results."
+    }
+  ],
+  "whatYouReceive": [
+    "A channel and content plan",
+    "Content creation and scheduling within the agreed scope",
+    "Advertising campaign set-up and management",
+    "Regular performance reports"
+  ],
+  "whatYouProvide": [
+    "Brand assets and approvals",
+    "Access to your social media and advertising accounts",
+    "An advertising budget, paid directly to the platforms"
+  ],
+  "doesNotInclude": [
+    "Advertising spend, which you pay to the platforms",
+    "A promise of followers, leads or sales"
+  ]
+}

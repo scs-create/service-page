@@ -1,0 +1,33 @@
+{
+  "id": "HO-14",
+  "status": "draft",
+  "whoFor": "Organisations planning or reorganising an office, store or work area, with registered design professionals.",
+  "benefits": [
+    {
+      "title": "Space that works",
+      "text": "Layouts planned around how people move and work."
+    },
+    {
+      "title": "Qualified input",
+      "text": "Plans prepared with registered design professionals."
+    },
+    {
+      "title": "Fewer costly changes",
+      "text": "Options reviewed before anything is moved or built."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of how the space is used",
+    "Layout options",
+    "A recommended layout plan",
+    "A list of works to scope with contractors"
+  ],
+  "whatYouProvide": [
+    "Floor plans or measurements",
+    "Information on staff, equipment and activities"
+  ],
+  "doesNotInclude": [
+    "Construction, fit-out or engineering works",
+    "Building approvals"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "TD-05",
+  "status": "draft",
+  "whoFor": "Organisations adopting AI and digital tools that want clear rules and plans first.",
+  "benefits": [
+    {
+      "title": "Use AI with care",
+      "text": "Policies that set out what is allowed and who decides."
+    },
+    {
+      "title": "Know the risks",
+      "text": "Assessments of data, accuracy and supplier risks."
+    },
+    {
+      "title": "A plan for change",
+      "text": "Digital changes sequenced and owned."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of current and planned AI and digital tools",
+    "An AI use policy",
+    "Risk assessments for the tools in scope",
+    "A digital transformation plan"
+  ],
+  "whatYouProvide": [
+    "A list of tools in use or planned",
+    "Information on the data involved",
+    "A named owner for technology decisions"
+  ],
+  "doesNotInclude": [
+    "Building AI systems",
+    "Technical security testing"
+  ]
+}

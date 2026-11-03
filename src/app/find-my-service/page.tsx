@@ -4,18 +4,18 @@ import PageHero from "@/components/ui/PageHero";
 import { SITE } from "@/lib/site";
 import OutcomeQuiz from "@/components/sections/OutcomeQuiz";
 import { finderQuiz, SUPPORT_PACKAGES } from "@/content/loaders";
-import { services } from "@/content/services/data";
-import { CLUSTERS } from "@/lib/types";
+import { CLUSTERS, servicesInCluster } from "@/content/v2/catalogue";
 
 export const metadata: Metadata = {
   title: "Find My Service",
-  description: "Three quick questions to find the SCS areas of support and managed package that fit your business.",
+  description: "Three quick questions to find the SCS services, areas of support and managed package that fit your organisation.",
 };
 
 export default function FinderPage() {
-  // Outcomes: the six service areas + packages A–F (built from live CMS data) + the quiz's own (Corporate College).
+  // Outcomes: the 7 v2 service areas (most-requested services named first) + packages A–F + the quiz's own
+  // (Corporate College, SCS Partnership).
   const outcomes = {
-    ...Object.fromEntries(CLUSTERS.map((c) => [c.slug, { title: c.name, description: `Includes ${services.filter((s) => s.cluster === c.slug).map((s) => s.title).join(", ")}.`, href: `/services#${c.slug}`, ctaLabel: `Explore ${c.name}` }])),
+    ...Object.fromEntries(CLUSTERS.map((c) => [c.slug, { title: c.name, description: `${c.summary} Includes ${servicesInCluster(c.slug).slice(0, 4).map((s) => s.name).join(", ")} and more.`, href: c.path, ctaLabel: `Explore ${c.name}` }])),
     ...Object.fromEntries(SUPPORT_PACKAGES.map((p) => [`pkg-${p.id}`, { title: `Package ${p.id}: ${p.name}`, description: `${p.audience}. ${p.includes}.`, href: "/services#packages", ctaLabel: "See the packages" }])),
     ...finderQuiz.outcomes,
   };

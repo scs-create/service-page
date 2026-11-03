@@ -1,0 +1,33 @@
+{
+  "id": "TD-04",
+  "status": "draft",
+  "whoFor": "Managers who want reports and dashboards built from their own data.",
+  "benefits": [
+    {
+      "title": "See performance at a glance",
+      "text": "Key measures on one screen."
+    },
+    {
+      "title": "One version of the numbers",
+      "text": "Reports built from agreed data sources."
+    },
+    {
+      "title": "Less manual reporting",
+      "text": "Dashboards that update from your systems."
+    }
+  ],
+  "whatYouReceive": [
+    "A reporting needs review",
+    "Agreed measures and definitions",
+    "Dashboards built from your data sources",
+    "Training and documentation"
+  ],
+  "whatYouProvide": [
+    "Access to the data sources involved",
+    "The decisions the dashboards should support"
+  ],
+  "doesNotInclude": [
+    "Fixing data quality in source systems, unless scoped",
+    "Software subscription costs"
+  ]
+}

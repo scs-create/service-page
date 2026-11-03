@@ -1,0 +1,33 @@
+{
+  "id": "SA-07",
+  "status": "draft",
+  "whoFor": "Organisations asked by investors, lenders, partners or buyers about environmental, social and governance (ESG) practice.",
+  "benefits": [
+    {
+      "title": "Know where you stand",
+      "text": "A clear picture of current practice against common ESG expectations."
+    },
+    {
+      "title": "Answer questionnaires well",
+      "text": "Consistent, evidenced answers for investors and buyers."
+    },
+    {
+      "title": "Improve step by step",
+      "text": "A realistic plan, sized for your organisation."
+    }
+  ],
+  "whatYouReceive": [
+    "An ESG readiness review",
+    "A gap list against the framework or questionnaire you face",
+    "An improvement plan with priorities",
+    "Draft policies where you need them"
+  ],
+  "whatYouProvide": [
+    "The questionnaires or frameworks you have been asked to meet",
+    "Information on your operations, people and suppliers"
+  ],
+  "doesNotInclude": [
+    "Third-party ESG certification or ratings",
+    "Environmental testing or engineering surveys"
+  ]
+}

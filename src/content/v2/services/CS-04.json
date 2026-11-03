@@ -1,0 +1,34 @@
+{
+  "id": "CS-04",
+  "status": "draft",
+  "whoFor": "Companies that want their board and shareholder records kept properly, without an in-house company secretary.",
+  "benefits": [
+    {
+      "title": "Records that stand up",
+      "text": "Minutes, resolutions and registers that match what was decided and filed."
+    },
+    {
+      "title": "Meetings that run well",
+      "text": "Notices, agendas and papers prepared on time."
+    },
+    {
+      "title": "Less to remember",
+      "text": "Reminders for the meetings and filings that come round each year."
+    }
+  ],
+  "whatYouReceive": [
+    "Board and shareholder meeting notices, agendas and minutes",
+    "Written resolutions",
+    "Up-to-date statutory registers",
+    "A corporate records file and a calendar of recurring obligations"
+  ],
+  "whatYouProvide": [
+    "Details of meetings and decisions",
+    "Your current registers and constitution",
+    "A named contact for approvals"
+  ],
+  "doesNotInclude": [
+    "Decisions for the board or shareholders",
+    "Statutory filings, which sit under Annual returns and statutory filings"
+  ]
+}

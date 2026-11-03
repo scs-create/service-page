@@ -1,0 +1,26 @@
+{
+  "note": "v1 service category slug -> v2 page. Same table as docs/v2/04-redirects.csv (a test keeps them equal).",
+  "links": {
+    "ai-governance-and-digital-transformation": "/services/technology-and-digital/ai-governance-and-digital-transformation",
+    "business-formation-and-corporate-structuring": "/services/company-formation-and-secretarial",
+    "business-operations-and-outsourced-support": "/services/hr-and-operations/outsourced-business-administration",
+    "contract-lifecycle-management": "/services/hr-and-operations/contract-lifecycle-management",
+    "corporate-and-commercial-advisory": "/services/strategy-and-advisory/corporate-and-commercial-advisory",
+    "corporate-communications-and-business-documentation": "/services/marketing-and-communications/corporate-communications-and-company-profiles",
+    "corporate-partnership-and-regulatory-business-support": "/services/compliance-and-regulatory/corporate-partnership-and-regulatory-business-support",
+    "customer-experience-and-customer-care": "/services/hr-and-operations/customer-service-outsourcing",
+    "data-analytics-and-business-intelligence": "/services/technology-and-digital/dashboards-and-business-intelligence",
+    "data-protection-privacy-and-information-governance": "/services/compliance-and-regulatory/data-protection-compliance",
+    "digital-marketing-and-brand-growth": "/services/marketing-and-communications",
+    "human-resources-and-staff-management": "/services/hr-and-operations/hr-administration-and-staff-handbooks",
+    "intellectual-property-and-brand-asset-management": "/services/company-formation-and-secretarial/intellectual-property-and-brand-asset-management",
+    "procurement-supply-chain-and-vendor-management": "/services/hr-and-operations/procurement-and-vendor-management",
+    "project-management-and-implementation": "/services/hr-and-operations/project-management",
+    "recruitment-and-talent-solutions": "/services/hr-and-operations/recruitment",
+    "regulatory-compliance-and-licensing": "/services/compliance-and-regulatory",
+    "research-market-intelligence-and-policy": "/services/strategy-and-advisory/market-research-and-competitor-analysis",
+    "strategy-management-and-business-consulting": "/services/strategy-and-advisory/business-strategy-consulting",
+    "tax-accounting-and-financial-business-support": "/services/finance-and-accounting",
+    "transaction-investment-and-growth-advisory": "/services/finance-and-accounting/transaction-and-investment-advisory"
+  }
+}

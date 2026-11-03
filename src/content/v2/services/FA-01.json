@@ -1,0 +1,34 @@
+{
+  "id": "FA-01",
+  "status": "draft",
+  "whoFor": "Small and growing organisations that need accurate books without a full in-house finance team.",
+  "benefits": [
+    {
+      "title": "Know your numbers",
+      "text": "Income, costs and balances up to date and reconciled."
+    },
+    {
+      "title": "Ready for tax and lenders",
+      "text": "Records in the form tax filings and banks expect."
+    },
+    {
+      "title": "Qualified hands",
+      "text": "Books kept by qualified accountants, reviewed before delivery."
+    }
+  ],
+  "whatYouReceive": [
+    "A bookkeeping set-up or clean-up, as agreed",
+    "Regular recording and bank reconciliation",
+    "Periodic summary reports",
+    "Organised records ready for your accountant or auditor"
+  ],
+  "whatYouProvide": [
+    "Bank statements, invoices and receipts",
+    "Access to your accounting software, if you use one",
+    "Answers to queries on unclear transactions"
+  ],
+  "doesNotInclude": [
+    "Audited accounts or an audit opinion",
+    "Tax returns, unless added under Tax registration and compliance"
+  ]
+}

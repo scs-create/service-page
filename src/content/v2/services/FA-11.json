@@ -1,0 +1,33 @@
+{
+  "id": "FA-11",
+  "status": "draft",
+  "whoFor": "Businesses that want their tax position reviewed and planned, with licensed tax practitioners.",
+  "benefits": [
+    {
+      "title": "Know your position",
+      "text": "Filings, payments and exposures reviewed."
+    },
+    {
+      "title": "Plan ahead",
+      "text": "Options for the year ahead, within the rules."
+    },
+    {
+      "title": "Fewer surprises",
+      "text": "Issues found before an agency finds them."
+    }
+  ],
+  "whatYouReceive": [
+    "A tax health check of recent filings and payments",
+    "A summary of findings and risks",
+    "Tax planning options within the rules",
+    "An action list"
+  ],
+  "whatYouProvide": [
+    "Recent tax returns, assessments and correspondence",
+    "Financial statements and records"
+  ],
+  "doesNotInclude": [
+    "Arrangements that do not comply with the tax rules",
+    "Representing you before the tax authority"
+  ]
+}

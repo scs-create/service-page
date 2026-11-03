@@ -1,0 +1,33 @@
+{
+  "id": "MC-05",
+  "status": "draft",
+  "whoFor": "Businesses that want customers to come back and buy again.",
+  "benefits": [
+    {
+      "title": "Reward repeat customers",
+      "text": "A programme designed around what they value."
+    },
+    {
+      "title": "Know your customers",
+      "text": "Better records of who buys and how often."
+    },
+    {
+      "title": "Measure retention",
+      "text": "Simple measures to see if it is working."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of current customer retention",
+    "A loyalty programme design",
+    "Launch materials and staff guidance",
+    "A measurement plan"
+  ],
+  "whatYouProvide": [
+    "Customer and sales data",
+    "Decisions on rewards and budget"
+  ],
+  "doesNotInclude": [
+    "The cost of rewards",
+    "Software subscriptions"
+  ]
+}

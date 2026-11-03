@@ -1,0 +1,34 @@
+{
+  "id": "HO-02",
+  "status": "draft",
+  "whoFor": "Organisations that want back-office, records and administrative work run for them.",
+  "benefits": [
+    {
+      "title": "More time for the main work",
+      "text": "Routine administration handled by a dedicated team."
+    },
+    {
+      "title": "Records in order",
+      "text": "Files, registers and trackers kept up to date."
+    },
+    {
+      "title": "One coordinator",
+      "text": "A named person who manages the work and reports to you."
+    }
+  ],
+  "whatYouReceive": [
+    "An agreed list of administrative tasks",
+    "Regular task handling and record keeping",
+    "A periodic report on work done",
+    "A clear escalation route"
+  ],
+  "whatYouProvide": [
+    "Access to the systems and records involved",
+    "Clear instructions and approvals",
+    "A named contact on your side"
+  ],
+  "doesNotInclude": [
+    "Tasks outside the agreed list",
+    "Regulated activities that need a licence SCS does not hold"
+  ]
+}

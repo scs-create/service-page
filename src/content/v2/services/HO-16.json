@@ -1,0 +1,33 @@
+{
+  "id": "HO-16",
+  "status": "draft",
+  "whoFor": "Organisations with teams working remotely or in hybrid patterns.",
+  "benefits": [
+    {
+      "title": "Clear ways of working",
+      "text": "Agreed rules for availability, meetings and handovers."
+    },
+    {
+      "title": "Visible work",
+      "text": "Simple tracking so progress is seen, not assumed."
+    },
+    {
+      "title": "Connected teams",
+      "text": "Routines that keep people informed."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of current remote and hybrid practice",
+    "A remote working policy",
+    "Team routines and tool recommendations",
+    "Manager guidance"
+  ],
+  "whatYouProvide": [
+    "Information on your teams, locations and tools",
+    "Time with managers for decisions"
+  ],
+  "doesNotInclude": [
+    "Buying or installing equipment",
+    "IT security audits"
+  ]
+}

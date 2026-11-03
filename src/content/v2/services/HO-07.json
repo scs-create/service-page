@@ -1,0 +1,33 @@
+{
+  "id": "HO-07",
+  "status": "draft",
+  "whoFor": "Organisations that buy from many suppliers and want onboarding, checks and performance tracked.",
+  "benefits": [
+    {
+      "title": "Know who you buy from",
+      "text": "Supplier details and checks in one register."
+    },
+    {
+      "title": "Fewer supplier surprises",
+      "text": "Due diligence before onboarding."
+    },
+    {
+      "title": "Track performance",
+      "text": "Simple measures reviewed regularly."
+    }
+  ],
+  "whatYouReceive": [
+    "A supplier onboarding process and forms",
+    "Supplier due diligence checks within the agreed scope",
+    "A supplier register",
+    "A performance review format"
+  ],
+  "whatYouProvide": [
+    "Your current supplier list and purchasing process",
+    "Decisions on approval criteria"
+  ],
+  "doesNotInclude": [
+    "Purchasing decisions, which stay with you",
+    "Supplier agreements beyond the agreed records"
+  ]
+}

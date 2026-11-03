@@ -1,0 +1,34 @@
+{
+  "id": "HO-17",
+  "status": "draft",
+  "whoFor": "Organisations that want training for staff on topics linked to SCS services, arranged through Corporate College.",
+  "benefits": [
+    {
+      "title": "Training that fits",
+      "text": "Topics shaped around your team's work."
+    },
+    {
+      "title": "Practical sessions",
+      "text": "Examples and exercises from real business situations."
+    },
+    {
+      "title": "Clear follow-up",
+      "text": "Materials staff can use after the session."
+    }
+  ],
+  "whatYouReceive": [
+    "A training needs discussion",
+    "A session plan",
+    "Delivery in person in Abuja or online",
+    "Training materials and a short feedback summary"
+  ],
+  "whatYouProvide": [
+    "The topics and the people to be trained",
+    "A venue or online access",
+    "Feedback after the session"
+  ],
+  "doesNotInclude": [
+    "Accredited qualifications, unless stated in the proposal",
+    "Topics outside the agreed plan"
+  ]
+}

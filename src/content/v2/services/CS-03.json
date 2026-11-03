@@ -1,0 +1,35 @@
+{
+  "id": "CS-03",
+  "status": "draft",
+  "whoFor": "Foreign companies, investors and diaspora founders setting up a company in Nigeria, managed from wherever they are.",
+  "benefits": [
+    {
+      "title": "A clear sequence",
+      "text": "Each registration and permit in the order it is needed."
+    },
+    {
+      "title": "Remote by design",
+      "text": "Documents, signing and updates handled without you travelling."
+    },
+    {
+      "title": "One coordinator in Nigeria",
+      "text": "A named person who tracks every step on West Africa Time (UTC+1)."
+    }
+  ],
+  "whatYouReceive": [
+    "A set-up plan listing each registration, permit and document",
+    "Company registration with the CAC",
+    "Coordination of the other registrations your plan needs, such as tax and investment registrations",
+    "A records pack and a calendar of the filings that follow"
+  ],
+  "whatYouProvide": [
+    "Details of the foreign shareholders and directors, with identification",
+    "Your intended activities and share structure",
+    "Documents notarised or certified where the rules require it",
+    "Your written authority for SCS to act on your behalf"
+  ],
+  "doesNotInclude": [
+    "A promise of when any agency will process an application, or of its decision",
+    "Immigration status for individuals, which is scoped separately"
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "title": "Find my service",
-  "intro": "Three quick questions. We will point you to the areas of support and the package that fit best.",
+  "intro": "Three quick questions. We will point you to the areas of support, the services and the package that fit best.",
   "topN": 3,
   "questions": [
     {
@@ -10,14 +10,15 @@
         {
           "label": "Still an idea",
           "weights": {
-            "start-and-structure": 3,
-            "pkg-A": 2
+            "company-formation-and-secretarial": 3,
+            "pkg-A": 2,
+            "strategy-and-advisory": 2
           }
         },
         {
           "label": "Just started (first year)",
           "weights": {
-            "start-and-structure": 2,
+            "company-formation-and-secretarial": 2,
             "compliance-and-regulatory": 1,
             "pkg-A": 2
           }
@@ -26,18 +27,19 @@
           "label": "Operating and settled",
           "weights": {
             "compliance-and-regulatory": 1,
-            "finance-and-tax": 1,
-            "people-and-operations": 1,
+            "finance-and-accounting": 1,
+            "hr-and-operations": 1,
             "pkg-B": 1
           }
         },
         {
           "label": "Growing and scaling",
           "weights": {
-            "growth-and-market-presence": 2,
-            "people-and-operations": 1,
-            "technology-and-data": 1,
-            "pkg-E": 1
+            "marketing-and-communications": 2,
+            "hr-and-operations": 1,
+            "technology-and-digital": 1,
+            "pkg-E": 1,
+            "strategy-and-advisory": 1
           }
         }
       ]
@@ -49,7 +51,7 @@
         {
           "label": "Registration and paperwork",
           "weights": {
-            "start-and-structure": 3,
+            "company-formation-and-secretarial": 3,
             "pkg-A": 1
           }
         },
@@ -63,13 +65,13 @@
         {
           "label": "Tax, accounts and money records",
           "weights": {
-            "finance-and-tax": 3
+            "finance-and-accounting": 3
           }
         },
         {
           "label": "Staff, hiring and day-to-day operations",
           "weights": {
-            "people-and-operations": 3,
+            "hr-and-operations": 3,
             "pkg-C": 2,
             "pkg-E": 1
           }
@@ -77,15 +79,29 @@
         {
           "label": "Finding and keeping customers",
           "weights": {
-            "growth-and-market-presence": 3,
+            "marketing-and-communications": 3,
             "pkg-D": 2
+          }
+        },
+        {
+          "label": "Planning, strategy or raising funds",
+          "weights": {
+            "strategy-and-advisory": 3,
+            "finance-and-accounting": 1
           }
         },
         {
           "label": "Data, systems and technology",
           "weights": {
-            "technology-and-data": 3,
+            "technology-and-digital": 3,
             "pkg-E": 2
+          }
+        },
+        {
+          "label": "Setting up in Nigeria from abroad",
+          "weights": {
+            "company-formation-and-secretarial": 3,
+            "compliance-and-regulatory": 1
           }
         }
       ]
@@ -102,7 +118,8 @@
           "label": "Ongoing support alongside my team",
           "weights": {
             "pkg-F": 2,
-            "pkg-B": 1
+            "pkg-B": 1,
+            "partnership": 3
           }
         },
         {
@@ -126,6 +143,12 @@
       "description": "Request learning and training on topics related to our services.",
       "href": "/corporate-college",
       "ctaLabel": "Explore Corporate College"
+    },
+    "partnership": {
+      "title": "SCS Partnership",
+      "description": "A retainership plan agreed with your organisation: one coordinator for recurring corporate, filing, documentation and operational support.",
+      "href": "/partnership",
+      "ctaLabel": "About SCS Partnership"
     }
   }
 }

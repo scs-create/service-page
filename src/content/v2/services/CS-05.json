@@ -1,0 +1,34 @@
+{
+  "id": "CS-05",
+  "status": "draft",
+  "whoFor": "Companies bringing in shareholders, creating subsidiaries or organising a group of companies.",
+  "benefits": [
+    {
+      "title": "A structure you can explain",
+      "text": "Ownership and control set out in a clear chart."
+    },
+    {
+      "title": "Documents that match",
+      "text": "Share records, registers and filings consistent with each other."
+    },
+    {
+      "title": "Ready for investors",
+      "text": "Ownership records that hold up to review."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of the current ownership and goals",
+    "Structure options with their trade-offs",
+    "Preparation of the share records, registers and filings",
+    "An ownership chart and records pack"
+  ],
+  "whatYouProvide": [
+    "Current ownership records and constitution",
+    "The changes you intend and the reasons for them",
+    "Decisions from shareholders and directors"
+  ],
+  "doesNotInclude": [
+    "Tax planning on the structure, which sits under Tax planning and tax health checks",
+    "Valuations"
+  ]
+}

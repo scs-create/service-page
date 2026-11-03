@@ -1,0 +1,33 @@
+{
+  "id": "HO-13",
+  "status": "draft",
+  "whoFor": "Organisations that want work delivered to a consistent standard.",
+  "benefits": [
+    {
+      "title": "Consistent results",
+      "text": "Clear checks at the points that matter."
+    },
+    {
+      "title": "Problems caught early",
+      "text": "Issues found before they reach customers."
+    },
+    {
+      "title": "Improvement over time",
+      "text": "Simple records that show what to fix."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of current quality practice",
+    "Quality checklists and standards",
+    "A defect and corrective action log",
+    "Staff guidance"
+  ],
+  "whatYouProvide": [
+    "Access to the work and the people who do it",
+    "Existing standards and customer requirements"
+  ],
+  "doesNotInclude": [
+    "Third-party certification",
+    "Laboratory or technical testing"
+  ]
+}

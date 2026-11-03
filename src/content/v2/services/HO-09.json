@@ -1,0 +1,47 @@
+{
+  "id": "HO-09",
+  "status": "draft",
+  "whoFor": "Organisations that want their contract records, renewals and approvals organised.",
+  "benefits": [
+    {
+      "title": "Know what you have signed",
+      "text": "Every agreement recorded in one register."
+    },
+    {
+      "title": "Renewals on time",
+      "text": "Reminders before key dates."
+    },
+    {
+      "title": "Clear approvals",
+      "text": "A consistent route for sign-off."
+    }
+  ],
+  "whatYouReceive": [],
+  "whatYouProvide": [
+    "Your existing agreements and records",
+    "A named contact for approvals"
+  ],
+  "doesNotInclude": [
+    "Anything outside the scope agreed in writing"
+  ],
+  "v1Retained": {
+    "framing": "We help organisations modernise their internal corporate and contract functions.",
+    "intro": "Our services include:",
+    "lines": [
+      "Contract lifecycle management",
+      "Contract automation",
+      "Contract repositories",
+      "Contract workflow design",
+      "Contract intake systems",
+      "Contract matter management",
+      "Document automation",
+      "Contract technology",
+      "AI-assisted workflows",
+      "Department process improvement",
+      "Corporate records management",
+      "Regulatory workflow management",
+      "Compliance technology"
+    ],
+    "closing": "We help organisations move from fragmented documents and manual processes towards structured, measurable and technology-enabled operations."
+  }
+}

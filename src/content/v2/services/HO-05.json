@@ -1,0 +1,33 @@
+{
+  "id": "HO-05",
+  "status": "draft",
+  "whoFor": "Organisations filling roles that want a structured, fair recruitment process.",
+  "benefits": [
+    {
+      "title": "A clear brief",
+      "text": "The role, requirements and offer agreed before searching."
+    },
+    {
+      "title": "Better shortlists",
+      "text": "Candidates screened against the brief."
+    },
+    {
+      "title": "A fair process",
+      "text": "Consistent questions and records for every candidate."
+    }
+  ],
+  "whatYouReceive": [
+    "A role brief and job advert",
+    "Sourcing and screening of candidates",
+    "A shortlist with screening notes",
+    "Interview scheduling and support"
+  ],
+  "whatYouProvide": [
+    "The role details, salary range and decision-makers",
+    "Time for interviews and timely feedback"
+  ],
+  "doesNotInclude": [
+    "Hiring decisions, which stay with you",
+    "A promise that a candidate will accept or stay"
+  ]
+}

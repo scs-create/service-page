@@ -1,0 +1,34 @@
+{
+  "id": "SA-02",
+  "status": "draft",
+  "whoFor": "Owners and leadership teams deciding where to take the business next, or why results are not where they should be.",
+  "benefits": [
+    {
+      "title": "Decisions based on evidence",
+      "text": "Your options are compared using your own figures and market facts."
+    },
+    {
+      "title": "A plan people can follow",
+      "text": "Goals, owners and measures written down in plain language."
+    },
+    {
+      "title": "A neutral view",
+      "text": "An outside reviewer who has no stake in any one option."
+    }
+  ],
+  "whatYouReceive": [
+    "A diagnosis of where the business stands",
+    "A written strategy or business model review with clear options",
+    "A prioritised action plan with owners and measures",
+    "A presentation of findings to your leadership team"
+  ],
+  "whatYouProvide": [
+    "Your current plans, figures and organisation chart",
+    "Time with the owners and key managers",
+    "Honest answers about what is and is not working"
+  ],
+  "doesNotInclude": [
+    "Running the business or making decisions on your behalf",
+    "A promise of revenue, profit or growth results"
+  ]
+}

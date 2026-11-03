@@ -1,0 +1,34 @@
+{
+  "id": "CR-03",
+  "status": "draft",
+  "whoFor": "Businesses and organisations that need a Tax ID and want their recurring tax administration kept in order with the Nigeria Revenue Service (NRS) and state revenue services.",
+  "benefits": [
+    {
+      "title": "Registered correctly",
+      "text": "The right Tax ID and tax registrations for what you do."
+    },
+    {
+      "title": "Returns on time",
+      "text": "VAT, PAYE and withholding tax prepared to a calendar."
+    },
+    {
+      "title": "Clean records",
+      "text": "A file of what was filed and paid, ready for any review."
+    }
+  ],
+  "whatYouReceive": [
+    "Tax ID registration support",
+    "A tax obligations calendar for your organisation",
+    "Preparation and submission of recurring returns within the agreed scope",
+    "A filing record with acknowledgements"
+  ],
+  "whatYouProvide": [
+    "Your registration documents",
+    "Sales, payroll and payment records for each period",
+    "Access or authority to file on your behalf"
+  ],
+  "doesNotInclude": [
+    "Tax planning, which sits under Tax planning and tax health checks",
+    "A promise of an agency's assessment or decision"
+  ]
+}

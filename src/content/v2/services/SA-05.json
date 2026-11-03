@@ -1,0 +1,34 @@
+{
+  "id": "SA-05",
+  "status": "draft",
+  "whoFor": "Businesses planning to sell in a new region, city or country, including foreign businesses entering Nigeria.",
+  "benefits": [
+    {
+      "title": "Fewer surprises",
+      "text": "Market, regulatory and operating questions answered before you commit."
+    },
+    {
+      "title": "A sequence to follow",
+      "text": "What to do first, second and third, written down."
+    },
+    {
+      "title": "Local coordination",
+      "text": "One team that can also carry out the Nigerian set-up steps when you are ready."
+    }
+  ],
+  "whatYouReceive": [
+    "A market entry assessment for the chosen location",
+    "An entry options comparison",
+    "A step-by-step entry plan with owners",
+    "A list of registrations and permits to plan for"
+  ],
+  "whatYouProvide": [
+    "Your goals for the new market and your current operating model",
+    "Your budget range and risk appetite, for planning purposes only",
+    "Decisions from your side at each stage"
+  ],
+  "doesNotInclude": [
+    "A promise of market success",
+    "Registrations themselves, which are scoped separately"
+  ]
+}

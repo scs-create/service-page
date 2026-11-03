@@ -1,0 +1,34 @@
+{
+  "id": "FA-04",
+  "status": "draft",
+  "whoFor": "Founders and organisations preparing to approach investors, lenders, partners or grant-makers.",
+  "benefits": [
+    {
+      "title": "A clear case",
+      "text": "Your opportunity, plan and figures told in a logical order."
+    },
+    {
+      "title": "Numbers that add up",
+      "text": "A financial model linked to the assumptions in the plan."
+    },
+    {
+      "title": "Ready to present",
+      "text": "A deck and plan in the format your audience expects."
+    }
+  ],
+  "whatYouReceive": [
+    "A business plan",
+    "A financial model with stated assumptions",
+    "A pitch deck",
+    "A review session before you present"
+  ],
+  "whatYouProvide": [
+    "Your idea or business details, history and goals",
+    "Figures and assumptions, with their sources",
+    "Feedback on drafts"
+  ],
+  "doesNotInclude": [
+    "A promise of investment, loans or grants",
+    "Introductions to investors"
+  ]
+}

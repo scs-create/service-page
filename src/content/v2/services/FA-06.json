@@ -1,0 +1,34 @@
+{
+  "id": "FA-06",
+  "status": "draft",
+  "whoFor": "NGOs, social enterprises, schools and businesses applying for grants or donor funding.",
+  "benefits": [
+    {
+      "title": "The right calls",
+      "text": "Applications focused on funders that fit your work."
+    },
+    {
+      "title": "Strong submissions",
+      "text": "Clear needs, activities, budgets and results."
+    },
+    {
+      "title": "Compliant packs",
+      "text": "Every requested document checked before submission."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of the call and your eligibility",
+    "A drafted application and supporting narrative",
+    "A document checklist and assembled pack",
+    "Submission support within the agreed scope"
+  ],
+  "whatYouProvide": [
+    "The call or funder's guidelines",
+    "Information about your organisation, programmes and results",
+    "Registration and financial documents"
+  ],
+  "doesNotInclude": [
+    "A promise of funding",
+    "Grant management after an award, unless scoped separately"
+  ]
+}

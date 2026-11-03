@@ -1,0 +1,36 @@
+{
+  "id": "CS-01",
+  "status": "draft",
+  "whoFor": "Founders and investors, in Nigeria or abroad, registering a private company or a business name with the Corporate Affairs Commission (CAC), Nigeria's company registry.",
+  "benefits": [
+    {
+      "title": "The right structure",
+      "text": "Help choosing between a business name and a limited company before you file."
+    },
+    {
+      "title": "Complete, consistent filings",
+      "text": "Names, objects, directors and shareholders checked before submission."
+    },
+    {
+      "title": "One person to ask",
+      "text": "A named coordinator follows the application until the CAC responds."
+    }
+  ],
+  "whatYouReceive": [
+    "A structure recommendation for your plans",
+    "Name availability search and reservation",
+    "Preparation and submission of the registration on the CAC portal",
+    "Your certificate and registration documents, with a list of the filings that come next"
+  ],
+  "whatYouProvide": [
+    "Proposed names, in order of preference",
+    "Identification and addresses for directors, shareholders or proprietors",
+    "The business activities and share structure you intend",
+    "Your written authority for SCS to file on your behalf"
+  ],
+  "doesNotInclude": [
+    "A promise of when the CAC will process the application, or of its decision",
+    "Tax registration, which sits under Tax registration and compliance",
+    "Licences and permits for regulated activities"
+  ]
+}

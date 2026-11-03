@@ -1,0 +1,33 @@
+{
+  "id": "MC-04",
+  "status": "draft",
+  "whoFor": "Sales teams that want a structured, measurable way of selling.",
+  "benefits": [
+    {
+      "title": "A shared process",
+      "text": "Every salesperson follows the same stages."
+    },
+    {
+      "title": "Better conversations",
+      "text": "Practice in questioning and handling objections."
+    },
+    {
+      "title": "Measurable progress",
+      "text": "Simple measures managers can track."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of your current sales approach",
+    "Training sessions in person in Abuja or online",
+    "A sales process guide and tools",
+    "A follow-up review"
+  ],
+  "whatYouProvide": [
+    "Information on your products, customers and current results",
+    "Time for your team to attend"
+  ],
+  "doesNotInclude": [
+    "Selling on your behalf",
+    "A promise of sales results"
+  ]
+}

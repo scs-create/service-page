@@ -1,0 +1,34 @@
+{
+  "id": "HO-06",
+  "status": "draft",
+  "whoFor": "Organisations that want reviews, goals and incentives that staff see as fair and managers can run.",
+  "benefits": [
+    {
+      "title": "Clear expectations",
+      "text": "Goals and measures agreed for each role."
+    },
+    {
+      "title": "Regular, fair reviews",
+      "text": "A simple cycle managers can keep to."
+    },
+    {
+      "title": "Rewards that make sense",
+      "text": "Incentives linked to what the organisation values."
+    }
+  ],
+  "whatYouReceive": [
+    "A performance management framework",
+    "Goal and review templates",
+    "An incentive scheme outline, if needed",
+    "Manager guidance and a briefing session"
+  ],
+  "whatYouProvide": [
+    "Your organisation's goals and structure",
+    "Current review practices, if any",
+    "Time with leadership for decisions"
+  ],
+  "doesNotInclude": [
+    "Carrying out individual staff reviews",
+    "Pay decisions"
+  ]
+}

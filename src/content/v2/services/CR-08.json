@@ -1,0 +1,34 @@
+{
+  "id": "CR-08",
+  "status": "draft",
+  "whoFor": "Business owners, staff and partners who need documents in order for business travel and international dealings.",
+  "benefits": [
+    {
+      "title": "Know what is required",
+      "text": "A document checklist for your destination and purpose."
+    },
+    {
+      "title": "Complete files",
+      "text": "Letters, certifications and supporting documents checked before submission."
+    },
+    {
+      "title": "Less back and forth",
+      "text": "One coordinator gathers and tracks every document."
+    }
+  ],
+  "whatYouReceive": [
+    "A document checklist for your purpose and destination",
+    "Preparation of business letters and supporting documents",
+    "Coordination of certification where required",
+    "A completed document file"
+  ],
+  "whatYouProvide": [
+    "Travel or dealing details and dates",
+    "Personal and company documents",
+    "Any requirements the embassy or counterparty has given you"
+  ],
+  "doesNotInclude": [
+    "A promise of a visa or of any authority's decision",
+    "Representation at embassies or immigration interviews"
+  ]
+}

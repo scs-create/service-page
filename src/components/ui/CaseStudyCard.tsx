@@ -2,6 +2,9 @@ import { registrationLabel } from "@/lib/types";
 import Link from "next/link";
 import { PortfolioEntry } from "@/lib/types";
 import { SERVICE_LINE_TO_SLUG } from "@/content/portfolio/serviceLines";
+import v1Links from "@/content/v2/v1-links.json";
+
+const V2: Record<string, string> = v1Links.links;
 
 function Check() {
   return (
@@ -67,12 +70,12 @@ export default function CaseStudyCard({
       <h4 className="mt-6 text-sm font-semibold uppercase tracking-wider text-secondary">Services Provided</h4>
       <ul className="mt-2 flex flex-wrap gap-2">
         {entry.serviceLines.map((line) => {
-          const slug = SERVICE_LINE_TO_SLUG[line];
+          const href = V2[SERVICE_LINE_TO_SLUG[line]];
           const cls = "inline-block rounded-sm bg-primary/10 px-3 py-1 text-sm text-primary";
           return (
             <li key={line}>
-              {slug ? (
-                <Link href={`/services/${slug}`} className={`${cls} hover:bg-primary hover:text-white`}>
+              {href ? (
+                <Link href={href} className={`${cls} hover:bg-primary hover:text-white`}>
                   {line}
                 </Link>
               ) : (

@@ -12,9 +12,8 @@ import HeroSkyline from "@/components/sections/HeroSkyline";
 import TowerMark from "@/components/brand/TowerMark";
 import ToolsTeaser from "@/components/sections/ToolsTeaser";
 import Testimonials from "@/components/sections/Testimonials";
-import { CLUSTERS } from "@/lib/types";
 import { SITE } from "@/lib/site";
-import { services } from "@/content/services/data";
+import { CLUSTERS as V2_CLUSTERS, servicesInCluster } from "@/content/v2/catalogue";
 import { featuredPortfolio } from "@/content/portfolio/data";
 import { APPROACH_STAGES } from "@/content/process";
 
@@ -91,27 +90,27 @@ export default function Home() {
           <SectionHeading
             eyebrow="What we do"
             title="Corporate services for every stage of the business"
-            intro="Six areas of support, one accountable partner, from formation to long-term growth."
+            intro="Seven areas of support, one accountable partner, from formation to long-term growth."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {CLUSTERS.map((cluster) => {
-              const items = services.filter((s) => s.cluster === cluster.slug);
+            {V2_CLUSTERS.map((cluster) => {
+              const items = servicesInCluster(cluster.slug);
               const shown = items.slice(0, 4);
               return (
                 <article key={cluster.slug} className="bg-bg border border-border border-t-4 border-t-primary rounded-md p-6">
                   <h3 className="text-lg font-semibold text-text">{cluster.name}</h3>
-                  <p className="text-sm text-muted mt-1">{items.length} service areas</p>
+                  <p className="text-sm text-muted mt-1">{items.length} services</p>
                   <ul className="mt-4 space-y-2">
                     {shown.map((s) => (
-                      <li key={s.slug}>
-                        <Link href={`/services/${s.slug}`} className="text-sm text-primary hover:underline">
-                          {s.title}
+                      <li key={s.id}>
+                        <Link href={s.path} className="text-sm text-primary hover:underline">
+                          {s.name}
                         </Link>
                       </li>
                     ))}
                   </ul>
                   {items.length > shown.length && (
-                    <Link href={`/services#${cluster.slug}`} className="mt-4 inline-block text-sm font-medium text-secondary hover:underline">
+                    <Link href={cluster.path} className="mt-4 inline-block text-sm font-medium text-secondary hover:underline">
                       + {items.length - shown.length} more in {cluster.name} →
                     </Link>
                   )}

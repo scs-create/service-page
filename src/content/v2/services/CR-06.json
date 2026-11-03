@@ -1,0 +1,34 @@
+{
+  "id": "CR-06",
+  "status": "draft",
+  "whoFor": "Organisations that collect or use personal data and need to meet the Nigeria Data Protection Act 2023 (NDPA).",
+  "benefits": [
+    {
+      "title": "Know your position",
+      "text": "A clear picture of how you handle personal data today."
+    },
+    {
+      "title": "Documents that fit",
+      "text": "Policies and notices written for how you actually work."
+    },
+    {
+      "title": "Ready for questions",
+      "text": "Records you can show customers, partners and the regulator."
+    }
+  ],
+  "whatYouReceive": [
+    "A data protection review of how personal data is collected and used",
+    "A record of processing activities",
+    "Privacy notices and internal data protection policies",
+    "A gap list with priorities, and support with any filings the rules require"
+  ],
+  "whatYouProvide": [
+    "Information on the personal data you collect and the systems you use",
+    "A named contact for data protection",
+    "Access to the staff who handle personal data"
+  ],
+  "doesNotInclude": [
+    "Penetration testing or technical security audits",
+    "A promise of the regulator's view or decision"
+  ]
+}

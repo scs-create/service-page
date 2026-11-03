@@ -1,0 +1,33 @@
+{
+  "id": "MC-01",
+  "status": "draft",
+  "whoFor": "Organisations creating or refreshing a logo and visual identity.",
+  "benefits": [
+    {
+      "title": "A clear identity",
+      "text": "A logo and visual style that fit who you are."
+    },
+    {
+      "title": "Used consistently",
+      "text": "Guidelines that keep every document and screen on-brand."
+    },
+    {
+      "title": "Ready files",
+      "text": "Every format your team and suppliers need."
+    }
+  ],
+  "whatYouReceive": [
+    "A brand discovery session",
+    "Logo and visual identity concepts, with refinements",
+    "Brand guidelines",
+    "Final files in standard formats"
+  ],
+  "whatYouProvide": [
+    "Information about your organisation, audience and preferences",
+    "Feedback at each stage"
+  ],
+  "doesNotInclude": [
+    "Trademark filings, which sit under Intellectual property and brand asset management",
+    "Printing costs"
+  ]
+}

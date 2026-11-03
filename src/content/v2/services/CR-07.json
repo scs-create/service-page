@@ -1,0 +1,47 @@
+{
+  "id": "CR-07",
+  "status": "draft",
+  "whoFor": "Organisations and in-house teams that want ongoing regulatory and corporate support from one coordinator.",
+  "benefits": [
+    {
+      "title": "One coordinator",
+      "text": "A single point of contact for recurring regulatory and corporate tasks."
+    },
+    {
+      "title": "Work scoped in writing",
+      "text": "What is and is not included is agreed before work starts."
+    },
+    {
+      "title": "Records kept in order",
+      "text": "Each task documented as it is completed."
+    }
+  ],
+  "whatYouReceive": [],
+  "whatYouProvide": [
+    "Your current registrations and records",
+    "A named contact for questions and approvals"
+  ],
+  "doesNotInclude": [
+    "Anything outside the scope agreed in writing"
+  ],
+  "v1Retained": {
+    "framing": "Where specialist legal or regulated professional services are required, SCS partners with them and provides or coordinates appropriate professional support through its relevant professional capabilities and network.",
+    "intro": "Areas of support include:",
+    "lines": [
+      "Corporate and commercial matters",
+      "Regulatory compliance",
+      "Corporate governance",
+      "Business and transaction documentation",
+      "Employment and workplace documentation",
+      "Intellectual property support",
+      "Data protection and privacy",
+      "Competition and consumer matters",
+      "Regulatory licensing",
+      "Dispute prevention and management support",
+      "Regulatory investigations and response support",
+      "Government and agency engagement support",
+      "Support for in-house corporate and compliance functions"
+    ],
+    "closing": "Our approach is business-oriented: we help clients understand requirements, organise their obligations and translate regulatory requirements into practical business processes."
+  }
+}

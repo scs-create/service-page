@@ -1,0 +1,33 @@
+{
+  "id": "HO-11",
+  "status": "draft",
+  "whoFor": "Employers that want a wellness programme for staff, delivered with licensed professionals.",
+  "benefits": [
+    {
+      "title": "A programme that fits",
+      "text": "Activities chosen for your staff and setting."
+    },
+    {
+      "title": "Qualified delivery",
+      "text": "Sessions run by licensed professionals."
+    },
+    {
+      "title": "See participation",
+      "text": "Simple measures of take-up and feedback."
+    }
+  ],
+  "whatYouReceive": [
+    "A wellness needs review",
+    "A programme plan",
+    "Coordination of sessions with licensed professionals",
+    "A participation and feedback report"
+  ],
+  "whatYouProvide": [
+    "Information on your staff and working patterns",
+    "Venues or online access for sessions"
+  ],
+  "doesNotInclude": [
+    "Medical diagnosis or treatment",
+    "Individual health records"
+  ]
+}

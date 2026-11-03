@@ -1,0 +1,34 @@
+{
+  "id": "HO-08",
+  "status": "draft",
+  "whoFor": "Organisations running a launch, expansion, relocation or change project.",
+  "benefits": [
+    {
+      "title": "A plan everyone follows",
+      "text": "Scope, tasks, owners and milestones written down."
+    },
+    {
+      "title": "Visible progress",
+      "text": "Regular status reports and a risk list."
+    },
+    {
+      "title": "Fewer dropped tasks",
+      "text": "One coordinator keeps the work moving."
+    }
+  ],
+  "whatYouReceive": [
+    "A project plan with scope, tasks and owners",
+    "Regular status reports",
+    "A risk and issue log",
+    "A close-out report"
+  ],
+  "whatYouProvide": [
+    "The project goals and decision-makers",
+    "Access to the people and suppliers involved",
+    "Timely decisions when issues arise"
+  ],
+  "doesNotInclude": [
+    "Construction or engineering works",
+    "A promise of a completion date that depends on others"
+  ]
+}

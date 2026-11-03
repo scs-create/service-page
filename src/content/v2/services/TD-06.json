@@ -1,0 +1,33 @@
+{
+  "id": "TD-06",
+  "status": "draft",
+  "whoFor": "Businesses that want to sell online and take payments.",
+  "benefits": [
+    {
+      "title": "Sell online",
+      "text": "A store or checkout set up for your products or services."
+    },
+    {
+      "title": "Take payments",
+      "text": "Payment options configured and tested."
+    },
+    {
+      "title": "Run it yourself",
+      "text": "Training for orders, products and payments."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of what and how you will sell online",
+    "Store and checkout set-up",
+    "Payment provider configuration and testing",
+    "Training and documentation"
+  ],
+  "whatYouProvide": [
+    "Product or service details, prices and images",
+    "Accounts with your chosen payment provider"
+  ],
+  "doesNotInclude": [
+    "Payment provider fees and subscriptions",
+    "Fulfilment and delivery"
+  ]
+}

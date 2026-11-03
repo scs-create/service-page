@@ -1,0 +1,34 @@
+{
+  "id": "SA-09",
+  "status": "draft",
+  "whoFor": "Family-owned businesses and their owners planning how leadership and ownership will pass on.",
+  "benefits": [
+    {
+      "title": "Continuity",
+      "text": "A plan for who leads and who owns, agreed before it is urgent."
+    },
+    {
+      "title": "Fewer disputes",
+      "text": "Expectations discussed and written down with the family."
+    },
+    {
+      "title": "Next leaders prepared",
+      "text": "Development steps for the people who will take over."
+    }
+  ],
+  "whatYouReceive": [
+    "Facilitated discussions with the owners and family members you choose",
+    "A written succession plan with stages and owners",
+    "A development plan for successors",
+    "A list of documents and filings the plan will need"
+  ],
+  "whatYouProvide": [
+    "The owners' goals and timing preferences",
+    "Information on the ownership and current roles",
+    "Participation from the family members involved"
+  ],
+  "doesNotInclude": [
+    "Wills or estate documents",
+    "Tax advice on the transfer, which is scoped separately"
+  ]
+}

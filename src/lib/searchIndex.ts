@@ -1,4 +1,4 @@
-import { services } from "@/content/services/data";
+import { CLUSTERS, SERVICES } from "@/content/v2/catalogue";
 import { portfolio } from "@/content/portfolio/data";
 import { faqs, industries } from "@/content/loaders";
 import { TOOLS } from "@/content/toolsList";
@@ -21,7 +21,8 @@ export function buildSearchIndex(): SearchEntry[] {
   return [
     ...PAGES,
     ...TOOLS.map((t) => ({ title: t.title, text: t.text, href: t.href, kind: "Tool" })),
-    ...services.map((s) => ({ title: s.title, text: s.framingSentence, href: `/services/${s.slug}`, kind: "Service" })),
+    ...CLUSTERS.map((c) => ({ title: c.name, text: c.summary, href: c.path, kind: "Service area" })),
+    ...SERVICES.map((s) => ({ title: s.name, text: `${s.clusterName}. ${s.summary}`, href: s.path, kind: "Service" })),
     ...portfolio.map((p) => ({ title: p.client, text: `${p.sector}. ${p.headline}`, href: `/portfolio/${p.slug}`, kind: "Case study" })),
     ...industries.map((i) => ({ title: i.name, text: i.summary, href: `/industries/${i.slug}`, kind: "Industry" })),
     ...faqs.map((f) => ({ title: f.question, text: f.answer, href: "/faq", kind: "FAQ" })),

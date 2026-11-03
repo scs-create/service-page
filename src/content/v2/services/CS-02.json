@@ -1,0 +1,35 @@
+{
+  "id": "CS-02",
+  "status": "draft",
+  "whoFor": "Non-profits, foundations, associations, schools and faith organisations registering as incorporated trustees with the CAC.",
+  "benefits": [
+    {
+      "title": "A sound constitution",
+      "text": "Objects and governance rules that fit how you will actually run."
+    },
+    {
+      "title": "Trustees properly recorded",
+      "text": "Trustee details, consents and documents complete before filing."
+    },
+    {
+      "title": "Ready for donors",
+      "text": "The registration records funders usually ask to see."
+    }
+  ],
+  "whatYouReceive": [
+    "Guidance on the trustee structure and objects",
+    "Name availability search and reservation",
+    "Preparation of the constitution and the CAC application",
+    "Submission and follow-up until the CAC responds, then your registration documents"
+  ],
+  "whatYouProvide": [
+    "Proposed names, aims and objects",
+    "Details and identification for each trustee",
+    "Minutes or resolutions appointing the trustees, if you have them",
+    "Your written authority for SCS to file on your behalf"
+  ],
+  "doesNotInclude": [
+    "A promise of when the CAC will process the application, or of its decision",
+    "Tax exemption applications, which are scoped separately"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "CR-04",
+  "status": "draft",
+  "whoFor": "Organisations whose activities need licences, permits or sector registrations, and that want renewals kept on track.",
+  "benefits": [
+    {
+      "title": "Know what you need",
+      "text": "A list of the licences and permits your activities require."
+    },
+    {
+      "title": "Complete applications",
+      "text": "Documents gathered and checked before submission."
+    },
+    {
+      "title": "No lapsed licences",
+      "text": "Renewal dates tracked and planned."
+    }
+  ],
+  "whatYouReceive": [
+    "A licence and permit map for your activities",
+    "Preparation and submission of the applications in scope",
+    "Follow-up with the issuing agency",
+    "A renewal calendar and a records file"
+  ],
+  "whatYouProvide": [
+    "A description of your activities and locations",
+    "The documents each application requires",
+    "Your written authority for SCS to apply on your behalf"
+  ],
+  "doesNotInclude": [
+    "A promise of when an agency will decide, or of its decision",
+    "Inspections or technical works an agency may require"
+  ]
+}

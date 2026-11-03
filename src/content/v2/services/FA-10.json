@@ -1,0 +1,33 @@
+{
+  "id": "FA-10",
+  "status": "draft",
+  "whoFor": "Organisations that want to spend less without cutting what matters.",
+  "benefits": [
+    {
+      "title": "See where money goes",
+      "text": "Spending grouped and compared."
+    },
+    {
+      "title": "Savings you can act on",
+      "text": "Specific changes, with their effect and risk."
+    },
+    {
+      "title": "Decisions stay yours",
+      "text": "Options laid out for you to choose from."
+    }
+  ],
+  "whatYouReceive": [
+    "A spending review across agreed categories",
+    "A list of savings options with their likely effect",
+    "A short action plan",
+    "A follow-up review, if agreed"
+  ],
+  "whatYouProvide": [
+    "Spending records and supplier contracts",
+    "Time with the managers who control budgets"
+  ],
+  "doesNotInclude": [
+    "Staff reductions decisions",
+    "A promise of a specific saving"
+  ]
+}

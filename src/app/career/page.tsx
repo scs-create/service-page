@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import NetlifyForm from "@/components/sections/NetlifyForm";
 import { CONSENT_FIELD, type FormField } from "@/lib/formSchema";
-import { services } from "@/content/services/data";
+import { CLUSTERS } from "@/content/v2/catalogue";
 
 export const metadata: Metadata = {
   title: "Career",
@@ -14,7 +14,7 @@ const fields: FormField[] = [
   { name: "email", label: "Email", type: "email", required: true, autoComplete: "email" },
   { name: "phone", label: "Phone", type: "tel", required: true, autoComplete: "tel" },
   { name: "applying_as", label: "I am applying as", type: "select", required: true, options: ["Staff position", "Partner"] },
-  { name: "area", label: "Area of interest", type: "select", required: true, options: [...services.map((s) => s.title), "Other / Not sure"], showWhen: { field: "applying_as", equals: "Staff position" } },
+  { name: "area", label: "Area of interest", type: "select", required: true, options: [...CLUSTERS.map((c) => c.name), "Other / Not sure"], showWhen: { field: "applying_as", equals: "Staff position" } },
   { name: "cv", label: "CV / resume", type: "file", required: true, hint: "PDF or Word, up to 3 MB.", showWhen: { field: "applying_as", equals: "Staff position" } },
   { name: "cover_letter", label: "Cover letter", type: "file", hint: "PDF or Word, up to 3 MB.", showWhen: { field: "applying_as", equals: "Staff position" } },
   { name: "profile_url", label: "LinkedIn profile or website", type: "url", required: true, placeholder: "https://", showWhen: { field: "applying_as", equals: "Partner" } },

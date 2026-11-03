@@ -12,7 +12,7 @@ type Props = {
   assessment: Assessment;
   sectors: string[];
   sectorNotes: Record<string, SectorNote>;
-  serviceTitles: Record<string, string>;
+  serviceLinks: Record<string, { href: string; label: string }>; // keyed by the v1 category slugs in the assessment data
   partnershipNote: string;
 };
 
@@ -36,7 +36,7 @@ const leadFields: FormField[] = [
 const OPTION = "flex min-h-11 items-center gap-3 rounded-md border border-border px-3 text-text hover:border-primary has-[:checked]:border-primary has-[:checked]:bg-primary/5";
 
 // "Assess your Business": 3 profile questions + one scored question per area. Scoring is fixed rules, no AI.
-export default function AssessmentTool({ assessment, sectors, sectorNotes, serviceTitles, partnershipNote }: Props) {
+export default function AssessmentTool({ assessment, sectors, sectorNotes, serviceLinks, partnershipNote }: Props) {
   const [step, setStep] = useState(0);
   const [sector, setSector] = useState("");
   const [stage, setStage] = useState("");
@@ -133,9 +133,9 @@ export default function AssessmentTool({ assessment, sectors, sectorNotes, servi
                 <div><dt className="font-semibold text-secondary">How SCS can help</dt><dd className="text-muted">{d.help}</dd></div>
               </dl>
               <p className="mt-3 text-sm">
-                <Link href={`/services/${d.serviceSlug}`} className="font-medium text-primary hover:underline">{serviceTitles[d.serviceSlug] ?? "View service"} →</Link>
+                <Link href={serviceLinks[d.serviceSlug]?.href ?? "/services"} className="font-medium text-primary hover:underline">{serviceLinks[d.serviceSlug]?.label ?? "View service"} →</Link>
                 {d.related.length > 0 && (
-                  <span className="text-muted"> · Related: {d.related.map((r, i) => (<span key={r}>{i > 0 && ", "}<Link href={`/services/${r}`} className="text-primary hover:underline">{serviceTitles[r] ?? r}</Link></span>))}</span>
+                  <span className="text-muted"> · Related: {d.related.map((r, i) => (<span key={r}>{i > 0 && ", "}<Link href={serviceLinks[r]?.href ?? "/services"} className="text-primary hover:underline">{serviceLinks[r]?.label ?? r}</Link></span>))}</span>
                 )}
               </p>
             </article>

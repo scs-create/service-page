@@ -1,0 +1,33 @@
+{
+  "id": "SA-08",
+  "status": "draft",
+  "whoFor": "Businesses unsure whether their prices, packages or discounts are working.",
+  "benefits": [
+    {
+      "title": "Prices you can explain",
+      "text": "A pricing approach linked to value, cost and competition."
+    },
+    {
+      "title": "Clearer packages",
+      "text": "Offers that are easier for customers to compare and choose."
+    },
+    {
+      "title": "Fewer ad hoc discounts",
+      "text": "Simple rules for when and how prices change."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of current prices, costs and sales data",
+    "A competitor price and positioning comparison",
+    "Pricing and packaging options with their trade-offs",
+    "A short pricing policy for your team"
+  ],
+  "whatYouProvide": [
+    "Your price lists, sales records and cost information",
+    "The goals you want pricing to support"
+  ],
+  "doesNotInclude": [
+    "Setting your prices for you",
+    "A promise of higher sales or margins"
+  ]
+}

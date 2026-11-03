@@ -1,0 +1,34 @@
+{
+  "id": "HO-04",
+  "status": "draft",
+  "whoFor": "Employers that need staff records, handbooks and HR policies in order.",
+  "benefits": [
+    {
+      "title": "Clear rules for everyone",
+      "text": "Policies staff can read and managers can apply."
+    },
+    {
+      "title": "Complete records",
+      "text": "A file for each employee with what it should contain."
+    },
+    {
+      "title": "A structure that fits",
+      "text": "Roles and reporting lines written down."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of current HR documents and records",
+    "A staff handbook and core HR policies",
+    "Job descriptions and an organisation chart",
+    "An HR records checklist"
+  ],
+  "whatYouProvide": [
+    "Current contracts, policies and staff lists",
+    "Information on how the organisation works",
+    "Review and approval of drafts"
+  ],
+  "doesNotInclude": [
+    "Handling individual grievance or disciplinary cases",
+    "Employment contracts beyond the agreed templates"
+  ]
+}

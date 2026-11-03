@@ -1,0 +1,50 @@
+{
+  "id": "FA-08",
+  "status": "draft",
+  "whoFor": "Organisations preparing for a transaction, investment or change of ownership.",
+  "benefits": [
+    {
+      "title": "Prepared records",
+      "text": "Documents organised before the other side reviews them."
+    },
+    {
+      "title": "One coordinator",
+      "text": "A single point of contact across the workstreams."
+    },
+    {
+      "title": "Scoped in writing",
+      "text": "What is and is not included is agreed before work starts."
+    }
+  ],
+  "whatYouReceive": [],
+  "whatYouProvide": [
+    "The transaction details and your goals",
+    "Corporate and financial records",
+    "A named contact for approvals"
+  ],
+  "doesNotInclude": [
+    "Anything outside the scope agreed in writing"
+  ],
+  "v1Retained": {
+    "framing": "We support significant growth, investment and strategic transactions.",
+    "intro": "Our services include:",
+    "lines": [
+      "Business due diligence",
+      "Commercial due diligence",
+      "Corporate restructuring",
+      "Investment readiness",
+      "Investor documentation",
+      "Transaction support",
+      "M&A support",
+      "Strategic partnerships",
+      "Joint ventures",
+      "Business valuation support",
+      "Capital raising support",
+      "Deal structuring support",
+      "Post-transaction integration support",
+      "Exit planning",
+      "Business succession planning"
+    ],
+    "closing": ""
+  }
+}

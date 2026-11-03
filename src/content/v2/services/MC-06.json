@@ -1,0 +1,32 @@
+{
+  "id": "MC-06",
+  "status": "draft",
+  "whoFor": "Organisations that want to be ready to communicate when something goes wrong.",
+  "benefits": [
+    {
+      "title": "Ready before it happens",
+      "text": "A plan prepared calmly, not in the moment."
+    },
+    {
+      "title": "Clear roles",
+      "text": "Who speaks, who decides and who is informed."
+    },
+    {
+      "title": "Consistent messages",
+      "text": "Holding statements prepared in advance."
+    }
+  ],
+  "whatYouReceive": [
+    "A review of likely scenarios",
+    "A crisis communications plan with roles",
+    "Holding statements and contact lists",
+    "A briefing or exercise for your team"
+  ],
+  "whatYouProvide": [
+    "Information on your operations and stakeholders",
+    "Time with leadership for decisions"
+  ],
+  "doesNotInclude": [
+    "Media relations during an actual incident, unless scoped"
+  ]
+}

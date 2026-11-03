@@ -1,0 +1,33 @@
+{
+  "id": "CR-05",
+  "status": "draft",
+  "whoFor": "Organisations that want every recurring filing, renewal and deadline in one place.",
+  "benefits": [
+    {
+      "title": "One view of every deadline",
+      "text": "Company, tax, data protection, licence and sector obligations together."
+    },
+    {
+      "title": "Reminders before dates",
+      "text": "Notice in time to gather what each filing needs."
+    },
+    {
+      "title": "Someone tracking it",
+      "text": "Status reviewed and reported to you regularly."
+    }
+  ],
+  "whatYouReceive": [
+    "A compliance calendar built for your organisation",
+    "Reminders ahead of each obligation",
+    "A regular status report",
+    "A record of each obligation met"
+  ],
+  "whatYouProvide": [
+    "Your registrations, licences and current filing records",
+    "A named contact who receives reminders"
+  ],
+  "doesNotInclude": [
+    "Preparing the filings themselves, unless they are added to the scope",
+    "Obligations you have not told us about"
+  ]
+}
