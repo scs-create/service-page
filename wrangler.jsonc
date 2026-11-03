@@ -22,7 +22,7 @@
   // Form submissions (06-TECH-SPEC.md §2). The database is created once by the "v2 provision" workflow, which prints
   // its id; that id (not a secret) replaces the placeholder below. Local `wrangler dev` uses a local copy either way.
   "d1_databases": [
-    { "binding": "DB", "database_name": "scs-forms", "database_id": "00000000-0000-0000-0000-000000000000", "migrations_dir": "migrations" }
+    { "binding": "DB", "database_name": "scs-forms", "database_id": "6ae231dd-31b2-4354-8642-8d5e5b1d71bb", "migrations_dir": "migrations" }
   ],
   // Private bucket for CVs and proposal briefs: no public access; staff open files through the admin view.
   "r2_buckets": [{ "binding": "UPLOADS", "bucket_name": "scs-forms-uploads" }],
