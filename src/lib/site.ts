@@ -28,8 +28,9 @@ export const EMAIL_ROUTING = [
 ] as const;
 
 export const SITE = {
-  name: "Stephen Corporate Services",
-  legalName: "Stephen Corporate Services Ltd",
+  // The full name everywhere, except where space makes it impossible (then shortName "SCS"): owner decision b.
+  name: "Stephen Corporate Services - SCS Ltd",
+  legalName: "Stephen Corporate Services - SCS Ltd",
   // Browser tab and search-result name (owner decision, 18 October 2026).
   titleName: "Stephen Corporate Services - SCS Ltd",
   shortName: "SCS",

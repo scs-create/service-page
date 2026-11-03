@@ -4,11 +4,11 @@ import Link from "next/link";
 import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { renderArticle } from "@/lib/markdown";
 import PostCard from "@/components/ui/PostCard";
-import JsonLd from "@/components/ui/JsonLd";
 import PageHero from "@/components/ui/PageHero";
 import CTAButton from "@/components/ui/CTAButton";
 import NewsletterSignup from "@/components/sections/NewsletterSignup";
 import { v2LinkForV1 } from "@/content/v2/catalogue";
+import { topicsForPost } from "@/content/v2/topics";
 import { SITE } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -33,21 +33,22 @@ export default async function CorporateSchoolPostPage({ params }: { params: Prom
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
-  const date = new Date(post.date).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  const fmt = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
+  const date = fmt(post.date);
+  const reviewed = fmt(post.reviewed ?? post.date);
+  const topics = topicsForPost(post.slug);
   const { html, toc } = await renderArticle(post.content); // sanitised (H-01)
   const related = getRelatedPosts(post);
   const services = [...new Map((post.services ?? []).map(v2LinkForV1).filter((s) => !!s).map((s) => [s.href, s])).values()];
-  const url = `${SITE.url}/corporate-college/corporate-school/${post.slug}`;
 
   return (
     <>
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "Article", headline: post.title, description: post.excerpt, datePublished: post.date, dateModified: post.date, image: `${SITE.url}/og-image.png`, author: { "@type": "Organization", name: SITE.legalName, url: SITE.url }, publisher: { "@type": "Organization", name: SITE.legalName, logo: { "@type": "ImageObject", url: `${SITE.url}/images/logo.png` } }, mainEntityOfPage: url }} />
       <PageHero
         breadcrumbs={[{ label: "Corporate College", href: "/corporate-college" }, { label: "Corporate School", href: "/corporate-college/corporate-school" }, { label: post.title }]}
         eyebrow={post.category ?? "Corporate School"}
         title={post.title}
         intro={post.excerpt}
-        meta={`${date} · ${post.readingMinutes} min read · SCS Corporate College`}
+        meta={`By ${SITE.titleName} · Published ${date} · Last reviewed ${reviewed} · ${post.readingMinutes} min read`}
       />
 
       <div className={`${WRAP} py-12 grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] items-start`}>
@@ -66,28 +67,59 @@ export default async function CorporateSchoolPostPage({ params }: { params: Prom
             </section>
           )}
 
+          {/* Item 20 (owner decision): the standard reader note on every guide. */}
+          <p className="mb-10 rounded-sm border border-border bg-surface px-4 py-3 text-sm text-muted">
+            <strong className="text-text">For general information only.</strong> This guide explains common practice. It is not advice on your
+            situation: seek specialist professional advice for your situation, or confirm current requirements with the regulator, before you act.
+          </p>
+
           <div className="prose-content text-base text-text" dangerouslySetInnerHTML={{ __html: html }} />
 
+          {post.sources && post.sources.length > 0 && (
+            <section aria-labelledby="sources" className="mt-12 border-t border-border pt-6">
+              <h2 id="sources" className="text-lg font-semibold text-text">Official sources</h2>
+              <ul className="mt-3 space-y-2 text-sm">
+                {post.sources.map((src) => (
+                  <li key={src.url}>
+                    <a href={src.url} target="_blank" rel="noopener noreferrer" className="font-medium text-primary hover:underline">
+                      {src.title}<span aria-hidden="true"> ↗</span><span className="sr-only"> (opens in new tab)</span>
+                    </a>
+                    <span className="text-muted"> · retrieved {fmt(src.retrieved)}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {topics.length > 0 && (
+            <p className="mt-8 text-sm text-muted">
+              Topics:{" "}
+              {topics.map((t, i) => (
+                <span key={t.slug}>{i > 0 && " · "}<Link href={`/corporate-college/corporate-school/topics/${t.slug}`} className="font-medium text-primary hover:underline">{t.name}</Link></span>
+              ))}
+            </p>
+          )}
+
           {(post.help || services.length > 0) && (
-            <section aria-labelledby="how-scs-helps" data-location="article_help" className="dark-surface mt-14 rounded-md border-t-4 border-accent bg-secondary p-6 md:p-8 text-white">
-              <p className="text-sm font-semibold uppercase tracking-wider text-accent">Put this into practice</p>
-              <h2 id="how-scs-helps" className="mt-2 text-2xl font-semibold">How SCS can help</h2>
-              {post.help && <p className="mt-3 text-white/85">{post.help}</p>}
+            <section aria-labelledby="how-scs-helps" data-location="article_help" className="mt-14 rounded-sm border border-border border-t-4 border-t-accent bg-surface p-6 md:p-8">
+              <p className="type-eyebrow text-primary">Put this into practice</p>
+              <h2 id="how-scs-helps" className="mt-2 text-2xl font-semibold text-text">How SCS can help</h2>
+              {post.help && <p className="mt-3 text-muted">{post.help}</p>}
               {services.length > 0 && (
                 <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                   {services.map((s) => (
                     <li key={s.href}>
-                      <Link href={s.href} className="block h-full rounded-md border border-white/15 bg-white/5 p-4 hover:border-accent">
-                        <span className="block font-semibold text-white">{s.label} →</span>
-                        <span className="mt-1 block text-sm text-white/85">{s.summary}</span>
+                      <Link href={s.href} className="block h-full rounded-sm border border-border bg-bg p-4 hover:border-primary">
+                        <span className="block font-semibold text-text">{s.label} →</span>
+                        <span className="mt-1 block text-sm text-muted">{s.summary}</span>
                       </Link>
                     </li>
                   ))}
                 </ul>
               )}
               <div className="mt-6 flex flex-wrap gap-3">
-                <CTAButton booking label="Book a Discovery Call" variant="accent" />
-                {post.tool && <CTAButton href={post.tool.href} label={post.tool.label} variant="outlineLight" />}
+                <CTAButton booking label="Ask a question: book a Discovery Call" />
+                {post.tool && <CTAButton href={post.tool.href} label={post.tool.label} variant="secondary" />}
               </div>
             </section>
           )}
@@ -106,10 +138,10 @@ export default async function CorporateSchoolPostPage({ params }: { params: Prom
               </ol>
             </nav>
           )}
-          <div data-location="article_sidebar" className="dark-surface rounded-md border-t-4 border-accent bg-secondary p-5 text-white">
-            <p className="font-semibold">Talk it through with SCS</p>
-            <p className="mt-1 text-sm text-white/85">A free 30-minute Discovery Call about your business.</p>
-            <div className="mt-4"><CTAButton booking label="Book a Discovery Call" variant="accent" /></div>
+          <div data-location="article_sidebar" className="rounded-sm border border-border border-t-4 border-t-accent bg-bg p-5">
+            <p className="font-semibold text-text">Talk it through with SCS</p>
+            <p className="mt-1 text-sm text-muted">A free 30-minute Discovery Call about your organisation.</p>
+            <div className="mt-4"><CTAButton booking label="Book a Discovery Call" /></div>
           </div>
         </aside>
       </div>

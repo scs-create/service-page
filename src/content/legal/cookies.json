@@ -11,7 +11,7 @@
    "blocks": [
     {
      "type": "p",
-     "text": "Stephen Corporate Services (SCS) Ltd (\"SCS\", \"we\", \"us\" or \"our\") uses cookies and similar technologies to operate, protect, and improve its websites and online services."
+     "text": "Stephen Corporate Services - SCS Ltd (\"SCS\", \"we\", \"us\" or \"our\") uses cookies and similar technologies to operate, protect, and improve its websites and online services."
     },
     {
      "type": "p",
@@ -38,7 +38,7 @@
    "blocks": [
     {
      "type": "p",
-     "text": "Stephen Corporate Services (SCS) Ltd is responsible for determining how cookies and similar technologies are used on the websites and online services covered by this Policy, subject to the respective roles and obligations of third-party service providers."
+     "text": "Stephen Corporate Services - SCS Ltd is responsible for determining how cookies and similar technologies are used on the websites and online services covered by this Policy, subject to the respective roles and obligations of third-party service providers."
     },
     {
      "type": "table",
@@ -600,7 +600,7 @@
    "blocks": [
     {
      "type": "p",
-     "text": "If you have questions about this Policy, wish to change your cookie preferences, or want to raise a concern about our use of cookies, you may contact Stephen Corporate Services (SCS) Ltd through the following channels:"
+     "text": "If you have questions about this Policy, wish to change your cookie preferences, or want to raise a concern about our use of cookies, you may contact Stephen Corporate Services - SCS Ltd through the following channels:"
     },
     {
      "type": "table",
@@ -693,7 +693,7 @@
     },
     {
      "type": "p",
-     "text": "This website uses no functional, marketing or advertising cookies. Our hosting provider (Netlify) sets no cookies for visitors. The Cal.com booking page and other external sites we link to apply their own cookie policies."
+     "text": "This website uses no functional, marketing or advertising cookies of its own. It is hosted on Cloudflare. Our forms use Cloudflare Turnstile, a security check that runs only on form pages; Cloudflare describes the data it processes in its Turnstile Privacy Addendum (https://www.cloudflare.com/turnstile-privacy-policy/). The Cal.com booking page and other external sites we link to apply their own cookie policies."
     }
    ]
   }

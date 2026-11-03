@@ -7,7 +7,7 @@ import { ContentError } from "@/lib/content";
 const POSTS_DIR = path.join(process.cwd(), "src/content/corporate-school");
 
 // Validated frontmatter. `date` doubles as the publish date: a future date keeps the post hidden
-// until the first build on/after that day (the daily scheduled-build workflow does that).
+// until the first build on/after that day (a daily rebuild publishes it; on Cloudflare this is added with the deploy workflow).
 // Minimal front-matter reader (replaces gray-matter, whose bundled YAML parser carried an advisory).
 function parseFrontmatter(raw: string, file: string): { data: unknown; content: string } {
   const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
@@ -25,6 +25,12 @@ const frontmatter = z.object({
   services: z.array(z.string().trim().min(1)).max(4).optional(), // service slugs for "How SCS can help"
   help: z.string().trim().min(1).optional(), // the "How SCS can help" paragraph
   tool: z.object({ href: z.string().startsWith("/"), label: z.string().trim().min(1) }).optional(), // a free analysis tool
+  // Guide template G (05-SITE-SPEC.md §3): the last review date, and official sources with the date each was retrieved.
+  reviewed: z.coerce.date({ error: "reviewed must be a valid date" }).optional(),
+  sources: z
+    .array(z.object({ title: z.string().trim().min(1), url: z.string().url(), retrieved: z.coerce.date({ error: "retrieved must be a valid date" }) }))
+    .max(12)
+    .optional(),
 });
 
 export interface Post {
@@ -37,6 +43,8 @@ export interface Post {
   services?: string[];
   help?: string;
   tool?: { href: string; label: string };
+  reviewed?: string; // ISO; the published date when not set
+  sources?: { title: string; url: string; retrieved: string }[];
   content: string;
   readingMinutes: number;
 }
@@ -54,7 +62,16 @@ function loadAll(): Post[] {
         throw new ContentError(`Invalid content in ${file}:\n` + parsed.error.issues.map((i) => `  - field "${i.path.join(".")}": ${i.message}`).join("\n"));
       }
       const words = content.split(/\s+/).filter(Boolean).length;
-      return { slug: filename.replace(/\.md$/, ""), ...parsed.data, date: parsed.data.date.toISOString(), content, readingMinutes: Math.max(1, Math.ceil(words / 200)) };
+      const { reviewed, sources, ...rest } = parsed.data;
+      return {
+        slug: filename.replace(/\.md$/, ""),
+        ...rest,
+        date: rest.date.toISOString(),
+        reviewed: (reviewed ?? rest.date).toISOString(),
+        sources: sources?.map((s) => ({ ...s, retrieved: s.retrieved.toISOString() })),
+        content,
+        readingMinutes: Math.max(1, Math.ceil(words / 200)),
+      };
     });
 }
 

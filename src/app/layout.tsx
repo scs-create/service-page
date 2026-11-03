@@ -27,7 +27,7 @@ const sourceSerif = Source_Serif_4({
 });
 
 const DESCRIPTION =
-  "Stephen Corporate Services Ltd (SCS) is a multidisciplinary corporate services, business support, consulting and advisory company providing integrated solutions to businesses, entrepreneurs, organisations, investors and institutions.";
+  "Stephen Corporate Services - SCS Ltd is a multidisciplinary corporate services, business support, consulting and advisory company providing integrated solutions to businesses, entrepreneurs, organisations, investors and institutions.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -56,7 +56,7 @@ const organisationSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: SITE.legalName,
-  alternateName: SITE.name,
+  alternateName: SITE.shortName,
   slogan: SITE.tagline,
   url: SITE.url,
   logo: `${SITE.url}/images/logo.png`,

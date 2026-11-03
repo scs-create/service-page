@@ -5,7 +5,7 @@ excerpt: "One of the most expensive mistakes a business can make is commissionin
 category: "Corporate Learning"
 takeaways:
   - "Define the business outcome the website must deliver before choosing a developer or a theme."
-  - "Plan pages, user journeys and content around the questions your audience actually asks."
+  - "Plan pages, user flows and content around the questions your audience actually asks."
   - "Specify lead capture, functions, mobile usability, accessibility and search requirements in writing."
   - "Use the requirements document to compare proposals and to measure results after launch."
 services:
@@ -38,7 +38,7 @@ Without a clear assessment, website projects can suffer from:
 
 - Unnecessary features that increase development costs.
 - Missing pages or information customers need.
-- Poor navigation and confusing user journeys.
+- Poor navigation and confusing user flows.
 - Delays caused by incomplete content and unclear responsibilities.
 - Expensive changes after development has started.
 - Weak integration with existing business systems.
@@ -187,7 +187,7 @@ Identify each proposed page, its purpose, its intended audience, and its require
 
 **Deliverable:** A page inventory showing which pages are essential, desirable, or unnecessary for the initial launch.
 
-## Step 6: Create a Sitemap and User Journey
+## Step 6: Create a Sitemap and User Flows
 
 A sitemap shows the planned structure of the website and how its pages relate to one another.
 
@@ -208,7 +208,7 @@ For example:
 
 The sitemap helps prevent disorganised navigation and makes the intended structure easier for management and developers to review.
 
-However, page structure alone is not enough. Consider the journey visitors should follow.
+However, page structure alone is not enough. Consider the path visitors should follow.
 
 For example:
 
@@ -216,9 +216,9 @@ For example:
 
 A prospective customer should be able to move from discovering a service to understanding it and taking the appropriate next step without unnecessary confusion.
 
-For more complex websites, map separate journeys for different user groups. An existing customer accessing a portal, for example, will have different needs from a prospective customer requesting a quotation.
+For more complex websites, map separate flows for different user groups. An existing customer accessing a portal, for example, will have different needs from a prospective customer requesting a quotation.
 
-**Deliverable:** An approved sitemap and, where necessary, user journey diagrams for important tasks.
+**Deliverable:** An approved sitemap and, where necessary, user flow diagrams for important tasks.
 
 ## Step 7: Define Content Requirements and Responsibilities
 
@@ -683,7 +683,7 @@ Before approving a website development project, confirm that the following items
 
 - Primary business objective and supporting goals.
 - Target audiences and their information needs.
-- Customer questions and priority user journeys.
+- Customer questions and priority user flows.
 - Competitor website review.
 - Required pages and approved sitemap.
 - Content inventory and assigned responsibilities.

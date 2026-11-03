@@ -146,7 +146,7 @@ test("booking calls to action never fall back to an empty URL", () => {
 });
 test("the website sections describe the tools this site actually uses", () => {
   const privacy = JSON.stringify(legal("privacy")), cookies = JSON.stringify(legal("cookies"));
-  for (const t of ["Netlify", "PostHog", "Cal.com", "GitHub", "12 months", "never** sent to PostHog"]) assert.ok(privacy.includes(t), t);
+  for (const t of ["Cloudflare", "Resend", "six (6) months", "PostHog", "Cal.com", "GitHub", "12 months", "never** sent to PostHog"]) assert.ok(privacy.includes(t), t);
   for (const t of ["scs_cookie_consent", "ph_<project key>_posthog", "365 days", "Global Privacy Control"]) assert.match(cookies, new RegExp(t));
 });
 test("analytics: the previous tool is gone everywhere; one PostHog config; only allowlisted event properties", () => {

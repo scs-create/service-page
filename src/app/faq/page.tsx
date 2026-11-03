@@ -6,7 +6,7 @@ import { faqs } from "@/content/loaders";
 
 export const metadata: Metadata = {
   title: "FAQ",
-  description: "Answers to common questions about working with Stephen Corporate Services: what we do, how fees are agreed, how to verify our work, and how your data is handled.",
+  description: "Answers to common questions about working with Stephen Corporate Services - SCS Ltd: what we do, how fees are agreed, how to verify our work, and how your data is handled.",
 };
 
 export default function FaqPage() {

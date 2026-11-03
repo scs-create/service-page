@@ -56,7 +56,7 @@ export const toSnake = (s: string) =>
   s.normalize("NFKD").toLowerCase().replace(/&/g, " and ").replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "").slice(0, 60);
 
 // Anonymous lead ID: created only when a visitor who accepted analytics submits a form. It is saved with the
-// enquiry in Netlify (hidden field lead_id) and used as the PostHog person ID, so a lead can be matched to the
+// enquiry in D1 (hidden field lead_id, stored as posthog_id) and used as the PostHog person ID, so a lead can be matched to the
 // visit that produced it without any email, name or phone number reaching PostHog.
 export function newLeadId(): string | null {
   if (!getPosthog() || typeof crypto === "undefined" || !crypto.getRandomValues) return null;

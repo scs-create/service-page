@@ -53,7 +53,7 @@ export default function ChecklistTool({ types, sectors, regulatorNames, disclaim
         <>
           <div className="print-area mt-8 rounded-md border border-border bg-bg p-6">
             <h2 className="text-2xl font-semibold text-text">Compliance Starter Checklist</h2>
-            <p className="mt-1 text-sm text-muted">{type.label}{sector ? ` · ${sector.label}` : ""} · Prepared with Stephen Corporate Services (stephencorporateservices-scs.com)</p>
+            <p className="mt-1 text-sm text-muted">{type.label}{sector ? ` · ${sector.label}` : ""} · Prepared with Stephen Corporate Services - SCS Ltd (stephencorporateservices-scs.com)</p>
             <ul className="mt-5 space-y-3">
               {items.map((i) => (
                 <li key={i.text}>

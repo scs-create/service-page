@@ -27,7 +27,7 @@ const KEPT_PAGES = new Set(["/privacy", "/terms", "/cookies", "/disclaimer", "/d
 
 const LEGAL = ["legal advice", "legal services", "law firm", "lawyer", "attorney", "solicitor", "barrister", "litigation", "legal opinion", "esq."];
 // Kept v1 passages (02-DECISIONS.md §3, items 1, 2, 13, 16 and the rest of the kept items).
-const LEGAL_KEPT = ["Is SCS a law firm?", "does not present itself as a law firm", "Stephen Onyekeja, Esq."];
+const LEGAL_KEPT = ["Is SCS a law firm?", "does not present itself as a law firm", "Stephen Onyekeja, Esq.", "a lawyer's drafting or advice"]; // item 19 kept as v1
 
 const OLD_PHONE = /906\W*403\W*5713/;
 const BENHEN = /benhen/i;

@@ -15,17 +15,17 @@ that carry it are built in PRs 3 to 6, in the order set by `01-BUILD-PROMPT.md`.
 |---|---|---|
 | Full name "Stephen Corporate Services - SCS Ltd" | `src/lib/site.ts` → header, footer, titles, JSON-LD, forms, emails | ✅ PR 2–5 |
 | Phone/WhatsApp +234 812 813 8222; old number banned | `site.ts`; `scripts/check-site.mjs` fails on the old number | ✅ PR 1–2 |
-| No fees or cost values, including government fees | Copy rule for every page; guides say fees come in the proposal | ⏳ PR 3–6 (copy) |
+| No fees or cost values, including government fees | Copy rule; tests reject amounts in service, page and topic copy | ✅ PR 3–6 |
 | No delivery or completion timelines | Service template has no timeline field; a test rejects time phrases in service copy | ✅ PR 3 |
 | "We respond within 24 hours." word for word; no "Open now" indicator | Footer, Contact, every form and the confirmation email | ✅ PR 2–5 |
 | Direction B: Source Serif 4 for H1/H2, Inter for the rest | `layout.tsx`, `globals.css` | ✅ PR 2 |
 | Tower on the home page, never removed, on mobile too | `TowerMark` + `HeroSkyline` (exact logo vector) | ✅ PR 2–4 |
 | Nav: Home · Services · Clients · Process · Partnership · Insights · About, plus Request a proposal and Book a Discovery Call | `src/lib/nav.ts`, `Header.tsx` | ✅ PR 2–4 (every target page exists) |
 | Shorter mobile home (carousels, `<details>`, 2×2 figures), nothing removed | `src/app/page.tsx` | ✅ PR 4 (5,798px at 390px wide; v1 about 8,600px) |
-| Legal wording: only items 20 and 22 applied; 1, 2, 13, 16 and the rest kept as v1 | Redirect (item 22) in `public/_redirects`; legal-word report allow-lists kept passages | ✅ item 22, report PR 1 · ⏳ item 20 rewrites PR 6 |
+| Legal wording: only items 20 and 22 applied; 1, 2, 13, 16 and the rest kept as v1 | Item 22 redirect; item 20 reader notes and the guide note; legal-word report marks kept passages (incl. item 19) | ✅ PR 1–6 |
 | Service names in globally used terms; 66 services in 7 clusters | `src/content/v2/services.v2.json`, `src/content/v2/services/<ID>.json` | ✅ PR 2–3 (copy is draft for approval) |
 | Industries 15 → 6 | `src/content/v2/industries.ts` | ✅ PR 4 |
-| All 23 case studies approved and consented | v1 content | ⏳ PR 6 (fixed case-study template PR 4) |
+| All 23 case studies approved and consented | `src/app/portfolio/[slug]/page.tsx` (template K) | ✅ PR 6 |
 | Proof figures with definitions, no "as at" dates | `src/content/v2/pages.ts` FIGURES | ✅ PR 4 |
 | Values list unchanged | v1 content | ✅ unchanged |
 | No extra partner benefits; enquiries kept 6 months | Partnership page; `worker/retention.ts` (daily) | ✅ PR 4–5 |
@@ -39,12 +39,12 @@ that carry it are built in PRs 3 to 6, in the order set by `01-BUILD-PROMPT.md`.
 | §2 Ten-second test (what, who, why trust, next step above the fold) | Home and audience heroes | ✅ PR 4 |
 | §3 Seven audiences and Start-here paths | `/clients/*` pages, home Start here | ✅ PR 4 |
 | §4 Merged service model (7 clusters, 66 services) | `/services`, 7 hubs, 66 service pages, Service Finder | ✅ PR 3 |
-| §5 Legal-rule table (only 20 and 22) | See rulings above | ✅ / ⏳ PR 6 |
+| §5 Legal-rule table (only 20 and 22) | See rulings above | ✅ PR 6 |
 | §6 Sitemap and redirects (41 rules) | `public/_redirects` | ✅ all 41 live (PR 1–4) |
 | §6 Footer and mobile menu carry Contact, Tools, Work, Corporate College, Join us; footer carries Search | `Footer.tsx`, `Header.tsx`, `/search` | ✅ PR 2–4 |
-| §7 Eight page templates, each ending in "What happens next" | Home, hub, service, audience, case study, guide, tool, form | ✅ home, hub, service, audience PR 3–4 · ⏳ case study, guide PR 6 · tool, form PR 5 |
+| §7 Eight page templates, each ending in "What happens next" | Home, hub, service, audience, case study, guide, tool, form | ✅ PR 3–6 |
 | §8 Partnership page outline | `/partnership`, `/partnership/remote-operations` | ✅ PR 4 |
-| §9 Tone guide (five v2 rules, banned vocabulary) | Copy rules; CI banned-word check | ✅ check PR 1 · ⏳ copy PR 3–6 |
+| §9 Tone guide (five v2 rules, banned vocabulary) | Copy rules; CI banned-word check, baseline now empty | ✅ PR 1–6 |
 | §10 Metrics plan: events `cta_click`, `booking_click`, `form_step`, `form_submit`, `tool_complete`, `whatsapp_click`, `call_click`, `partnership_cta`, `post_submit_next_step`, each with `service_id` and `audience`; UTM stored with leads | PostHog via `/ingest`; D1 lead rows | ✅ UTM in D1 PR 5 · ⏳ events, dashboard PR 8 |
 | §11 Owner decisions | All answered (see `02-DECISIONS.md`) | ✅ |
 
@@ -62,4 +62,4 @@ that carry it are built in PRs 3 to 6, in the order set by `01-BUILD-PROMPT.md`.
 
 ## Research report
 
-Summary and the official facts to state carefully: `09-RESEARCH-SUMMARY.md`. They are used in the Corporate School guides and topic hubs (PR 6), with "last reviewed" dates and no fee amounts.
+Summary and the official facts to state carefully: `09-RESEARCH-SUMMARY.md`. The six topic hubs (PR 6) link each regulator's official site with a retrieval date and leave disputed figures for the regulator to confirm; no fee amounts.

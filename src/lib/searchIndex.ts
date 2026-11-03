@@ -3,6 +3,7 @@ import { portfolio } from "@/content/portfolio/data";
 import { faqs } from "@/content/loaders";
 import { INDUSTRIES } from "@/content/v2/industries";
 import { AUDIENCES } from "@/content/v2/pages";
+import { TOPICS } from "@/content/v2/topics";
 import { TOOLS } from "@/content/toolsList";
 import { getAllPosts } from "@/lib/posts";
 import type { SearchEntry } from "@/lib/search";
@@ -20,7 +21,7 @@ const PAGES: SearchEntry[] = [
   { title: "Verification", text: "Client RC numbers and how to verify them on the CAC website", href: "/verification", kind: "Page" },
   { title: "Industries", text: "Sector-specific needs and relevant agencies", href: "/industries", kind: "Page" },
   { title: "Corporate College", text: "Request training; Stephen Corporate Academy; Corporate School blog", href: "/corporate-college", kind: "Page" },
-  { title: "About SCS", text: "Leadership, approach, client journey and sectors", href: "/about", kind: "Page" },
+  { title: "About SCS", text: "Leadership, approach, client lifecycle and sectors", href: "/about", kind: "Page" },
   { title: "FAQ", text: "Answers to common questions about working with SCS", href: "/faq", kind: "Page" },
   { title: "Contact", text: "Book a Discovery Call, call, WhatsApp or email", href: "/contact", kind: "Page" },
   { title: "Career", text: "Apply to work or partner with SCS", href: "/career", kind: "Page" },
@@ -34,6 +35,7 @@ export function buildSearchIndex(): SearchEntry[] {
     ...SERVICES.map((s) => ({ title: s.name, text: `${s.clusterName}. ${s.summary}`, href: s.path, kind: "Service" })),
     ...portfolio.map((p) => ({ title: p.client, text: `${p.sector}. ${p.headline}`, href: `/portfolio/${p.slug}`, kind: "Case study" })),
     ...AUDIENCES.map((a) => ({ title: a.name, text: a.lead, href: `/clients/${a.slug}`, kind: "Clients" })),
+    ...TOPICS.map((t) => ({ title: t.name, text: t.intro, href: `/corporate-college/corporate-school/topics/${t.slug}`, kind: "Topic" })),
     ...INDUSTRIES.map((i) => ({ title: i.name, text: `${i.summary} Includes ${i.includes.join(", ")}.`, href: i.path, kind: "Industry" })),
     ...faqs.map((f) => ({ title: f.question, text: f.answer, href: "/faq", kind: "FAQ" })),
     ...getAllPosts().map((p) => ({ title: p.title, text: p.excerpt, href: `/corporate-college/corporate-school/${p.slug}`, kind: "Article" })),

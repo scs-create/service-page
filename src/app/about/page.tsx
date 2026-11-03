@@ -14,7 +14,7 @@ import { ABOUT_INTRO, ABOUT_SECTIONS, INDUSTRIES, JOURNEY_STAGES, MISSION, VISIO
 export const metadata: Metadata = {
   title: "About",
   description:
-    "About Stephen Corporate Services Ltd (SCS): our leadership, specialist network, five-stage approach, client journey and the industries we serve.",
+    "About Stephen Corporate Services - SCS Ltd: our leadership, specialist network, five-stage approach, client lifecycle and the industries we serve.",
 };
 
 const WRAP = "max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8";
@@ -76,7 +76,7 @@ function renderSection(s: AboutSection) {
     case "journey":
       return (
         <>
-          <SectionHeading eyebrow="Lifecycle support" title="The SCS Client Journey" />
+          <SectionHeading eyebrow="Lifecycle support" title="The SCS Client Lifecycle" />
           <div className="flex flex-col md:flex-row gap-6">
             {JOURNEY_STAGES.map((stage) => (
               <JourneyStage key={stage.label} label={stage.label} steps={stage.steps} />

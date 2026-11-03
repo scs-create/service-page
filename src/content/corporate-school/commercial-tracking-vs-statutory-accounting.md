@@ -218,7 +218,7 @@ A typical structure is:
 | 1 to 30 days overdue | Payment is slightly late. | Send a reminder and confirm the reason for delay. |
 | 31 to 60 days overdue | Collection risk is increasing. | Escalate follow-up and obtain a clear payment commitment. |
 | 61 to 90 days overdue | The balance requires closer attention. | Review the customer's payment history and consider formal escalation. |
-| More than 90 days overdue | The balance may present significant collection risk. | Assess recovery options, contractual remedies and appropriate legal advice. |
+| More than 90 days overdue | The balance may present significant collection risk. | Assess recovery options and contractual remedies, and seek specialist professional advice for your situation. |
 
 These categories are illustrative and should be adapted to the business's payment terms, industry and customer risk profile.
 

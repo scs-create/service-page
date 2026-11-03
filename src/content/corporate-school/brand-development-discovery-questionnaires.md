@@ -530,7 +530,7 @@ Design choices should support the intended identity rather than substitute for i
 
 ### Website development
 
-Use the findings to determine the website's value proposition, service descriptions, page structure, tone, and customer journey.
+Use the findings to determine the website's value proposition, service descriptions, page structure, tone, and the path customers take through the site.
 
 The website should explain what the business does, whom it serves, and what visitors can do next.
 

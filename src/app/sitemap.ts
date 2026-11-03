@@ -6,6 +6,7 @@ import { CLUSTERS, SERVICES } from "@/content/v2/catalogue";
 import { portfolio } from "@/content/portfolio/data";
 import { INDUSTRIES } from "@/content/v2/industries";
 import { AUDIENCES } from "@/content/v2/pages";
+import { TOPICS } from "@/content/v2/topics";
 import { TOOLS } from "@/content/toolsList";
 import { getAllPosts } from "@/lib/posts";
 import { hasPlaceholders } from "@/lib/legal";
@@ -20,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const legal = ([["/terms", terms], ["/privacy", privacy], ["/cookies", cookies]] as const)
     .filter(([, d]) => !hasPlaceholders(d as unknown as LegalDocumentData))
     .map(([path]) => ({ url: `${SITE.url}${path}`, priority: 0.3 }));
-  const pages = ["", "/services", "/clients", "/process", "/partnership", "/partnership/remote-operations", "/portfolio", "/industries", "/tools", "/faq", "/verification", "/corporate-college", "/corporate-college/corporate-school", "/about", "/about/standards", "/career", "/contact", "/contact/proposal", "/accessibility", "/search"];
+  const pages = ["", "/services", "/clients", "/process", "/partnership", "/partnership/remote-operations", "/portfolio", "/industries", "/tools", "/faq", "/verification", "/corporate-college", "/corporate-college/corporate-school", "/about", "/about/standards", "/career", "/contact", "/contact/proposal", "/accessibility", "/search", "/career/expert-network"];
   return [
     ...pages.map((r) => ({ url: `${SITE.url}${r}`, priority: r === "" ? 1 : 0.8 })),
     ...TOOLS.map((t) => ({ url: `${SITE.url}${t.href}`, priority: 0.7 })),
@@ -28,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...SERVICES.map((s) => ({ url: `${SITE.url}${s.path}`, priority: 0.7 })),
     ...portfolio.map((p) => ({ url: `${SITE.url}/portfolio/${p.slug}`, priority: 0.6 })),
     ...AUDIENCES.map((a) => ({ url: `${SITE.url}/clients/${a.slug}`, priority: 0.8 })),
+    ...TOPICS.map((t) => ({ url: `${SITE.url}/corporate-college/corporate-school/topics/${t.slug}`, priority: 0.6 })),
     ...INDUSTRIES.map((i) => ({ url: `${SITE.url}${i.path}`, priority: 0.6 })),
     ...getAllPosts().map((p) => ({ url: `${SITE.url}/corporate-college/corporate-school/${p.slug}`, lastModified: new Date(p.date), priority: 0.6 })),
     ...legal,

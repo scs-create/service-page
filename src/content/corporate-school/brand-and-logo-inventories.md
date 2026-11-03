@@ -192,7 +192,7 @@ For each important asset, determine whether it was:
 
 Review employment contracts, contractor agreements, assignments, licences, confidentiality agreements and relevant commercial contracts.
 
-Where ownership is uncertain, identify the gap and obtain appropriate legal advice. An assignment or other document may be needed, depending on the circumstances, to establish or document the intended transfer of rights.
+Where ownership is uncertain, identify the gap and seek specialist professional advice for your situation. An assignment or other document may be needed, depending on the circumstances, to establish or document the intended transfer of rights.
 
 ## 11. Record Registration and Protection Status
 
@@ -315,7 +315,7 @@ Intellectual assets can support a company's reputation, competitive advantage, r
 
 A structured brand and intellectual property inventory helps businesses organise their assets, uncover ownership gaps, prioritise protection and prepare for commercial transactions.
 
-The inventory is not a substitute for registration, enforceable agreements or legal advice where required. It is the foundation that helps a business understand what it owns, what it uses and what still needs attention.
+The inventory is not a substitute for registration, enforceable agreements or specialist professional advice for your situation. It is the foundation that helps a business understand what it owns, what it uses and what still needs attention.
 
 **Before protecting, commercialising or enforcing intellectual property, establish a reliable record of the assets and rights on which the business depends.**
 

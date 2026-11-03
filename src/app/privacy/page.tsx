@@ -9,7 +9,7 @@ const doc = data as unknown as LegalDocumentData;
 // Stays out of search results until every [placeholder] in the JSON is resolved.
 export const metadata: Metadata = {
   title: "Privacy Notice",
-  description: "How Stephen Corporate Services Ltd collects, uses, shares and protects personal data, and your rights under Nigerian data protection law.",
+  description: "How Stephen Corporate Services - SCS Ltd collects, uses, shares and protects personal data, and your rights under Nigerian data protection law.",
   robots: hasPlaceholders(doc) ? { index: false, follow: true } : undefined,
 };
 

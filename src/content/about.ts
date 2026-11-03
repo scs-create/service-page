@@ -4,7 +4,7 @@ import type { LeadershipProfile } from "@/lib/types";
 // (use { type: "text", ... } for a new profile block) — no layout code needs to change.
 
 export const ABOUT_INTRO =
-  "Stephen Corporate Services Ltd (SCS) is a multidisciplinary corporate services, business support, consulting and advisory company providing integrated solutions to businesses, entrepreneurs, organisations, investors and institutions.";
+  "Stephen Corporate Services - SCS Ltd is a multidisciplinary corporate services, business support, consulting and advisory company providing integrated solutions to businesses, entrepreneurs, organisations, investors and institutions.";
 
 export type AboutSection =
   | { type: "identity"; paragraphs: string[] }
@@ -94,7 +94,7 @@ export const INDUSTRIES = [
 ];
 
 export const VISION = { heading: "Our Vision", paragraphs: [
-  "To be a world-class partner empowering professionals and entrepreneurs through company formation, corporate governance, and digital transformation. We strive to build a global community of innovation and sustainable success by providing practical training, corporate services and business advisory institution, empowering businesses and organisations with the expertise, technology, systems and strategic support required to build enduring enterprises.",
+  "To be a world-class partner supporting professionals and entrepreneurs through company formation, corporate governance, and digital transformation. We strive to build a global community of innovation and sustainable success by providing practical training, corporate services and business advisory institution, equipping businesses and organisations with the expertise, technology, systems and strategic support required to build enduring enterprises.",
   "We envision a business environment where entrepreneurs and organisations can access sophisticated corporate support without unnecessary complexity, fragmented service providers or inefficient processes."
 ] };
 export const MISSION = { heading: "Our Mission", paragraphs: [
