@@ -9,8 +9,10 @@
     "lint": "eslint",
     "prebuild": "node scripts/sync-cms.mjs && tsx scripts/gen-forms.ts",
     "predev": "node scripts/sync-cms.mjs && tsx scripts/gen-forms.ts",
-    "typecheck": "tsc --noEmit",
-    "test": "node --import tsx --test tests/*.test.ts"
+    "typecheck": "tsc --noEmit && tsc --noEmit -p worker",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "postbuild": "node scripts/prune-soft-404s.mjs && node scripts/csp-hashes.mjs",
+    "check:site": "node scripts/check-site.mjs"
   },
   "dependencies": {
     "js-yaml": "^5.4.3",
@@ -23,6 +25,7 @@
     "zod": "^4.6.6"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "5.20261019.1",
     "@tailwindcss/postcss": "^4",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20",
@@ -34,6 +37,7 @@
     "eslint-config-next": "^16.4.2",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "4.151.2"
   }
 }

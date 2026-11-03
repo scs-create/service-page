@@ -1,0 +1,21 @@
+// Cloudflare Workers Static Assets (docs/v2/06-TECH-SPEC.md §1). No custom domain here: production DNS stays on
+// Netlify until the owner writes "Approved for cutover" in the sign-off PR.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "scs-website",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-19",
+  "workers_dev": true,
+  "preview_urls": true,
+  "assets": {
+    "directory": "./out",
+    "binding": "ASSETS",
+    "html_handling": "drop-trailing-slash",
+    "not_found_handling": "404-page",
+    // Only these paths run the Worker first; every other request is a static file (and gets public/_headers).
+    "run_worker_first": ["/api/*", "/ingest", "/ingest/*", "/admin", "/admin/*"]
+  },
+  "observability": { "enabled": true },
+  // Daily 01:00 UTC = 02:00 WAT: retention job (no-op until the forms PR adds D1 and R2).
+  "triggers": { "crons": ["0 1 * * *"] }
+}
