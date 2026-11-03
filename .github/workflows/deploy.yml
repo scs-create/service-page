@@ -69,6 +69,7 @@ jobs:
           npx wrangler deploy --message "${NEXT_PUBLIC_SITE_ENV} ${GITHUB_REF_NAME} ${GITHUB_SHA::7}" 2>&1 | tee deploy.log ||
             { note "Deploy failed" deploy.log; exit 1; }
           url=$(grep -oE 'https://[a-z0-9.-]+\.workers\.dev' deploy.log | head -1 || true)
+          [ -n "$url" ] && echo "::notice title=Review address::$url"
           {
             echo "## Deployed (${NEXT_PUBLIC_SITE_ENV})"
             echo ""
