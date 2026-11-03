@@ -45,3 +45,6 @@ public/admin/*.js
 
 # keep the documented example (no secrets in it)
 !.env.example
+
+# Cloudflare local state
+.wrangler/

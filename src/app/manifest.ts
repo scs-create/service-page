@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+
+export const dynamic = "force-static"; // static export (v2 on Cloudflare)
 import { SITE } from "@/lib/site";
 
 // PWA basics. Colour literals are required here (a manifest cannot read CSS variables): they mirror

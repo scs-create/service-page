@@ -1,0 +1,24 @@
+# Cloudflare Workers Static Assets headers (docs/v2/06-TECH-SPEC.md §8). These apply to static files only;
+# responses from the Worker (/api/*, /ingest/*, /admin/*) get the same headers from worker/index.ts.
+#
+# CSP: two policies are enforced together. This header carries every directive; its script-src also allows
+# inline scripts, and each HTML page adds a <meta> policy (scripts/csp-hashes.mjs) whose script-src lists the
+# SHA-256 hash of every inline script on that page. A browser applies both, so only those exact inline scripts
+# run. That meets the spec's script-src ('self' + Turnstile, no blanket 'unsafe-inline') on a static export,
+# where Next.js must inline its bootstrap scripts and per-request nonces are impossible.
+#
+# HSTS stays max-age only until the cutover is stable; includeSubDomains and preload are an owner decision then
+# (preload is effectively irreversible).
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'; font-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable

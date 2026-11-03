@@ -1,0 +1,9 @@
+# Cloudflare Workers Static Assets redirects (docs/v2/06-TECH-SPEC.md §1). www -> apex is a Cloudflare
+# redirect rule, not here. Static rules first, then rules with a splat.
+#
+# Staged: only rules whose target page already exists are live. The full v2 list is docs/v2/04-_redirects.txt;
+# the service rules switch on with the services PR and the industry, /who-we-help and /how-we-work rules with the
+# pages PR. scripts/check-site.mjs fails the build if any target here is not a real page in out/.
+/services/legal-partnership-and-regulatory-business-support /services/corporate-partnership-and-regulatory-business-support 301
+/academy /corporate-college 301
+/academy/* /corporate-college/:splat 301
