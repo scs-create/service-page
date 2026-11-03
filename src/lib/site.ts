@@ -63,5 +63,9 @@ export const SITE = {
   rc: "9041457", // SCS's own CAC registration number (confirmed by the client)
 } as const;
 
+// Which build this is. Only the Cloudflare production deploy sets NEXT_PUBLIC_SITE_ENV=production; every other
+// build (local, CI, previews) is treated as a preview: noindex, robots disallow, placeholders allowed.
+export const IS_PRODUCTION = process.env.NEXT_PUBLIC_SITE_ENV === "production";
+
 export const MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(SITE.address.full);

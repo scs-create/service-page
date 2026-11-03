@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>SCS Content Admin</title>
+    <!-- Absolute config path: Cloudflare serves this page at /admin (no trailing slash), where Decap's default
+         relative "config.yml" would resolve to /config.yml. -->
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
   </head>
   <body>
     <!-- Self-hosted copy of an exact, pinned npm version (see scripts/sync-cms.mjs). No third-party scripts. -->

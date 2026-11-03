@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>SCS header</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<header style="width: 100%; background: #ffffff; border-bottom: 1px solid #d6e0f2; font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif; color: #0b1730;">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 {{pad}}; min-height: {{hh}}; display: flex; align-items: center; justify-content: space-between; gap: 20px;">
+<a href="/" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #0b1730;">
+<img src="/_blob/946e11c34549f24353a921c67bcc8b0a" alt="" width="{{logoW}}" height="{{logoH}}" style="display: block;">
+<span style="display: flex; flex-direction: column; line-height: 1.2;"><span style="font-size: {{nameSize}}; font-weight: 600;">Stephen Corporate Services - SCS Ltd</span><span style="font-size: 12px; color: #475a7d; font-variant-numeric: tabular-nums;">RC 9041457</span></span>
+</a>
+<sc-if value="{{desk}}" hint-placeholder-val="{{ true }}">
+<nav aria-label="Main" style="display: flex; align-items: center; gap: 24px; font-size: 15px;">
+<a href="/" style="color: #0b1730; text-decoration: none; padding: 8px 0; border-bottom: 2px solid {{bHome}};">Home</a>
+<a href="/services" style="color: #0b1730; text-decoration: none; padding: 8px 0; border-bottom: 2px solid {{bServices}};">Services</a>
+<a href="/clients" style="color: #0b1730; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent;">Clients</a>
+<a href="/process" style="color: #0b1730; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent;">Process</a>
+<a href="/partnership" style="color: #0b1730; text-decoration: none; padding: 8px 0; border-bottom: 2px solid {{bPartnership}};">Partnership</a>
+<a href="/corporate-college/corporate-school" style="color: #0b1730; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent;">Insights</a>
+<a href="/about" style="color: #0b1730; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent;">About</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 16px;">
+<a href="/contact/proposal" style="color: #0340a9; font-size: 14px; font-weight: 500; text-decoration: none;">Request a proposal</a>
+<a href="https://cal.com/support-stephen-corporate-services-scs/30min" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; background: #0340a9; color: #ffffff; border-radius: 8px; font-size: 15px; font-weight: 500; text-decoration: none;">Book a Discovery Call</a>
+</div>
+</sc-if>
+<sc-if value="{{mobile}}" hint-placeholder-val="{{ false }}">
+<button type="button" aria-label="Open menu" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 12px; background: #ffffff; border: 1px solid #d6e0f2; border-radius: 8px; color: #0b1730; font: inherit; font-size: 15px; font-weight: 500; flex: none;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0b1730" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>Menu</button>
+</sc-if>
+</div>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"mobile":{"editor":"boolean","default":false},"active":{"editor":"enum","options":["home","services","partnership","contact"],"default":"home"},"direction":{"editor":null},"$preview":{"width":1440,"height":88}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const m = this.props.mobile === true || this.props.mobile === 'yes' || this.props.mobile === 'true';
+    const a = this.props.active || 'home';
+    return {
+      mobile: m,
+      desk: !m,
+      pad: m ? '16px' : '40px',
+      hh: m ? '68px' : '84px',
+      logoW: m ? 30 : 40,
+      logoH: m ? 34 : 45,
+      nameSize: m ? '13px' : '15px',
+      bHome: a === 'home' ? '#f9b91a' : 'transparent',
+      bServices: a === 'services' ? '#f9b91a' : 'transparent',
+      bPartnership: a === 'partnership' ? '#f9b91a' : 'transparent'
+    };
+  }
+}
+</script>
+</body>
+</html>

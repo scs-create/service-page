@@ -1,0 +1,42 @@
+source,destination,status,reason
+/services/ai-governance-and-digital-transformation,/services/technology-and-digital/ai-governance-and-digital-transformation,301,v1 service category
+/services/business-formation-and-corporate-structuring,/services/company-formation-and-secretarial,301,v1 service category
+/services/business-operations-and-outsourced-support,/services/hr-and-operations/outsourced-business-administration,301,v1 service category
+/services/contract-lifecycle-management,/services/hr-and-operations/contract-lifecycle-management,301,v1 service category
+/services/corporate-and-commercial-advisory,/services/strategy-and-advisory/corporate-and-commercial-advisory,301,v1 service category
+/services/corporate-communications-and-business-documentation,/services/marketing-and-communications/corporate-communications-and-company-profiles,301,v1 service category
+/services/corporate-partnership-and-regulatory-business-support,/services/compliance-and-regulatory/corporate-partnership-and-regulatory-business-support,301,v1 service category
+/services/customer-experience-and-customer-care,/services/hr-and-operations/customer-service-outsourcing,301,v1 service category
+/services/data-analytics-and-business-intelligence,/services/technology-and-digital/dashboards-and-business-intelligence,301,v1 service category
+/services/data-protection-privacy-and-information-governance,/services/compliance-and-regulatory/data-protection-compliance,301,v1 service category
+/services/digital-marketing-and-brand-growth,/services/marketing-and-communications,301,v1 service category
+/services/human-resources-and-staff-management,/services/hr-and-operations/hr-administration-and-staff-handbooks,301,v1 service category
+/services/intellectual-property-and-brand-asset-management,/services/company-formation-and-secretarial/intellectual-property-and-brand-asset-management,301,v1 service category
+/services/procurement-supply-chain-and-vendor-management,/services/hr-and-operations/procurement-and-vendor-management,301,v1 service category
+/services/project-management-and-implementation,/services/hr-and-operations/project-management,301,v1 service category
+/services/recruitment-and-talent-solutions,/services/hr-and-operations/recruitment,301,v1 service category
+/services/regulatory-compliance-and-licensing,/services/compliance-and-regulatory,301,v1 service category
+/services/research-market-intelligence-and-policy,/services/strategy-and-advisory/market-research-and-competitor-analysis,301,v1 service category
+/services/strategy-management-and-business-consulting,/services/strategy-and-advisory/business-strategy-consulting,301,v1 service category
+/services/tax-accounting-and-financial-business-support,/services/finance-and-accounting,301,v1 service category
+/services/transaction-investment-and-growth-advisory,/services/finance-and-accounting/transaction-and-investment-advisory,301,v1 service category
+/services/legal-partnership-and-regulatory-business-support,/services/compliance-and-regulatory/corporate-partnership-and-regulatory-business-support,301,v1 service category
+/industries/agriculture-and-agribusiness,/industries/agriculture-and-food,301,industries merged 15 to 6
+/industries/construction-and-general-contracting,/industries/energy-construction-and-real-estate,301,industries merged 15 to 6
+/industries/education,/industries/education-and-non-profits,301,industries merged 15 to 6
+/industries/energy-oil-and-gas,/industries/energy-construction-and-real-estate,301,industries merged 15 to 6
+/industries/financial-services-and-fintech,/industries/financial-services,301,industries merged 15 to 6
+/industries/healthcare-and-pharmaceuticals,/industries/health-and-manufacturing,301,industries merged 15 to 6
+/industries/lending-credit-and-investment,/industries/financial-services,301,industries merged 15 to 6
+/industries/manufacturing,/industries/health-and-manufacturing,301,industries merged 15 to 6
+/industries/media-and-entertainment,/industries/technology-media-and-consumer,301,industries merged 15 to 6
+/industries/nonprofits-and-social-enterprises,/industries/education-and-non-profits,301,industries merged 15 to 6
+/industries/private-schools-and-early-years,/industries/education-and-non-profits,301,industries merged 15 to 6
+/industries/professional-services,/industries/technology-media-and-consumer,301,industries merged 15 to 6
+/industries/real-estate-and-construction,/industries/energy-construction-and-real-estate,301,industries merged 15 to 6
+/industries/retail-and-consumer-businesses,/industries/technology-media-and-consumer,301,industries merged 15 to 6
+/industries/technology-and-digital-businesses,/industries/technology-media-and-consumer,301,industries merged 15 to 6
+/academy,/corporate-college,301,existing rule
+/academy/*,/corporate-college/:splat,301,existing rule
+/who-we-help,/clients,301,nav rename (in case of early links)
+/how-we-work,/process,301,nav rename (in case of early links)

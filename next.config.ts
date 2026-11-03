@@ -1,53 +1,16 @@
 import type { NextConfig } from "next";
 
-// Content Security Policy for the public site (every path except /admin, the Decap CMS editor, which needs
-// api.github.com, api.netlify.com and GitHub-hosted images and keeps the minimal policy from netlify.toml).
-// 'unsafe-inline' in script-src stays: Next.js inlines its hydration data in <script> tags and the site is
-// statically generated, so per-request nonces (which need dynamic rendering) are not possible. Everything else
-// is same-origin, including analytics: PostHog is reached through /ingest (proxied in netlify.toml).
-const CSP = [
-  "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
-  "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob:",
-  "font-src 'self'",
-  "connect-src 'self'",
-  "manifest-src 'self'",
-  "frame-src 'none'",
-  "worker-src 'self'",
-  "form-action 'self'",
-  "frame-ancestors 'self'",
-  "base-uri 'self'",
-  "object-src 'none'",
-  "upgrade-insecure-requests",
-].join("; ");
-
-// Same values as netlify.toml (kept in step). HSTS is max-age only: never includeSubDomains/preload here.
-const SECURITY_HEADERS = [
-  { key: "X-Content-Type-Options", value: "nosniff" },
-  { key: "X-Frame-Options", value: "SAMEORIGIN" },
-  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-  { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
-  { key: "Strict-Transport-Security", value: "max-age=31536000" },
-];
-
+// v2 runs on Cloudflare Workers Static Assets (docs/v2/06-TECH-SPEC.md §1): the site is a static export in out/.
+// A static export cannot use next.config redirects, headers or the default image loader, so:
+//   redirects        -> public/_redirects   (checked by scripts/check-site.mjs: every target must exist)
+//   security headers -> public/_headers     (+ a per-page script-src with hashes, added by scripts/csp-hashes.mjs)
+//   images           -> served as built (pre-optimised at build time in a later PR)
+// Paths that the Worker answers (/api/*, /ingest/*, /admin/*) get their headers from worker/index.ts instead.
 const nextConfig: NextConfig = {
-  // "Academy" is now "Corporate College" — keep old links and search rankings working.
-  async redirects() {
-    return [
-      { source: "/academy", destination: "/corporate-college", permanent: true },
-      { source: "/services/legal-partnership-and-regulatory-business-support", destination: "/services/corporate-partnership-and-regulatory-business-support", permanent: true },
-      { source: "/academy/:path*", destination: "/corporate-college/:path*", permanent: true },
-    ];
-  },
+  output: "export",
+  trailingSlash: false,
+  images: { unoptimized: true },
   poweredByHeader: false,
-  // On Netlify, netlify.toml [[headers]] only reach static files; pages rendered by Next.js need them here too.
-  async headers() {
-    return [
-      { source: "/:path*", headers: SECURITY_HEADERS },
-      { source: "/((?!admin).*)", headers: [{ key: "Content-Security-Policy", value: CSP }] },
-    ];
-  },
 };
 
 export default nextConfig;

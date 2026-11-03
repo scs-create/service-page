@@ -1,4 +1,6 @@
 import type { MetadataRoute } from "next";
+
+export const dynamic = "force-static"; // static export (v2 on Cloudflare)
 import { SITE } from "@/lib/site";
 import { services } from "@/content/services/data";
 import { portfolio } from "@/content/portfolio/data";

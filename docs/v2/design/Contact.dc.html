@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Contact SCS</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 100%; background: #ffffff; color: #0b1730; font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 1.55;">
+
+<dc-import name="Header" direction="{{direction}}" mobile="{{mobile}}" active="contact" hint-size="100%,80px"></dc-import>
+
+<main>
+<section aria-labelledby="c-title" style="border-bottom: 1px solid #d6e0f2;">
+<div style="max-width: 1200px; margin: 0 auto; padding: {{heroPad}} {{pad}};">
+<p style="margin: 0 0 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0340a9;">Contact</p>
+<h1 id="c-title" style="margin: 0; font-family: {{hf}}; font-size: {{h1}}; line-height: 1.12; font-weight: 600; letter-spacing: {{hls}};">Talk to SCS</h1>
+<div style="width: 56px; height: 4px; background: #f9b91a; border-radius: 2px; margin: 24px 0;"></div>
+<p style="margin: 0; font-size: {{lead}}; color: #475a7d; max-width: 60ch;">Choose whichever suits you. We respond within 24 hours.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 40px;">
+<div style="border: 1px solid #d6e0f2; border-top: 4px solid #f9b91a; border-radius: 4px; padding: 24px; display: flex; flex-direction: column; gap: 12px;">
+<h2 style="margin: 0; font-size: 18px; font-weight: 600;">Book a Discovery Call</h2>
+<p style="margin: 0; font-size: 14px; color: #475a7d;">30 minutes by video, at a time that suits you.</p>
+<a href="https://cal.com/support-stephen-corporate-services-scs/30min" style="margin-top: auto; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 20px; background: #0340a9; color: #ffffff; border-radius: 8px; font-weight: 500; text-decoration: none;">Book a Discovery Call</a>
+</div>
+<div style="border: 1px solid #d6e0f2; border-radius: 4px; padding: 24px; display: flex; flex-direction: column; gap: 12px;">
+<h2 style="margin: 0; font-size: 18px; font-weight: 600;">Send an enquiry</h2>
+<p style="margin: 0; font-size: 14px; color: #475a7d;">Tell us what you need in a few lines.</p>
+<a href="#enquiry" style="margin-top: auto; color: #0340a9; font-weight: 500; text-decoration: none;">Go to the form →</a>
+</div>
+<div style="border: 1px solid #d6e0f2; border-radius: 4px; padding: 24px; display: flex; flex-direction: column; gap: 12px;">
+<h2 style="margin: 0; font-size: 18px; font-weight: 600;">Request a proposal</h2>
+<p style="margin: 0; font-size: 14px; color: #475a7d;">For organisations with a formal brief or tender.</p>
+<a href="/contact/proposal" style="margin-top: auto; color: #0340a9; font-weight: 500; text-decoration: none;">Request a proposal →</a>
+</div>
+</div>
+</div>
+</section>
+
+<div style="max-width: 1200px; margin: 0 auto; padding: {{sec}} {{pad}}; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start;">
+<form id="enquiry" aria-labelledby="form-title" style="flex: 1 1 600px; min-width: 0; display: flex; flex-direction: column; gap: 20px;">
+<h2 id="form-title" style="margin: 0; font-family: {{hf}}; font-size: {{h2}}; line-height: 1.15; font-weight: 600; letter-spacing: {{hls}};">Send an enquiry</h2>
+<p style="margin: -8px 0 0; font-size: 14px; color: #475a7d;">Only the fields marked required are needed. <span style="color: #b3261e;">*</span> Required</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500;">Your name <span style="color: #b3261e;" aria-hidden="true">*</span><input type="text" name="name" required autocomplete="name" style="min-height: 44px; padding: 0 12px; border: 1px solid #8a9bbb; border-radius: 4px; font: inherit; font-weight: 400;"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500;">Email <span style="color: #b3261e;" aria-hidden="true">*</span><input type="email" name="email" required autocomplete="email" style="min-height: 44px; padding: 0 12px; border: 1px solid #8a9bbb; border-radius: 4px; font: inherit; font-weight: 400;"></label>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500;">Organisation (optional)<input type="text" name="organisation" autocomplete="organization" style="min-height: 44px; padding: 0 12px; border: 1px solid #8a9bbb; border-radius: 4px; font: inherit; font-weight: 400;"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500;">What can we help with? <span style="color: #b3261e;" aria-hidden="true">*</span>
+<select name="topic" required style="min-height: 44px; padding: 0 12px; border: 1px solid #8a9bbb; border-radius: 4px; font: inherit; font-weight: 400; background: #ffffff;">
+<option>Choose one</option>
+<option>Strategy &amp; Advisory</option>
+<option>Company Formation &amp; Secretarial</option>
+<option>Compliance &amp; Regulatory</option>
+<option>Finance &amp; Accounting</option>
+<option>HR &amp; Operations</option>
+<option>Technology &amp; Digital</option>
+<option>Marketing &amp; Communications</option>
+<option>SCS Partnership</option>
+<option>Training (Corporate College)</option>
+<option>Something else</option>
+</select></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 500;">Your message <span style="color: #b3261e;" aria-hidden="true">*</span><textarea name="message" required rows="5" style="padding: 10px 12px; border: 1px solid #8a9bbb; border-radius: 4px; font: inherit; font-weight: 400; resize: vertical;"></textarea></label>
+<label style="display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: #0b1730;"><input type="checkbox" name="consent" required style="width: 20px; height: 20px; margin: 2px 0 0; flex: none;">I agree that Stephen Corporate Services - SCS Ltd may use these details to reply to my enquiry, as described in the <a href="/privacy" style="color: #0340a9;">Privacy notice</a>.</label>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: center;">
+<button type="submit" style="min-height: 48px; padding: 0 24px; background: #0340a9; color: #ffffff; border: 0; border-radius: 8px; font: inherit; font-weight: 500; cursor: pointer;">Send enquiry</button>
+<span style="font-size: 14px; color: #475a7d;">We respond within 24 hours.</span>
+</div>
+</form>
+
+<aside aria-label="Other ways to reach us" style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+<div style="border: 1px solid #d6e0f2; border-radius: 4px; padding: 24px;">
+<h2 style="margin: 0 0 16px; font-size: 18px; font-weight: 600;">Reach a person</h2>
+<dl style="margin: 0; display: flex; flex-direction: column; gap: 14px; font-size: 15px;">
+<div><dt style="font-size: 13px; color: #475a7d;">Phone and WhatsApp</dt><dd style="margin: 2px 0 0;"><a href="tel:+2348128138222" style="color: #0340a9; text-decoration: none; font-weight: 500;">+234 812 813 8222</a> · <a href="https://wa.me/2348128138222" style="color: #0340a9; text-decoration: none; font-weight: 500;">WhatsApp ↗</a></dd></div>
+<div><dt style="font-size: 13px; color: #475a7d;">Email</dt><dd style="margin: 2px 0 0;"><a href="mailto:contact@stephencorporateservices-scs.com" style="color: #0340a9; text-decoration: none; font-weight: 500; word-break: break-all;">contact@stephencorporateservices-scs.com</a></dd></div>
+<div><dt style="font-size: 13px; color: #475a7d;">Office</dt><dd style="margin: 2px 0 0;">SD20 Belham Estate, Karsana, FCT, Abuja, Nigeria</dd></div>
+<div><dt style="font-size: 13px; color: #475a7d;">Office hours</dt><dd style="margin: 2px 0 0;">Monday to Friday, 8:00 am to 5:00 pm WAT (UTC+1)</dd></div>
+</dl>
+</div>
+<div style="border: 1px solid #d6e0f2; border-top: 4px solid #f9b91a; border-radius: 4px; padding: 24px; background: #f1f5fc;">
+<h2 style="margin: 0 0 16px; font-size: 18px; font-weight: 600;">What happens after you contact us</h2>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 15px;">
+<li style="display: flex; gap: 12px;"><span style="flex: none; width: 24px; font-weight: 600; color: #0340a9; font-variant-numeric: tabular-nums;">1</span><span>You receive a reference number by email.</span></li>
+<li style="display: flex; gap: 12px;"><span style="flex: none; width: 24px; font-weight: 600; color: #0340a9; font-variant-numeric: tabular-nums;">2</span><span>The right person at SCS reviews your enquiry.</span></li>
+<li style="display: flex; gap: 12px;"><span style="flex: none; width: 24px; font-weight: 600; color: #0340a9; font-variant-numeric: tabular-nums;">3</span><span>We reply within 24 hours.</span></li>
+<li style="display: flex; gap: 12px;"><span style="flex: none; width: 24px; font-weight: 600; color: #0340a9; font-variant-numeric: tabular-nums;">4</span><span>We arrange a call or prepare a proposal.</span></li>
+</ol>
+</div>
+</aside>
+</div>
+</main>
+
+<dc-import name="Footer" direction="{{direction}}" mobile="{{mobile}}" hint-size="100%,560px"></dc-import>
+<sc-if value="{{mobile}}" hint-placeholder-val="{{ false }}">
+<dc-import name="MobileBar" hint-size="100%,72px"></dc-import>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"direction":{"editor":"enum","options":["A","B"],"default":"A","section":"Direction"},"mobile":{"editor":"boolean","default":false,"section":"Direction"},"$preview":{"width":1440,"height":2900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const d = this.props.direction === 'B' ? 'B' : 'A';
+    const m = this.props.mobile === true || this.props.mobile === 'yes' || this.props.mobile === 'true';
+    const serif = d === 'B';
+    return {
+      direction: d,
+      mobile: m,
+      hf: serif ? "'Source Serif 4', Georgia, 'Times New Roman', serif" : "Inter, system-ui, -apple-system, 'Segoe UI', sans-serif",
+      hls: serif ? '0' : '-0.01em',
+      h1: m ? (serif ? '38px' : '34px') : (serif ? '58px' : '50px'),
+      h2: m ? (serif ? '28px' : '26px') : (serif ? '36px' : '30px'),
+      lead: m ? '16px' : '18px',
+      pad: m ? '20px' : '48px',
+      heroPad: m ? '40px' : '72px',
+      sec: m ? '48px' : '80px'
+    };
+  }
+}
+</script>
+</body>
+</html>

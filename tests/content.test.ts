@@ -156,7 +156,7 @@ test("the website sections describe the tools this site actually uses", () => {
 });
 test("analytics: the previous tool is gone everywhere; one PostHog config; only allowlisted event properties", () => {
   const walk = (d: string): string[] => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(`${d}/${e.name}`) : [`${d}/${e.name}`]));
-  const files = [...walk("src"), "next.config.ts", "netlify.toml", ".env.example", "README.md", ...walk("docs")];
+  const files = [...walk("src"), "next.config.ts", "netlify.toml", ".env.example", "README.md", ...walk("docs").filter((f) => !f.startsWith("docs/v2/"))]; // docs/v2 is the owner-approved pack, kept verbatim
   const oldTool = new RegExp(["plaus", "ible"].join(""), "i"); // built from parts so this file passes its own check
   assert.deepEqual(files.filter((f) => oldTool.test(fs.readFileSync(f, "utf-8"))), []);
   assert.deepEqual(files.filter((f) => f.startsWith("src") && fs.readFileSync(f, "utf-8").includes("phc_")), ["src/lib/analytics.ts"]);

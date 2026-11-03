@@ -10,7 +10,7 @@ import ContactDock from "@/components/layout/ContactDock";
 import TrackClicks from "@/components/ui/TrackClicks";
 import BadgeOffset from "@/components/ui/BadgeOffset";
 import { services } from "@/content/services/data";
-import { SITE } from "@/lib/site";
+import { SITE, IS_PRODUCTION } from "@/lib/site";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -23,6 +23,7 @@ const DESCRIPTION =
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
+  ...(IS_PRODUCTION ? {} : { robots: { index: false, follow: false } }), // previews are never indexed
   title: {
     default: `${SITE.titleName} | Corporate Services Partner`,
     template: `%s | ${SITE.titleName}`,

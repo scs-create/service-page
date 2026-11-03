@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<title>Stephen Corporate Services - SCS Ltd home page</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,600&amp;display=swap">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 100%; background: #ffffff; color: #0b1730; font-family: Inter, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 1.5;">
+
+<dc-import name="Header" direction="{{direction}}" mobile="{{mobile}}" active="home" hint-size="100%,80px"></dc-import>
+
+<main>
+<section aria-labelledby="hero-title" style="border-bottom: 1px solid #d6e0f2;">
+<div style="max-width: 1240px; margin: 0 auto; padding: {{heroPad}} {{pad}}; display: flex; flex-wrap: wrap; gap: {{heroGap}}; align-items: flex-end;">
+
+<sc-if value="{{mobile}}" hint-placeholder-val="{{ false }}">
+<div style="width: 100%; display: flex; align-items: flex-end; gap: 16px; border-bottom: 3px solid #f9b91a; padding-bottom: 0;">
+<svg role="img" aria-label="The SCS towers" viewBox="0 0 284.2 315.5" width="104" height="116" style="display: block; flex: none;"><path fill="#0340a9" fill-rule="evenodd" d="M269.8 204.2L269.2 315.2L284.0 315.2L283.8 216.0L278.2 209.2ZM251.5 192.0L250.0 196.0L250.2 312.0L252.2 315.2L262.8 315.2L263.8 201.2L254.0 192.8ZM222.0 190.2L218.2 191.0L201.0 202.0L195.2 207.5L195.2 315.2L222.0 315.2L223.0 312.5L223.2 191.8ZM237.2 155.0L196.8 181.0L195.2 184.2L195.0 191.2L196.2 194.2L199.5 193.8L230.0 175.8L232.0 176.8L231.8 313.0L233.0 315.2L242.8 315.2L244.8 312.2L244.8 180.5L246.0 179.2L247.8 179.8L281.5 203.5L283.5 202.2L283.2 189.0L244.0 158.0L239.8 155.2ZM53.2 131.8L48.5 134.0L2.0 170.5L0.2 173.8L0.5 205.0L1.5 206.0L4.5 205.2L41.5 176.0L43.2 175.8L44.0 178.5L43.5 183.0L3.0 215.8L0.2 220.0L0.5 238.8L2.5 239.8L42.0 210.5L44.0 211.8L44.2 215.0L42.0 218.5L5.5 247.0L0.8 252.2L0.2 273.2L1.2 274.0L15.8 264.2L42.2 244.0L44.0 245.0L43.8 250.0L40.2 254.5L3.2 283.5L0.8 287.0L0.0 304.8L0.5 307.5L4.5 307.0L6.8 304.2L42.2 277.8L44.2 279.0L44.2 283.8L42.8 287.8L18.5 307.0L12.5 313.0L13.8 314.5L60.5 315.2L60.2 149.2L62.2 147.2L77.5 154.2L78.8 148.0L76.5 145.2ZM146.8 0.5L138.0 0.0L135.2 3.0L135.5 61.8L133.5 66.0L99.5 93.0L95.5 95.0L87.2 103.8L86.8 117.0L88.5 119.0L92.0 117.5L121.2 94.8L124.5 93.5L126.5 94.8L126.0 105.2L88.5 133.2L87.2 135.5L87.2 150.0L88.5 150.8L120.8 127.2L124.5 125.8L126.2 127.0L125.5 135.2L119.5 141.0L89.5 163.2L87.0 167.0L86.2 179.0L88.5 180.8L112.2 164.5L122.5 155.8L125.0 155.2L126.2 156.5L126.0 163.8L89.5 191.2L86.8 196.5L86.2 209.8L88.0 210.8L124.8 184.5L126.0 185.8L126.2 191.8L122.8 195.5L88.8 221.8L86.8 224.5L86.0 237.5L88.5 240.0L123.8 214.5L126.2 215.8L125.8 223.8L98.5 244.8L86.5 255.5L87.0 269.5L88.0 270.2L124.2 244.5L126.2 246.2L125.5 254.8L88.0 284.8L87.2 300.2L88.8 301.0L124.8 274.8L126.8 276.5L126.0 286.5L91.2 315.2L117.8 315.2L137.5 303.0L149.2 314.0L155.5 313.2L161.2 315.2L184.5 315.2L184.5 178.2L196.8 171.2L196.5 130.2L167.8 109.0L165.8 106.5L165.8 100.5L167.2 99.2L174.5 103.8L183.0 111.0L196.0 119.5L197.2 118.5L197.2 102.0L190.5 95.5L167.0 78.2L150.0 63.8L149.8 2.5Z"></path><path fill="#f9b91a" fill-rule="evenodd" d="M166.0 107.8L165.0 109.8L165.0 315.2L184.5 315.2L184.5 178.2L196.8 171.2L196.5 130.2ZM152.0 93.8L151.0 95.2L151.0 312.0L151.8 313.2L156.0 313.5L156.8 96.0L155.2 93.8Z"></path><path fill="#ffffff" fill-rule="evenodd" d="M155.8 93.8L156.0 312.8L159.8 314.5L165.8 315.2L165.8 98.2L159.0 93.0Z"></path></svg>
+<p style="margin: 0 0 10px; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #011550; line-height: 1.4;">Elevate Your Company, Go Global.</p>
+</div>
+</sc-if>
+
+<div style="flex: 1 1 560px; min-width: 0;">
+<p style="margin: 0 0 16px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0340a9;">Corporate services and business support · Abuja, serving clients worldwide</p>
+<h1 id="hero-title" style="margin: 0; font-family: {{hf}}; font-size: {{h1}}; line-height: 1.12; font-weight: 600; letter-spacing: {{hls}}; color: #0b1730; max-width: 18ch;">One accountable partner for setting up, running and growing your organisation, in Nigeria and across borders.</h1>
+<div style="width: 56px; height: 4px; background: #f9b91a; border-radius: 2px; margin: {{ruleMargin}};"></div>
+<p style="margin: 0; font-size: {{lead}}; line-height: 1.55; color: #475a7d; max-width: 60ch;">Company registration, compliance and filings, company secretarial work, documentation and growth projects. Every engagement is scoped in writing and reviewed by our management team before delivery.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; margin-top: 28px;">
+<a href="https://cal.com/support-stephen-corporate-services-scs/30min" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; background: #0340a9; color: #ffffff; border-radius: 8px; font-weight: 500; text-decoration: none;">Book a Discovery Call</a>
+<a href="/process" style="color: #0340a9; font-weight: 500; text-decoration: none;">See our process →</a>
+</div>
+<p style="margin: 14px 0 0; font-size: 14px; color: #475a7d;">30 minutes, by video. We respond within 24 hours.</p>
+</div>
+
+<sc-if value="{{desk}}" hint-placeholder-val="{{ true }}">
+<div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column;">
+<div style="display: flex; justify-content: center; border-bottom: 4px solid #f9b91a;">
+<svg role="img" aria-label="The SCS towers" viewBox="0 0 284.2 315.5" width="300" height="333" style="display: block;"><path fill="#0340a9" fill-rule="evenodd" d="M269.8 204.2L269.2 315.2L284.0 315.2L283.8 216.0L278.2 209.2ZM251.5 192.0L250.0 196.0L250.2 312.0L252.2 315.2L262.8 315.2L263.8 201.2L254.0 192.8ZM222.0 190.2L218.2 191.0L201.0 202.0L195.2 207.5L195.2 315.2L222.0 315.2L223.0 312.5L223.2 191.8ZM237.2 155.0L196.8 181.0L195.2 184.2L195.0 191.2L196.2 194.2L199.5 193.8L230.0 175.8L232.0 176.8L231.8 313.0L233.0 315.2L242.8 315.2L244.8 312.2L244.8 180.5L246.0 179.2L247.8 179.8L281.5 203.5L283.5 202.2L283.2 189.0L244.0 158.0L239.8 155.2ZM53.2 131.8L48.5 134.0L2.0 170.5L0.2 173.8L0.5 205.0L1.5 206.0L4.5 205.2L41.5 176.0L43.2 175.8L44.0 178.5L43.5 183.0L3.0 215.8L0.2 220.0L0.5 238.8L2.5 239.8L42.0 210.5L44.0 211.8L44.2 215.0L42.0 218.5L5.5 247.0L0.8 252.2L0.2 273.2L1.2 274.0L15.8 264.2L42.2 244.0L44.0 245.0L43.8 250.0L40.2 254.5L3.2 283.5L0.8 287.0L0.0 304.8L0.5 307.5L4.5 307.0L6.8 304.2L42.2 277.8L44.2 279.0L44.2 283.8L42.8 287.8L18.5 307.0L12.5 313.0L13.8 314.5L60.5 315.2L60.2 149.2L62.2 147.2L77.5 154.2L78.8 148.0L76.5 145.2ZM146.8 0.5L138.0 0.0L135.2 3.0L135.5 61.8L133.5 66.0L99.5 93.0L95.5 95.0L87.2 103.8L86.8 117.0L88.5 119.0L92.0 117.5L121.2 94.8L124.5 93.5L126.5 94.8L126.0 105.2L88.5 133.2L87.2 135.5L87.2 150.0L88.5 150.8L120.8 127.2L124.5 125.8L126.2 127.0L125.5 135.2L119.5 141.0L89.5 163.2L87.0 167.0L86.2 179.0L88.5 180.8L112.2 164.5L122.5 155.8L125.0 155.2L126.2 156.5L126.0 163.8L89.5 191.2L86.8 196.5L86.2 209.8L88.0 210.8L124.8 184.5L126.0 185.8L126.2 191.8L122.8 195.5L88.8 221.8L86.8 224.5L86.0 237.5L88.5 240.0L123.8 214.5L126.2 215.8L125.8 223.8L98.5 244.8L86.5 255.5L87.0 269.5L88.0 270.2L124.2 244.5L126.2 246.2L125.5 254.8L88.0 284.8L87.2 300.2L88.8 301.0L124.8 274.8L126.8 276.5L126.0 286.5L91.2 315.2L117.8 315.2L137.5 303.0L149.2 314.0L155.5 313.2L161.2 315.2L184.5 315.2L184.5 178.2L196.8 171.2L196.5 130.2L167.8 109.0L165.8 106.5L165.8 100.5L167.2 99.2L174.5 103.8L183.0 111.0L196.0 119.5L197.2 118.5L197.2 102.0L190.5 95.5L167.0 78.2L150.0 63.8L149.8 2.5Z"></path><path fill="#f9b91a" fill-rule="evenodd" d="M166.0 107.8L165.0 109.8L165.0 315.2L184.5 315.2L184.5 178.2L196.8 171.2L196.5 130.2ZM152.0 93.8L151.0 95.2L151.0 312.0L151.8 313.2L156.0 313.5L156.8 96.0L155.2 93.8Z"></path><path fill="#ffffff" fill-rule="evenodd" d="M155.8 93.8L156.0 312.8L159.8 314.5L165.8 315.2L165.8 98.2L159.0 93.0Z"></path></svg>
+</div>
+<aside aria-label="Registration record" style="margin-top: 20px; border: 1px solid #d6e0f2; border-top: 4px solid #f9b91a; border-radius: 4px; background: #ffffff;">
+<dl style="margin: 0; padding: 4px 20px;">
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #eef2f9;"><dt style="font-size: 14px; color: #475a7d;">Company</dt><dd style="margin: 0; font-size: 14px; font-weight: 500; text-align: right;">Stephen Corporate Services - SCS Ltd</dd></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-bottom: 1px solid #eef2f9;"><dt style="font-size: 14px; color: #475a7d;">RC number</dt><dd style="margin: 0; font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums;">9041457 · Corporate Affairs Commission (CAC)</dd></div>
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 10px 0;"><dt style="font-size: 14px; color: #475a7d;">Office</dt><dd style="margin: 0; font-size: 14px; text-align: right;">SD20 Belham Estate, Karsana, FCT, Abuja</dd></div>
+</dl>
+<div style="padding: 12px 20px 14px; border-top: 1px solid #d6e0f2;"><a href="/verification" style="color: #0340a9; font-weight: 500; text-decoration: none; font-size: 15px;">Verify our registration →</a></div>
+</aside>
+</div>
+</sc-if>
+
+<sc-if value="{{mobile}}" hint-placeholder-val="{{ false }}">
+<details style="width: 100%; border: 1px solid #d6e0f2; border-top: 4px solid #f9b91a; border-radius: 4px;">
+<summary style="padding: 14px 16px; font-size: 14px; font-weight: 600; cursor: pointer;">Registered with the CAC · RC 9041457</summary>
+<div style="padding: 0 16px 14px; font-size: 14px; color: #475a7d;">
+<p style="margin: 0;">Stephen Corporate Services - SCS Ltd</p>
+<p style="margin: 4px 0 0;">SD20 Belham Estate, Karsana, FCT, Abuja</p>
+<a href="/verification" style="display: inline-block; margin-top: 10px; color: #0340a9; font-weight: 500; text-decoration: none;">Verify our registration →</a>
+</div>
+</details>
+</sc-if>
+</div>
+</section>
+
+<section aria-label="Stephen Corporate Services - SCS Ltd in figures" style="border-bottom: 1px solid #d6e0f2;">
+<div style="max-width: 1240px; margin: 0 auto; padding: {{figPad}} {{pad}}; display: grid; grid-template-columns: repeat(auto-fit, minmax({{figMin}}, 1fr)); gap: {{figGap}};">
+<div><p style="margin: 0; font-size: {{stat}}; line-height: 1; font-weight: 600; font-variant-numeric: tabular-nums; color: #011550;">3,000+</p><p style="margin: 8px 0 0; font-size: 13px; color: #475a7d;">Business registrations guided through the CAC by our founding team</p></div>
+<div><p style="margin: 0; font-size: {{stat}}; line-height: 1; font-weight: 600; font-variant-numeric: tabular-nums; color: #011550;">1,800+</p><p style="margin: 8px 0 0; font-size: 13px; color: #475a7d;">Agreements processed for clients</p></div>
+<div><p style="margin: 0; font-size: {{stat}}; line-height: 1; font-weight: 600; font-variant-numeric: tabular-nums; color: #011550;">1,200+</p><p style="margin: 8px 0 0; font-size: 13px; color: #475a7d;">Client and administrative engagements</p></div>
+<div><p style="margin: 0; font-size: {{stat}}; line-height: 1; font-weight: 600; font-variant-numeric: tabular-nums; color: #011550;">10+</p><p style="margin: 8px 0 0; font-size: 13px; color: #475a7d;">Sectors actively served</p></div>
+</div>
+</section>
+
+<section aria-labelledby="start-title">
+<div style="max-width: 1240px; margin: 0 auto; padding: {{sec}} {{pad}};">
+<p style="margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0340a9;">Start here</p>
+<h2 id="start-title" style="margin: 0; font-family: {{hf}}; font-size: {{h2}}; line-height: 1.15; font-weight: 600; letter-spacing: {{hls}};">Where would you like to begin?</h2>
+<div style="width: 56px; height: 4px; background: #f9b91a; border-radius: 2px; margin: {{ruleMargin2}};"></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); column-gap: 32px; border-top: 1px solid #d6e0f2;">
+<a href="/clients/founders-and-smes" style="display: block; padding: {{rowPad}}; border-bottom: 1px solid #d6e0f2; text-decoration: none; color: #0b1730;"><span style="display: block; font-size: {{rowTitle}}; font-weight: 600;">I'm starting or formalising a business →</span><sc-if value="{{desk}}" hint-placeholder-val="{{ true }}"><span style="display: block; margin-top: 6px; font-size: 14px; color: #475a7d;">Choosing a structure, registration, first filings and tax registration.</span></sc-if></a>
+<a href="/clients/growing-companies" style="display: block; padding: {{rowPad}}; border-bottom: 1px solid #d6e0f2; text-decoration: none; color: #0b1730;"><span style="display: block; font-size: {{rowTitle}}; font-weight: 600;">I want an ongoing business partner →</span><sc-if value="{{desk}}" hint-placeholder-val="{{ true }}"><span style="display: block; margin-top: 6px; font-size: 14px; color: #475a7d;">One coordinator for filings, documentation, operations and growth.</span></sc-if></a>
+<a href="/clients/ngos-and-institutions" style="display: block; padding: {{rowPad}}; border-bottom: 1px solid #d6e0f2; text-decoration: none; color: #0b1730;"><span style="display: block; font-size: {{rowTitle}}; font-weight: 600;">I run a non-profit or institution →</span><sc-if value="{{desk}}" hint-placeholder-val="{{ true }}"><span style="display: block; margin-top: 6px; font-size: 14px; color: #475a7d;">NGO and foundation registration, governance and donor-compliance support.</span></sc-if></a>
+<a href="/clients/doing-business-in-nigeria" style="display: block; padding: {{rowPad}}; border-bottom: 1px solid #d6e0f2; text-decoration: none; color: #0b1730;"><span style="display: block; font-size: {{rowTitle}}; font-weight: 600;">I'm entering Nigeria from abroad →</span><sc-if value="{{desk}}" hint-placeholder-val="{{ true }}"><span style="display: block; margin-top: 6px; font-size: 14px; color: #475a7d;">Setting up a Nigerian company, explained plainly and handled remotely.</span></sc-if></a>
+<a href="/partnership/remote-operations" style="display: block; padding: {{rowPad}}; border-bottom: 1px solid #d6e0f2; text-decoration: none; color: #0b1730;"><span style="display: block; font-size: {{rowTitle}}; font-weight: 600;">I need a remote operations partner in Nigeria →</span><sc-if value="{{desk}}" hint-placeholder-val="{{ true }}"><span style="display: block; margin-top: 6px; font-size: 14px; color: #475a7d;">Client intake, file and billing administration, research and back-office support.</span></sc-if></a>
+<a href="/corporate-college" style="display: block; padding: {{rowPad}}; border-bottom: 1px solid #d6e0f2; text-decoration: none; color: #0b1730;"><span style="display: block; font-size: {{rowTitle}}; font-weight: 600;">I want training for my team or myself →</span><sc-if value="{{desk}}" hint-placeholder-val="{{ true }}"><span style="display: block; margin-top: 6px; font-size: 14px; color: #475a7d;">Corporate College, and online courses at Stephen Corporate Academy (SCA).</span></sc-if></a>
+<a href="/career" style="display: block; padding: {{rowPad}}; border-bottom: 1px solid #d6e0f2; text-decoration: none; color: #0b1730;"><span style="display: block; font-size: {{rowTitle}}; font-weight: 600;">I want to work with SCS →</span><sc-if value="{{desk}}" hint-placeholder-val="{{ true }}"><span style="display: block; margin-top: 6px; font-size: 14px; color: #475a7d;">Join the expert network or apply for an open role.</span></sc-if></a>
+<a href="/find-my-service" style="display: block; padding: {{rowPad}}; border-bottom: 1px solid #d6e0f2; text-decoration: none; color: #0340a9;"><span style="display: block; font-size: {{rowTitle}}; font-weight: 600;">Not sure? Use the Service Finder →</span><sc-if value="{{desk}}" hint-placeholder-val="{{ true }}"><span style="display: block; margin-top: 6px; font-size: 14px; color: #475a7d;">Three questions, then the services that fit.</span></sc-if></a>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="how-title" style="background: #011550; color: #ffffff; border-top: 4px solid #f9b91a;">
+<div style="max-width: 1240px; margin: 0 auto; padding: {{sec}} {{pad}};">
+<p style="margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #f9b91a;">Our process</p>
+<h2 id="how-title" style="margin: 0; font-family: {{hf}}; font-size: {{h2}}; line-height: 1.15; font-weight: 600; letter-spacing: {{hls}}; color: #ffffff; max-width: 24ch;">Every engagement follows the same six steps.</h2>
+<p style="margin: 14px 0 28px; font-size: {{lead}}; color: rgba(255,255,255,0.85); max-width: 60ch;">Nothing starts until the scope is agreed in writing, and nothing reaches you before our management team has reviewed it.</p>
+<ol style="list-style: none; margin: 0; padding: 0 0 4px; display: flex; flex-wrap: {{wrap}}; overflow-x: {{ox}}; scroll-snap-type: x mandatory; gap: 16px;">
+<li style="flex: {{stepFlex}}; scroll-snap-align: start; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 14px;"><span style="display: block; font-size: 26px; font-weight: 600; color: #f9b91a; font-variant-numeric: tabular-nums;">01</span><span style="display: block; margin-top: 6px; font-weight: 600;">Enquiry</span><span style="display: block; margin-top: 4px; font-size: 14px; color: rgba(255,255,255,0.85);">Tell us what you need. We respond within 24 hours.</span></li>
+<li style="flex: {{stepFlex}}; scroll-snap-align: start; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 14px;"><span style="display: block; font-size: 26px; font-weight: 600; color: #f9b91a; font-variant-numeric: tabular-nums;">02</span><span style="display: block; margin-top: 6px; font-weight: 600;">Understand the need</span><span style="display: block; margin-top: 4px; font-size: 14px; color: rgba(255,255,255,0.85);">A Discovery Call, or the Quarterly Business Check-Up for Partners.</span></li>
+<li style="flex: {{stepFlex}}; scroll-snap-align: start; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 14px;"><span style="display: block; font-size: 26px; font-weight: 600; color: #f9b91a; font-variant-numeric: tabular-nums;">03</span><span style="display: block; margin-top: 6px; font-weight: 600;">Propose</span><span style="display: block; margin-top: 4px; font-size: 14px; color: rgba(255,255,255,0.85);">A written proposal: scope, deliverables and what is not included.</span></li>
+<li style="flex: {{stepFlex}}; scroll-snap-align: start; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 14px;"><span style="display: block; font-size: 26px; font-weight: 600; color: #f9b91a; font-variant-numeric: tabular-nums;">04</span><span style="display: block; margin-top: 6px; font-weight: 600;">Agree</span><span style="display: block; margin-top: 4px; font-size: 14px; color: rgba(255,255,255,0.85);">Work starts only once the proposal is signed.</span></li>
+<li style="flex: {{stepFlex}}; scroll-snap-align: start; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 14px;"><span style="display: block; font-size: 26px; font-weight: 600; color: #f9b91a; font-variant-numeric: tabular-nums;">05</span><span style="display: block; margin-top: 6px; font-weight: 600;">Deliver</span><span style="display: block; margin-top: 4px; font-size: 14px; color: rgba(255,255,255,0.85);">Vetted specialists do the work. A reviewer checks every deliverable first.</span></li>
+<li style="flex: {{stepFlex}}; scroll-snap-align: start; border-top: 1px solid rgba(255,255,255,0.3); padding-top: 14px;"><span style="display: block; font-size: 26px; font-weight: 600; color: #f9b91a; font-variant-numeric: tabular-nums;">06</span><span style="display: block; margin-top: 6px; font-weight: 600;">Hand over and close</span><span style="display: block; margin-top: 4px; font-size: 14px; color: rgba(255,255,255,0.85);">You accept in writing. Files are handed over and access removed.</span></li>
+</ol>
+<sc-if value="{{mobile}}" hint-placeholder-val="{{ false }}"><p style="margin: 12px 0 0; font-size: 13px; color: rgba(255,255,255,0.85);">Swipe to see all six steps →</p></sc-if>
+<a href="/process" style="display: inline-block; margin-top: 24px; color: #ffffff; font-weight: 500; text-decoration: underline; text-underline-offset: 4px;">What we do and do not do →</a>
+</div>
+</section>
+
+<section aria-labelledby="partner-title" style="background: #f1f5fc;">
+<div style="max-width: 1240px; margin: 0 auto; padding: {{sec}} {{pad}}; display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: flex-start;">
+<div style="flex: 1 1 480px; min-width: 0;">
+<p style="margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0340a9;">SCS Partnership</p>
+<h2 id="partner-title" style="margin: 0; font-family: {{hf}}; font-size: {{h2}}; line-height: 1.15; font-weight: 600; letter-spacing: {{hls}};">A retainership plan agreed with each partner.</h2>
+<div style="width: 56px; height: 4px; background: #f9b91a; border-radius: 2px; margin: {{ruleMargin2}};"></div>
+<p style="margin: 0; font-size: {{lead}}; color: #475a7d; max-width: 56ch;">For organisations with recurring corporate, filing, documentation and operational needs. We first check that we are right for each other, then build the plan around your organisation.</p>
+<a href="/partnership" style="display: inline-block; margin-top: 20px; color: #0340a9; font-weight: 500; text-decoration: none;">Start a partnership conversation →</a>
+</div>
+<sc-if value="{{desk}}" hint-placeholder-val="{{ true }}">
+<div style="flex: 1 1 400px; min-width: 0; background: #ffffff; border: 1px solid #d6e0f2; border-top: 4px solid #f9b91a; border-radius: 4px; padding: 28px;">
+<h3 style="margin: 0 0 12px; font-size: 18px; font-weight: 600;">What partners receive</h3>
+<ul style="margin: 0; padding: 0; list-style: none;">
+<li style="display: flex; gap: 12px; padding: 11px 0; border-top: 1px solid #eef2f9;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e7f4d" stroke-width="2.25" style="flex: none; margin-top: 3px;"><path d="M5 12l5 5L20 7"></path></svg><span>The Quarterly Business Check-Up</span></li>
+<li style="display: flex; gap: 12px; padding: 11px 0; border-top: 1px solid #eef2f9;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e7f4d" stroke-width="2.25" style="flex: none; margin-top: 3px;"><path d="M5 12l5 5L20 7"></path></svg><span>The SCS Business Growth Report</span></li>
+<li style="display: flex; gap: 12px; padding: 11px 0; border-top: 1px solid #eef2f9;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e7f4d" stroke-width="2.25" style="flex: none; margin-top: 3px;"><path d="M5 12l5 5L20 7"></path></svg><span>One coordinator for continuous support</span></li>
+<li style="display: flex; gap: 12px; padding: 11px 0; border-top: 1px solid #eef2f9;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e7f4d" stroke-width="2.25" style="flex: none; margin-top: 3px;"><path d="M5 12l5 5L20 7"></path></svg><span>Projects scoped and agreed in writing before work starts</span></li>
+<li style="display: flex; gap: 12px; padding: 11px 0; border-top: 1px solid #eef2f9;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e7f4d" stroke-width="2.25" style="flex: none; margin-top: 3px;"><path d="M5 12l5 5L20 7"></path></svg><span>Management quality review before anything is delivered</span></li>
+</ul>
+</div>
+</sc-if>
+<sc-if value="{{mobile}}" hint-placeholder-val="{{ false }}">
+<details style="width: 100%; background: #ffffff; border: 1px solid #d6e0f2; border-top: 4px solid #f9b91a; border-radius: 4px;">
+<summary style="padding: 14px 16px; font-weight: 600; cursor: pointer;">What partners receive (5)</summary>
+<ul style="margin: 0; padding: 0 16px 14px 34px; font-size: 15px; display: flex; flex-direction: column; gap: 6px;">
+<li>The Quarterly Business Check-Up</li>
+<li>The SCS Business Growth Report</li>
+<li>One coordinator for continuous support</li>
+<li>Projects scoped and agreed in writing before work starts</li>
+<li>Management quality review before anything is delivered</li>
+</ul>
+</details>
+</sc-if>
+</div>
+</section>
+
+<section aria-labelledby="work-title">
+<div style="max-width: 1240px; margin: 0 auto; padding: {{sec}} {{pad}};">
+<p style="margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0340a9;">Selected work</p>
+<h2 id="work-title" style="margin: 0; font-family: {{hf}}; font-size: {{h2}}; line-height: 1.15; font-weight: 600; letter-spacing: {{hls}};">Engagements you can check on the public register.</h2>
+<div style="width: 56px; height: 4px; background: #f9b91a; border-radius: 2px; margin: {{ruleMargin2}};"></div>
+<div style="display: flex; flex-wrap: {{wrap}}; overflow-x: {{ox}}; scroll-snap-type: x mandatory; gap: 16px; padding-bottom: 4px;">
+<article style="flex: {{cardFlex}}; scroll-snap-align: start; border: 1px solid #d6e0f2; border-top: 4px solid #f9b91a; border-radius: 4px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0340a9;">Healthcare and pharmaceuticals</p>
+<h3 style="margin: 0; font-size: 19px; line-height: 1.3; font-weight: 600;">Premier Pharmaceuticals Ltd</h3>
+<p style="margin: 0; font-size: 13px; color: #475a7d; font-variant-numeric: tabular-nums;">RC 9482408</p>
+<ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #475a7d;"><li>Company formation and post-registration documentation</li><li>Compliance mapping for pharmaceutical trade requirements</li></ul>
+<a href="/portfolio/premier-pharmaceuticals-ltd" style="margin-top: auto; color: #0340a9; font-weight: 500; text-decoration: none; font-size: 15px;">Read the case study →</a>
+</article>
+<article style="flex: {{cardFlex}}; scroll-snap-align: start; border: 1px solid #d6e0f2; border-top: 4px solid #f9b91a; border-radius: 4px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0340a9;">Real estate and property</p>
+<h3 style="margin: 0; font-size: 19px; line-height: 1.3; font-weight: 600;">Verihomes Ltd</h3>
+<p style="margin: 0; font-size: 13px; color: #475a7d; font-variant-numeric: tabular-nums;">RC 9695634</p>
+<ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #475a7d;"><li>Company formation and shareholding structure</li><li>Process design for client and property records</li></ul>
+<a href="/portfolio/verihomes-ltd" style="margin-top: auto; color: #0340a9; font-weight: 500; text-decoration: none; font-size: 15px;">Read the case study →</a>
+</article>
+<article style="flex: {{cardFlex}}; scroll-snap-align: start; border: 1px solid #d6e0f2; border-top: 4px solid #f9b91a; border-radius: 4px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+<p style="margin: 0; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0340a9;">Non-profit and social impact</p>
+<h3 style="margin: 0; font-size: 19px; line-height: 1.3; font-weight: 600;">Light Bearers Education &amp; Empowerment Foundation</h3>
+<p style="margin: 0; font-size: 13px; color: #475a7d; font-variant-numeric: tabular-nums;">RC 9409156</p>
+<ul style="margin: 0; padding-left: 18px; font-size: 14px; color: #475a7d;"><li>NGO registration as incorporated trustees, with its constitution</li><li>Programme and donor record-keeping systems</li></ul>
+<a href="/portfolio/light-bearers-education-empowerment-foundation" style="margin-top: auto; color: #0340a9; font-weight: 500; text-decoration: none; font-size: 15px;">Read the case study →</a>
+</article>
+</div>
+<a href="/portfolio" style="display: inline-block; margin-top: 20px; color: #0340a9; font-weight: 500; text-decoration: none;">All 23 case studies →</a>
+</div>
+</section>
+
+<section aria-labelledby="guides-title" style="border-top: 1px solid #d6e0f2;">
+<div style="max-width: 1240px; margin: 0 auto; padding: {{sec}} {{pad}};">
+<p style="margin: 0 0 10px; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #0340a9;">Corporate School</p>
+<h2 id="guides-title" style="margin: 0; font-family: {{hf}}; font-size: {{h2}}; line-height: 1.15; font-weight: 600; letter-spacing: {{hls}};">Practical guides, dated and sourced.</h2>
+<div style="width: 56px; height: 4px; background: #f9b91a; border-radius: 2px; margin: {{ruleMargin2}};"></div>
+<div style="display: flex; flex-wrap: {{wrap}}; overflow-x: {{ox}}; scroll-snap-type: x mandatory; gap: 16px; padding-bottom: 4px;">
+<a href="/corporate-college/corporate-school/navigating-cac-corporate-filings" style="flex: {{cardFlex}}; scroll-snap-align: start; display: block; padding: 20px; border: 1px solid #d6e0f2; border-radius: 4px; text-decoration: none; color: #0b1730;"><span style="display: block; font-size: 12px; color: #475a7d;">Guide · Company filings · 16 October 2026</span><span style="display: block; margin-top: 8px; font-size: 17px; font-weight: 600; line-height: 1.35;">Navigating CAC corporate filings: beyond initial registration</span></a>
+<a href="/corporate-college/corporate-school/how-to-design-a-customer-support-workflow-that-prevents-missed-enquiries" style="flex: {{cardFlex}}; scroll-snap-align: start; display: block; padding: 20px; border: 1px solid #d6e0f2; border-radius: 4px; text-decoration: none; color: #0b1730;"><span style="display: block; font-size: 12px; color: #475a7d;">Guide · Operations · 16 October 2026</span><span style="display: block; margin-top: 8px; font-size: 17px; font-weight: 600; line-height: 1.35;">How to design a customer support workflow that prevents missed enquiries</span></a>
+<a href="/corporate-college/corporate-school/workforce-needs-assessment" style="flex: {{cardFlex}}; scroll-snap-align: start; display: block; padding: 20px; border: 1px solid #d6e0f2; border-radius: 4px; text-decoration: none; color: #0b1730;"><span style="display: block; font-size: 12px; color: #475a7d;">Guide · People · 16 October 2026</span><span style="display: block; margin-top: 8px; font-size: 17px; font-weight: 600; line-height: 1.35;">Workforce needs assessment: a practical guide before hiring</span></a>
+</div>
+</div>
+</section>
+
+<section aria-labelledby="close-title" style="background: #f1f5fc; border-top: 1px solid #d6e0f2;">
+<div style="max-width: 1240px; margin: 0 auto; padding: {{sec}} {{pad}}; display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: center; justify-content: space-between;">
+<div style="flex: 1 1 520px; min-width: 0;">
+<h2 id="close-title" style="margin: 0; font-family: {{hf}}; font-size: {{h2}}; line-height: 1.15; font-weight: 600; letter-spacing: {{hls}};">Not sure where to start?</h2>
+<p style="margin: 10px 0 0; font-size: {{lead}}; color: #475a7d;">A 30-minute Discovery Call is the simplest first step. If we are not the right fit for a need, we will say so.</p>
+</div>
+<a href="https://cal.com/support-stephen-corporate-services-scs/30min" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; background: #0340a9; color: #ffffff; border-radius: 8px; font-weight: 500; text-decoration: none;">Book a Discovery Call</a>
+</div>
+</section>
+</main>
+
+<dc-import name="Footer" direction="{{direction}}" mobile="{{mobile}}" hint-size="100%,560px"></dc-import>
+<sc-if value="{{mobile}}" hint-placeholder-val="{{ false }}">
+<dc-import name="MobileBar" hint-size="100%,72px"></dc-import>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"direction":{"editor":"enum","options":["A","B"],"default":"A","section":"Direction"},"mobile":{"editor":"boolean","default":false,"section":"Direction"},"$preview":{"width":1440,"height":4300}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const d = this.props.direction === 'B' ? 'B' : 'A';
+    const m = this.props.mobile === true || this.props.mobile === 'yes' || this.props.mobile === 'true';
+    const serif = d === 'B';
+    return {
+      direction: d,
+      mobile: m,
+      desk: !m,
+      hf: serif ? "'Source Serif 4', Georgia, 'Times New Roman', serif" : "Inter, system-ui, -apple-system, 'Segoe UI', sans-serif",
+      hls: serif ? '0' : '-0.01em',
+      h1: m ? (serif ? '34px' : '31px') : (serif ? '58px' : '50px'),
+      h2: m ? (serif ? '27px' : '25px') : (serif ? '42px' : '36px'),
+      lead: m ? '16px' : '18px',
+      pad: m ? '20px' : '48px',
+      heroPad: m ? '24px' : '80px',
+      heroGap: m ? '20px' : '56px',
+      ruleMargin: m ? '18px 0' : '24px 0',
+      ruleMargin2: m ? '14px 0 24px' : '16px 0 36px',
+      sec: m ? '44px' : '96px',
+      figPad: m ? '24px' : '40px',
+      figMin: m ? '140px' : '220px',
+      figGap: m ? '20px 16px' : '32px',
+      stat: m ? '28px' : '40px',
+      rowPad: m ? '14px 0' : '22px 24px 22px 0',
+      rowTitle: m ? '16px' : '18px',
+      wrap: m ? 'nowrap' : 'wrap',
+      ox: m ? 'auto' : 'visible',
+      stepFlex: m ? '0 0 72%' : '1 1 160px',
+      cardFlex: m ? '0 0 84%' : '1 1 300px'
+    };
+  }
+}
+</script>
+</body>
+</html>
