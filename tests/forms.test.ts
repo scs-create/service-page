@@ -49,7 +49,7 @@ function harness(opts: { turnstile?: boolean; rateOk?: boolean; resend?: boolean
   const env: Env = {
     ASSETS: { fetch: async () => new Response("") },
     DB: { prepare: () => ({ bind: (...v: unknown[]) => ({ run: async () => rows.push(v), all: async () => ({ results: [] }) }) }) },
-    UPLOADS: { put: async (key, _v, o) => void puts.push({ key, type: o?.httpMetadata?.contentType }), delete: async () => {} },
+    UPLOADS: { put: async (key, _v, o) => void puts.push({ key, type: o?.httpMetadata?.contentType }), delete: async () => {}, get: async () => null },
     RATE_LIMITER: { limit: async () => ({ success: opts.rateOk ?? true }) },
     TURNSTILE_SECRET: "1x0000000000000000000000000000000AA",
     RESEND_API_KEY: opts.resend === false ? undefined : "re_test",
@@ -155,7 +155,7 @@ test("retention: rows older than 6 months are deleted together with their files"
         }),
       }),
     },
-    UPLOADS: { put: async () => {}, delete: async (k) => void deleted.push(Array.isArray(k) ? k : [k]) },
+    UPLOADS: { put: async () => {}, delete: async (k) => void deleted.push(Array.isArray(k) ? k : [k]), get: async () => null },
   };
   const r = await purgeOld(env, new Date("2026-11-03T00:00:00Z"));
   assert.deepEqual(r, { rows: 2, files: 1 });

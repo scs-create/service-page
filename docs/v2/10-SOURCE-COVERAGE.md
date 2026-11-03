@@ -29,7 +29,7 @@ that carry it are built in PRs 3 to 6, in the order set by `01-BUILD-PROMPT.md`.
 | Proof figures with definitions, no "as at" dates | `src/content/v2/pages.ts` FIGURES | ✅ PR 4 |
 | Values list unchanged | v1 content | ✅ unchanged |
 | No extra partner benefits; enquiries kept 6 months | Partnership page; `worker/retention.ts` (daily) | ✅ PR 4–5 |
-| Hosting on Cloudflare Workers, not Netlify | `wrangler.jsonc`, `worker/` | ✅ PR 1 (Netlify forms replaced in PR 5) |
+| Hosting on Cloudflare Workers, not Netlify | `wrangler.jsonc`, `worker/`; forms (PR 5); CMS sign-in on the Worker (PR 7) | ✅ PR 1–7 |
 
 ## Strategy and Content Model, section by section
 

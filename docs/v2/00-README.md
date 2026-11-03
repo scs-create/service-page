@@ -28,6 +28,7 @@ Prepared 3 November 2026. This pack holds everything the Claude Code session nee
 | `09-RESEARCH-SUMMARY.md` | Added in the build: research summary and the official facts guides must state carefully (no fees) |
 | `10-SOURCE-COVERAGE.md` | Added in the build: every item from the chat, strategy doc and canvas, where it lands and which PR builds it |
 | `LOCAL-TESTING.md` | Added in the build: running the v2 build on your own PC |
+| `ADMIN-ACCESS-SETUP.md` | Added in the build: exact Cloudflare Access, GitHub OAuth and Worker settings for checklist steps 10–12 |
 | `99-original-brief.txt` | The original v2 brief (context only; the decisions file overrides it) |
 
 ## Links

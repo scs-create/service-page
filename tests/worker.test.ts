@@ -28,8 +28,8 @@ test("worker: forms fail closed until D1 and the Turnstile secret are configured
 });
 
 test("worker: CMS auth and unknown API routes", async () => {
-  assert.equal((await call("/api/auth")).status, 501);
-  assert.equal((await call("/api/callback")).status, 501);
+  assert.equal((await call("/api/auth")).status, 503); // CMS sign-in not configured in this test env
+  assert.equal((await call("/api/callback")).status, 503);
   assert.equal((await call("/api/other")).status, 404);
   assert.equal((await call("/ingest/e")).status, 404);
 });

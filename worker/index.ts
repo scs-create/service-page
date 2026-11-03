@@ -4,23 +4,35 @@
 //
 // Routes:
 //   /api/forms/:form   form submissions: Turnstile, rate limit, zod, D1, R2, Resend (worker/forms.ts)
-//   /api/auth, /api/callback   CMS PR (GitHub OAuth for Decap)
+//   /api/auth, /api/callback   GitHub OAuth for Decap CMS (worker/oauth.ts)
 //   /ingest/*          analytics PR (PostHog EU proxy)
-//   /admin/*           password gate (worker/admin-auth.ts, as in v1) + ADMIN_CSP; Cloudflare Access in the CMS PR
+//   /admin/*           Cloudflare Access token check (worker/access.ts) when configured, otherwise the v1 password gate;
+//                      /admin/submissions is the staff view of form submissions (worker/submissions.ts)
+import { accessConfigured, verifyAccess } from "./access";
 import { adminGate } from "./admin-auth";
 import { handleForm } from "./forms";
-import { ADMIN_CSP, SECURITY_HEADERS } from "./headers";
+import { ADMIN_CSP, SECURITY_HEADERS, SUBMISSIONS_CSP } from "./headers";
+import { finishAuth, startAuth } from "./oauth";
+import { handleSubmissions } from "./submissions";
 import { purgeOld } from "./retention";
 import type { Env } from "./types";
 
 // Only the default export may be a value export: Workers treats every named value export as an entrypoint.
 export type { Env };
 
-async function admin(request: Request, env: Env): Promise<Response> {
-  const res = adminGate(request, env.ADMIN_USER, env.ADMIN_PASSWORD) ?? (await env.ASSETS.fetch(request));
+// Access replaces the password gate once it is configured (the spec's "Cloudflare Access in front of /admin").
+async function gate(request: Request, env: Env): Promise<Response | null> {
+  if (!accessConfigured(env)) return adminGate(request, env.ADMIN_USER, env.ADMIN_PASSWORD);
+  const result = await verifyAccess(request, env);
+  return result.ok ? null : new Response("Sign in through Cloudflare Access to open the admin area.", { status: 403, headers: { "Content-Type": "text/plain; charset=utf-8" } });
+}
+
+async function admin(request: Request, env: Env, pathname: string): Promise<Response> {
+  const submissions = pathname === "/admin/submissions" || pathname.startsWith("/admin/submissions/");
+  const res = (await gate(request, env)) ?? (submissions ? await handleSubmissions(request, env, pathname) : await env.ASSETS.fetch(request));
   const headers = new Headers(res.headers);
   for (const [k, v] of Object.entries(SECURITY_HEADERS)) headers.set(k, v);
-  headers.set("Content-Security-Policy", ADMIN_CSP);
+  headers.set("Content-Security-Policy", submissions ? SUBMISSIONS_CSP : ADMIN_CSP);
   headers.set("Cache-Control", "no-store");
   headers.set("X-Robots-Tag", "noindex, nofollow");
   return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
@@ -42,11 +54,16 @@ async function route(request: Request, env: Env): Promise<Response> {
     const reply = await handleForm(request, env, formMatch[1]);
     return json(reply.status, reply.body);
   }
-  if (pathname === "/api/auth" || pathname === "/api/callback") return json(501, { ok: false, error: "not_implemented" });
+  if (pathname === "/api/auth" || pathname === "/api/callback") {
+    const res = pathname === "/api/auth" ? startAuth(request, env) : await finishAuth(request, env);
+    const headers = new Headers(res.headers);
+    for (const [k, v] of Object.entries(SECURITY_HEADERS)) if (k !== "Content-Security-Policy" || !headers.has(k)) headers.set(k, v);
+    return new Response(res.body, { status: res.status, headers });
+  }
   if (pathname.startsWith("/api/")) return json(404, { ok: false, error: "not_found" });
   if (pathname === "/ingest" || pathname.startsWith("/ingest/")) return json(404, { ok: false, error: "not_found" });
 
-  if (pathname === "/admin" || pathname.startsWith("/admin/")) return admin(request, env);
+  if (pathname === "/admin" || pathname.startsWith("/admin/")) return admin(request, env, pathname);
 
   // Anything else that reaches the Worker: serve the static file, keeping its own headers.
   return env.ASSETS.fetch(request);

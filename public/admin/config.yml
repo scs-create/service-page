@@ -2,7 +2,11 @@ backend:
   name: github
   repo: scs-create/service-page
   branch: main
-# Editors log in at /admin; edits commit to the GitHub repo and Netlify rebuilds the site automatically.
+  # GitHub sign-in runs on this site's own Worker (worker/oauth.ts), not Netlify. The popup opens /api/auth.
+  base_url: https://stephencorporateservices-scs.com
+  auth_endpoint: api/auth
+# Editors open /admin (behind Cloudflare Access), sign in with GitHub, and edits are committed to the repository;
+# each commit triggers the deploy workflow, which rebuilds the site.
 publish_mode: editorial_workflow
 
 media_folder: "public/images/uploads"
@@ -55,10 +59,80 @@ collections:
               - { label: "Find My Service", value: "/find-my-service" }
               - { label: "Compliance Calendar", value: "/compliance-calendar" }
           - { label: "Button text", name: "label", widget: "string" }
+      - { label: "Last reviewed", name: "reviewed", widget: "datetime", required: false, hint: "Leave empty to use the publish date." }
+      - label: "Official sources (shown with the date each was retrieved)"
+        name: "sources"
+        widget: "list"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Address (https://...)", name: "url", widget: "string" }
+          - { label: "Retrieved on", name: "retrieved", widget: "datetime", time_format: false }
       - { label: "Body", name: "body", widget: "markdown" }
 
+  # v2 services: the page copy for each of the 66 services. Names, clusters and paths come from the catalogue
+  # (src/content/v2/services.v2.json), which is edited in the repository, not here. No fees and no delivery times.
+  - name: "services_v2"
+    label: "Services (v2 page copy)"
+    folder: "src/content/v2/services"
+    create: false
+    delete: false
+    extension: "json"
+    format: "json"
+    identifier_field: "id"
+    slug: "{{id}}"
+    summary: "{{id}} · {{status}}"
+    fields:
+      - { label: "Service ID", name: "id", widget: "string", hint: "Do not change." }
+      - label: "Status"
+        name: "status"
+        widget: "select"
+        options: [{ label: "Draft (awaiting approval)", value: "draft" }, { label: "Approved", value: "approved" }]
+      - { label: "Who it is for", name: "whoFor", widget: "text" }
+      - label: "Why it matters (exactly 3)"
+        name: "benefits"
+        widget: "list"
+        min: 3
+        max: 3
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Text", name: "text", widget: "string" }
+      - { label: "What you receive", name: "whatYouReceive", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+      - { label: "What you provide", name: "whatYouProvide", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+      - { label: "What this service does not include", name: "doesNotInclude", widget: "list", field: { label: "Item", name: "item", widget: "string" } }
+      - label: "v1 service lines (kept by owner decision; SA-11, CS-07, CR-07, FA-08 and HO-09 only)"
+        name: "v1Retained"
+        widget: "object"
+        required: false
+        collapsed: true
+        fields:
+          - { label: "Framing sentence", name: "framing", widget: "text" }
+          - { label: "Intro line", name: "intro", widget: "string" }
+          - { label: "Lines", name: "lines", widget: "list", field: { label: "Line", name: "item", widget: "string" } }
+          - { label: "Closing", name: "closing", widget: "text", required: false }
+
+  - name: "service_areas_v2"
+    label: "Service areas (v2 introductions)"
+    files:
+      - name: "clusters"
+        label: "Cluster introductions"
+        file: "src/content/v2/clusters.json"
+        fields:
+          - { label: "Note", name: "note", widget: "hidden" }
+          - label: "Clusters"
+            name: "clusters"
+            widget: "object"
+            fields:
+              - { label: "Strategy & Advisory", name: "strategy-and-advisory", widget: "object", fields: [{ label: "Status", name: "status", widget: "select", options: ["draft", "approved"] }, { label: "What this covers", name: "covers", widget: "text" }] }
+              - { label: "Company Formation & Secretarial", name: "company-formation-and-secretarial", widget: "object", fields: [{ label: "Status", name: "status", widget: "select", options: ["draft", "approved"] }, { label: "What this covers", name: "covers", widget: "text" }] }
+              - { label: "Compliance & Regulatory", name: "compliance-and-regulatory", widget: "object", fields: [{ label: "Status", name: "status", widget: "select", options: ["draft", "approved"] }, { label: "What this covers", name: "covers", widget: "text" }] }
+              - { label: "Finance & Accounting", name: "finance-and-accounting", widget: "object", fields: [{ label: "Status", name: "status", widget: "select", options: ["draft", "approved"] }, { label: "What this covers", name: "covers", widget: "text" }] }
+              - { label: "HR & Operations", name: "hr-and-operations", widget: "object", fields: [{ label: "Status", name: "status", widget: "select", options: ["draft", "approved"] }, { label: "What this covers", name: "covers", widget: "text" }] }
+              - { label: "Technology & Digital", name: "technology-and-digital", widget: "object", fields: [{ label: "Status", name: "status", widget: "select", options: ["draft", "approved"] }, { label: "What this covers", name: "covers", widget: "text" }] }
+              - { label: "Marketing & Communications", name: "marketing-and-communications", widget: "object", fields: [{ label: "Status", name: "status", widget: "select", options: ["draft", "approved"] }, { label: "What this covers", name: "covers", widget: "text" }] }
+
   - name: "services"
-    label: "Services"
+    label: "v1 service categories (reference: kept service lines and old links)"
     folder: "src/content/services/entries"
     create: true
     slug: "{{slug}}"
@@ -288,5 +362,6 @@ collections:
               - { label: "Note", name: "note", widget: "text" }
           - { label: "Disclaimer", name: "disclaimer", widget: "text" }
 
-# AUTH: GitHub backend + Netlify's built-in OAuth provider (README, step 6). Editors sign in with a GitHub account
-# that has write access to the repository. Git Gateway / Netlify Identity are deprecated and are no longer used.
+# AUTH: GitHub backend with this site's own OAuth endpoints (/api/auth, /api/callback on the Worker, using the GitHub
+# OAuth App from owner checklist step 12). Editors sign in with a GitHub account that has write access to the
+# repository; /admin itself is behind Cloudflare Access (step 11).

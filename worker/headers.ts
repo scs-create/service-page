@@ -22,3 +22,6 @@ export const ADMIN_CSP = [
   "form-action 'self'",
   "frame-ancestors 'none'",
 ].join("; ");
+
+// /admin/submissions renders plain HTML and forms with no scripts at all.
+export const SUBMISSIONS_CSP = "default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; base-uri 'none'; frame-ancestors 'none'";
