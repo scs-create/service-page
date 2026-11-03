@@ -22,13 +22,13 @@ export default function SectionHeading({
   return (
     <div className={`reveal mb-10 ${center ? "text-center mx-auto" : ""} max-w-[70ch]`}>
       {eyebrow && (
-        <p className={`text-sm font-semibold uppercase tracking-wider mb-2 ${dark ? "text-accent" : "text-primary"}`}>
+        <p className={`type-eyebrow mb-2 ${dark ? "text-accent" : "text-primary"}`}>
           {eyebrow}
         </p>
       )}
-      <Tag className={`text-3xl md:text-4xl font-semibold ${dark ? "text-white" : "text-text"}`}>{title}</Tag>
+      <Tag className={`${Tag === "h1" ? "type-h1" : "type-h2"} ${dark ? "text-white" : "text-text"}`}>{title}</Tag>
       <span aria-hidden="true" className={`block h-1 w-14 bg-accent rounded-sm mt-4 ${center ? "mx-auto" : ""}`} />
-      {intro && <p className={`mt-4 text-base md:text-lg ${dark ? "text-white/85" : "text-muted"}`}>{intro}</p>}
+      {intro && <p className={`type-lead mt-4 ${dark ? "text-white/85" : "text-muted"}`}>{intro}</p>}
     </div>
   );
 }

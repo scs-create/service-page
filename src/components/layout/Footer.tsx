@@ -1,98 +1,90 @@
 import Link from "next/link";
-import Image from "next/image";
-import { services } from "@/content/services/data";
-import SocialLinks from "@/components/ui/SocialLinks";
-import ContactChannel from "@/components/ui/ContactChannel";
 import CookieSettingsButton from "@/components/ui/CookieSettingsButton";
-import { SITE, MAPS_URL } from "@/lib/site";
+import { SITE } from "@/lib/site";
+import { CLUSTERS, COMPANY_LINKS, POLICY_LINKS } from "@/lib/nav";
 
-const QUICK_LINKS = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/verification", label: "Verification" },
-  { href: "/tools", label: "Analyse your Business" },
-  { href: "/industries", label: "Industries" },
-  { href: "/corporate-college", label: "Corporate College" },
-  { href: "/faq", label: "FAQ" },
-  { href: "/about", label: "About" },
-  { href: "/career", label: "Career" },
-  { href: "/contact", label: "Contact" },
+const SOCIAL = [
+  { label: "LinkedIn", href: SITE.linkedin },
+  { label: "Instagram", href: SITE.instagram },
+  { label: "Facebook", href: SITE.facebook },
+  { label: "Threads", href: SITE.threads },
+  { label: "X", href: SITE.x },
 ];
 
+// v2 footer, Direction B (docs/v2/design/Footer.dc.html, 05-SITE-SPEC.md §2): a navy band with a 4px gold top edge.
+// The service list is printed once (the 7 clusters); social links are text labels, never raw URLs.
 export default function Footer() {
   const year = new Date().getFullYear();
-  const linkCls = "text-white/85 hover:text-accent";
-  const headCls = "text-sm font-semibold uppercase tracking-wider text-accent mb-3";
-
-  const serviceLinks = services.map((s) => (
-    <li key={s.slug}>
-      <Link href={`/services/${s.slug}`} className={linkCls}>
-        {s.title}
-      </Link>
-    </li>
-  ));
+  const link = "text-white hover:text-accent hover:underline";
+  const head = "mb-3 text-base font-semibold text-white";
 
   return (
-    <footer className="dark-surface bg-secondary text-white border-t-4 border-accent">
-      <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer className="dark-surface border-t-4 border-accent bg-secondary text-sm leading-relaxed text-white">
+      <div className="mx-auto grid max-w-[1280px] grid-cols-1 gap-10 px-4 pb-8 pt-14 sm:grid-cols-2 md:px-6 lg:grid-cols-4 lg:px-8">
         <div>
-          {/* White tile: the logo's navy lettering needs a light ground */}
-          <span className="inline-block rounded-md bg-white p-2">
-            <Image src="/images/logo.png" alt="Stephen Corporate Services" width={72} height={81} className="h-16 w-auto" />
-          </span>
-          <p className="mt-4 text-accent font-medium">{SITE.tagline}</p>
-          <p className="mt-2 text-sm text-white/85">
-            Corporate services, regulatory compliance and business development support for Nigeria and cross-border markets.
-          </p>
+          <p className={head}>{SITE.titleName}</p>
+          <p className="tabular text-white/85">RC {SITE.rc}</p>
+          <address className="not-italic">
+            <p className="text-white/85">{SITE.address.full}</p>
+            <p className="mt-3 text-white/85">{SITE.hours}</p>
+            <p className="mt-3">
+              <a href={`tel:${SITE.phoneHref}`} className={link}>{SITE.phone}</a>{" "}
+              <span className="text-white/85">(phone and WhatsApp)</span>
+            </p>
+            <p><a href={`mailto:${SITE.email}`} className={`${link} break-all`}>{SITE.email}</a></p>
+          </address>
+          <p className="mt-3 text-white/85">{SITE.responsePromise}</p>
         </div>
 
-        <div>
-          <h2 className={headCls}>Quick Links</h2>
-          <ul className="space-y-2 text-sm">
-            {QUICK_LINKS.map((l) => (
-              <li key={l.href}>
-                <Link href={l.href} className={linkCls}>{l.label}</Link>
-              </li>
+        <nav aria-label="Services">
+          <p className={head}>Services</p>
+          <ul className="space-y-1.5">
+            {CLUSTERS.map((c) => (
+              <li key={c.slug}><Link href={c.path} className={link}>{c.name}</Link></li>
             ))}
           </ul>
-        </div>
+        </nav>
+
+        <nav aria-label="Company">
+          <p className={head}>SCS</p>
+          <ul className="space-y-1.5">
+            {COMPANY_LINKS.map((l) => (
+              <li key={l.href}><Link href={l.href} className={link}>{l.label}</Link></li>
+            ))}
+          </ul>
+        </nav>
 
         <div>
-          <h2 className={headCls}>All Services</h2>
-          <details className="md:hidden">
-            <summary className="text-sm cursor-pointer text-white/85 mb-2">Show all {services.length} services</summary>
-            <ul className="space-y-1.5 text-sm mt-2">{serviceLinks}</ul>
-          </details>
-          <ul className="hidden md:block space-y-1.5 text-sm max-h-72 overflow-y-auto pr-2">{serviceLinks}</ul>
-        </div>
-
-        <div>
-          <h2 className={headCls}>Contact</h2>
-          <address className="not-italic text-sm text-white/85 space-y-1">
-            <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" className={linkCls}>
-              {SITE.address.full}
-              <span className="sr-only"> (opens map in new tab)</span>
-            </a>
-          </address>
-          <div className="mt-2 flex flex-col">
-            <ContactChannel tone="dark" type="phone" value={SITE.phoneHref} label={SITE.phone} />
-            <ContactChannel tone="dark" type="email" value={SITE.email} label={SITE.email} />
-          </div>
-          <h3 className="sr-only">Follow SCS</h3>
-          <SocialLinks tone="dark" className="mt-3" />
+          <nav aria-label="Policies">
+            <p className={head}>Policies</p>
+            <ul className="space-y-1.5">
+              {POLICY_LINKS.map((l) => (
+                <li key={l.href}><Link href={l.href} className={link}>{l.label}</Link></li>
+              ))}
+              <li><CookieSettingsButton className="min-h-11 text-left text-white underline hover:text-accent" /></li>
+            </ul>
+          </nav>
+          <nav aria-label="Social media" className="mt-6">
+            <p className={head}>Follow SCS</p>
+            <ul className="flex flex-wrap gap-x-4 gap-y-1">
+              {SOCIAL.map((s) => (
+                <li key={s.label}>
+                  <a href={s.href} target="_blank" rel="noopener noreferrer" className={link}>
+                    {s.label}<span aria-hidden="true"> ↗</span><span className="sr-only"> (opens in new tab)</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
       </div>
 
       <div className="border-t border-white/15">
-        <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 py-4 flex flex-col md:flex-row md:justify-between gap-2">
-          <p className="text-xs text-white/80">© {year} {SITE.legalName} · RC {SITE.rc}. All rights reserved.</p>
-          <nav aria-label="Policies" className="flex flex-wrap items-center gap-x-5 gap-y-1 text-xs">
-            <Link href="/terms" className={linkCls}>Terms of Service</Link>
-            <Link href="/privacy" className={linkCls}>Privacy Notice</Link>
-            <Link href="/cookies" className={linkCls}>Cookie Policy</Link>
-            <CookieSettingsButton className="text-white/85 hover:text-accent min-h-11 text-xs underline" />
-          </nav>
+        <div className="mx-auto flex max-w-[1280px] flex-col gap-2 px-4 py-5 text-white/85 md:flex-row md:items-center md:justify-between md:px-6 lg:px-8">
+          <p>© {year} {SITE.titleName}. {SITE.tagline}</p>
+          <a href={SITE.academyUrl} target="_blank" rel="noopener noreferrer" className={link}>
+            Stephen Corporate Academy (SCA)<span aria-hidden="true"> ↗</span><span className="sr-only"> (opens in new tab)</span>
+          </a>
         </div>
       </div>
     </footer>

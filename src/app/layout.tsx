@@ -1,19 +1,27 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import JsonLd from "@/components/ui/JsonLd";
 import Analytics from "@/components/ui/Analytics";
 import CookieBanner from "@/components/ui/CookieBanner";
-import ContactDock from "@/components/layout/ContactDock";
+import MobileBar from "@/components/layout/MobileBar";
 import TrackClicks from "@/components/ui/TrackClicks";
-import { services } from "@/content/services/data";
 import { SITE, IS_PRODUCTION } from "@/lib/site";
 
+// Self-hosted at build time by next/font (no request to Google from visitors), subset to Latin and Latin
+// Extended, font-display swap, preloaded. Direction B: Source Serif 4 600 for H1/H2, Inter for everything else.
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+const sourceSerif = Source_Serif_4({
+  variable: "--font-source-serif",
+  subsets: ["latin", "latin-ext"],
+  weight: "600",
   display: "swap",
 });
 
@@ -67,20 +75,18 @@ const organisationSchema = {
   founder: { "@type": "Person", name: "Stephen Onyekeja" },
 };
 
-const navServices = services.map(({ slug, title, cluster }) => ({ slug, title, cluster }));
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} h-full`}>
-      <body className="min-h-full flex flex-col pb-[calc(3.5rem+env(safe-area-inset-bottom))] md:pb-0">
+    <html lang="en" className={`${inter.variable} ${sourceSerif.variable} h-full`}>
+      <body className="min-h-full flex flex-col pb-[calc(70px+env(safe-area-inset-bottom))] md:pb-0">
         <JsonLd data={organisationSchema} />
         <a href="#main-content" className="skip-link">Skip to main content</a>
         {/* First in the focus order (after the skip link) so keyboard users reach the choice straight away; it is fixed to the bottom visually. */}
         <CookieBanner />
-        <Header services={navServices} />
+        <Header />
         <main id="main-content" className="flex-1">{children}</main>
         <Footer />
-        <ContactDock />
+        <MobileBar />
         <TrackClicks />
         <Analytics />
       </body>

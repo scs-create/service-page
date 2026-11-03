@@ -61,6 +61,8 @@ export const SITE = {
   // CAC website only. The old deep link to the public-search portal returned 404, so visitors are given instructions instead.
   cacUrl: "https://www.cac.gov.ng",
   rc: "9041457", // SCS's own CAC registration number (confirmed by the client)
+  hours: "Monday to Friday, 8:00 am to 5:00 pm WAT (UTC+1)", // from the approved v2 footer design (docs/v2/design/Footer.dc.html)
+  responsePromise: "We respond within 24 hours.", // owner wording, word for word (docs/v2/02-DECISIONS.md)
 } as const;
 
 // Which build this is. Only the Cloudflare production deploy sets NEXT_PUBLIC_SITE_ENV=production; every other

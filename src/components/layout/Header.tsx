@@ -1,40 +1,31 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import CTAButton from "@/components/ui/CTAButton";
-import SearchPalette from "@/components/layout/SearchPalette";
-import { CLUSTERS, ServiceCategoryData } from "@/lib/types";
 import { SITE } from "@/lib/site";
+import { CLUSTERS, PRIMARY_NAV, PROPOSAL_HREF, SERVICE_FINDER_HREF, isActive } from "@/lib/nav";
 
-const NAV = [
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/tools", label: "Analyse your Business" },
-  { href: "/corporate-college", label: "Corporate College" },
-  { href: "/about", label: "About" },
-  { href: "/verification", label: "Verification" },
-  { href: "/contact", label: "Contact" },
-];
-
-// Only what the menus need: the full service records would be serialised into every page.
-export type NavService = Pick<ServiceCategoryData, "slug" | "title" | "cluster">;
-type HeaderProps = { services: NavService[] };
-
-export default function Header({ services }: HeaderProps) {
+// v2 header, Direction B (docs/v2/design/Header.dc.html, 05-SITE-SPEC.md §2): logo, full name and RC; seven nav
+// items with a 2px gold underline on the active one; "Request a proposal" and "Book a Discovery Call" on the right.
+// Services opens a mega-menu of the 7 clusters (3 services each). Below 1360px a Menu button opens a full-height panel.
+export default function Header() {
   const pathname = usePathname();
   const [megaOpen, setMegaOpen] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const megaRef = useRef<HTMLDivElement>(null);
   const megaButtonRef = useRef<HTMLButtonElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
-  const byCluster = (cluster: string) => services.filter((s) => s.cluster === cluster);
-  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
-  const navClass = (active: boolean) =>
-    `py-2 whitespace-nowrap text-[14px] xl:text-[15px] border-b-2 transition-colors ${active ? "border-accent text-primary font-semibold" : "border-transparent text-text hover:text-primary"}`;
+  // Close both menus on navigation.
+  const [lastPath, setLastPath] = useState(pathname);
+  if (pathname !== lastPath) {
+    setLastPath(pathname);
+    setMegaOpen(false);
+    setMenuOpen(false);
+  }
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
@@ -47,7 +38,7 @@ export default function Header({ services }: HeaderProps) {
         if (open) megaButtonRef.current?.focus();
         return false;
       });
-      setMobileOpen((open) => {
+      setMenuOpen((open) => {
         if (open) menuButtonRef.current?.focus();
         return false;
       });
@@ -60,101 +51,161 @@ export default function Header({ services }: HeaderProps) {
     };
   }, []);
 
+  // The full-height panel stops the page behind it from scrolling and takes focus when it opens.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    panelRef.current?.focus();
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [menuOpen]);
+
+  const navClass = (active: boolean) =>
+    `inline-flex min-h-11 items-center border-b-2 py-2 text-[15px] whitespace-nowrap transition-colors ${
+      active ? "border-accent text-text font-medium" : "border-transparent text-text hover:text-primary"
+    }`;
+
   return (
-    <>
-      {/* Utility bar — direct lead channels, desktop only */}
-      <div data-location="top_bar" className="dark-surface hidden lg:block bg-secondary text-white text-sm">
-        <div className="max-w-[1280px] mx-auto px-8 py-2 flex items-center justify-between">
-          <p className="text-accent font-medium">{SITE.tagline}</p>
-          <p className="flex items-center gap-6">
-            <a href={`tel:${SITE.phoneHref}`} className="hover:text-accent">{SITE.phone}</a>
-            <a href={`mailto:${SITE.email}`} className="hover:text-accent">{SITE.email}</a>
-          </p>
-        </div>
-      </div>
+    <header className="sticky top-0 z-50 border-b border-border bg-bg">
+      <div className="mx-auto flex min-h-[68px] max-w-[1280px] items-center justify-between gap-5 px-4 md:px-6 min-[1360px]:min-h-[84px] lg:px-8">
+        <Link href="/" className="flex min-w-0 items-center gap-3 text-text">
+          <Image src="/images/logo.png" alt="" width={40} height={45} priority className="h-[34px] w-auto min-[1360px]:h-[45px]" />
+          <span className="flex min-w-0 flex-col leading-tight">
+            <span className="text-[13px] font-semibold sm:whitespace-nowrap min-[1360px]:text-[15px]">{SITE.titleName}</span>
+            <span className="tabular text-xs text-muted">RC {SITE.rc}</span>
+          </span>
+          <span className="sr-only">, home page</span>
+        </Link>
 
-      <header className="sticky top-0 z-50 bg-bg border-b border-border">
-        <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8">
-          <div className="flex items-center justify-between gap-4 h-[72px] md:h-20">
-            <Link href="/" className="shrink-0">
-              <Image src="/images/logo.png" alt="Stephen Corporate Services home page" width={64} height={72} priority className="h-14 md:h-16 w-auto" />
-            </Link>
-
-            <nav aria-label="Primary" className="hidden lg:flex items-center gap-2.5 xl:gap-6">
-              <Link href="/" aria-current={isActive("/") ? "page" : undefined} className={navClass(isActive("/"))}>Home</Link>
-              <div className="relative" ref={megaRef}>
-                <button ref={megaButtonRef} type="button" aria-expanded={megaOpen} aria-controls="services-mega-menu" onClick={() => setMegaOpen((v) => !v)} className={`${navClass(isActive("/services"))} flex items-center gap-1`}>
-                  Services
-                  <span aria-hidden="true" className="text-xs">{megaOpen ? "▲" : "▼"}</span>
+        <nav aria-label="Main" className="hidden items-center gap-5 min-[1360px]:flex">
+          {PRIMARY_NAV.map((item) =>
+            item.href === "/services" ? (
+              <div key={item.href} className="relative" ref={megaRef}>
+                <button
+                  ref={megaButtonRef}
+                  type="button"
+                  aria-expanded={megaOpen}
+                  aria-controls="services-menu"
+                  onClick={() => setMegaOpen((v) => !v)}
+                  className={`${navClass(isActive(pathname, item.href))} gap-1`}
+                >
+                  {item.label}
+                  <span aria-hidden="true" className="text-[10px]">{megaOpen ? "▲" : "▼"}</span>
                 </button>
                 {megaOpen && (
-                  <div id="services-mega-menu" className="absolute left-0 top-full mt-3 w-[780px] bg-bg border border-border border-t-4 border-t-accent rounded-md shadow-lg p-6 grid grid-cols-3 gap-6">
-                    {CLUSTERS.map((cluster) => (
-                      <div key={cluster.slug}>
-                        <p className="font-semibold text-sm text-secondary mb-2 pb-1 border-b border-border">{cluster.name}</p>
-                        <ul className="space-y-1">
-                          {byCluster(cluster.slug).map((s) => (
-                            <li key={s.slug}>
-                              <Link href={`/services/${s.slug}`} className="text-sm text-muted hover:text-primary" onClick={() => setMegaOpen(false)}>{s.title}</Link>
+                  <div
+                    id="services-menu"
+                    className="absolute left-1/2 top-full mt-3 grid w-[880px] -translate-x-1/2 grid-cols-4 gap-x-6 gap-y-5 rounded-sm border border-border border-t-4 border-t-accent bg-bg p-6 shadow-[var(--shadow-menu)]"
+                  >
+                    {CLUSTERS.map((c) => (
+                      <div key={c.slug}>
+                        <Link href={c.path} className="block border-b border-border pb-1 text-sm font-semibold text-text hover:text-primary">
+                          {c.name}
+                        </Link>
+                        <ul className="mt-2 space-y-1">
+                          {c.top.map((s) => (
+                            <li key={s.href}>
+                              <Link href={s.href} className="block py-0.5 text-sm text-muted hover:text-primary">{s.label}</Link>
                             </li>
                           ))}
                         </ul>
                       </div>
                     ))}
-                    <div className="col-span-3 pt-3 border-t border-border flex gap-6">
-                      <Link href="/services" className="text-sm font-medium text-primary hover:underline" onClick={() => setMegaOpen(false)}>View all services →</Link>
-                      <Link href="/industries" className="text-sm font-medium text-primary hover:underline" onClick={() => setMegaOpen(false)}>Industries →</Link>
+                    <div className="flex flex-col justify-end gap-2 border-l border-border pl-6">
+                      <Link href="/services" className="text-sm font-medium text-primary hover:underline">All services →</Link>
+                      <Link href={SERVICE_FINDER_HREF} className="text-sm font-medium text-primary hover:underline">Service Finder →</Link>
                     </div>
                   </div>
                 )}
               </div>
-              {NAV.map((l) => (
-                <Link key={l.href} href={l.href} aria-current={isActive(l.href) ? "page" : undefined} className={navClass(isActive(l.href))}>{l.label}</Link>
-              ))}
-            </nav>
+            ) : (
+              <Link key={item.href} href={item.href} aria-current={isActive(pathname, item.href) ? "page" : undefined} className={navClass(isActive(pathname, item.href))}>
+                {item.label}
+              </Link>
+            )
+          )}
+        </nav>
 
-            <div className="flex items-center gap-2">
-              <SearchPalette />
-              {/* Persistent conversion CTA: always visible, desktop and mobile */}
-              <CTAButton booking label="Book a Discovery Call" shortLabel="Book a Call" />
-              <button ref={menuButtonRef} type="button" aria-expanded={mobileOpen} aria-controls="mobile-menu" aria-label={mobileOpen ? "Close menu" : "Open menu"} onClick={() => setMobileOpen((v) => !v)} className="lg:hidden min-h-11 min-w-11 flex items-center justify-center">
-                <span aria-hidden="true" className="text-2xl leading-none">{mobileOpen ? "✕" : "☰"}</span>
-              </button>
-            </div>
-          </div>
+        <div className="hidden items-center gap-4 min-[1360px]:flex">
+          <Link href={PROPOSAL_HREF} className="whitespace-nowrap text-sm font-medium text-primary hover:underline">Request a proposal</Link>
+          <a
+            href={SITE.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-booking=""
+            data-location="header"
+            className="inline-flex min-h-11 items-center whitespace-nowrap rounded-md bg-primary px-4 text-[15px] font-medium text-white transition-colors hover:bg-secondary"
+          >
+            Book a Discovery Call<span className="sr-only"> (opens Cal.com in a new tab)</span>
+          </a>
         </div>
 
-        {mobileOpen && (
-          <div id="mobile-menu" className="lg:hidden border-t border-border bg-bg px-4 py-4 max-h-[80vh] overflow-y-auto">
-            <nav aria-label="Mobile" className="flex flex-col">
-              <Link href="/" className="py-3 text-text" onClick={() => setMobileOpen(false)}>Home</Link>
-              <button type="button" aria-expanded={mobileServicesOpen} aria-controls="mobile-services" onClick={() => setMobileServicesOpen((v) => !v)} className="py-3 text-left text-text flex justify-between items-center">
-                Services <span aria-hidden="true">{mobileServicesOpen ? "−" : "+"}</span>
-              </button>
-              {mobileServicesOpen && (
-                <div id="mobile-services" className="pl-4 pb-2">
-                  {CLUSTERS.map((cluster) => (
-                    <details key={cluster.slug} className="mb-2">
-                      <summary className="text-sm font-semibold text-secondary cursor-pointer py-2">{cluster.name}</summary>
-                      <ul className="pl-3 mt-1">
-                        {byCluster(cluster.slug).map((s) => (
-                          <li key={s.slug}><Link href={`/services/${s.slug}`} className="text-sm text-muted block py-2" onClick={() => setMobileOpen(false)}>{s.title}</Link></li>
+        <button
+          ref={menuButtonRef}
+          type="button"
+          aria-expanded={menuOpen}
+          aria-controls="site-menu"
+          onClick={() => setMenuOpen((v) => !v)}
+          className="inline-flex min-h-11 flex-none items-center gap-2 rounded-md border border-border bg-bg px-3 text-[15px] font-medium text-text min-[1360px]:hidden"
+        >
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            {menuOpen ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+          </svg>
+          {menuOpen ? "Close" : "Menu"}
+        </button>
+      </div>
+
+      {menuOpen && (
+        <div
+          id="site-menu"
+          ref={panelRef}
+          tabIndex={-1}
+          className="fixed inset-x-0 bottom-0 top-[68px] z-50 overflow-y-auto border-t border-border bg-bg px-4 pb-28 pt-4 outline-none md:px-6 min-[1360px]:hidden"
+        >
+          <nav aria-label="Main">
+            <ul className="divide-y divide-border">
+              {PRIMARY_NAV.map((item) => (
+                <li key={item.href}>
+                  {item.href === "/services" ? (
+                    <details>
+                      <summary className="flex min-h-12 cursor-pointer items-center justify-between text-base text-text">
+                        Services <span aria-hidden="true">+</span>
+                      </summary>
+                      <ul className="pb-3 pl-3">
+                        {CLUSTERS.map((c) => (
+                          <li key={c.slug}>
+                            <Link href={c.path} className="flex min-h-11 items-center text-sm text-text">{c.name}</Link>
+                          </li>
                         ))}
+                        <li><Link href="/services" className="flex min-h-11 items-center text-sm font-medium text-primary">All services →</Link></li>
+                        <li><Link href={SERVICE_FINDER_HREF} className="flex min-h-11 items-center text-sm font-medium text-primary">Service Finder →</Link></li>
                       </ul>
                     </details>
-                  ))}
-                  <Link href="/services" className="text-sm font-medium text-primary block pt-1" onClick={() => setMobileOpen(false)}>View all services →</Link>
-                </div>
-              )}
-              {NAV.map((l) => (
-                <Link key={l.href} href={l.href} className="py-3 text-text" onClick={() => setMobileOpen(false)}>{l.label}</Link>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      aria-current={isActive(pathname, item.href) ? "page" : undefined}
+                      className={`flex min-h-12 items-center text-base ${isActive(pathname, item.href) ? "font-medium text-primary" : "text-text"}`}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </li>
               ))}
-              <Link href="/industries" className="py-3 text-text" onClick={() => setMobileOpen(false)}>Industries</Link>
-              <Link href="/faq" className="py-3 text-text" onClick={() => setMobileOpen(false)}>FAQ</Link>
-            </nav>
+            </ul>
+          </nav>
+          <div className="mt-6 flex flex-col gap-3">
+            <a href={SITE.bookingUrl} target="_blank" rel="noopener noreferrer" data-booking="" data-location="mobile_menu" className="inline-flex min-h-12 items-center justify-center rounded-md bg-primary px-4 font-medium text-white">
+              Book a Discovery Call<span className="sr-only"> (opens Cal.com in a new tab)</span>
+            </a>
+            <Link href={PROPOSAL_HREF} className="inline-flex min-h-12 items-center justify-center rounded-md border border-primary px-4 font-medium text-primary">
+              Request a proposal
+            </Link>
           </div>
-        )}
-      </header>
-    </>
+        </div>
+      )}
+    </header>
   );
 }

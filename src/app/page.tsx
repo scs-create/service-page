@@ -9,6 +9,7 @@ import ClosingStatement from "@/components/ui/ClosingStatement";
 import DeliveryModes from "@/components/sections/DeliveryModes";
 import LeadCapture from "@/components/sections/LeadCapture";
 import HeroSkyline from "@/components/sections/HeroSkyline";
+import TowerMark from "@/components/brand/TowerMark";
 import ToolsTeaser from "@/components/sections/ToolsTeaser";
 import Testimonials from "@/components/sections/Testimonials";
 import { CLUSTERS } from "@/lib/types";
@@ -36,8 +37,13 @@ export default function Home() {
       <section data-location="hero" className="dark-surface bg-secondary">
         <div className={`${WRAP} py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center`}>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-4">{SITE.tagline}</p>
-            <h1 className="text-4xl md:text-5xl font-semibold text-white leading-tight">
+            {/* The tower is the SCS symbol and stays in the hero on every screen (docs/v2/02-DECISIONS.md §4):
+                on mobile a 116px mark over a gold rule beside the tagline, from md up the full skyline. */}
+            <div className="mb-5 flex items-end gap-4 md:mb-4 md:block">
+              <TowerMark height={116} rule className="flex-none md:hidden" />
+              <p className="type-eyebrow pb-3 text-accent md:pb-0">{SITE.tagline}</p>
+            </div>
+            <h1 className="type-h1 text-white">
               Build with structure. Operate with confidence. Grow with purpose.
             </h1>
             <p className="text-lg md:text-xl text-white/85 mt-5">

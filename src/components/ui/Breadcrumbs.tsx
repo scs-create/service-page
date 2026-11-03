@@ -6,8 +6,8 @@ export type Crumb = { label: string; href?: string };
 
 // Visible trail ("Home > Section > Page") plus BreadcrumbList structured data built from the SAME items,
 // so the markup always matches what visitors see. "Home" is added automatically; the last item is the
-// current page (no link). Navy PageHero by default; tone="light" for pages without a hero.
-export default function Breadcrumbs({ items, tone = "dark" }: { items: Crumb[]; tone?: "dark" | "light" }) {
+// current page (no link). Light by default (v2 PageHero is light); tone="dark" inside navy bands.
+export default function Breadcrumbs({ items, tone = "light" }: { items: Crumb[]; tone?: "dark" | "light" }) {
   const trail: Crumb[] = [{ label: "Home", href: "/" }, ...items];
   const link = tone === "dark" ? "text-white/85 underline-offset-4 hover:text-accent hover:underline" : "text-primary hover:underline";
   const current = tone === "dark" ? "text-white" : "text-text";

@@ -8,10 +8,11 @@ import { privacySignal } from "@/lib/analytics";
 
 const noopSubscribe = () => () => {};
 const BTN = "inline-flex items-center justify-center rounded-md px-5 py-2.5 min-h-11 font-medium transition-colors";
-// Accept and Decline are deliberately identical in size and style: declining is never harder (Cookie Policy §5).
-const EQUAL = `${BTN} bg-white text-secondary hover:bg-accent`;
-const GHOST = `${BTN} border border-white/70 text-white hover:bg-white/10`;
-const LINK = "underline hover:text-accent";
+// Accept and Reject are deliberately identical in size and style: rejecting is never harder (Cookie Policy §5,
+// docs/v2/05-SITE-SPEC.md §2). v2: a white panel with the 4px gold top edge (navy bands are kept for page sections).
+const EQUAL = `${BTN} bg-primary text-white hover:bg-secondary`;
+const GHOST = `${BTN} border border-primary text-primary hover:bg-surface`;
+const LINK = "text-primary underline hover:text-secondary";
 
 export default function CookieBanner() {
   const hydrated = useSyncExternalStore(noopSubscribe, () => true, () => false);
@@ -53,13 +54,13 @@ export default function CookieBanner() {
       role="dialog"
       aria-labelledby="cookie-banner-title"
       aria-describedby="cookie-banner-text"
-      className="dark-surface fixed inset-x-0 bottom-0 z-[60] max-h-[90vh] overflow-y-auto border-t-4 border-accent bg-secondary text-white shadow-2xl"
+      className="fixed inset-x-0 bottom-0 z-[60] max-h-[90vh] overflow-y-auto border-t-4 border-accent bg-bg text-text shadow-[var(--shadow-overlay)]"
     >
       <div className="max-w-[1280px] mx-auto px-4 md:px-6 lg:px-8 pt-5 pb-5">
-        <h2 id="cookie-banner-title" className="text-lg font-semibold">{reopened ? "Cookie settings" : "Your cookie choice"}</h2>
+        <p id="cookie-banner-title" className="text-lg font-semibold">{reopened ? "Cookie settings" : "Your cookie choice"}</p>
         {!reopened ? (
           <>
-            <p id="cookie-banner-text" className="mt-2 max-w-[90ch] text-sm text-white/90">
+            <p id="cookie-banner-text" className="mt-2 max-w-[90ch] text-sm text-muted">
               With your permission, we use analytics cookies to see how visitors use this site, so we can improve it. They stay off unless
               you accept, and you can change your mind at any time with &ldquo;Cookie settings&rdquo; in the footer.
               {signal && " Your browser is sending a privacy signal, so analytics is off unless you choose to allow it."} See our{" "}
@@ -68,12 +69,12 @@ export default function CookieBanner() {
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <button type="button" onClick={() => choose(true)} className={EQUAL}>Accept analytics</button>
-              <button type="button" onClick={() => choose(false)} className={EQUAL}>Decline</button>
+              <button type="button" onClick={() => choose(false)} className={EQUAL}>Reject analytics</button>
             </div>
           </>
         ) : (
           <>
-            <p id="cookie-banner-text" className={signal ? "mt-2 max-w-[90ch] text-sm text-white/90" : "sr-only"}>
+            <p id="cookie-banner-text" className={signal ? "mt-2 max-w-[90ch] text-sm text-muted" : "sr-only"}>
               {signal
                 ? "Your browser is sending a privacy signal (Do Not Track or Global Privacy Control), so analytics is off unless you allow it here."
                 : "Choose which cookies this site may use."}
@@ -84,14 +85,14 @@ export default function CookieBanner() {
                 <label key={c.id} className="flex items-start gap-3 text-sm">
                   <input
                     type="checkbox"
-                    className="mt-1 h-5 w-5 accent-white"
+                    className="mt-1 h-5 w-5 accent-[var(--color-primary)]"
                     checked={c.required ? true : analytics}
                     disabled={c.required}
                     onChange={(e) => setAnalytics(e.target.checked)}
                   />
                   <span>
                     <span className="block font-semibold">{c.label}{c.required && " (always on)"}</span>
-                    <span className="block text-white/85">{c.description}</span>
+                    <span className="block text-muted">{c.description}</span>
                   </span>
                 </label>
               ))}
