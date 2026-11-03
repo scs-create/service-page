@@ -48,3 +48,4 @@ public/admin/*.js
 
 # Cloudflare local state
 .wrangler/
+.dev.vars
