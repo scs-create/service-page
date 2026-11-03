@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import { renderMarkdown } from "../src/lib/markdown";
 import { validateConsent, parseConsent } from "../src/lib/consent";
-import { checkBasicAuth, safeEqual } from "../netlify/edge-functions/admin-auth";
+import { adminGate, checkBasicAuth, safeEqual } from "../worker/admin-auth";
 
 // ---------- H-01: CMS Markdown is sanitised ----------
 const attacks: [string, string, RegExp][] = [
@@ -50,7 +50,7 @@ test("consent: non-objects and malformed JSON rejected", () => {
   assert.equal(parseConsent(null, NOW), null);
 });
 
-// ---------- /admin password gate (Netlify Edge Function) ----------
+// ---------- /admin password gate (Worker) ----------
 const basic = (u: string, p: string) => "Basic " + Buffer.from(`${u}:${p}`).toString("base64");
 test("admin gate: correct username and password pass", () => assert.equal(checkBasicAuth(basic("editor", "s3cret:with:colons"), "editor", "s3cret:with:colons"), true));
 test("admin gate: wrong password, wrong user, missing or malformed header fail", () => {
@@ -67,6 +67,15 @@ test("admin gate: constant-time compare handles different lengths", () => {
   assert.equal(safeEqual("", "a"), false);
 });
 test("admin gate: no credentials are stored in the repository", () => {
-  const src = fs.readFileSync("netlify/edge-functions/admin-auth.ts", "utf-8") + fs.readFileSync("netlify.toml", "utf-8");
-  assert.doesNotMatch(src, /ADMIN_PASSWORD\s*=\s*["']|Basic-Auth/);
+  const src = fs.readFileSync("worker/admin-auth.ts", "utf-8") + fs.readFileSync("wrangler.jsonc", "utf-8");
+  assert.doesNotMatch(src, /ADMIN_PASSWORD\s*[=:]\s*["']|Basic-Auth/);
+});
+test("admin gate: locked when the secrets are missing, challenge when credentials are wrong", () => {
+  const req = (auth?: string) => new Request("https://example.test/admin", auth ? { headers: { authorization: auth } } : {});
+  assert.equal(adminGate(req(), undefined, "x")!.status, 503);
+  assert.equal(adminGate(req(), "editor", "")!.status, 503);
+  const challenge = adminGate(req(basic("editor", "nope")), "editor", "s3cret")!;
+  assert.equal(challenge.status, 401);
+  assert.match(challenge.headers.get("www-authenticate")!, /^Basic /);
+  assert.equal(adminGate(req(basic("editor", "s3cret")), "editor", "s3cret"), null);
 });

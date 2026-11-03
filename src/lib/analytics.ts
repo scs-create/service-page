@@ -6,12 +6,12 @@ import { SITE } from "@/lib/site";
 // NEXT_PUBLIC_POSTHOG_KEY overrides it, e.g. for a separate test project.
 export const POSTHOG = {
   key: process.env.NEXT_PUBLIC_POSTHOG_KEY || "phc_virzGLMmYLWVEZ4t8y8TvkuxCeQqMhNkeqJCwhtRyfLE",
-  apiHost: "/ingest", // proxied by netlify.toml to eu.i.posthog.com, so ad blockers don't drop it and the CSP stays same-origin
+  apiHost: "/ingest", // proxied to eu.i.posthog.com (by the Worker from the analytics PR), so ad blockers don't drop it and the CSP stays same-origin
   uiHost: "https://eu.posthog.com",
   defaults: "2026-08-30", // PostHog's latest dated defaults (docs, October 2026)
 } as const;
 
-// Only the live domain is tracked: never localhost, Netlify deploy previews (*.netlify.app) or the CMS.
+// Only the live domain is tracked: never localhost, preview builds (*.workers.dev) or the CMS.
 export function trackingAllowedHere(): boolean {
   if (typeof window === "undefined") return false;
   const host = window.location.hostname;

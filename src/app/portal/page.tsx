@@ -3,8 +3,8 @@ import { notFound } from "next/navigation";
 import PageHero from "@/components/ui/PageHero";
 
 // PROTOTYPE ONLY. Invisible to visitors: returns 404 unless NEXT_PUBLIC_ENABLE_PORTAL_PROTOTYPE="true"
-// (set automatically for deploy previews / branch deploys in netlify.toml). Not linked anywhere, not in the sitemap,
-// noindex. It shows MOCK data only — a real client portal needs real authentication (e.g. Netlify Identity roles)
+// (set by the v2 workflow for preview builds only). Not linked anywhere, not in the sitemap,
+// noindex. It shows MOCK data only — a real client portal needs real authentication (e.g. Cloudflare Access)
 // and a data store, neither of which exists yet.
 export const metadata: Metadata = { title: "Client portal (prototype)", robots: { index: false, follow: false } };
 

@@ -1,9 +1,8 @@
-// Password gate for /admin (Decap CMS), in front of the CMS's own GitHub login.
-// The username and password live ONLY in Netlify environment variables ADMIN_USER and ADMIN_PASSWORD
-// (Site configuration → Environment variables, marked secret), never in the repository.
+// Password gate for /admin (Decap CMS), in front of the CMS's own GitHub login. Carried over from v1 so /admin is
+// never less protected than today; Cloudflare Access replaces it in the CMS PR.
+// The username and password live ONLY in the Worker secrets ADMIN_USER and ADMIN_PASSWORD (set with
+// `wrangler secret put` or in the Cloudflare dashboard), never in the repository.
 // If either is missing, /admin stays locked (fail closed) instead of falling open.
-
-declare const Netlify: { env: { get(name: string): string | undefined } };
 
 // Compares in time that does not depend on where the strings differ.
 export function safeEqual(a: string, b: string): boolean {
@@ -30,22 +29,15 @@ export function checkBasicAuth(header: string | null, user: string, pass: string
   return userOk && passOk;
 }
 
-const NO_STORE = { "cache-control": "no-store", "x-robots-tag": "noindex" };
-
-export default async function adminAuth(request: Request, context: { next: () => Promise<Response> }) {
-  const user = Netlify.env.get("ADMIN_USER");
-  const pass = Netlify.env.get("ADMIN_PASSWORD");
+// null = let the request through; otherwise the locked or challenge response (headers are added by the caller).
+export function adminGate(request: Request, user: string | undefined, pass: string | undefined): Response | null {
+  const text = { "content-type": "text/plain; charset=utf-8" };
   if (!user || !pass) {
-    return new Response("The admin area is locked: set ADMIN_USER and ADMIN_PASSWORD in Netlify, then redeploy.", {
-      status: 503,
-      headers: { ...NO_STORE, "content-type": "text/plain; charset=utf-8" },
-    });
+    return new Response("The admin area is locked: set the ADMIN_USER and ADMIN_PASSWORD Worker secrets.", { status: 503, headers: text });
   }
-  if (checkBasicAuth(request.headers.get("authorization"), user, pass)) return context.next();
+  if (checkBasicAuth(request.headers.get("authorization"), user, pass)) return null;
   return new Response("Authentication required.", {
     status: 401,
-    headers: { ...NO_STORE, "content-type": "text/plain; charset=utf-8", "www-authenticate": 'Basic realm="SCS admin", charset="UTF-8"' },
+    headers: { ...text, "www-authenticate": 'Basic realm="SCS admin", charset="UTF-8"' },
   });
 }
-
-export const config = { path: ["/admin", "/admin/*"] };

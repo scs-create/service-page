@@ -22,7 +22,7 @@ export default function ContactDock() {
   const item = "flex min-h-14 flex-1 flex-col items-center justify-center gap-0.5 text-xs font-medium text-white hover:text-accent";
   return (
     <>
-      <nav aria-label="Quick contact" className="dark-surface fixed inset-x-0 bottom-[var(--badge-h,0px)] z-40 border-t-2 border-accent bg-secondary pb-[env(safe-area-inset-bottom)] md:hidden">
+      <nav aria-label="Quick contact" className="dark-surface fixed inset-x-0 bottom-0 z-40 border-t-2 border-accent bg-secondary pb-[env(safe-area-inset-bottom)] md:hidden">
         <div className="flex">
           <a href={`tel:${SITE.phoneHref}`} data-track="Dock Call" className={item}><Icon d={PHONE} />Call</a>
           <a href={WA} target="_blank" rel="noopener noreferrer" data-track="Dock WhatsApp" className={item}>
@@ -40,7 +40,7 @@ export default function ContactDock() {
         data-track="Float WhatsApp"
         data-location="floating_button"
         aria-label="Chat with SCS on WhatsApp (opens in new tab)"
-        className="fixed bottom-[calc(var(--badge-h,0px)+1.5rem)] right-6 z-40 hidden h-14 min-w-14 items-center justify-center gap-2 rounded-full bg-primary px-4 text-white shadow-lg ring-2 ring-accent transition-transform hover:scale-105 md:flex"
+        className="fixed bottom-6 right-6 z-40 hidden h-14 min-w-14 items-center justify-center gap-2 rounded-full bg-primary px-4 text-white shadow-lg ring-2 ring-accent transition-transform hover:scale-105 md:flex"
       >
         <WhatsAppMark className="h-7 w-7" />
         {/* Visible label on larger screens: a bare chat icon reads as "live chat", not WhatsApp. */}

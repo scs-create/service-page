@@ -6,16 +6,19 @@
 //   /api/forms/:form   forms PR (Turnstile, D1, R2, Resend)
 //   /api/auth, /api/callback   CMS PR (GitHub OAuth for Decap)
 //   /ingest/*          analytics PR (PostHog EU proxy)
-//   /admin/*           CMS PR puts Cloudflare Access in front; until then the static files are served with ADMIN_CSP
+//   /admin/*           password gate (worker/admin-auth.ts, as in v1) + ADMIN_CSP; Cloudflare Access in the CMS PR
+import { adminGate } from "./admin-auth";
 import { ADMIN_CSP, SECURITY_HEADERS } from "./headers";
 
 // Only the default export may be exported from the entry module: Workers treats every named export as an entrypoint.
 export interface Env {
   ASSETS: { fetch(request: Request): Promise<Response> };
+  ADMIN_USER?: string; // Worker secrets, never in the repository
+  ADMIN_PASSWORD?: string;
 }
 
 async function admin(request: Request, env: Env): Promise<Response> {
-  const res = await env.ASSETS.fetch(request);
+  const res = adminGate(request, env.ADMIN_USER, env.ADMIN_PASSWORD) ?? (await env.ASSETS.fetch(request));
   const headers = new Headers(res.headers);
   for (const [k, v] of Object.entries(SECURITY_HEADERS)) headers.set(k, v);
   headers.set("Content-Security-Policy", ADMIN_CSP);

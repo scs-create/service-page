@@ -1,3 +1,5 @@
+> **v2 (branch `v2`) runs on Cloudflare Workers, not Netlify.** See `wrangler.jsonc`, `worker/` and `docs/v2/06-TECH-SPEC.md`. The Netlify notes below describe the v1 site that is live until cutover; this file is rewritten for Cloudflare in the v2 docs PR.
+
 # Deploying the SCS website — step by step
 
 Order matters. Do the steps in sequence. Anything marked **(you decide)** needs a client decision first.

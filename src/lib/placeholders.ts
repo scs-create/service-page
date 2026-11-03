@@ -1,5 +1,5 @@
 // Exact client-placeholder strings (see docs/CLIENT_PLACEHOLDERS.md). They render ONLY on preview /
-// branch deploys (NEXT_PUBLIC_SHOW_CLIENT_PLACEHOLDERS=true, set in netlify.toml) — never on production.
+// branch deploys (NEXT_PUBLIC_SHOW_CLIENT_PLACEHOLDERS=true, set by the v2 workflow for previews) — never on production.
 export const SHOW_PLACEHOLDERS = process.env.NEXT_PUBLIC_SHOW_CLIENT_PLACEHOLDERS === "true";
 
 export const PH = {

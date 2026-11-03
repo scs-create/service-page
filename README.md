@@ -1,3 +1,5 @@
+> **v2 (branch `v2`) runs on Cloudflare Workers, not Netlify.** See `wrangler.jsonc`, `worker/` and `docs/v2/06-TECH-SPEC.md`. The Netlify notes below describe the v1 site that is live until cutover; this file is rewritten for Cloudflare in the v2 docs PR.
+
 # Stephen Corporate Services Ltd — Website
 
 **Deploying? Follow `docs/DEPLOYMENT.md`.**

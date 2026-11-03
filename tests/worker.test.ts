@@ -6,6 +6,8 @@ import { ADMIN_CSP, SECURITY_HEADERS } from "../worker/headers";
 
 const served: string[] = [];
 const env: Env = {
+  ADMIN_USER: "editor",
+  ADMIN_PASSWORD: "test-only",
   ASSETS: {
     async fetch(request: Request) {
       served.push(new URL(request.url).pathname);
@@ -13,7 +15,9 @@ const env: Env = {
     },
   },
 };
-const call = (path: string, method = "GET") => worker.fetch(new Request("https://example.test" + path, { method }), env);
+const call = (path: string, method = "GET", headers: Record<string, string> = {}) =>
+  worker.fetch(new Request("https://example.test" + path, { method, headers }), env);
+const login = { authorization: "Basic " + Buffer.from("editor:test-only").toString("base64") };
 
 test("worker: forms are not live yet", async () => {
   const r = await call("/api/forms/proposal", "POST");
@@ -35,8 +39,15 @@ test("worker: Worker responses carry the security headers", async () => {
   assert.equal(r.headers.get("Cache-Control"), "no-store");
 });
 
-test("worker: /admin passes through to static assets", async () => {
-  const r = await call("/admin/");
+test("worker: /admin asks for the password, with the admin headers on the challenge too", async () => {
+  const r = await call("/admin");
+  assert.equal(r.status, 401);
+  assert.equal(r.headers.get("Content-Security-Policy"), ADMIN_CSP);
+  assert.equal(r.headers.get("Cache-Control"), "no-store");
+});
+
+test("worker: /admin passes through to static assets after login", async () => {
+  const r = await call("/admin/", "GET", login);
   assert.equal(r.status, 200);
   assert.equal(served.at(-1), "/admin/");
   assert.equal(r.headers.get("Content-Security-Policy"), ADMIN_CSP); // replaces, never joins, the asset's policy

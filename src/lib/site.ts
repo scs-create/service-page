@@ -8,7 +8,7 @@ const DOMAIN = "stephencorporateservices-scs.com";
 //  sales    → consultations, assessments, training requests (all lead forms)
 //  info     → information, partnerships, complaints
 //  accounts → invoices and payments
-//  admin    → INTERNAL ONLY (Workspace admin, Netlify/CMS/analytics accounts). Never rendered on the site.
+//  admin    → INTERNAL ONLY (Workspace admin, hosting/CMS/analytics accounts). Never rendered on the site.
 export const EMAILS = {
   admin: `admin@${DOMAIN}`,
   contact: `contact@${DOMAIN}`,
@@ -35,7 +35,7 @@ export const SITE = {
   shortName: "SCS",
   tagline: "Elevate Your Company, Go Global.",
   domain: DOMAIN,
-  // Netlify injects URL at build time; NEXT_PUBLIC_SITE_URL overrides it.
+  // NEXT_PUBLIC_SITE_URL overrides the canonical URL (for example on a preview build).
   url: process.env.NEXT_PUBLIC_SITE_URL ?? `https://${DOMAIN}`,
   email: EMAILS.contact,
   phone: "+234 812 813 8222", // calls and WhatsApp (owner decision, 18 October 2026; was +234 906 403 5713)
@@ -55,7 +55,7 @@ export const SITE = {
   facebook: "https://web.facebook.com/profile.php?id=61593570197715",
   x: "https://x.com/SCSaccount1",
   // Discovery Call on Cal.com (free). Every "Book" call to action opens it in a new tab.
-  // NEXT_PUBLIC_BOOKING_URL in Netlify overrides it; an empty value falls back to this default.
+  // NEXT_PUBLIC_BOOKING_URL overrides it at build time; an empty value falls back to this default.
   bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || "https://cal.com/support-stephen-corporate-services-scs/30min",
   academyUrl: "https://stephencorporateservicesacademy.com",
   // CAC website only. The old deep link to the public-search portal returned 404, so visitors are given instructions instead.
