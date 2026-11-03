@@ -2,7 +2,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import { CLUSTERS, PRIMARY_NAV, isActive } from "../src/lib/nav";
+import { CLUSTERS, POLICY_LINKS, PRIMARY_NAV, SECONDARY_NAV, isActive } from "../src/lib/nav";
 
 const read = (p: string) => fs.readFileSync(p, "utf-8");
 
@@ -66,4 +66,10 @@ test("tower: the exact logo vector is reused, never redrawn", () => {
 test("footer: the response promise word for word, and office hours as text (no open-now indicator)", () => {
   assert.match(read("src/lib/site.ts"), /responsePromise: "We respond within 24 hours\."/);
   assert.doesNotMatch(read("src/components/layout/Footer.tsx"), /open now/i);
+});
+
+test("nav: Contact, Tools, Work, Corporate College and Join us sit in the mobile menu; Search in the footer (strategy §6)", () => {
+  assert.deepEqual(SECONDARY_NAV.map((n) => n.label), ["Contact", "Tools", "Case studies", "Corporate College", "Join us", "Search"]);
+  assert.match(read("src/components/layout/Header.tsx"), /SECONDARY_NAV\.map/);
+  assert.ok(POLICY_LINKS.some((l) => l.href === "/search"));
 });

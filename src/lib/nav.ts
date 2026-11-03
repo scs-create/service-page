@@ -14,6 +14,16 @@ export const PRIMARY_NAV: NavLink[] = [
   { href: "/about", label: "About" },
 ];
 
+// Strategy §6: these sit in the footer and the mobile menu, not the top bar.
+export const SECONDARY_NAV: NavLink[] = [
+  { href: "/contact", label: "Contact" },
+  { href: "/tools", label: "Tools" },
+  { href: "/portfolio", label: "Case studies" },
+  { href: "/corporate-college", label: "Corporate College" },
+  { href: "/career", label: "Join us" },
+  { href: "/search", label: "Search" },
+];
+
 export const PROPOSAL_HREF = "/contact/proposal";
 export const SERVICE_FINDER_HREF = "/find-my-service";
 
@@ -42,6 +52,7 @@ export const POLICY_LINKS: NavLink[] = [
   { href: "/cookies", label: "Cookie notice" },
   { href: "/terms", label: "Website terms" },
   { href: "/accessibility", label: "Accessibility statement" },
+  { href: "/search", label: "Search" },
 ];
 
 // "/" is active only on the home page; any other item is active on its own page and the pages below it.

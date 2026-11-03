@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { SITE } from "@/lib/site";
-import { CLUSTERS, PRIMARY_NAV, PROPOSAL_HREF, SERVICE_FINDER_HREF, isActive } from "@/lib/nav";
+import { CLUSTERS, PRIMARY_NAV, PROPOSAL_HREF, SECONDARY_NAV, SERVICE_FINDER_HREF, isActive } from "@/lib/nav";
 
 // v2 header, Direction B (docs/v2/design/Header.dc.html, 05-SITE-SPEC.md §2): logo, full name and RC; seven nav
 // items with a 2px gold underline on the active one; "Request a proposal" and "Book a Discovery Call" on the right.
@@ -192,6 +192,15 @@ export default function Header() {
                       {item.label}
                     </Link>
                   )}
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <nav aria-label="More" className="mt-4 border-t border-border pt-3">
+            <ul className="grid grid-cols-2 gap-x-4">
+              {SECONDARY_NAV.map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className="flex min-h-11 items-center text-sm text-muted hover:text-primary">{l.label}</Link>
                 </li>
               ))}
             </ul>

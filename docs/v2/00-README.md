@@ -24,6 +24,10 @@ Prepared 3 November 2026. This pack holds everything the Claude Code session nee
 | `design/*.dc.html` | Source of the approved Direction B designs (Home, Service, Partnership, Contact, Header, Footer, Mobile bar) |
 | `design/tower.svg` | The SCS tower mark (exact vector of the logo) |
 | `design/tokens.json`, `design/design-system-README.md` | The SCS design system |
+| `08-STRATEGY-AND-CONTENT-MODEL.md` | Added in the build: full copy of the strategy doc (positioning, audiences, templates, Partnership outline, tone guide, metrics plan) |
+| `09-RESEARCH-SUMMARY.md` | Added in the build: research summary and the official facts guides must state carefully (no fees) |
+| `10-SOURCE-COVERAGE.md` | Added in the build: every item from the chat, strategy doc and canvas, where it lands and which PR builds it |
+| `LOCAL-TESTING.md` | Added in the build: running the v2 build on your own PC |
 | `99-original-brief.txt` | The original v2 brief (context only; the decisions file overrides it) |
 
 ## Links
