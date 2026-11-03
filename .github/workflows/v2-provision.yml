@@ -1,0 +1,47 @@
+# One-off setup for the v2 forms (docs/v2/06-TECH-SPEC.md §2–§3): creates the D1 database "scs-forms" and the private
+# R2 bucket "scs-forms-uploads" in the Cloudflare account, if they do not exist yet, and applies the D1 migrations.
+# Safe to re-run. Run it from GitHub → Actions → "v2 provision" → Run workflow, after CLOUDFLARE_API_TOKEN and
+# CLOUDFLARE_ACCOUNT_ID are set (owner checklist steps 4–5). The run summary shows the D1 database id, which is not a
+# secret: it goes into wrangler.jsonc in place of the all-zero placeholder.
+name: v2 provision
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  provision:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Create the D1 database and R2 bucket (if missing), apply migrations
+        run: |
+          set -euo pipefail
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "Set CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID first (owner checklist steps 4-5)."; exit 1
+          fi
+          id=$(npx wrangler d1 list --json | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{const db=JSON.parse(s).find(d=>d.name==="scs-forms");process.stdout.write(db?db.uuid:"")})')
+          if [ -z "$id" ]; then
+            npx wrangler d1 create scs-forms
+            id=$(npx wrangler d1 list --json | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>process.stdout.write(JSON.parse(s).find(d=>d.name==="scs-forms").uuid))')
+          fi
+          npx wrangler r2 bucket list | grep -q "scs-forms-uploads" || npx wrangler r2 bucket create scs-forms-uploads
+          sed -i "s/00000000-0000-0000-0000-000000000000/$id/" wrangler.jsonc
+          npx wrangler d1 migrations apply DB --remote
+          {
+            echo "## v2 forms resources"
+            echo ""
+            echo "- D1 database \`scs-forms\`: \`$id\`"
+            echo "- R2 bucket \`scs-forms-uploads\` (private)"
+            echo ""
+            echo "Put the database id into wrangler.jsonc (\`database_id\`) in the v2 branch."
+          } >> "$GITHUB_STEP_SUMMARY"
