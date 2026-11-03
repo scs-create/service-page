@@ -16,13 +16,27 @@ or the live domain.
 | Layout shift (CLS) | ✅ 0 to 0.05 on every template (budget under 0.05) |
 | Page weight | ✅ About 290–300 KB on most templates (budget 500 KB for Home). Guides and the proposal form are about 530–550 KB because of the Turnstile check and guide content |
 | JavaScript | ⚠️ About 150 KB compressed on Home (budget 100 KB). See below |
-| Performance score | ⚠️ 61–87 locally. Not reliable on this PC (below); to be measured online after deploy |
+| Performance score | ✅ Online (PageSpeed Insights): Home **100**, proposal form **95**. Locally 61–87, which isn't reliable on this PC (below) |
 | Old phone number, "Benhen", banned words, `[OWNER TO CONFIRM]` | ✅ 0 (`check:site`) |
 | Full name in header, footer, titles, structured data | ✅ (tests and `check:site`) |
 | Forms end to end | ✅ Locally (PR 5: D1, R2, rate limit, Turnstile test key, vCard). **After deploy**: once `TURNSTILE_SECRET` and `RESEND_API_KEY` are set, with real emails |
 | Screen reader | **To do by hand**: NVDA (Windows, free) on Home, a service page and the proposal form; checklist below |
 
-## Lighthouse (mobile, simulated slow 4G), final run
+## Online: PageSpeed Insights (mobile, slow 4G, Google's machines)
+
+Review address `https://scs-website.stephencorporateservices.workers.dev`, first deploy (3 November 2026):
+
+| Page | Performance | Accessibility | Best practices | FCP | LCP | Total blocking time | CLS |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Home `/` | **100** | 100 | 100 | 0.9 s | 0.9 s | 0 ms | 0 |
+| Proposal form `/contact/proposal` | **95** | 100 | 96 | 0.9 s | 2.9 s | 30 ms | 0 |
+
+SEO shows 69 on both only because review builds are deliberately noindex. The form page's LCP (2.9 s, budget 2.0 s)
+and best-practices score come from the Turnstile check, which loads from Cloudflare. They're to be re-measured once
+the Turnstile secret and the hostname are set. The smoke test also passes online: 151 pages, 41 redirects, 404,
+headers, `/admin` closed. Forms answer 503 until the Worker secrets are set.
+
+## Local Lighthouse (mobile, simulated slow 4G), final run
 
 | Template | Page | Perf. | Access. | Best pr. | LCP | CLS | Total blocking time |
 | --- | --- | --- | --- | --- | --- | --- | --- |
