@@ -18,7 +18,7 @@ function interestOf(form: HTMLFormElement): string | undefined {
   return undefined;
 }
 
-// form_started (first focus) · form_error (validation or send failure) · form_step_completed · form_submitted
+// form_started (first focus) · form_error (validation or send failure) · form_step · form_submit
 // (+ newsletter_subscribed) and, only for visitors who accepted analytics, an anonymous lead ID saved with the
 // enquiry + identify().
 export function useFormAnalytics(formKey: string) {
@@ -66,7 +66,7 @@ export function useFormAnalytics(formKey: string) {
   const submitted = useCallback(
     (form: HTMLFormElement) => {
       const service_interest = interestOf(form);
-      track("form_submitted", { form_name, service_interest });
+      track("form_submit", { form_name, service_interest });
       if (form_name === "newsletter") track("newsletter_subscribed");
       identifyLead(leadId.current, { service_interest, lead_source: form_name });
     },
@@ -74,7 +74,7 @@ export function useFormAnalytics(formKey: string) {
   );
 
   const failed = useCallback(() => track("form_error", { form_name, error_type: "submit_failed" }), [form_name]);
-  const step = useCallback((n: number) => track("form_step_completed", { form_name, step: n }), [form_name]);
+  const step = useCallback((n: number) => track("form_step", { form_name, step: n }), [form_name]);
 
   return useMemo(
     () => ({ attach, onFocus, beforeSubmit, submitted, failed, step }),

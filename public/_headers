@@ -26,3 +26,11 @@
 /scs-contact.vcf
   Content-Type: text/vcard; charset=utf-8
   Content-Disposition: attachment; filename="Stephen-Corporate-Services-SCS-Ltd.vcf"
+
+# Section Open Graph images (src/app/**/opengraph-image.tsx) are written without a file extension.
+/:section/opengraph-image
+  Content-Type: image/png
+  Cache-Control: public, max-age=86400
+/:section/:sub/opengraph-image
+  Content-Type: image/png
+  Cache-Control: public, max-age=86400

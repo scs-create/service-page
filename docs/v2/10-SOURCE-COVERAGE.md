@@ -45,7 +45,7 @@ that carry it are built in PRs 3 to 6, in the order set by `01-BUILD-PROMPT.md`.
 | §7 Eight page templates, each ending in "What happens next" | Home, hub, service, audience, case study, guide, tool, form | ✅ PR 3–6 |
 | §8 Partnership page outline | `/partnership`, `/partnership/remote-operations` | ✅ PR 4 |
 | §9 Tone guide (five v2 rules, banned vocabulary) | Copy rules; CI banned-word check, baseline now empty | ✅ PR 1–6 |
-| §10 Metrics plan: events `cta_click`, `booking_click`, `form_step`, `form_submit`, `tool_complete`, `whatsapp_click`, `call_click`, `partnership_cta`, `post_submit_next_step`, each with `service_id` and `audience`; UTM stored with leads | PostHog via `/ingest`; D1 lead rows | ✅ UTM in D1 PR 5 · ⏳ events, dashboard PR 8 |
+| §10 Metrics plan: events `cta_click`, `booking_click`, `form_step`, `form_submit`, `tool_complete`, `whatsapp_click`, `call_click`, `partnership_cta`, `post_submit_next_step`, each with `service_id` and `audience`; UTM stored with leads | PostHog via `/ingest` (Worker proxy); D1 lead rows | ✅ PR 5 (UTM) · PR 8 (proxy, events; dashboard spec in ANALYTICS-AND-SEO.md, built after launch) |
 | §11 Owner decisions | All answered (see `02-DECISIONS.md`) | ✅ |
 
 ## Design canvas (Direction B), board by board

@@ -54,7 +54,7 @@ export default function OutcomeQuiz({ quiz, outcomes, resultField, requestType, 
   }
 
   return (
-    <form onSubmit={(e) => { e.preventDefault(); track("tool_completed", { tool_name: toSnake(requestType) }); setShown(true); }} className="space-y-8">
+    <form onSubmit={(e) => { e.preventDefault(); track("tool_complete", { tool_name: toSnake(requestType) }); setShown(true); }} className="space-y-8">
       {quiz.questions.map((q, qi) => (
         <fieldset key={q.id}>
           <legend className="mb-3 text-lg font-semibold text-text">{qi + 1}. {q.text}</legend>

@@ -4,22 +4,37 @@
 import { getPosthog, trackingAllowedHere } from "@/lib/analytics";
 import { getRawConsent, parseConsent } from "@/lib/consent";
 
+// v2 event names (docs/v2/05-SITE-SPEC.md §7). Every event also carries service_id and audience when the page or the
+// clicked element has them (data-service-id / data-audience), so the funnel can be read per service and audience.
 export type AnalyticsEvent =
-  | "cta_clicked" // { cta_name, location_on_page, page_path }
-  | "outbound_link_clicked" // { destination_domain, link_label, location_on_page, page_path }
-  | "file_downloaded" // { file_name, page_path }
-  | "form_started" // { form_name, page_path }
-  | "form_step_completed" // { form_name, step, page_path }
-  | "form_submitted" // { form_name, service_interest, page_path }
-  | "form_error" // { form_name, error_type, page_path }
-  | "newsletter_subscribed" // { page_path }
-  | "service_page_viewed" // { service_name, page_path }
-  | "tool_completed"; // { tool_name, result_band, page_path }
+  | "cta_click" // { cta_name, location_on_page }
+  | "booking_click" // the Cal.com Discovery Call link { location_on_page }
+  | "call_click" // a tel: link { location_on_page }
+  | "whatsapp_click" // a WhatsApp link { location_on_page }
+  | "partnership_cta" // "Start a partnership conversation" { location_on_page }
+  | "post_submit_next_step" // a click inside the success panel after a form { cta_name }
+  | "outbound_link_clicked" // { destination_domain, link_label, location_on_page }
+  | "file_downloaded" // { file_name }
+  | "form_started" // { form_name }
+  | "form_step" // { form_name, step }
+  | "form_submit" // { form_name, service_interest }
+  | "form_error" // { form_name, error_type }
+  | "newsletter_subscribed"
+  | "service_page_viewed" // { service_name }
+  | "tool_complete"; // { tool_name, result_band }
 
 const ALLOWED_PROPS = new Set([
   "cta_name", "location_on_page", "page_path", "destination_domain", "link_label", "file_name",
   "form_name", "step", "service_interest", "error_type", "service_name", "tool_name", "result_band",
+  "service_id", "audience",
 ]);
+
+// The page's service and audience: the closest data-service-id / data-audience to the element, else the page's own.
+export function contextOf(el?: Element | null): { service_id?: string; audience?: string } {
+  if (typeof document === "undefined") return {};
+  const pick = (attr: string) => el?.closest(`[${attr}]`)?.getAttribute(attr) ?? document.querySelector(`main [${attr}]`)?.getAttribute(attr) ?? undefined;
+  return { service_id: pick("data-service-id"), audience: pick("data-audience") };
+}
 
 type Props = Record<string, string | number | boolean | undefined>;
 
@@ -39,7 +54,7 @@ const consented = () => !!parseConsent(getRawConsent())?.analytics && trackingAl
 
 export function track(event: AnalyticsEvent, props: Props = {}) {
   if (typeof window === "undefined") return;
-  const data = clean({ page_path: window.location.pathname, ...props });
+  const data = clean({ page_path: window.location.pathname, ...contextOf(), ...props });
   const ph = getPosthog();
   if (ph) ph.capture(event, data);
   else if (consented() && queue.length < 50) queue.push([event, data]);

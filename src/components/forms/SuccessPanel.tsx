@@ -29,7 +29,7 @@ export default function SuccessPanel({ title, message, reference, next, name, em
 }) {
   const btn = "inline-flex min-h-12 items-center justify-center rounded-md bg-primary px-6 font-medium text-white hover:bg-secondary";
   return (
-    <div role="status" tabIndex={-1} ref={(el) => el?.focus()} className="rounded-sm border border-border border-t-4 border-t-success bg-bg p-6 outline-none md:p-8">
+    <div role="status" tabIndex={-1} ref={(el) => el?.focus()} data-location="form_success" className="rounded-sm border border-border border-t-4 border-t-success bg-bg p-6 outline-none md:p-8">
       <p className="text-lg font-semibold text-success">{title}</p>
       <p className="mt-1 text-text">{message}</p>
       <p className="mt-4 text-sm text-muted">

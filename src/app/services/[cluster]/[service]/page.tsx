@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import PageHero from "@/components/ui/PageHero";
+import JsonLd from "@/components/ui/JsonLd";
+import { SITE } from "@/lib/site";
 import DiscussPanel from "@/components/v2/DiscussPanel";
 import RelatedCards from "@/components/v2/RelatedCards";
 import WhatHappensNext from "@/components/v2/WhatHappensNext";
@@ -9,7 +11,6 @@ import { SERVICES, getService } from "@/content/v2/catalogue";
 import { caseStudiesFor, guidesFor } from "@/lib/serviceRelated";
 
 // S: Service page (docs/v2/05-SITE-SPEC.md §3, design/Service.dc.html). No fees and no delivery timelines.
-// No Service JSON-LD: v2 structured data is Organization + ProfessionalService only (02-DECISIONS.md §3).
 type Params = { cluster: string; service: string };
 
 export function generateStaticParams(): Params[] {
@@ -40,6 +41,18 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
 
   return (
     <article data-service-id={s.id}>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: s.name,
+          description: s.summary,
+          serviceType: s.clusterName,
+          url: `${SITE.url}${s.path}`,
+          provider: { "@id": `${SITE.url}/#organization` },
+          areaServed: ["Nigeria", "Worldwide"],
+        }}
+      />
       <PageHero
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: s.clusterName, href: `/services/${s.cluster}` }, { label: s.name }]}
         title={s.name}

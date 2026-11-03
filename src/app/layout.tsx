@@ -52,10 +52,13 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = { themeColor: "#011550" };
 
+// Organization + ProfessionalService (05-SITE-SPEC.md §6; 02-DECISIONS.md §3: never a legal-service type).
 const organisationSchema = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["Organization", "ProfessionalService"],
+  "@id": `${SITE.url}/#organization`,
   name: SITE.legalName,
+  legalName: SITE.legalName,
   alternateName: SITE.shortName,
   slogan: SITE.tagline,
   url: SITE.url,
@@ -70,8 +73,23 @@ const organisationSchema = {
     addressRegion: SITE.address.region,
     addressCountry: "NG",
   },
-  areaServed: "Nigeria",
-  identifier: `RC ${SITE.rc}`,
+  areaServed: ["Nigeria", "Worldwide"],
+  identifier: { "@type": "PropertyValue", propertyID: "RC (Corporate Affairs Commission, Nigeria)", value: SITE.rc },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "08:00",
+    closes: "17:00",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    telephone: "+234-812-813-8222",
+    email: SITE.email,
+    areaServed: "Worldwide",
+    availableLanguage: ["English"],
+    hoursAvailable: { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "17:00" },
+  },
   sameAs: [SITE.linkedin, SITE.instagram, SITE.facebook, SITE.threads, SITE.x],
   founder: { "@type": "Person", name: "Stephen Onyekeja" },
 };

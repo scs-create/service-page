@@ -51,9 +51,9 @@ test("check: legal words are reported and kept passages marked", () => {
 function site() {
   const dir = mkdtempSync(join(tmpdir(), "scs-out-"));
   mkdirSync(join(dir, "services"));
-  writeFileSync(join(dir, "index.html"), "<head></head><p>Home</p>");
-  writeFileSync(join(dir, "services.html"), "<head></head><p>Our journey</p>");
-  writeFileSync(join(dir, "services", "a.html"), "<head></head><p>[OWNER TO CONFIRM]</p>");
+  writeFileSync(join(dir, "index.html"), '<head><title>home</title><meta name="description" content="About home"><link rel="canonical" href="https://x.test/home"></head><p>Home</p>');
+  writeFileSync(join(dir, "services.html"), '<head><title>services</title><meta name="description" content="About services"><link rel="canonical" href="https://x.test/services"></head><p>Our journey</p>');
+  writeFileSync(join(dir, "services", "a.html"), '<head><title>a</title><meta name="description" content="About a"><link rel="canonical" href="https://x.test/a"></head><p>[OWNER TO CONFIRM]</p>');
   writeFileSync(join(dir, "_redirects"), "/old /services/a 301\n/x/* /services/:splat 301\n/gone /nowhere 301\n");
   return dir;
 }

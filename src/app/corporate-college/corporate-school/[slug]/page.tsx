@@ -5,6 +5,7 @@ import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { renderArticle } from "@/lib/markdown";
 import PostCard from "@/components/ui/PostCard";
 import PageHero from "@/components/ui/PageHero";
+import JsonLd from "@/components/ui/JsonLd";
 import CTAButton from "@/components/ui/CTAButton";
 import NewsletterSignup from "@/components/sections/NewsletterSignup";
 import { v2LinkForV1 } from "@/content/v2/catalogue";
@@ -43,6 +44,20 @@ export default async function CorporateSchoolPostPage({ params }: { params: Prom
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          headline: post.title,
+          description: post.excerpt,
+          datePublished: post.date,
+          dateModified: post.reviewed ?? post.date,
+          image: `${SITE.url}/og-image.png`,
+          author: { "@id": `${SITE.url}/#organization` },
+          publisher: { "@id": `${SITE.url}/#organization` },
+          mainEntityOfPage: `${SITE.url}/corporate-college/corporate-school/${post.slug}`,
+        }}
+      />
       <PageHero
         breadcrumbs={[{ label: "Corporate College", href: "/corporate-college" }, { label: "Corporate School", href: "/corporate-college/corporate-school" }, { label: post.title }]}
         eyebrow={post.category ?? "Corporate School"}

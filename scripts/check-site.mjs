@@ -7,6 +7,8 @@
 //   old phone, Benhen fail always.
 //   _redirects        fail if a target is not a real page in out/.
 //   internal links    report pages linked but not built yet (v2 pages arrive PR by PR); fail in production.
+//   SEO               every indexable page has a unique <title> and meta description, and a canonical link
+//                     (05-SITE-SPEC.md §6); reported in previews, fail in production.
 //
 // Usage: node scripts/check-site.mjs [outDir] [--update-baseline]
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
@@ -76,6 +78,17 @@ export function pageExists(outDir, path) {
   return existsSync(join(outDir, base + ".html")) || existsSync(join(outDir, base, "index.html")) || existsSync(join(outDir, base));
 }
 
+const decode = (s) => s.replace(/&amp;/g, "&").replace(/&#x27;|&#39;/g, "'").replace(/&quot;/g, '"').trim();
+export function seoOf(html) {
+  return {
+    title: decode(html.match(/<title>([^<]*)<\/title>/)?.[1] ?? ""),
+    description: decode(html.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? ""),
+    canonical: html.match(/<link rel="canonical" href="([^"]*)"/)?.[1] ?? "",
+  };
+}
+// Pages that are never indexed and so need no unique metadata.
+const NOINDEX_PAGES = new Set(["/404", "/_not-found", "/portal", "/admin", "/__forms"]);
+
 export function internalLinks(html) {
   return [...html.matchAll(/<a\b[^>]*\shref="(\/[^"#?]*)/gi)].map((m) => m[1]).filter((h) => !h.startsWith("//"));
 }
@@ -97,7 +110,7 @@ export function missingRedirectTargets(outDir, redirects) {
 }
 
 export function run(outDir, { production = false, updateBaseline = false, baseline = {} } = {}) {
-  const errors = [], legal = [], banned = {}, linkedMissing = {};
+  const errors = [], legal = [], banned = {}, linkedMissing = {}, seo = [];
   let ownerToConfirm = 0, pages = 0;
   for (const file of walkHtml(outDir)) {
     const path = pagePath(outDir, file);
@@ -114,6 +127,7 @@ export function run(outDir, { production = false, updateBaseline = false, baseli
       const hits = bannedHits(text);
       if (Object.keys(hits).length) banned[path] = hits;
     }
+    if (!NOINDEX_PAGES.has(path) && !path.startsWith("/admin")) seo.push({ path, ...seoOf(html) });
     for (const href of internalLinks(html)) if (!pageExists(outDir, href)) (linkedMissing[href] ??= new Set()).add(path);
     for (const h of legalHits(text)) legal.push({ path, ...h, kept: h.kept || KEPT_PAGES.has(path) });
   }
@@ -136,7 +150,19 @@ export function run(outDir, { production = false, updateBaseline = false, baseli
   for (const href of Object.keys(linkedMissing)) if (redirectSources.has(href)) delete linkedMissing[href];
   if (production) for (const [href, from] of Object.entries(linkedMissing)) errors.push(`link to missing page ${href} (from ${[...from][0]})`);
 
-  return { pages, errors, legal, banned, ownerToConfirm, linkedMissing, newBaseline: updateBaseline ? banned : null };
+  const seoIssues = [];
+  for (const key of ["title", "description"]) {
+    const seen = new Map();
+    for (const p of seo) {
+      if (!p[key]) seoIssues.push(`${p.path}: no ${key}`);
+      else seen.set(p[key], [...(seen.get(p[key]) ?? []), p.path]);
+    }
+    for (const [value, paths] of seen) if (paths.length > 1) seoIssues.push(`duplicate ${key} on ${paths.length} pages (${paths.slice(0, 3).join(", ")}${paths.length > 3 ? ", …" : ""}): "${value.slice(0, 60)}"`);
+  }
+  for (const p of seo) if (!p.canonical) seoIssues.push(`${p.path}: no canonical link`);
+  if (production) errors.push(...seoIssues);
+
+  return { pages, errors, legal, banned, ownerToConfirm, linkedMissing, seoIssues, newBaseline: updateBaseline ? banned : null };
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
@@ -157,6 +183,8 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
   const legacy = Object.values(r.banned).reduce((s, h) => s + Object.values(h).reduce((a, b) => a + b, 0), 0);
   console.log(`banned words: ${legacy} legacy v1 occurrence(s) on ${Object.keys(r.banned).length} page(s); production needs 0`);
   console.log(`[OWNER TO CONFIRM]: ${r.ownerToConfirm} page(s)`);
+  console.log(`SEO (unique titles and descriptions, canonical links): ${r.seoIssues.length} issue(s)${r.seoIssues.length ? " (fail in production)" : ""}`);
+  for (const i of r.seoIssues.slice(0, 40)) console.log(`  ${i}`);
   const missing = Object.entries(r.linkedMissing);
   console.log(`internal links to pages not built yet: ${missing.length}${missing.length ? " (fails in production)" : ""}`);
   for (const [href, from] of missing) console.log(`  ${href}  (linked from ${from.size} page(s))`);

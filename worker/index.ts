@@ -5,13 +5,14 @@
 // Routes:
 //   /api/forms/:form   form submissions: Turnstile, rate limit, zod, D1, R2, Resend (worker/forms.ts)
 //   /api/auth, /api/callback   GitHub OAuth for Decap CMS (worker/oauth.ts)
-//   /ingest/*          analytics PR (PostHog EU proxy)
+//   /ingest/*          PostHog EU reverse proxy (worker/ingest.ts); analytics itself stays consent-gated
 //   /admin/*           Cloudflare Access token check (worker/access.ts) when configured, otherwise the v1 password gate;
 //                      /admin/submissions is the staff view of form submissions (worker/submissions.ts)
 import { accessConfigured, verifyAccess } from "./access";
 import { adminGate } from "./admin-auth";
 import { handleForm } from "./forms";
 import { ADMIN_CSP, SECURITY_HEADERS, SUBMISSIONS_CSP } from "./headers";
+import { proxyIngest } from "./ingest";
 import { finishAuth, startAuth } from "./oauth";
 import { handleSubmissions } from "./submissions";
 import { purgeOld } from "./retention";
@@ -45,7 +46,7 @@ function json(status: number, body: unknown): Response {
   });
 }
 
-async function route(request: Request, env: Env): Promise<Response> {
+async function route(request: Request, env: Env, ctx?: { waitUntil(p: Promise<unknown>): void }): Promise<Response> {
   const { pathname } = new URL(request.url);
 
   const formMatch = pathname.match(/^\/api\/forms\/([a-z0-9-]+)\/?$/);
@@ -61,7 +62,7 @@ async function route(request: Request, env: Env): Promise<Response> {
     return new Response(res.body, { status: res.status, headers });
   }
   if (pathname.startsWith("/api/")) return json(404, { ok: false, error: "not_found" });
-  if (pathname === "/ingest" || pathname.startsWith("/ingest/")) return json(404, { ok: false, error: "not_found" });
+  if (pathname === "/ingest" || pathname.startsWith("/ingest/")) return proxyIngest(request, ctx);
 
   if (pathname === "/admin" || pathname.startsWith("/admin/")) return admin(request, env, pathname);
 
@@ -70,9 +71,9 @@ async function route(request: Request, env: Env): Promise<Response> {
 }
 
 const worker = {
-  async fetch(request: Request, env: Env): Promise<Response> {
+  async fetch(request: Request, env: Env, ctx?: { waitUntil(p: Promise<unknown>): void }): Promise<Response> {
     try {
-      return await route(request, env);
+      return await route(request, env, ctx);
     } catch {
       return json(500, { ok: false, error: "server_error" });
     }
